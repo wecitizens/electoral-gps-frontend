@@ -1,0 +1,73 @@
+.el-button {
+  font-weight: bold;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.1), 0 2px 6px 0 rgba(49,49,93,0.15);
+
+  &.expanded {
+    width: 100%;
+  }
+
+  &.primary {
+    background-image: $gradient-primary;
+    color: $color-neutral-lightest;
+
+    &:hover {
+      color: $color-neutral-lightest;
+    }
+  }
+
+  &.secondary {
+    background: $color-neutral-lightest;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-background;
+      color: darken($color-primary, 10%);
+      opacity: 1;
+    }
+  }
+
+  &.success {
+    background-image: $gradient-success;
+    color: $color-neutral-lightest;
+
+    &:hover {
+      color: $color-neutral-lightest;
+    }
+  }
+
+  &.info {
+    background-image: $gradient-info;
+    color: $color-neutral-lightest;
+
+    &:hover {
+      color: $color-neutral-lightest;
+    }
+  }
+
+  &.warning {
+    background-image: $gradient-warning;
+    color: $color-neutral-lightest;
+
+    &:hover {
+      color: $color-neutral-lightest;
+    }
+  }
+
+  &.alert {
+    background-image: $gradient-alert;
+    color: $color-neutral-lightest;
+
+    &:hover {
+      color: $color-neutral-lightest;
+    }
+  }
+
+  &.neutral {
+    background-image: $gradient-neutral;
+    color: $color-neutral-lightest;
+
+    &:hover {
+      color: $color-neutral-lightest;
+    }
+  }
+}

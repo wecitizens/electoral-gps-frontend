@@ -1,0 +1,22 @@
+/* Core tags style */
+
+body {
+  font-family: $font-main, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $--color-text-primary;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3 {
+  font-family: $font-headings, sans-serif;
+  font-weight: 400;
+}

@@ -1,0 +1,39 @@
+/* Custom Colors */
+
+/* Colors
+-------------------------- */
+$color-primary: #3680DA;
+$color-success: #50bd91;
+$color-info: #fbc929;
+$color-warning: #ff8c27;
+$color-alert: #ff2d5c;
+
+$color-neutral-lightest: #ffffff;
+$color-neutral-lighter: #f7f7f8;
+$color-neutral-light: #dae2e8;
+$color-neutral: #909fab;
+$color-neutral-dark: #576977;
+$color-neutral-darker: #3B3E4A;
+$color-neutral-darkest: #222222;
+
+/* Alias
+-------------------------- */
+$color-text: $color-neutral-dark;
+$color-text-light: $color-neutral;
+$color-background: $color-neutral-lighter;
+
+/* Gradients
+-------------------------- */
+$gradient-primary: linear-gradient(135deg, #3E85FF, #30A2FF, #24CEF3);
+$gradient-success: linear-gradient(-45deg, #96DF77, #62D288, #59B883);
+$gradient-info: linear-gradient(-45deg, #FCD53C, #FFCA30, #F39E24);
+$gradient-warning: linear-gradient(135deg, #fa672e, #fd972e, #feb61a);
+$gradient-alert: linear-gradient(-45deg, #fc6a3c, #f93b3b, #ed205d);
+$gradient-neutral: linear-gradient(-45deg, #dcd8d8, #C5C5C5, #9d9d9d);
+
+$gradient-large-primary: linear-gradient(-45deg, #2AE1E7, #24CEF3, #30A2FF, #3E85FF, #6369FC);
+$gradient-large-success: linear-gradient(-45deg, #B2E66E, #62D288, #52A780);
+$gradient-large-info: linear-gradient(-45deg, #FBDB4C, #FCC93C, #FFC130, #F39E24 , #F0752A);
+$gradient-large-warning: linear-gradient(-45deg, #ffe000, #fd972e, #f94a2e);
+$gradient-large-alert: linear-gradient(-45deg, #ff963c, #f93b3b, #e60f72);
+$gradient-large-neutral: linear-gradient(-45deg, #d6d2d2, #C5C5C5, #8e8e8e);
