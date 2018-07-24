@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
-import smurfs from './smurfs'
+import questions from './questions'
 
 Vue.use(Vuex)
 
@@ -14,7 +14,7 @@ export default () => {
     strict: ['development', 'staging'].includes(process.env.NODE_ENV),
     plugins,
     modules: {
-      smurfs
+      questions
     }
   })
 }
