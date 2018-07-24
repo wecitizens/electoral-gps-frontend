@@ -1,12 +1,30 @@
 <template lang="pug">
 div
-  h3 {{ question }}
-  el-button-group
-    el-button(type="primary" @click="setQuestionAgreement({ questionId: question.id, agreement: 'strongly_agree' })") Strongly agree
-    el-button(type="success") Agree
-    el-button(type="info") No opinion
-    el-button(type="warning") Disagree
-    el-button(type="danger") Strongly disagree
+  h3 {{ question.text }}
+  p {{ question.notice }}
+  el-radio-group.hidden-xs-only(v-model="agreement")
+    el-radio-button(label="Strongly agree")
+    el-radio-button(label="Agree")
+    el-radio-button(label="No opinion")
+    el-radio-button(label="Disagree")
+    el-radio-button(label="Strongly disagree")
+
+  el-radio-group.hidden-sm-and-up(v-model="agreement")
+    el-row
+      el-col(:xs="24")
+        el-radio-button.el-radio-button--custom(label="Strongly agree")
+    el-row
+      el-col(:xs="24")
+        el-radio-button.el-radio-button--custom(label="Agree")
+    el-row
+      el-col(:xs="24")
+        el-radio-button.el-radio-button--custom(label="No opinion")
+    el-row
+      el-col(:xs="24")
+        el-radio-button.el-radio-button--custom(label="Disagree")
+    el-row
+      el-col(:xs="24")
+        el-radio-button.el-radio-button--custom(label="Strongly disagree")
 </template>
 
 <script>
@@ -16,11 +34,50 @@ export default {
   props: [
     'question'
   ],
+  data () {
+    return {
+      agreement: null
+    }
+  },
+  watch: {
+    agreement: function (agreement) {
+      setTimeout(() => {
+        this.setQuestionAgreement({ questionId: this.question.id, agreement })
+      }, 1000)
+    }
+  },
   methods: {
     ...mapActions(['setQuestionAgreement', 'setQuestionImportance'])
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/style/main.scss';
+
+.el-radio-button--custom {
+  margin: 10px 0 10px 0;
+
+  .el-radio-button__inner {
+    width: 250px !important;
+  }
+
+  &.is-active {
+    .el-radio-button__inner {
+      animation: blink-animation 0.4s steps(5, start) 2;
+      -webkit-animation: blink-animation 0.4s steps(5, start) 2;
+    }
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
 </style>

@@ -36,11 +36,11 @@ export default {
     },
     [SET_QUESTION_AGREEMENT] (state, mutation) {
       const questionId = mutation.questionId
-      state.list[questionId].agreement = mutation.agreement
+      state.list.data[questionId].agreement = mutation.agreement
     },
     [SET_QUESTION_IMPORTANCE] (state, mutation) {
       const questionId = mutation.questionId
-      state.list[questionId].importance = mutation.importance
+      state.list.data[questionId].importance = mutation.importance
     }
   },
   actions: {
@@ -48,8 +48,10 @@ export default {
       await promiseActionCreator(store, questionsService.getQuestions({}), GET_QUESTIONS)
       store.commit(SET_CURRENT_QUESTION, { question: store.state.list.data[0] })
     },
-    setQuestionAgreement ({ commit }, data) {
+    setQuestionAgreement ({ commit, state }, data) {
       commit(SET_QUESTION_AGREEMENT, data)
+      const questionId = data.questionId
+      commit(SET_CURRENT_QUESTION, { question: state.list.data[questionId + 1] })
     },
     setQuestionImportance ({ commit }, data) {
       commit(SET_QUESTION_IMPORTANCE, data)

@@ -1,16 +1,11 @@
 <template lang="pug">
 div
-  el-steps(:active="1" align-center)
-    el-step(title="Your district")
-    el-step(title="Your opinions")
-    el-step(title="Your results")
-    el-step(title="Suggestions")
-  h1 Electoral GPS
-  br
-  transition-group(name="slide" tag="div" class="questions-slider")
-    div(v-for="question in questions.list.data" :key="question.id"  v-if="question.id === currentQuestionId")
-      .question
-        Question(:question="question")
+  el-main
+    h1 Electoral GPS
+    transition-group(name="slide" tag="div" class="questions-slider")
+      div(v-for="(question, idx) in questions.list.data" :key="idx"  v-if="question.id === currentQuestionId")
+        .question
+          Question(:question="question")
 </template>
 
 <script>
@@ -25,7 +20,7 @@ export default {
     ...mapGetters(['questions', 'currentQuestionId'])
   },
   methods: {
-    ...mapActions(['getQuestions', 'setCurrentQuestion'])
+    ...mapActions(['getQuestions'])
   },
   created () {
     this.getQuestions()
@@ -51,7 +46,7 @@ div {
 .questions-slider {
   overflow: hidden;
   position: relative;
-  height: 200px;
+  min-height: 800px;
   width: 100%;
 }
 
