@@ -16,6 +16,7 @@
     "ajv": "^6.5.2",
     "axios": "^0.18.0",
     "element-ui": "^2.4.4",
+    "hoek": "^5.0.3",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
