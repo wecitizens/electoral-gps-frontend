@@ -13,3 +13,4 @@ branches:
 deploy:
   provider: pages
   local_dir: dist
+  github_token: $GITHUB_TOKEN
