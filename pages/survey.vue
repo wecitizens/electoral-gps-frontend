@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   el-main
-    h1 Electoral GPS
+    h1 {{ $t("app.title") }}
     transition-group(name="slide" tag="div" class="questions-slider")
       div(v-for="(question, idx) in questions.list.data" :key="idx"  v-if="question.id === currentQuestionId")
         .question

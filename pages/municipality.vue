@@ -1,23 +1,23 @@
 <template lang="pug">
 div
   el-main
-    h1 Quel est votre code postal ?
-    p Ceci nous aidera à personnaliser votre questionnaire
+    h1 {{ $t("district.what_is_your_postcode") }}
+    p {{ $t("district.help_customise_survey") }}
     br
     el-row
       el-autocomplete(
         class="inline-input"
         v-model="municipality"
         :fetch-suggestions="querySearch"
-        placeholder="Votre code postal"
+        v-bind:placeholder="$t('input.place_holder.your_postcode')"
         @select="setZipCode({ municipality })"
       )
     br
     el-row
       router-link(
-        to="/survey"
+        v-bind:to="localePath('survey')"
         tag="el-button"
-      ) C'est parti
+      ) {{ $t("button.lets_go") }}
 </template>
 
 <script>
