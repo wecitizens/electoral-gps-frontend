@@ -3,7 +3,7 @@ div
   el-main
     h1 {{ $t("app.title") }}
     transition-group(name="slide" tag="div" class="questions-slider")
-      div(v-for="(question, idx) in questions.list.data" :key="idx"  v-if="question.id === currentQuestionId")
+      div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.id === currentQuestionId")
         .question
           Question(:question="question")
 </template>

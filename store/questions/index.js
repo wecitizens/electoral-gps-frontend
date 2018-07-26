@@ -1,18 +1,20 @@
 import mutationsCreator from '../_helpers/mutationsCreator'
-import { GET_QUESTIONS, SET_CURRENT_QUESTION, SET_QUESTION_AGREEMENT, SET_QUESTION_IMPORTANCE } from './constants'
-import { questionsService } from './services'
+import {GET_QUESTIONS, SET_CURRENT_QUESTION, SET_QUESTION_AGREEMENT, SET_QUESTION_IMPORTANCE} from './constants'
+import {questionsService} from './services'
 import promiseActionCreator from '../_helpers/promiseActionCreator'
 
 export default {
   state: {
     list: {
-      data: [
-        {
-          id: null,
-          text: null,
-          notice: null
-        }
-      ],
+      data: {
+        questions: [
+          {
+            id: null,
+            text: null,
+            notice: null
+          }
+        ]
+      },
       actions: {},
       loading: false,
       success: false,
@@ -46,14 +48,14 @@ export default {
   actions: {
     async getQuestions (store) {
       await promiseActionCreator(store, questionsService.getQuestions({}), GET_QUESTIONS)
-      store.commit(SET_CURRENT_QUESTION, { question: store.state.list.data[0] })
+      store.commit(SET_CURRENT_QUESTION, {question: store.state.list.data.questions[0]})
     },
-    setQuestionAgreement ({ commit, state }, data) {
+    setQuestionAgreement ({commit, state}, data) {
       commit(SET_QUESTION_AGREEMENT, data)
       const questionId = data.questionId
-      commit(SET_CURRENT_QUESTION, { question: state.list.data[questionId + 1] })
+      commit(SET_CURRENT_QUESTION, {question: state.list.data.questions[questionId + 1]})
     },
-    setQuestionImportance ({ commit }, data) {
+    setQuestionImportance ({commit}, data) {
       commit(SET_QUESTION_IMPORTANCE, data)
     }
   }
