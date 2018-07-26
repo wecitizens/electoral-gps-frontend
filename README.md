@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/wecitizens/electoral-gps-frontend.svg?branch=master)](https://travis-ci.com/wecitizens/electoral-gps-frontend)
+
 # wecitizens-front
 
 > Nuxt.js project
