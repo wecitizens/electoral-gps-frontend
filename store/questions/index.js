@@ -38,11 +38,11 @@ export default {
     },
     [SET_QUESTION_AGREEMENT] (state, mutation) {
       const questionId = mutation.questionId
-      state.list.data[questionId].agreement = mutation.agreement
+      state.list.data.questions[questionId].agreement = mutation.agreement
     },
     [SET_QUESTION_IMPORTANCE] (state, mutation) {
       const questionId = mutation.questionId
-      state.list.data[questionId].importance = mutation.importance
+      state.list.data.questions[questionId].importance = mutation.importance
     }
   },
   actions: {
