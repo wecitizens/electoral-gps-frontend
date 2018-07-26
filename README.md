@@ -3,6 +3,8 @@
 # wecitizens-front
 
 > Nuxt.js project
+> 
+> App starts at https://wecitizens.github.io/electoral-gps-frontend/municipality/
 
 ## Build Setup
 
