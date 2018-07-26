@@ -1,6 +1,7 @@
 <template lang="pug">
 div
   el-main
+    button(v-for="locale in $i18n.locales" v-on:click="$i18n.locale = locale.code") {{ locale.name }}
     h1 {{ $t("district.what_is_your_postcode") }}
     p {{ $t("district.help_customise_survey") }}
     br
