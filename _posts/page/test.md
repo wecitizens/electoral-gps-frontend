@@ -28,8 +28,7 @@ Options offertes
 | pas de réponse | | x | |
 
 La distance euclidienne entre un candidat en un électeur est alors :
-
-$$D = \sqrt{\sum_{i=1}^n (v_i - c_i)^2}$$
+D = √∑ (𝑣𝑖 − 𝑐𝑖)𝑛 2𝑖=1
 
 Où : 
 
@@ -38,7 +37,8 @@ Où :
 * n = le nombre de questions auxquelles l’électeur a répondu.
 
 Cette distance est ensuite rapportée à la distance maximale :
-Dmax = √∑ (100)𝑛 2𝑖=1 = √𝑛 ∙ 1002
+
+$$D_{max} = \sqrt{\sum_{i=1}^n (100)^2 = \sqrt(n*100^2)}$$
 
 Ce qui donne la distance normée : D / D<sub>max</sub>
 
