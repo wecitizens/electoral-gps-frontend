@@ -3,7 +3,7 @@ import API from '../_common/services/api'
 export const questionsService = {
   getQuestions (data) {
     // https://olivier5741.github.io/wecitizens_api_doc/api/work_in_progress/questions.json
-    return API.get('https://olivier5741.github.io/wecitizens_api_doc/api/gps/survey/2018_be_municipal_wallonia_rural.json').then((request) => {
+    return API.get('https://wecitizens.github.io/wecitizens_api_doc/api/gps/survey/2018_be_municipal_wallonia_rural.json').then((request) => {
       // BUG very nasty hack use plugin instead
       let i18n = window.$nuxt.$i18n
 
