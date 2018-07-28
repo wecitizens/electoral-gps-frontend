@@ -28,7 +28,8 @@ Options offertes
 | pas de réponse | | x | |
 
 La distance euclidienne entre un candidat en un électeur est alors :
-D = √∑ (𝑣𝑖 − 𝑐𝑖)𝑛 2𝑖=1
+
+$$D = \sqrt{\sum_{i=1}^n (v_i - c_i)^2}$$
 
 Où : 
 
@@ -37,8 +38,7 @@ Où :
 * n = le nombre de questions auxquelles l’électeur a répondu.
 
 Cette distance est ensuite rapportée à la distance maximale :
-
-$$D_{max} = \sqrt{\sum_{i=1}^n (100)^2 = \sqrt(n*100^2)}$$
+Dmax = √∑ (100)𝑛 2𝑖=1 = √𝑛 ∙ 1002
 
 Ce qui donne la distance normée : D / D<sub>max</sub>
 
@@ -59,8 +59,8 @@ Dans toute décision multicritère, il est recommandé de pondérer les critère
 * 0,4 = moins important
 
 Les formules précédentes sont revisitées comme suit :
-* D<sub>w</sub> = √∑ (𝑤𝑖(𝑣𝑖 − 𝑐𝑖))𝑛 2𝑖=1
-* D<sub>w,max</sub> = √∑ (𝑤𝑖∙ 100)𝑛 2𝑖=1
+*   $$D_w = \sqrt{\sum_{i=1}^n (w_i(v_i - c_i)^2)}$$
+*   $$D_{w,max} = \sqrt{\sum_{i=1}^n (w_i*100)^2}$$
 * Match<sub>w</sub> = 100 ∙ (1 – Dw/Dw,max)
 
 Où : 
