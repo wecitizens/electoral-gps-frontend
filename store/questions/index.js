@@ -10,7 +10,7 @@ export default {
         question_order: [],
         questions: [
           {
-            id: null,
+            key: null,
             text: null,
             notice: null
           }
@@ -32,7 +32,7 @@ export default {
       error: ''
     },
     current: {
-      id: null,
+      key: null,
       text: null,
       notice: null
     }
@@ -40,7 +40,7 @@ export default {
   getters: {
     questions: state => state,
     questionsLoading: state => state.list.loading,
-    currentQuestionId: state => state.current.id
+    currentQuestionKey: state => state.current === undefined ? null : state.current.key
   },
   mutations: {
     ...mutationsCreator(GET_QUESTIONS),
@@ -48,25 +48,32 @@ export default {
       state.current = mutation.question
     },
     [SET_QUESTION_AGREEMENT] (state, mutation) {
-      const questionId = mutation.questionId
-      state.list.data.questions[questionId].agreement = mutation.agreement
+      const questionKey = mutation.questionKey
+      state.list.data.questions.filter(q => q.key === questionKey)[0].agreement = mutation.agreement
     },
     [SET_QUESTION_IMPORTANCE] (state, mutation) {
-      const questionId = mutation.questionId
-      state.list.data.questions[questionId].importance = mutation.importance
+      const questionKey = mutation.questionKey
+      state.list.data.questions.filter(q => q.key === questionKey)[0].importance = mutation.importance
     }
   },
   actions: {
     async getQuestions (store) {
       await promiseActionCreator(store, questionsService.getQuestions({}), GET_QUESTIONS)
+      const questions = store.state.list.data.questions
       const order = store.state.list.data.question_order
-      store.commit(SET_CURRENT_QUESTION, {question: store.state.list.data.questions.filter(q => q.key === order[0])[0]})
+      const currentQuestion = questions[0]
+      // BUG cannot start on another question than first one, app bugs on refresh
+      // .filter(q => q.key === order[0])
+      store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})
     },
     setQuestionAgreement ({commit, state}, data) {
       commit(SET_QUESTION_AGREEMENT, data)
-      const questionId = data.questionId
+
+      const questionKey = data.questionKey
       const order = state.list.data.question_order
-      const currentQuestion = state.list.data.questions.filter(q => q.key === order[questionId + 1])[0]
+      const previousIndex = order.indexOf(questionKey)
+
+      const currentQuestion = state.list.data.questions.filter(q => q.key === order[previousIndex + 1])[0]
       commit(SET_CURRENT_QUESTION, {question: currentQuestion})
     },
     setQuestionImportance ({commit}, data) {

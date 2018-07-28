@@ -29,7 +29,7 @@ export default {
   watch: {
     agreement: function (agreement) {
       setTimeout(() => {
-        this.setQuestionAgreement({ questionId: this.question.id, agreement })
+        this.setQuestionAgreement({ questionKey: this.question.key, agreement })
       }, 1000)
     }
   },

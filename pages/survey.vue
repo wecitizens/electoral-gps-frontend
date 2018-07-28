@@ -4,7 +4,7 @@ div
     button(v-for="locale in $i18n.locales" v-on:click="$i18n.locale = locale.code") {{ locale.name }}
     h1 {{ $t("app.title") }}
     transition-group(name="slide" tag="div" class="questions-slider")
-      div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.id === currentQuestionId")
+      div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.key === currentQuestionKey")
         .question
           Question(:question="question" :answerFormat="getAnswerFormat(question.answer_format)")
 </template>
@@ -19,7 +19,7 @@ export default {
     Question
   },
   computed: {
-    ...mapGetters(['questions', 'currentQuestionId'])
+    ...mapGetters(['questions', 'currentQuestionKey'])
   },
   methods: {
     ...mapActions(['getQuestions']),

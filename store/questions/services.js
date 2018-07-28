@@ -11,12 +11,6 @@ export const questionsService = {
       i18n.mergeLocaleMessage('fr', { gps: { survey: request.data.i18n.fr } })
       i18n.mergeLocaleMessage('nl', { gps: { survey: request.data.i18n.nl } })
 
-      request.data.questions[0].id = 0
-      request.data.questions[1].id = 1
-      request.data.questions[2].id = 2
-      request.data.questions[3].id = 3
-      request.data.questions[4].id = 4
-
       let e = request.data
       request.data = {}
       request.data.data = e
