@@ -17,7 +17,10 @@ export const questionsService = {
       request.data.questions[3].id = 4
       request.data.questions[4].id = 5
 
-      request.data.data = request.data
+      let e = request.data
+      request.data = {}
+      request.data.data = e
+
       request.data.success = true
 
       return request

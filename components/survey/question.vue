@@ -2,28 +2,15 @@
 div
   h3 {{ $t("gps.survey." + question.text,{defaultValue:""}) }}
   el-radio-group.hidden-xs-only(v-model="agreement")
-    el-radio-button(v-bind:label="$t('gps.survey.answer_format.item.strongly_agree')")
-    el-radio-button(v-bind:label="$t('gps.survey.answer_format.item.agree')")
-    el-radio-button(v-bind:label="$t('gps.survey.answer_format.item.no_opinion')")
-    el-radio-button(v-bind:label="$t('gps.survey.answer_format.item.disagree')")
-    el-radio-button(v-bind:label="$t('gps.survey.answer_format.item.strongly_disagree')")
+    el-radio-button(
+      v-for="(item, idx) in $store.state.questions.list.data.answer_formats[0].items"
+      :key="idx"
+      v-bind:label="$t('gps.survey.' + item.name)")
 
   el-radio-group.hidden-sm-and-up(v-model="agreement")
-    el-row
+    el-row(v-for="item in $store.state.questions.list.data.answer_formats[0].items")
       el-col(:xs="24")
-        el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.answer_format.item.strongly_agree')")
-    el-row
-      el-col(:xs="24")
-        el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.answer_format.item.agree')")
-    el-row
-      el-col(:xs="24")
-        el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.answer_format.item.no_opinion')")
-    el-row
-      el-col(:xs="24")
-        el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.answer_format.item.disagree')")
-    el-row
-      el-col(:xs="24")
-        el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.answer_format.item.strongly_disagree')")
+        el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.' + item.name)")
 </template>
 
 <script>

@@ -13,6 +13,16 @@ export default {
             text: null,
             notice: null
           }
+        ],
+        answer_formats: [
+          {
+            items: [
+              {
+                key: null,
+                name: null
+              }
+            ]
+          }
         ]
       },
       actions: {},
