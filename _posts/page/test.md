@@ -28,7 +28,8 @@ Options offertes
 | pas de réponse | | x | |
 
 La distance euclidienne entre un candidat en un électeur est alors :
-D = √∑ (𝑣𝑖 − 𝑐𝑖)𝑛 2𝑖=1
+
+$$D = \sqrt{\sum_{i=1}^n (v_i - c_i)^2}$$
 
 Où : 
 
