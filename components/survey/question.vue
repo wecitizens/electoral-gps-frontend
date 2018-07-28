@@ -3,12 +3,12 @@ div
   h3 {{ $t("gps.survey." + question.text,{defaultValue:""}) }}
   el-radio-group.hidden-xs-only(v-model="agreement")
     el-radio-button(
-      v-for="(item, idx) in $store.state.questions.list.data.answer_formats[0].items"
+      v-for="(item, idx) in answerFormat.items"
       :key="idx"
       v-bind:label="$t('gps.survey.' + item.name)")
 
   el-radio-group.hidden-sm-and-up(v-model="agreement")
-    el-row(v-for="item in $store.state.questions.list.data.answer_formats[0].items")
+    el-row(v-for="item in answerFormat.items")
       el-col(:xs="24")
         el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.' + item.name)")
 </template>
@@ -18,7 +18,8 @@ import { mapActions } from 'vuex'
 
 export default {
   props: [
-    'question'
+    'question',
+    'answerFormat'
   ],
   data () {
     return {

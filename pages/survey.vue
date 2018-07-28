@@ -6,7 +6,7 @@ div
     transition-group(name="slide" tag="div" class="questions-slider")
       div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.id === currentQuestionId")
         .question
-          Question(:question="question")
+          Question(:question="question" :answerFormat="getAnswerFormat(question.answer_format)")
 </template>
 
 <script>
@@ -22,7 +22,11 @@ export default {
     ...mapGetters(['questions', 'currentQuestionId'])
   },
   methods: {
-    ...mapActions(['getQuestions'])
+    ...mapActions(['getQuestions']),
+    getAnswerFormat (answerFormatKey) {
+      // Bug should get this from the store but from data directly ...
+      return this.$store.state.questions.list.data.answer_formats.filter(f => f.key === answerFormatKey)[0]
+    }
   },
   created () {
     this.getQuestions()
