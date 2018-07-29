@@ -11,7 +11,17 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 module.exports = {
   ...routerBase,
+  content: {
+    page: '/page/_slug',
+    permalink: ':slug',
+    isPost: false,
+    generate: [
+      'get',
+      'getAll'
+    ]
+  },
   modules: [
+    'nuxtent',
     ['nuxt-i18n', {
       locales: [
         {
@@ -51,6 +61,9 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Dosis:500,700|Noto+Sans:400,700' }
+    ],
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' }
     ]
   },
   /*

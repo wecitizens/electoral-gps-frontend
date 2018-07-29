@@ -60,7 +60,6 @@ export default {
     async getQuestions (store) {
       await promiseActionCreator(store, questionsService.getQuestions({}), GET_QUESTIONS)
       const questions = store.state.list.data.questions
-      const order = store.state.list.data.question_order
       const currentQuestion = questions[0]
       // BUG cannot start on another question than first one, app bugs on refresh
       // .filter(q => q.key === order[0])
