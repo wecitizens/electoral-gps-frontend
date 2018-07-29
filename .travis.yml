@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "8"
-  
+
 cache:
   directories:
     - "node_modules"
@@ -9,17 +9,20 @@ cache:
 branches:
   only:
     - master
-  
+
 install:
+  - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+  - git fetch
+  - git merge master-cms
   - npm install
   - npm run generate:gh-pages
 
 script:
   - echo "Skipping tests"
-    
+
 deploy:
   provider: pages
-  skip-cleanup: true  
+  skip-cleanup: true
   github_token: $GITHUB_TOKEN
   target-branch: gh-pages
   local-dir: dist
