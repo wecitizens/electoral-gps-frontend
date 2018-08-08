@@ -1,55 +1,43 @@
-<template lang="pug">
-  section.container
-    div
-      h1.title Nuxt Boilerplate
-      p.subtitle With ES6, ESLint, Element UI, Custom CSS, Axios, Pug, and cool store helpers
-      el-row
-        el-button.primary Brought
-        el-button.secondary to
-        el-button.success you
-        el-button.info by
-        el-button.warning Seraphin's
-        el-button.alert Team
+<template>
+    <div>
+        <el-main>
+            <steps active="0"></steps>
+            <h1>{{ $t("Quels sont les candidats qui partagent mes convictions ?") }}</h1>
+            <router-link v-bind:to="localePath('municipality')" tag="el-button" class="btn-start">Je commence</router-link>
+            <div class="infos">Déjà {{ usersCount }} utilisateurs</div>
+        </el-main>
+    </div>
 </template>
 
 <script>
+import Steps from '@/components/steps'
 
 export default {
   components: {
-
+    Steps
+  },
+  data () {
+    return {
+      usersCount: 20345
+    }
   }
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss" scoped>
+    h1 {
+        margin-top: 30px;
+        text-align: center;
+    }
 
-.title {
-  font-family: $font-headings;
-  /* font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */ */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+    .btn-start {
+        display: block;
+        margin: 50px auto 50px;
+        width: 200px;
+    }
 
-.subtitle {
-  font-family: $font-main;
-  font-weight: 300;
-  font-size: 20px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+    .infos {
+        margin-top: 100px;
+        text-align: center;
+    }
 </style>

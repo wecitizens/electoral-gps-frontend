@@ -1,3 +1,6 @@
+// Vendors
+@import url('//cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css');
+
 /* Variables - Functions  - Mixins
 -------------------------- */
 @import 'settings';
@@ -5,6 +8,8 @@
 /* Base
 -------------------------- */
 @import 'base/core';
+@import 'base/buttons';
+@import 'base/header';
 
 /* Element UI Overwrite
 -------------------------- */

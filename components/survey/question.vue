@@ -8,7 +8,10 @@ div
       v-bind:label="$t('gps.survey.' + item.name)")
 
   el-radio-group.hidden-sm-and-up(v-model="agreement")
-    el-row(v-for="item in answerFormat.items")
+    el-row(
+      v-for="item in answerFormat.items"
+      :key="item.id"
+      )
       el-col(:xs="24")
         el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.' + item.name)")
 </template>

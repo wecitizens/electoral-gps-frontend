@@ -1,22 +1,25 @@
 <template lang="pug">
 div
   el-main
-    button(v-for="locale in $i18n.locales" v-on:click="$i18n.locale = locale.code") {{ locale.name }}
-    h1 {{ $t("app.title") }}
-    transition-group(name="slide" tag="div" class="questions-slider")
-      div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.key === currentQuestionKey")
-        .question
-          Question(:question="question" :answerFormat="getAnswerFormat(question.answer_format)")
+    steps(active=1)
+    .text-center
+        h1.mt-10 {{ $t("app.title") }}
+        transition-group(name="slide" tag="div" class="questions-slider")
+          div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.key === currentQuestionKey")
+            .question.mt-5
+              Question(:question="question" :answerFormat="getAnswerFormat(question.answer_format)")
 </template>
 
 <script>
 
 import Question from '@/components/survey/question'
 import { mapGetters, mapActions } from 'vuex'
+import Steps from '@/components/steps'
 
 export default {
   components: {
-    Question
+    Question,
+    Steps
   },
   computed: {
     ...mapGetters(['questions', 'currentQuestionKey'])
@@ -35,9 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-  text-align: center;
-}
 .slide-leave-active,
 .slide-enter-active {
   transition: 1s;

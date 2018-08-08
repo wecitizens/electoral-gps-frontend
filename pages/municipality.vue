@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   el-main
-    button(v-for="locale in $i18n.locales" v-on:click="$i18n.locale = locale.code") {{ locale.name }}
+    steps(active=1)
     h1 {{ $t("district.what_is_your_postcode") }}
     p {{ $t("district.help_customise_survey") }}
     br
@@ -24,7 +24,12 @@ div
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import Steps from '@/components/steps'
+
 export default {
+  components: {
+    Steps
+  },
   data () {
     return {
       municipality: null
@@ -57,7 +62,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-  text-align: center;
-}
+
 </style>

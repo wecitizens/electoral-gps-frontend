@@ -14,12 +14,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
     "@nuxtjs/axios": "^5.3.1",
     "ajv": "^6.5.2",
     "axios": "^0.18.0",
     "element-ui": "^2.4.4",
     "hoek": "^5.0.3",
     "nuxt": "^1.0.0",
+    "nuxt-fontawesome": "^0.3.0",
     "nuxt-i18n": "^4.1.0",
     "nuxtent": "^1.4.1"
   },
