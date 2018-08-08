@@ -2,23 +2,24 @@
 div
   el-main
     steps(active=1)
-    h1 {{ $t("district.what_is_your_postcode") }}
-    p {{ $t("district.help_customise_survey") }}
-    br
-    el-row
-      el-autocomplete(
-        class="inline-input"
-        v-model="municipality"
-        :fetch-suggestions="querySearch"
-        v-bind:placeholder="$t('input.place_holder.your_postcode')"
-        @select="setZipCode({ municipality })"
-      )
-    br
-    el-row
-      router-link(
-        v-bind:to="localePath('survey')"
-        tag="el-button"
-      ) {{ $t("button.lets_go") }}
+    .text-center.mt-5
+        h1 {{ $t("district.what_is_your_postcode") }}
+        p {{ $t("district.help_customise_survey") }}
+        br
+        el-row
+          el-autocomplete(
+            class="inline-input"
+            v-model="municipality"
+            :fetch-suggestions="querySearch"
+            v-bind:placeholder="$t('input.place_holder.your_postcode')"
+            @select="setZipCode({ municipality })"
+          )
+        br
+        el-row
+          router-link(
+            v-bind:to="localePath('survey')"
+            tag="el-button"
+          ) {{ $t("button.lets_go") }}
 </template>
 
 <script>
