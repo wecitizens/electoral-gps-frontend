@@ -45,20 +45,6 @@ module.exports = {
           nl: langNl,
           fr: langFr
         }
-      },
-      {
-        fontawesome: {
-          imports: [
-            {
-              set: '@fortawesome/pro-regular-svg-icons',
-              icons: ['faAdjust']
-            },
-            {
-              set: '@fortawesome/free-solid-svg-icons',
-              icons: ['fas']
-            },
-          ],
-        },
       }
     }]
   ],

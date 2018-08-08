@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .nav-lang{
+    .nav-lang {
         float: right !important;
         display: block;
         text-transform: uppercase;
