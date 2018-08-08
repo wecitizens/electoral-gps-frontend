@@ -23,6 +23,7 @@ module.exports = {
   modules: [
     'nuxtent',
     ['nuxt-i18n', {
+      seo: false,
       locales: [
         {
           code: 'en',

@@ -1,12 +1,12 @@
 <template>
-<div>
-    <h1>{{ post.title }}</h1>
+    <div>
+        <h1>{{ post.title }}</h1>
     </div>
 </template>
 
 <script>
 export default {
-  async asyncData ({ app, route }) {
+  async asyncData ({app, route}) {
     return {
       post: async function () {
         return app.$content('/')

@@ -1,7 +1,7 @@
 <template>
     <el-container>
         <el-header>
-            <Header/>
+            <HeaderBar />
         </el-header>
         <el-main>
             <nuxt/>
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Header from '@/components/header'
+import HeaderBar from '@/components/headerBar'
 import steps from '@/components/steps'
 
 export default {
   components: {
-    Header,
+    HeaderBar,
     steps
   }
 }

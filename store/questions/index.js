@@ -72,7 +72,8 @@ export default {
       const order = state.list.data.question_order
       const previousIndex = order.indexOf(questionKey)
 
-      const currentQuestion = state.list.data.questions.filter(q => q.key === order[previousIndex + 1])[0]
+      const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 1])
+
       commit(SET_CURRENT_QUESTION, {question: currentQuestion})
     },
     setQuestionImportance ({commit}, data) {

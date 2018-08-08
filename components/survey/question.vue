@@ -1,12 +1,13 @@
 <template lang="pug">
 div
   h3 {{ $t("gps.survey." + question.text,{defaultValue:""}) }}
+  div.mt-3
+    a.btn() {{ $t('+ more infos') }}
   el-radio-group.hidden-xs-only(v-model="agreement")
     el-radio-button(
       v-for="(item, idx) in answerFormat.items"
       :key="idx"
       v-bind:label="$t('gps.survey.' + item.name)")
-
   el-radio-group.hidden-sm-and-up(v-model="agreement")
     el-row(
       v-for="item in answerFormat.items"
@@ -43,7 +44,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/style/main.scss';
 
 .el-radio-button--custom {
   margin: 10px 0 10px 0;
