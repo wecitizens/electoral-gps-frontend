@@ -41,8 +41,9 @@ export default {
   watch: {
     'currentQuestionKey': (value) => {
       console.log('route', this.$router)
-      // Fix redirect doesn't work ?
-      if (!value) { window.location.href = ('/stats') }
+
+      // BUG : could not get this.$router to work ...
+      if (!value) { window.location.href = window.$nuxt.$router.app.localePath('stats') }
     }
   },
   created () {
