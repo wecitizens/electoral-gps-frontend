@@ -1,12 +1,8 @@
 <template>
-    <el-container>
-        <el-header>
-            <HeaderBar />
-        </el-header>
-        <el-main>
-            <nuxt/>
-        </el-main>
-    </el-container>
+  <div>
+    <header-bar></header-bar>
+    <nuxt/>
+  </div>
 </template>
 
 <script>

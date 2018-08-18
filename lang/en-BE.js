@@ -7,6 +7,18 @@ const config = {
     help_customise_survey: 'This will help us customize your survey',
     your_postcode: 'Your postal code'
   },
+  importance: {
+    '1': 'Pas important',
+    '2': 'Peu important',
+    '3': 'Moyen',
+    '4': 'Important',
+    '5': 'Très important'
+  },
+  home: {
+    title: 'Trouve les candidats qui te correspondent',
+    cta: 'Je fais le test!',
+    description: 'Déjà {userCount} matchs'
+  },
   button: {
     lets_go: 'Let\'s go'
   },

@@ -1,20 +1,18 @@
 <template lang="pug">
 div
   el-main
-    steps(active=2)
+    steps(:active=2)
     .text-center
         transition-group(name="slide" tag="div" class="questions-slider")
           div(v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.key === currentQuestionKey")
             h3.question.mt-5
               Question(:question="question" :answerFormat="getAnswerFormat(question.answer_format)")
-              el-slider(v-model="value7" :step="10" show-stops)
   el-footer
     el-button-group
       el-button(type="primary" icon="el-icon-arrow-left") Previous Question
       el-button(type="primary")
         Next Question
         i.el-icon-arrow-right.el-icon-right
-
 </template>
 
 <script>

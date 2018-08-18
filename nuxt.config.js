@@ -22,6 +22,7 @@ module.exports = {
   },
   modules: [
     'nuxtent',
+    'nuxt-fontawesome',
     ['nuxt-i18n', {
       seo: false,
       locales: [
@@ -93,6 +94,7 @@ module.exports = {
   css: [
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
-    '@/assets/style/main.scss'
+    'hamburgers/dist/hamburgers.css',
+    '@/assets/style/main.scss',
   ]
 }

@@ -2,8 +2,9 @@
 div
   h3 {{ $t("gps.survey." + question.text,{defaultValue:""}) }}
   div.mt-3
+    el-slider.importance.mt-5.mb-5(v-model="important" :step="1" :min=1 :max=5 show-stops :format-tooltip="showStepLabel" show-tooltip)
     a.btn() {{ $t('+ more infos') }}
-  el-radio-group.hidden-xs-only(v-model="agreement")
+  el-radio-group.mt-5.hidden-xs-only(v-model="agreement")
     el-radio-button(
       v-for="(item, idx) in answerFormat.items"
       :key="idx"
@@ -27,7 +28,8 @@ export default {
   ],
   data () {
     return {
-      agreement: null
+      agreement: null,
+      important: 3
     }
   },
   watch: {
@@ -38,7 +40,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setQuestionAgreement', 'setQuestionImportance'])
+    ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
+    showStepLabel: (index) => {
+      const key = 'importance.' + index
+      console.log('this', this)
+      return key
+    }
   }
 }
 </script>
@@ -58,6 +65,12 @@ export default {
       -webkit-animation: blink-animation 0.4s steps(5, start) 2;
     }
   }
+}
+
+.importance{
+  width: 500px;
+  text-align: center;
+  margin: auto;
 }
 
 @keyframes blink-animation {

@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   el-main
-    steps(active=1)
+    steps(:active=1)
     .text-center.mt-5
         h1 {{ $t("district.what_is_your_postcode") }}
         p {{ $t("district.help_customise_survey") }}
