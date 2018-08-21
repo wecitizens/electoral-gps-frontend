@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const langEn = require('./lang/en-BE')
 const langFr = require('./lang/fr-BE')
 const langNl = require('./lang/nl-BE')
@@ -65,6 +66,7 @@ module.exports = {
       { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Dosis:500,700|Noto+Sans:400,700' }
     ],
     script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' }
     ]
   },
@@ -90,7 +92,9 @@ module.exports = {
       }
     }
   },
-  plugins: ['~/plugins/element-ui'],
+  plugins: [
+    '~/plugins/element-ui'
+  ],
   css: [
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',

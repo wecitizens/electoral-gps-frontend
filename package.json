@@ -23,10 +23,12 @@
     "element-ui": "^2.4.4",
     "hamburgers": "^0.9.3",
     "hoek": "^5.0.3",
+    "jquery": "^3.3.1",
     "nuxt": "^1.0.0",
     "nuxt-fontawesome": "^0.3.0",
     "nuxt-i18n": "^4.1.0",
-    "nuxtent": "^1.4.1"
+    "nuxtent": "^1.4.1",
+    "vue-jquery": "^1.0.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

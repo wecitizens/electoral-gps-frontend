@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div.h-screen
   el-main
     steps(:active=1)
     .text-center.mt-5
@@ -24,7 +24,6 @@ div
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-
 import Steps from '@/components/steps'
 
 export default {
