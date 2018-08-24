@@ -42,7 +42,7 @@ module.exports = {
       ],
       defaultLocale: 'en',
       vueI18n: {
-        fallbackLocale: 'en',
+        fallbackLocale: 'fr',
         messages: {
           en: langEn,
           nl: langNl,
