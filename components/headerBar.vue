@@ -20,16 +20,16 @@
       </template>
 
       <el-menu-item-group>
-      <el-menu-item index="/">Acceuil</el-menu-item>
-      <el-menu-item index="/results">Sauter aux résultats</el-menu-item>
-      <el-menu-item index="/share">Partager le {{ $t("app.title") }}</el-menu-item>
-      <el-menu-item index="/share">Partager mes résultats</el-menu-item>
-      <el-menu-item index="/questions">Voir toutes les questions</el-menu-item>
-      <el-menu-item index="/">Recommencer à zéro</el-menu-item>
+      <el-menu-item index="/">{{$t('menu.item.welcome')}}</el-menu-item>
+      <el-menu-item index="/results">{{$t('menu.item.go_to_results')}}</el-menu-item>
+      <el-menu-item index="/share">{{$t('menu.item.share_app')}}</el-menu-item>
+      <el-menu-item index="/share">{{$t('menu.item.share_results')}}</el-menu-item>
+      <el-menu-item index="/questions">{{$t('menu.item.see_all_questions')}}</el-menu-item>
+      <el-menu-item index="/">{{$t('menu.item.start_from_scratch')}}</el-menu-item>
       </el-menu-item-group>
       <el-menu-item-group class="text-white">
-        <el-menu-item><a href="http://www.wecitizens.be/about">A propos du GPS éléctoral</a></el-menu-item>
-        <el-menu-item><a href="http://www.wecitizens.be/about">A propos de WeCitizens</a></el-menu-item>
+        <el-menu-item><a href="http://www.wecitizens.be/about">{{$t('menu.item.about_app')}}</a></el-menu-item>
+        <el-menu-item><a href="http://www.wecitizens.be/about">{{$t('menu.item.about_association')}}</a></el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="2" class="nav-lang">

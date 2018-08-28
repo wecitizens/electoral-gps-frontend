@@ -3,7 +3,7 @@ div
   h3 {{ $t("gps.survey." + question.text,{defaultValue:""}) }}
   div.mt-3
     el-slider.importance.mt-5.mb-5(v-model="importance" :step="1" :min=1 :max=5 show-stops :format-tooltip="showStepLabel" show-tooltip)
-    a.btn() {{ $t('+ more infos') }}
+    a.btn() {{ $t('more_info') }}
   el-radio-group.mt-5.hidden-xs-only(v-model="agreement")
     el-radio-button(
       v-for="(item, idx) in answerFormat.items"

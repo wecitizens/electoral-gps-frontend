@@ -1,18 +1,17 @@
 <template>
     <div>
         <steps :active="3"></steps>
-        <h1 class="text-center">Ces dernières questions restent anonymes et nous permettent d’améliorer notre
-            service</h1>
+        <h1 class="text-center">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
         <el-form ref="form" :model="form" label-width="120px">
             <el-form-item label="Activity type">
                 <el-checkbox-group v-model="form.type">
-                    <el-checkbox label="-35 ans" name="type"></el-checkbox>
-                    <el-checkbox label="35 à 55" name="type"></el-checkbox>
-                    <el-checkbox label="+ 55 ans" name="type"></el-checkbox>
+                    <el-checkbox v-bind:label="$t('less_than_35')" name="type"></el-checkbox>
+                    <el-checkbox v-bind:label="$t('between_35_and_55')" name="type"></el-checkbox>
+                    <el-checkbox v-bind:label="$t('over_55')" name="type"></el-checkbox>
                 </el-checkbox-group>
             </el-form-item>
             <el-form-item>
-                <router-link tag="el-button" v-bind:to="localePath('results')" type="primary" @click="onSubmit">Voir les résultats</router-link>
+                <router-link tag="el-button" v-bind:to="localePath('results')" type="primary" @click="onSubmit">{{$t('button.see_results')}}</router-link>
             </el-form-item>
         </el-form>
     </div>

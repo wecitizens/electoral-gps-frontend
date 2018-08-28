@@ -1,11 +1,11 @@
 <template>
     <div>
         <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="Candidats" name="first">
-                <h2>Les candidats qui partagent le plus mes convictions</h2>
+            <el-tab-pane v-bind:label="$t('title.candidates')" name="first">
+                <h2>{{ $t("results.candatidates_sharing_my_position_the_most") }}</h2>
                 [A DEFINIR]
             </el-tab-pane>
-            <el-tab-pane label="Listes" name="second">
+            <el-tab-pane v-bind:label="$t('title.parties')" name="second">
                 [A DEFINIR]
             </el-tab-pane>
         </el-tabs>

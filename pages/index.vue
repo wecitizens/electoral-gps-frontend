@@ -7,11 +7,11 @@
     </el-main>
     <el-footer class="flex footer w-full mb-5">
       <div class="flex-1 flex-auto">
-        <div class="mb-2">{{ $t("Powered by:") }}</div>
+        <div class="mb-2">{{ $t("home.powered_by") }}</div>
         <img src="~/static/images/logo-wecitizens.jpeg" class="h-10" alt="">
       </div>
       <div class="flex-1 text-right">
-        <div class="mb-2">{{ $t("Avec le soutien de :") }}</div>
+        <div class="mb-2">{{ $t("home.with_help_from") }}</div>
         <img src="~/static/images/partner-metro.png" class="h-10" alt="">
         <img src="~/static/images/partner-sudpress.png" class="ml-5 h-10" alt="">
       </div>
