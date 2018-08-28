@@ -32,7 +32,11 @@ const config = {
       see_all_questions: 'Voir toutes les questions',
       start_from_scratch: 'Recommencer à zéro',
       about_app: 'À propos du {{app.title}}',
-      about_association: 'À propos de {{association.name}}'
+      about_association: 'À propos de {{association.name}}',
+      municipality: 'Commune',
+      questions: 'Questions',
+      stats: 'Stats',
+      results: 'Résultats'
   	}
   },
   results: {
