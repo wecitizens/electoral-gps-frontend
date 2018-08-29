@@ -9,9 +9,9 @@ div
               Question(:question="question" :answerFormat="getAnswerFormat(question.answer_format)")
   el-footer
     el-button-group
-      el-button(type="primary" icon="el-icon-arrow-left") Previous Question
+      el-button(type="primary" icon="el-icon-arrow-left") Previous
       el-button(type="primary")
-        Next Question
+        | Next
         i.el-icon-arrow-right.el-icon-right
 </template>
 
