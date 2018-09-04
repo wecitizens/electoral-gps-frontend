@@ -1,3 +1,4 @@
+/* eslint-disable */
 const config = {
   app: {
     title: 'GPS électoral'

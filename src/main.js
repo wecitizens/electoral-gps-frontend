@@ -10,6 +10,9 @@ import fr from './lang/fr-BE';
 import nl from './lang/nl-BE';
 import en from './lang/en-BE';
 
+
+Vue.use(vuexI18n.plugin, store);
+
 Vue.i18n.add('fr', fr);
 Vue.i18n.add('nl', nl);
 Vue.i18n.add('en', en);
@@ -23,7 +26,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.use(BootstrapVue);
-Vue.use(vuexI18n.plugin, store);
 
 new Vue({
   router,
