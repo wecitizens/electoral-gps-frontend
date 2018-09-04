@@ -6,71 +6,9 @@
                         <p>Les candidats qui partagent le plus mes convictions
                             <a href="#" class="badge badge-primary">+ d'infos</a>
                         </p>
-                        <ul class="list-group tab-scroll">
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                         aria-valuemin="0" aria-valuemax="100">75%
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                         aria-valuemin="0" aria-valuemax="100">75%
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                         aria-valuemin="0" aria-valuemax="100">75%
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                         aria-valuemin="0" aria-valuemax="100">75%
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                         aria-valuemin="0" aria-valuemax="100">75%
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                         aria-valuemin="0" aria-valuemax="100">75%
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <h4>Doe John</h4>
-                                <h6>Liste du Bourgmestre</h6>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                                         aria-valuemin="0" aria-valuemax="100">25%
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+
+                        <candidate-lists class="list-scroll"></candidate-lists>
+                        
                 </b-tab>
                 <b-tab title="Listes" class="col-md-6 tab-center">
                     <ul class="list-group tab-scroll">
@@ -95,17 +33,23 @@
 </template>
 
 <script>
+
+    import CandidateLists from '@/components/CandidateList';
+    
     export default {
         name: 'results',
-        components: {}
+        components: {
+            CandidateLists
+        }
     }
 </script>
 
-<style>
+<style scoped>
     .tab-center {
         margin: auto;
     }
-    .tab-scroll {
+    
+    .list-scroll {
         height: 70vh;
         overflow-y: scroll;
     }
