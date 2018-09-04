@@ -12,20 +12,20 @@ import fr from './lang/fr-BE';
 import nl from './lang/nl-BE';
 import en from './lang/en-BE';
 
-Vue.use(vuexI18n.plugin, store);
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
 Vue.use(ElementUI);
+Vue.use(vuexI18n.plugin, store);
 
 Vue.i18n.add('fr', fr);
 Vue.i18n.add('nl', nl);
 Vue.i18n.add('en', en);
 
 // set the start locale to use
-Vue.i18n.set('en');
+Vue.i18n.set('fr');
 
 Vue.config.productionTip = false;
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.use(BootstrapVue);
 
