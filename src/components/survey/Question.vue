@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>{{ $t('survey.' + question.text) }}</h3>
+    <h3>{{ $t('gps.survey.' + question.text) }}</h3>
     <a class="btn">+ {{ $t('more_info') }}</a>
     <div class="mt-3">
       <el-slider class="importance mt-5 mb-5" v-model="importance"
@@ -10,13 +10,13 @@
     </div>
     <el-radio-group class="d-none d-sm-block" v-model="agreement">
       <el-radio-button v-for="(item, idx) in answerFormat.items" :key="idx"
-          v-bind:label="$t('survey.' + item.name)">
+          v-bind:label="$t('gps.survey.' + item.name)">
       </el-radio-button>
     </el-radio-group>
     <el-radio-group class="d-block d-sm-none" v-model="agreement">
       <el-row v-for="item in answerFormat.items" :key="item.id">
         <el-col :xs="24">
-          <el-radio-button class="el-radio-button--custom" v-bind:label="$t('survey.' + item.name)"></el-radio-button>
+          <el-radio-button class="el-radio-button--custom" v-bind:label="$t('gps.survey.' + item.name)"></el-radio-button>
         </el-col>
       </el-row>
     </el-radio-group>
@@ -52,7 +52,7 @@ export default {
   methods: {
     ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
     showStepLabel: (index) => {
-      const key = 'importance.' + index
+      const key = 'gps.survey.answer_format.tolerance.' + index
       return key
     }
   }

@@ -4,7 +4,7 @@
       <steps :active="1"></steps>
       <div class="text-center">
         <transition-group name="slide" tag="div" class="questions-slider">
-          <div v-for="(question, idx) in survey.questions" :key="idx"  v-if="idx == 0">
+          <div v-for="(question, idx) in questions.questions" :key="idx"  v-if="idx == 0">
             <h3 class="question mt-5">
               <Question :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
             </h3>
@@ -36,12 +36,12 @@
       Steps
     },
     computed: {
-      ...mapGetters(['survey'])
+      ...mapGetters(['questions'])
     },
     methods: {
       ...mapActions(['getQuestions']),
       getAnswerFormat (answerFormatKey) {
-        return this.survey.answer_formats.find(f => f.key === answerFormatKey)
+        return this.questions.answer_formats.find(f => f.key === answerFormatKey)
       }
     },
     created () {
