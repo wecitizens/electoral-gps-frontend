@@ -4,11 +4,6 @@
         <main class="main text-white mt-5">
             <h1>{{ $t("home.title") }}</h1>
             <router-link to="/municipality" tag="el-button" class="btn-start">{{ $t("home.cta") }}</router-link>
-
-            <ul v-for="(question, key) in questions" :key="key">
-                <li>{{ question }}</li>
-            </ul>
-
             <div class="infos mt-3">{{ $t("home.description", {"userCount": usersCount}) }}</div>
         </main>
         <footer class="footer container-fluid">

@@ -24,12 +24,11 @@
                 </ul>
             </div>
 
-            <ul class="nav nav-pills nav-lang">
+            <ul class="nav nav-lang">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item">one</a>
+                    <a class="nav-link dropdown-toggle" id="navbarLang" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarLang">
+                        <a class="dropdown-item" v-for="(locale) in $i18n.locales()">{{ locale }}</a>
                     </div>
                 </li>
             </ul>
@@ -37,6 +36,15 @@
         <router-view/>
     </div>
 </template>
+
+<script>
+
+  export default {
+    created(){
+      console.log('Oki');
+    }
+  }
+</script>
 
 <style lang="scss">
     #app {
