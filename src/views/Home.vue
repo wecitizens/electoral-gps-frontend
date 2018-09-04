@@ -2,9 +2,9 @@
     <div>
         <div class="bg"></div>
         <main class="main text-white mt-5">
-            <h1>{{ $t("home.title") }}</h1>
-            <router-link to="/municipality" tag="el-button" class="btn-start">{{ $t("home.cta") }}</router-link>
-            <div class="infos mt-3">{{ $t("home.description", {"userCount": usersCount}) }}</div>
+            <h1  data-aos="fade-up">{{ $t("home.title") }}</h1>
+            <router-link to="/municipality" tag="el-button" class="btn-start"  data-aos="fade-up">{{ $t("home.cta") }}</router-link>
+            <div class="infos mt-3" data-aos="fade-up">{{ $t("home.description", {"userCount": usersCount}) }}</div>
         </main>
         <footer class="footer container-fluid">
             <div class="row">

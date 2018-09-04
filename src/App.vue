@@ -14,11 +14,22 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             GPS Electoral
                         </a>
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <router-link class="dropdown-item" to="/">{{$t('menu.item.welcome')}}</router-link>
+                            <router-link class="dropdown-item" to="/results">{{$t('menu.item.go_to_results')}}
+                            </router-link>
+                            <router-link class="dropdown-item" to="/share">{{$t('menu.item.share_app')}}</router-link>
+                            <router-link class="dropdown-item" to="/share">{{$t('menu.item.share_results')}}
+                            </router-link>
+                            <router-link class="dropdown-item" to="/questions">{{$t('menu.item.see_all_questions')}}
+                            </router-link>
+                            <router-link class="dropdown-item" to="/">{{$t('menu.item.start_from_scratch')}}
+                            </router-link>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item"
+                               href="http://www.wecitizens.be/about">{{$t('menu.item.about_app')}}</a>
+                            <a class="dropdown-item" href="http://www.wecitizens.be/about">{{$t('menu.item.about_association')}}</a>
                         </div>
                     </li>
                 </ul>
@@ -26,21 +37,26 @@
 
             <ul class="nav nav-lang">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarLang" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
+                    <a class="nav-link dropdown-toggle" id="navbarLang" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarLang">
-                        <a class="dropdown-item" v-for="(locale) in $i18n.locales()">{{ locale }}</a>
+                        <a class="dropdown-item" v-for="(locale, key) in $i18n.locales()" :key="key" v-if="locale !== $i18n.locale()" @click="(locale) => $i18n.set(locale)">{{ locale }}</a>
                     </div>
                 </li>
             </ul>
         </nav>
-        <router-view/>
+
+        {{ $i18n.locales() }}
+        <transition name="fade">
+            <router-view/>
+        </transition>
     </div>
 </template>
 
 <script>
 
   export default {
-    created(){
+    created() {
       console.log('Oki');
     }
   }
@@ -53,6 +69,13 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
 
     .text-white {
@@ -72,7 +95,7 @@
 
     .nav-lang {
         text-transform: uppercase;
-        a{
+        a {
             color: #ffffff;
         }
     }
