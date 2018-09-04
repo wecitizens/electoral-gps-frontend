@@ -8,14 +8,14 @@
         </main>
         <footer class="footer container-fluid">
             <div class="row">
-                <div class="col-6 text-left">
+                <div class="col-sm-6 d-none d-sm-block text-left">
                     <div class="mb-2">{{ $t("home.powered_by") }}</div>
-                    <img src="/img/logo-wecitizens.jpeg" height="50" class="h-10" alt="">
+                    <img src="/img/logo-wecitizens.jpeg" height="30" class="h-10" alt="">
                 </div>
-                <div class="col-6 text-right">
+                <div class="col-sm-6 col-xs-12 text-right">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
-                    <img src="/img/partner-metro.png" height="50" class="h-10" alt="">
-                    <img src="/img/partner-sudpress.png" height="50" class="ml-5 h-10" alt="">
+                    <img src="/img/partner-metro.png" height="30" class="h-10" alt="">
+                    <img src="/img/partner-sudpress.png" height="30" class="ml-5 h-10" alt="">
                 </div>
             </div>
         </footer>
@@ -71,6 +71,7 @@
 
     .footer {
         bottom: 0;
+        color: #fff;
         position: fixed;
         width: 100%;
         padding: 0.5em;
