@@ -45,8 +45,6 @@
                 </li>
             </ul>
         </nav>
-
-        {{ $i18n.locales() }}
         <transition name="fade">
             <router-view/>
         </transition>
