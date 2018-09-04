@@ -14,7 +14,10 @@ export const SET_QUESTION_IMPORTANCE = 'SET_QUESTION_IMPORTANCE';
 
 export default new Vuex.Store({
   getters: {
-    questions: state => state
+    questions: (state) => {
+      console.log('Ici dans le getter filtrer par la lanque user');
+      return state;
+    }
   },
   state: {
     questions: []
