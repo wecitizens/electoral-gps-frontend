@@ -1,21 +1,25 @@
 <template>
   <div>
-    <!-- h3 {{ $t("gps.survey." + question.text,{defaultValue:""}) }}
-    div.mt-3
-      el-slider.importance.mt-5.mb-5(v-model="importance" :step="1" :min=1 :max=5 show-stops :format-tooltip="showStepLabel" show-tooltip)
-      a.btn() {{ $t('more_info') }}
-    el-radio-group.mt-5.hidden-xs-only(v-model="agreement")
-      el-radio-button(
-        v-for="(item, idx) in answerFormat.items"
-        :key="idx"
-        v-bind:label="$t('gps.survey.' + item.name)")
-    el-radio-group.hidden-sm-and-up(v-model="agreement")
-      el-row(
-        v-for="item in answerFormat.items"
-        :key="item.id"
-        )
-        el-col(:xs="24")
-          el-radio-button.el-radio-button--custom(v-bind:label="$t('gps.survey.' + item.name)") -->
+    <h3>{{ $t('survey.' + question.text) }}</h3>
+    <a class="btn">+ {{ $t('more_info') }}</a>
+    <div class="mt-3">
+      <el-slider class="importance mt-5 mb-5" v-model="importance"
+        :step="1" :min="1" :max="3" show-stop="true"
+        :format-tooltip="showStepLabel" show-tooltip="show-tooltip">
+      </el-slider>
+    </div>
+    <el-radio-group class="d-none d-sm-block" v-model="agreement">
+      <el-radio-button v-for="(item, idx) in answerFormat.items" :key="idx"
+          v-bind:label="$t('survey.' + item.name)">
+      </el-radio-button>
+    </el-radio-group>
+    <el-radio-group class="d-block d-sm-none" v-model="agreement">
+      <el-row v-for="item in answerFormat.items" :key="item.id">
+        <el-col :xs="24">
+          <el-radio-button class="el-radio-button--custom" v-bind:label="$t('survey.' + item.name)"></el-radio-button>
+        </el-col>
+      </el-row>
+    </el-radio-group>
   </div>
 </template>
 
@@ -30,7 +34,7 @@ export default {
   data () {
     return {
       agreement: null,
-      importance: 3
+      importance: 2
     }
   },
   watch: {

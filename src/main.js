@@ -23,7 +23,7 @@ Vue.i18n.add('nl', nl)
 Vue.i18n.add('en', en)
 
 // set the start locale to use
-Vue.i18n.set('en')
+Vue.i18n.set('fr')
 
 Vue.config.productionTip = false
 
