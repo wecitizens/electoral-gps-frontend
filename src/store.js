@@ -4,6 +4,12 @@ import axios from 'axios';
 
 Vue.use(Vuex);
 
+export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const SET_CURRENT_QUESTION = 'SET_CURRENT_QUESTION';
+export const SET_QUESTION_AGREEMENT = 'SET_QUESTION_AGREEMENT';
+export const SET_QUESTION_IMPORTANCE = 'SET_QUESTION_IMPORTANCE';
+
+
 export default new Vuex.Store({
   getters: {
     questions: state => state

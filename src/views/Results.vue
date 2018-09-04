@@ -9,7 +9,7 @@
 export default {
   name: 'results',
   components: {
-    HelloWorld
+
   }
 }
 </script>
