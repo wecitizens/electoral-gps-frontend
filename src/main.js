@@ -10,7 +10,6 @@ import fr from './lang/fr-BE';
 import nl from './lang/nl-BE';
 import en from './lang/en-BE';
 
-
 Vue.use(vuexI18n.plugin, store);
 
 Vue.i18n.add('fr', fr);
