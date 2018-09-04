@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="/img/logo.png" height="20px" alt=""></a>
+        <a class="navbar-brand" href="#/"><img src="/img/logo.png" height="20px" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                    aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
                 <div class="dropdown-menu" aria-labelledby="navbarLang">
                     <a class="dropdown-item" v-for="(locale, key) in $i18n.locales()" :key="key"
-                       v-if="locale !== $i18n.locale()" @click="(locale) => $i18n.set(locale)">{{ locale }}</a>
+                       v-if="locale !== $i18n.locale()" @click="() => setLocale(locale)">{{ locale }}</a>
                 </div>
             </li>
         </ul>
@@ -48,8 +48,16 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+
   export default {
     name: 'header-nav',
+    methods: {
+      setLocale: (local) => {
+        console.log('-> Switch lang', local);
+        Vue.i18n.set(local);
+      }
+    }
   }
 </script>
 

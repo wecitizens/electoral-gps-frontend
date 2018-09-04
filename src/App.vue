@@ -16,7 +16,7 @@
       HeaderNav
     },
     created() {
-      console.log('Oki');
+
     }
   }
 </script>
