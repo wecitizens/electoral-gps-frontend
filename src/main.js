@@ -1,11 +1,12 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import vuexI18n from 'vuex-i18n'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 import fr from './lang/fr-BE'
 import nl from './lang/nl-BE'
