@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Survey from './views/Survey.vue'
+import Municipality from './views/Municipality.vue'
 import Results from './views/Results.vue'
 
 Vue.use(Router)
@@ -17,6 +18,11 @@ export default new Router({
       path: '/survey',
       name: 'survey',
       component: Survey
+    },
+    {
+      path: '/municipality',
+      name: 'municipality',
+      component: Municipality
     },
     {
       path: '/results',

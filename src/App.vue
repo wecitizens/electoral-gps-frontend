@@ -34,6 +34,11 @@
   text-align: center;
   color: #2c3e50;
 }
+
+.text-white{
+  color: #ffffff;
+}
+
 #nav {
   padding: 30px;
   a {
