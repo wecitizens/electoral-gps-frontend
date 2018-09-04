@@ -5,12 +5,15 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 import vuexI18n from 'vuex-i18n';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 import fr from './lang/fr-BE';
 import nl from './lang/nl-BE';
 import en from './lang/en-BE';
 
 Vue.use(vuexI18n.plugin, store);
+Vue.use(ElementUI);
 
 Vue.i18n.add('fr', fr);
 Vue.i18n.add('nl', nl);
