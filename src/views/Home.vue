@@ -1,8 +1,6 @@
 <template>
     <div class="home">
         <steps></steps>
-
-        {{ questions }}
     </div>
 </template>
 
