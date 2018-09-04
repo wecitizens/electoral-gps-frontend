@@ -1,22 +1,23 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="/img/logo.png">
+        <steps></steps>
+
         {{ questions }}
     </div>
 </template>
 
 <script>
 
-  import {mapActions, mapState, mapGetters} from 'vuex'
-
+  import {mapActions, mapGetters} from 'vuex';
+  import Steps from '@/components/Steps';
 
   export default {
     name: 'home',
     components: {
-
+      Steps
     },
-    created: () => {
-      this.getQuestions()
+    created(){
+      this.$store.dispatch('getQuestions');
     },
     methods: {
       ...mapActions(['getQuestions']),

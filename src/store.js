@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 
+/* eslint-disable */
+
 Vue.use(Vuex);
 
 export const GET_QUESTIONS = 'GET_QUESTIONS';
@@ -15,23 +17,23 @@ export default new Vuex.Store({
     questions: state => state
   },
   state: {
-    questions : []
+    questions: []
   },
   mutations: {
-    setAnswer(){
+    setAnswer() {
       console.log('todo');
     }
   },
   actions: {
-    getQuestions (data) {
-      axios.get('https://wecitizens.github.io/wecitizens_api_doc/api/gps/survey/2018_be_municipal_wallonia_rural.json', data).then((res) => {
+    getQuestions(data) {
+      axios.get('/api/gps/survey/2018_be_municipal_wallonia_rural.json', data).then((res) => {
         console.log(res);
       });
     },
-    setQuestionAgreement ({commit, state}, data) {
+    setQuestionAgreement({commit, state}, data) {
       console.log('TODO');
     },
-    setQuestionImportance ({commit}, data) {
+    setQuestionImportance({commit}, data) {
       console.log('TODO');
     }
   }
