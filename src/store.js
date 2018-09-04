@@ -22,12 +22,23 @@ export default new Vuex.Store({
   mutations: {
     setAnswer() {
       console.log('todo');
+    },
+    setQuestions(state, data){
+      state.questions = data;
     }
   },
   actions: {
-    getQuestions(data) {
+    getQuestions({commit, state},data) {
       axios.get('/api/gps/survey/2018_be_municipal_wallonia_rural.json', data).then((res) => {
-        console.log(res);
+        console.log('res', res);
+
+        let i18n = Vue.i18n;
+
+        i18n.add('en', { gps: { survey: res.data.i18n.en } })
+        i18n.add('fr', { gps: { survey: res.data.i18n.fr } })
+        i18n.add('nl', { gps: { survey: res.data.i18n.nl } })
+
+        commit('setQuestions', res.data);
       });
     },
     setQuestionAgreement({commit, state}, data) {

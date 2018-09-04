@@ -1,24 +1,24 @@
 <template>
-    <el-container class="bg bg-cover text-white">
-        <el-main>
+    <div class="bg">
+        <main class="main">
             <h1>{{ $t("home.title") }}</h1>
             <router-link to="/municipality" tag="el-button" class="btn-start">{{ $t("home.cta") }}</router-link>
             <div class="infos mt-3">{{ $t("home.description", {"userCount": usersCount}) }}</div>
-        </el-main>
-        <el-footer>
+        </main>
+        <footer class="footer container-fluid">
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 text-left">
                     <div class="mb-2">{{ $t("home.powered_by") }}</div>
                     <img src="/img/logo-wecitizens.jpeg" height="50" class="h-10" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 text-right">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
                     <img src="/img/partner-metro.png" height="50" class="h-10" alt="">
                     <img src="/img/partner-sudpress.png" height="50" class="ml-5 h-10" alt="">
                 </div>
             </div>
-        </el-footer>
-    </el-container>
+        </footer>
+    </div>
 </template>
 
 <script>
@@ -50,20 +50,30 @@
 
 <style lang="scss">
 
-    html {
-        background: url("/img/bg-home.jpg") no-repeat center center fixed !important;
-        background-size: cover;
+    body, html {
+        height: 100%;
     }
 
     .bg {
         background-image: url("/img/bg-home.jpg");
-        height: 100vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
     }
 
     .footer {
         bottom: 0;
         position: fixed;
         width: 100%;
+        padding: 0.5em;
+        margin: 0;
     }
 
     h1 {
