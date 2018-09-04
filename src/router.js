@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Results from './views/Results.vue';
-import Survey from './views/Survey.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+import Survey from './views/Survey.vue'
+import Results from './views/Results.vue'
 
 Vue.use(Router)
 
