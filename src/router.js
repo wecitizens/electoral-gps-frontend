@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Survey from './views/Survey.vue'
 import Municipality from './views/Municipality.vue'
 import Results from './views/Results.vue'
+import PollInsufficientCandidates from './views/PollInsufficientCandidates.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/results',
       name: 'results',
       component: Results
+    },
+    {
+      path: '/poll/insufficient-candidates',
+      name: 'poll-insufficient-candidates',
+      component: PollInsufficientCandidates
     }
   ],
   scrollBehavior (to, from, savedPosition) {
