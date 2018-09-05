@@ -19,7 +19,6 @@ import en from './lang/en-BE'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Aos.init()
 Vue.use(ElementUI)
 
 Vue.use(vuexI18n.plugin, store, {
@@ -47,5 +46,10 @@ new Vue({
   },
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  watch:{
+    $route(){
+      Aos.refresh();
+    }
+  }
 }).$mount('#app')

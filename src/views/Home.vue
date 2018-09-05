@@ -2,9 +2,9 @@
     <div>
         <div class="bg"></div>
         <main class="main text-white mt-5">
-            <h1  data-aos="fade-up">{{ $t("home.title") }}</h1>
-            <router-link to="/municipality" tag="el-button" class="btn-start"  data-aos="fade-up">{{ $t("home.cta") }}</router-link>
-            <div class="infos mt-3" data-aos="fade-up">{{ $t("home.description", {"userCount": usersCount}) }}</div>
+            <h1>{{ $t("home.title") }}</h1>
+            <router-link to="/municipality" tag="el-button" class="btn-start m-5">{{ $t("home.cta") }}</router-link>
+            <div class="infos mt-3">{{ $t("home.description", {"userCount": usersCount}) }}</div>
         </main>
         <footer class="footer container-fluid">
             <div class="row">
@@ -26,6 +26,7 @@
 
   import {mapActions, mapGetters} from 'vuex';
   import Steps from '../components/Steps';
+  import Aos from 'aos';
 
   export default {
     name: 'home',
@@ -34,12 +35,13 @@
     },
     created() {
       this.$store.dispatch('getQuestions');
+      Aos.init();
     },
     methods: {
       ...mapActions(['getQuestions']),
     },
     computed: {
-      ...mapGetters(['questions']),
+      ...mapGetters(['questions', 'currentQuestionKey']),
     },
     data: () => {
       return {

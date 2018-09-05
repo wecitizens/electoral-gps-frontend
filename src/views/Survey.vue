@@ -12,15 +12,21 @@
         </transition-group>
       </div>
       <el-footer>
-        <el-button-group>
-          <el-button type="primary" icon="el-icon-arrow-left">
-            Previous
-          </el-button>
-          <el-button type="primary">
-            Next
-            <i class="el-icon-arrow-right el-icon-right"></i>
-          </el-button>
-        </el-button-group>
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-outline-primary btn-block"><i class="fas fa-chevron-left"></i>
+
+               {{ $t("Previous") }} </a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-primary btn-block">{{ $t("Show my results") }} </a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-primary btn-block">{{ $t("Next") }} <i class="fas fa-chevron-right"></i>
+
+            </a>
+          </div>
+        </div>
       </el-footer>
     </el-main>
   </div>
@@ -30,13 +36,14 @@
   import Question from '@/components/survey/Question'
   import {mapGetters, mapActions} from 'vuex'
   import Steps from '@/components/Steps'
+
   export default {
     components: {
       Question,
       Steps
     },
     computed: {
-      ...mapGetters(['questions'])
+      ...mapGetters(['questions', 'currentQuestionKey'])
     },
     methods: {
       ...mapActions(['getQuestions']),
@@ -44,8 +51,11 @@
         return this.questions.answer_formats.find(f => f.key === answerFormatKey)
       }
     },
+
     created () {
-      this.getQuestions()
+      this.getQuestions();
+      let $ = window.jQuery;
+      $("html, body").animate({ scrollTop: $(document).height() }, 1000);
     }
   }
 </script>
