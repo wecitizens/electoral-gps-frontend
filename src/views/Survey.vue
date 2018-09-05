@@ -4,7 +4,7 @@
       <steps :active="1"></steps>
       <div class="text-center">
         <transition-group name="slide" tag="div" class="questions-slider">
-          <div v-for="(question, idx) in questions.questions" :key="idx"  v-if="idx == 0">
+          <div v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.key === currentQuestionKey">
             <h3 class="question mt-5">
               <Question :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
             </h3>
@@ -19,7 +19,7 @@
                {{ $t("Previous") }} </a>
           </div>
           <div class="col">
-            <a class="btn btn-outline-primary btn-block">{{ $t("Show my results") }} </a>
+            <a class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("Show my results") }} </a>
           </div>
           <div class="col">
             <a class="btn btn-outline-primary btn-block">{{ $t("Next") }} <i class="fas fa-chevron-right"></i>
@@ -34,7 +34,7 @@
 
 <script>
   import Question from '@/components/survey/Question'
-  import {mapGetters, mapActions} from 'vuex'
+  import {mapGetters, mapState, mapActions} from 'vuex'
   import Steps from '@/components/Steps'
 
   export default {
@@ -43,15 +43,24 @@
       Steps
     },
     computed: {
-      ...mapGetters(['questions', 'currentQuestionKey'])
+      ...mapGetters(['questions', 'currentQuestionKey', 'survey']),
     },
     methods: {
       ...mapActions(['getQuestions']),
       getAnswerFormat (answerFormatKey) {
-        return this.questions.answer_formats.find(f => f.key === answerFormatKey)
+        return this.questions.list.data.answer_formats.filter(f => f.key === answerFormatKey)[0]
+      },
+      goNext(){
+        this.$router.push({path : '/results'});
       }
     },
-
+    watch: {
+      'currentQuestionKey': (value) => {
+        if (!value) {
+          this.goNext();
+        }
+      }
+    },
     created () {
       this.getQuestions();
       let $ = window.jQuery;

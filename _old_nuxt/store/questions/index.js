@@ -1,6 +1,6 @@
-import mutationsCreator from '../_helpers/mutationsCreator'
 import {GET_QUESTIONS, SET_CURRENT_QUESTION, SET_QUESTION_AGREEMENT, SET_QUESTION_IMPORTANCE} from './constants'
 import {questionsService} from './services'
+import mutationsCreator from '../_helpers/mutationsCreator'
 import promiseActionCreator from '../_helpers/promiseActionCreator'
 
 export default {
