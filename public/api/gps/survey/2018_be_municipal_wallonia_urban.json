@@ -49,13 +49,13 @@
     {
       "key": "question_264",
       "text": "question.264_text",
-      "notice": "question.264_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_46",
       "text": "question.46_text",
-      "notice": "question.46_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -79,7 +79,7 @@
     {
       "key": "question_31",
       "text": "question.31_text",
-      "notice": "question.31_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -91,7 +91,7 @@
     {
       "key": "question_123",
       "text": "question.123_text",
-      "notice": "question.123_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -109,7 +109,7 @@
     {
       "key": "question_257",
       "text": "question.257_text",
-      "notice": "question.257_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -127,25 +127,25 @@
     {
       "key": "question_230",
       "text": "question.230_text",
-      "notice": "question.230_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_218",
       "text": "question.218_text",
-      "notice": "question.218_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_196",
       "text": "question.196_text",
-      "notice": "question.196_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_95",
       "text": "question.95_text",
-      "notice": "question.95_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -157,49 +157,49 @@
     {
       "key": "question_105",
       "text": "question.105_text",
-      "notice": "question.105_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_112",
       "text": "question.112_text",
-      "notice": "question.112_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_118",
       "text": "question.118_text",
-      "notice": "question.118_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_207",
       "text": "question.207_text",
-      "notice": "question.207_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_130",
       "text": "question.130_text",
-      "notice": "question.130_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_133",
       "text": "question.133_text",
-      "notice": "question.133_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_149",
       "text": "question.149_text",
-      "notice": "question.149_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_96",
       "text": "question.96_text",
-      "notice": "question.96_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -211,25 +211,25 @@
     {
       "key": "question_93",
       "text": "question.93_text",
-      "notice": "question.93_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_89",
       "text": "question.89_text",
-      "notice": "question.89_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_88",
       "text": "question.88_text",
-      "notice": "question.88_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_86",
       "text": "question.86_text",
-      "notice": "question.86_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -247,13 +247,13 @@
     {
       "key": "question_49",
       "text": "question.49_text",
-      "notice": "question.49_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_4",
       "text": "question.4_text",
-      "notice": "question.4_notice",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     }
   ],
@@ -327,21 +327,42 @@
   "i18n": {
     "en": {
       "question": {
-        "4_text": "Taxes must be severely diminished, even if it means a reduction in public services.",
-        "14_text": "Congestion fees for cars users during working days in big cities should be set up.",
-        "20_text": "The State may own companies exposed to competition (telephone, newspaper, bank, etc.).",
-        "21_text": "To alleviate poverty, basic goods and services (energy, housing, medical care, childcare, etc.) should be available free of charge",
-        "22_text": "All public representatives must be required to report all incomes (including benefits in kind) from their public activity.",
-        "23_text": "Officials may wear signs revealing their religious or philosophical beliefs (veil, cross, pins,…) even if they are in contact with the public.",
-        "31_text": "In general, sanctions against criminal offenses should be more severe.",
-        "38_text": "Decisions on major public investments should require a preliminary popular consultation (referendum).",
-        "46_text": "State bonds should be reserved for infrastructure projects (roads and buildings).",
-        "49_text": "Social assistance to immigrants must be adjusted according to their successful integration (language exams, civic education, vocational training, etc.).",
-        "58_text": "Speed limits of 30 km/h should be limited to real danger zones.",
-        "88_text": "Both the electoral programs and the proposals to the municipal council should include the budgetary impact, calculated in an independant manner.",
-        "89_text": "Good maintenance, including cleanliness, of existing infrastructure has (budget) priority over new municipal initiatives.",
+        "4_text": "Taxes should be lowered, even if it means a reduction in public services.",
+        "14_text": "Cars entering the city centre during the work week should be charged a congestion fee.",
+        "20_text": "The State may own 'private' companies operating in competitive markets (e.g. telecom operators, media, banking).",
+        "21_text": "To alleviate poverty, basic goods and services (e.g. energy, housing, medical care, childcare, etc.) should be provided free of charge or at low cost.",
+        "22_text": "All public officials should be required to report their income (including benefits in kind) derived from their public activity.",
+        "23_text": "Public employees may wear signs of their religious or philosophical beliefs (headscarf, cross,…) even if they are in contact with the public.",
+        "31_text": "In general, penalties for criminal offenses should be more severe.",
+        "38_text": "Any economic and social project involving major investments must be submitted to a public consultation.",
+        "46_text": "Public debt should only be used for investments (buildings, infrastructure) and not for the day-to-day costs of running public services.",
+        "49_text": "Welfare benefits to immigrants should depend on their successful completion of an integration programme.",
+        "58_text": "Speed limits of 30 km/h should only be enforced in dangerous areas.",
+        "84_text": "The commune should ensure that voters have access to a voting advice application (such as the electoral GPS).",
+        "86_text": "The local welfare office (CPAS/OCMW) must welcome more volunteers, trainees and people sentenced to community work to have a social experience.",
+        "88_text": "The programmes of political parties should include the budgetary impact of their proposals.",
+        "89_text": "The maintenance, including cleaning, of existing infrastructure should be given budgetary priority over new municipal projects.",
         "93_text": "All services that can be entrusted to private companies, should be subcontracted by the public authority, subject to competition rules.",
-        "95_text": "The municipality must organize a call for projects to stimulate the integration and civic sense of young people by subsidizing the best initiatives."
+        "95_text": "The municipality should publish calls for projects to stimulate the integration and civic sense of youth, and fund the best initiatives.",
+        "96_text": "There should be more pedestrian streets.",
+        "103_text": "Taxes on labour should be reduced, even if taxes will need to be raised elsewhere.",
+        "105_text": "Any petition supported by 0.5% of the population must be heard by the City Council.",
+        "112_text": "Office-holders and civil servants should abide by an ethical code that allows them to report abuses of power.",
+        "118_text": "More CCTV security cameras should be installed in public streets.",
+        "123_text": "More trees should be planted, even if that reduces the sidewalk or parking spaces.",
+        "130_text": "Party loyalty, requiring that voting follows the party line, is more important than personal ethical principles.",
+        "133_text": "Schools need to share their sports infrastructure with each other and with sports clubs.",
+        "149_text": "Pre-electoral agreements between political parties must be made public before the elections.",
+        "196_text": "Most of the commune's energy use should come from sustainable sources, even if that is more expensive.",
+        "200_text": "Office-holders should align their positions with the results of public opinion polls.",
+        "207_text": "The city has to do everything possible to introduce a system for car-sharing (similar to Cambio, Boldes, Zen Car, etc).",
+        "218_text": "When designing public spaces, aesthetic concerns are less important than practical, economic and security concerns.",
+        "230_text": "Public authorities that do not respect the time limit for administrative decisions (such as building permits) must pay a daily compensation to the applicant.",
+        "232_text": "Public authorities should have an active policy for the social recognition of LGBTQI+ people.",
+        "255_text": "My commune should adopt a motion opposing the bill allowing the police to visit the homes of people hosting undocumented migrants.",
+        "257_text": "The commune should get the local population to more actively report uncivil behaviour.",
+        "262_text": "The commune and the social welfare office should be merged, when the law allows this.",
+        "264_text": "The commune should create a system of scholarships to encourage apprenticeships for people with difficulty finding work."
       },
       "answer_format": {
         "item": {
@@ -366,26 +387,26 @@
     "fr": {
       "question": {
         "4_text": "Il faut réduire les impôts, même si cela entraîne une diminution de l'impact des services publics.",
-        "14_text": "Il faut instaurer un péage urbain pour les automobilistes venant en semaine dans lecentre des grandes agglomérations.",
+        "14_text": "Il faut instaurer un péage urbain pour les automobilistes venant en semaine dans le centre des grandes agglomérations.",
         "14_notice": "Pour décongestionner le trafic automobile aux heures de pointes du matin et du soir à l’entrée dans Bruxelles, plusieurs études proposent l’instauration d’un péage urbain avec des tarifs journaliers variant de 3 à 12€. L’effet dissuasif du péage ne peut être atteint qu’à la condition de transférer, plus et mieux qu’actuellement, les navetteurs sur les transports en communs.  \nLa congestion, sur les voies d’accès à Bruxelles, est influencée par des choix d’infrastructures et d’urbanisme relevant d’autorités politiques autonomes les unes par rapport aux autres :\n- Le gouvernement flamand, en promouvant l’extension des zones économiques sur les communes périphériques et autour de l’aéroport de Zaventem, fait croître la demande de transit automobile via le ring faute pour les usagers de disposer d’alternatives attrayantes en transport en commun;\n- Le manque d’une desserte cadencée pour les navetteurs venant du sud et de l’ouest de Bruxelles, faute de R.E.R, ne les incite guère à passer du transport individuel vers d’autre mode. \n- On prévoit que Bruxelles continuera de connaitre une croissance d’activité économique, certes ralentie, mais régulière générant son lot de navetteurs supplémentaires. Les réglementations de la Région de Bruxelles-capitale protégeant les quartiers d’habitat face à la demande d’extension des surfaces économiques, particulièrement les bureaux, ne permettent pas d’inverser cette tendance.",
         "20_text": "Les Pouvoirs publics peuvent être propriétaires d'entreprises 'privées' soumises à concurrence, p.ex. médias, banques, opérateurs télécom.",
         "20_notice": "Au sein de l’Union européenne, les Pouvoirs publics peuvent être propriétaires, en partie ou totalement, d’entreprises économiques pour autant que leur gestion ne déroge pas aux règlementations européennes imposant le respect  des règles de concurrence non faussée qui interdisent les subventions déguisées sauf pour les entreprises chargées de mission de services publics comme la Poste et la SNCB. Dans des secteurs comme ceux de l’édition, de la communication et de la culture, la Commission européenne admet des aides publiques pour soutenir la création et maintenir la diversité des opinions.",
         "21_text": "Pour remédier à la pauvreté, il faut offrir, gratuitement ou avec une forte réduction de prix, certains biens et services fondamentaux.",
-        "21_notice": "On pense notamment à l'enseignement, l'énergie, le logement, les soins médicaux, les crèches, le transport. En 2016, le nombre de belges se trouvant sous le seuil de pauvreté était estimé à 14,9%, en sachant que ce seuil se trouve à 1083€ par mois pour une personne seule et 2274€ par mois pour une famille de deux adultes avec deux enfants . \nL’offre de certains service gratuits, se distingue clairement du concept d’allocation universelle, mais s’en rapproche. Il s’agit, en quelque sorte, d’une allocation « en nature ». \nLa commune peut typiquement agir au niveau des crèches, du logement (dans le cadre du CPAS) et du transport public.",
+        "21_notice": "On pense notamment à l'enseignement (y compris les frais dérivés de la scolarité, comme le matériel scolaire, etc), l'énergie, le logement, les soins médicaux, les crèches, le transport. En 2016, le nombre de belges se trouvant sous le seuil de pauvreté était estimé à 14,9%, en sachant que ce seuil se trouve à 1083€ par mois pour une personne seule et 2274€ par mois pour une famille de deux adultes avec deux enfants . \nL’offre de certains service gratuits, se distingue clairement du concept d’allocation universelle, mais s’en rapproche. Il s’agit, en quelque sorte, d’une allocation « en nature ». \nLa commune peut typiquement agir au niveau des crèches, du logement (dans le cadre du CPAS) et du transport public.",
         "22_text": "Tous les mandataires publics doivent déclarer leurs revenus et les avantages en nature tirés de leurs activités publiques.",
         "22_notice": "En Belgique, la plupart des mandataires publics, les dirigeants de cabinets ministériels, certains hauts fonctionnaires doivent périodiquement déposer à la Cour des Comptes une déclaration de patrimoine et une liste de leurs mandats, fonctions ou professions.\nCes listes concernent tous les mandats, fonctions et professions, rémunérées ou non, et sont publiées au Moniteur belge.\nLes déclarations de patrimoine sont déposées, sous pli fermé, à la Cour des Comptes. Elles doivent décrire l’état du patrimoine mobilier et immobilier. Cette déclaration doit être complétée seulement en cas de modification de celui-ci. La déclaration étant strictement confidentielle, elle ne peut être ouverte que par un juge d’instruction dans le cadre d’une procédure judiciaire. Les déclarations de patrimoine sont renvoyées aux déposants à l’issue d’une période ininterrompue de non obligation de six ans.\nEn Belgique, à la différence de nombreux pays voisins, il n’existe pas d’obligations pour les mandataires politiques élus de déposer des informations sur leurs revenus pendant la durée de leurs mandats.",
         "23_text": "Les fonctionnaires peuvent porter des signes révélant leur appartenance religieuse et / ou philosophique, même s'ils sont en contact avec le public.",
         "23_notice": "Le port du voile intégral (Burqa), couvrant le visage, est interdit en Belgique depuis la loi du 28/04/2011. Cette loi oblige toute  personne, sur l’espace public, à être identifiable en permanence et donc interdit de dissimuler, même partiellement, le visage. Des recours pour atteinte à la liberté d’expression et à la protection de la vie privée ont été portés devant la Cour constitutionnelle qui les a rejetés.",
         "31_text": "D'une façon générale, les sanctions contre les délits devraient être plus sévères.",
-        "38_text": "Les Pouvoirs publics devraient plus souvent soumettre à consultation populaire ses grands projets tant économiques que sociaux , p.e. l'opportunité d'un grand investissement.",
+        "38_text": "Les Pouvoirs publics devraient plus souvent soumettre à consultation populaire leurs grands projets tant économiques que sociaux , p.e. l'opportunité d'un grand investissement.",
         "38_notice": "Par définition, les projets de grands travaux d’intérêt général visent le bien-être à long terme, après un temps de réalisation déjà long lui-même ! Quelle que soit l’instance qui décide, elle doit avoir une capacité de se détacher de l’intérêt immédiat pour privilégier le long terme. A la différence du référendum dont les conclusions s’imposent au Pouvoir politique qui l’a organisé, la consultation populaire laisse à ses organisateurs l’appréciation des suites à donner. Actuellement, la décision sur les grands travaux est précédée d’une étude d’impact, avec une enquête publique permettant aux participants d’émettre toutes les questions et les objections. Les initiateurs du projet doivent y répondre, et, le cas échéant, corriger le projet.",
         "46_text": "L’endettement public ne peut pas financer les dépenses courantes. Il doit être réservé aux investissements (bâtiments, infrastructure).",
         "49_text": "L’aide sociale aux immigrés doit être modulée en fonction de leur réussite d'un parcours d'intégration.",
-        "58_text": "Les limitations de vitesse à 30 km/h doivent être strictement limitées à des points sensibles.",
+        "58_text": "Les limitations de vitesse à 30 km/h doivent être strictement réservées  à des points sensibles.",
         "58_notice": "La limitation de vitesse à 30km/h se justifie particulièrement lorsque la circulation automobile traverse des zones urbaines fréquentées régulièrement par des piétons et des cyclistes et où la fonction de séjour est prépondérante  comme les abords d’écoles, de centres sportifs, les marchés  ou dans les quartiers d’habitations  lorsque la voirie sert également d’aire de jeux pour les enfants.\nLes zones « trente » ne doivent plus obligatoirement être annoncées par des rétrécissements de l’espace public. Les autorités publiques en Belgique comme dans les pays scandinaves encouragent l’extension des « zones trente » à l’ensemble des quartiers où prédomine l’habitat et les activités à forte fréquentation de piétons et de cyclistes.",
         "84_text": "La commune doit veiller à ce que les électeurs disposent d'un système d'aide au vote (comme le GPS électoral).",
         "84_notice": "Les systèmes d'aide au vote (SAV), permettant de sélectionner les candidats sur base d'un questionnaire politique, sont de plus en plus populaires. Pour être crédibles, ils doivent être produits par des instances impartiales. Les Pays-Bas sont des précurseurs: pour les élections communales de mars 2018, 44 villes y ont payé l'institut Prodemos pour produire un SAV local.  La réduction progressive des coûts fait que le système d'aide au vote représenterait un coût, pour la commune, comparable aux panneaux d’affichage électoraux. Or la valeur ajoutée d'un bon SAV est largement supérieure. Faute de soutien financier, le GPS électoral de 2018 doit se limiter à des questions générales valables pour l'ensemble des communes. Il ne peut pas prendre en compte les spécificités de la ville/commune.",
-        "86_text": "Le CPAS doit accueillir plus de gens (y compris des jeunes condamnés à des travaux d'intérêt général) pour y faire une expérience sociale.",
+        "86_text": "Le CPAS doit accueillir plus de volontaires, stagiaires voir des personnes condamnées à des travaux d'intérêt général pour y faire une expérience sociale.",
         "88_text": "Les programmes électoraux doivent inclure l'impact budgétaire des propositions.",
         "89_text": "Le bon entretien, y compris la propreté, des infrastructures existantes a budgétairement priorité sur les nouvelles initiatives communales.",
         "93_text": "Il faut sous-traiter tous les services qu'il est possible de confier à des tiers, moyennant mise en concurrence.",
@@ -398,8 +419,8 @@
         "118_text": "Il faut installer davantage de caméras de surveillance dans les rues.",
         "123_text": "Il faut plus d'arbres, même si cela empiète sur les trottoirs ou les emplacements de parking.",
         "130_text": "La discipline de parti, exigeant de voter selon des orientations reçues du parti, passe avant les principes éthiques personnels.",
-        "133_text": "Les écoles devraient partager leur infrastructurs sportive avec les autres écoles, et avec les clubs sportifs.",
-        "149_text": "Les accords pré-électoraux, entre partis en lice, doivent être rendus publics bien avant les élections.",
+        "133_text": "Les écoles devraient partager leur infrastructures sportives avec les autres écoles, et avec les clubs sportifs.",
+        "149_text": "Les accords pré-électoraux entre partis doivent être rendus publics bien avant les élections.",
         "196_text": "Même si cela coûte plus cher, la commune doit s'approvisionner principalement en énergie durable.",
         "200_text": "Le mandataire devrait s'aligner sur les tendances majoritaires qui se dégagent dans les sondages de l'opinion publique.",
         "200_notice": "L’idée d’avoir des mandataires qui s’alignent sur les tendances populaires est séduisante. Elle soulève toutefois quelques questions. Quelle est la valeur des sondages : qualité scientifique de l’exécution, niveau de préparation/conditionnement des participants au sondage, etc ? Si on veut consulter la population en vue d’une décision politique, ne faut-il pas se baser sur un référendum ? Le mandataire doit-il rendre des comptes à la majorité de la population, ou à ceux qui l’ont élu sur base d’un programme précis ? Souhaite-t-on un mandataire sans convictions personnelles ?",
@@ -408,7 +429,7 @@
         "230_text": "L'autorité qui ne respecte pas les délais pour accorder des autorisations administratives (comme un permis d'urbanisme), doit indemniser le demandeur, par jour de retard.",
         "232_text": "Les autorités doivent mener une politique active pour assurer aux personnes LGBTQI+ une meilleure reconnaissance sociale.",
         "232_notice": "L'association RainbowHouse, de défense des personnes LGBTQI+, préconise e.a.: la création d'un service en charge de l'égalité des chances, un système de plainte à disposition des fonctionnaires victimes de menaces ou de discrimination , une plus grande présence des personnes LGBTQI+ dans la programmation culturelle et dans les supports pédagogiques, des actions de formation/sensibilisation des agents publics, etc. Cette association invite les autorités publiques à Afficher les symboles des communautés minorisées lors de leurs principaux événements (p.ex. Belgian Pride), en utilisant, selon les cas, less bâtiments publics (drapeaux) et/ou less supports de communication (journal communal, panneaux d'affichage).",
-        "255_text": "Ma commune doit adopter une motion s’opposant au projet de visite domiciliaire (concernant les étrangers en situation irrégulière).",
+        "255_text": "Ma commune doit adopter une motion s’opposant au projet de visite domiciliaire, concernant les étrangers en situation irrégulière.",
         "255_notice": "Confronté à la question des étrangers en situation irrégulière, le gouvernement fédéral a entrepris en 2018 de  permettre à la police, moyennant autorisation d’un juge d’instruction, à entrer dans l’habitation afin d’exécuter une mesure de refoulement, d’éloignement ou de transfert d’un étranger en séjour irrégulier ainsi que de permettre la saisie de ses documents d’identité. De nombreuses associations et des professeurs d’universités ont sévèrement condamné le projet au regard des droits fondamentaux des personnes concernées. Au-delà de la portée symbolique d'une motion, la commune peut refuser l’appui de la police locale à l’exécution de telles démarches.",
         "257_text": "Les communes doivent davantage s'appuyer sur la population pour constater les incivilités.",
         "262_text": "Lorsque le cadre légal le permettra, la commune et le CPAS doivent fusionner.",
@@ -437,12 +458,13 @@
     },
     "nl": {
       "question": {
-        "4_text": "De belastingdruk moet worden verlaagd, zelfs indien dit ten koste gaat van de openbare dienstverlening.",
+        "4_text": "De belastingdruk moet worden verlaagd, zelfs indien dit ten koste gaat van de impact van de openbare dienstverlening.",
         "14_text": "Er moet een stedelijke wegenbelasting worden ingevoerd voor automobilisten die tijdens de weekdagen het centrum van de grote agglomeraties binnenrijden.",
         "14_notice": "Om het autoverkeer tijdens de ochtend  en avondspits bij het binnenkomen van Brussel vlotter te laten verlopen, stellen verscheidene studies voor een stadstol in te voeren met dagtarieven die schommelen tussen 3 tot 12 EUR. Dergelijke tolheffing kan slechts ontradend zijn, wanneer ze de pendelaars meer en beter dan nu het openbaar vervoer doet gebruiken.  \nDe files op de Brusselse invalswegen worden beïnvloed door de keuzes inzake infrastructuur en stedenbouw, die behoren tot de bevoegdheid van politieke instanties die losstaan van elkaar:\n- Wanneer de Vlaamse regering de uitbreiding van de bedrijfszones in de randgemeenten en rond de luchthaven van Zaventem promoot, veroorzaakt ze een toename van het autoverkeer op de ring, aangezien het openbaar vervoer de weggebruikers geen aantrekkelijk alternatief biedt;\n- Bij gebrek aan een GEN, hebben de pendelaars vanuit het zuiden en het westen van Brussel onvoldoende klokvaste diensten, zodat ze minder geneigd zijn van het individueel vervoer over te stappen naar een andere transportwijze. \n- Men verwacht dat de economische activiteit in Brussel, trager maar regelmatig, zal blijven groeien en dus meer pendelaars zal aantrekken. De regelgeving van het Brussel Hoofdstedelijk Gewest die de woonwijken beschermt tegen de uitbreiding van bedrijfsvolumes, meer bepaald van kantoren, kan die trend niet ombuigen.",
         "20_text": "De overheid mag eigenaar zijn van 'private' ondernemigen die onderhevig zijn aan concurrentie (telecom, media, banken, enz.).",
         "20_notice": "Binnen de Europese Unie kunnen overheden geheel of gedeeltelijk eigenaar zijn van handelsondernemingen, op voorwaarde dat het beheer ervan niet in strijd is met de Europese regelgeving inzake eerlijke concurrentie, die verborgen overheidssteun verbiedt, behalve voor ondernemingen die moeten zorgen voor openbare dienstverlening, zoals de Post en de NMBS. In sectoren zoals uitgeverij, communicatie en cultuur, staat de Europese Commissie overheidssteun toe om de creativiteit te bevorderen en de verscheidenheid van meningen in stand te houden.",
         "21_text": "Om de armoede te bestrijden, moeten bepaalde basisgoederen en -diensten (energie, huisvesting, gezondheidszorg, kinderopvang, enz.) gratis aangeboden worden.",
+        "21_notice": "Men denkt onder andere aan onderwijs, energie, huisvesting, medische zorg, kinderdagverblijf, transport. In 2016 werd het aantal Belgen die onder de armoededrempel leven geschat op 14,9 %. Die drempel ligt op 1083€ per maand voor een alleenstaande persoon en op 2274€ voor een familie van twee volwassenen met twee kinderen.  Het gratis dienstenaanbod is niet te verwarren met het concept van algemene uitkering maar benadert het mits het in zekere zin gaat om een uitkering « in natura ». De gemeente kan typisch handelen wat de kinderdagverblijven betreft , woningen (in het kader van het OCMW) en het openbaar transport",
         "22_text": "Alle politieke mandatarissen moeten de inkomsten (incl. voordelen in natura) verkregen uit hun openbare activiteit, openbaar maken.",
         "22_notice": "In België moeten de meeste overheidsmandatarissen, de leiders van ministeriële kabinetten en sommige hoge ambtenaren bij het Rekenhof geregeld een vermogensverklaring indienen, alsmede een lijst van hun mandaten, functies of beroepen.\nDie lijsten hebben betrekking op alle bezoldigde en onbezoldigde mandaten, functies en beroepen en ze worden gepubliceerd in het Belgisch Staatsblad.\nDie vermogensverklaringen worden onder gesloten omslag ingediend bij het Rekenhof. Ze moeten een beschrijving geven van het roerend en onroerend bezit. Die verklaring dient enkel te worden aangepast wanneer het vermogen verandert. Aangezien de verklaring strikt vertrouwelijk is, mag ze slechts worden geopend door en onderzoeksrechter in het kader van een gerechtelijke procedure. De vermogensverklaringen worden aan de indieners terugbezorgd na een ononderbroken periode van zes jaar waarin die verplichting niet meer gold.\nAnders dan in veel buurlanden zijn verkozen politieke mandatarissen in België niet verplicht informatie over hun inkomsten te geven tijdens de duur van hun mandaat.",
         "23_text": "Ambtenaren mogen hun godsdienstige - of filosofische overtuiging kenbaar maken (met hoofddoek, kruisje, pin, enz.) zelfs bij contacten met de bevolking.",
@@ -454,19 +476,37 @@
         "49_text": "Hoe beter een allochtoon inburgert (inburgeringscursus, taalexamens, beroepsopleiding, enz.), hoe meer recht hij krijgt op sociale voorzieningen.",
         "58_text": "De snelheidsbeperkingen van 30 km/u moeten strikt beperkt worden tot de gevoelige punten.",
         "58_notice": "De snelheidsbeperking tot 30km/u is in het bijzonder verantwoord wanneer het autoverkeer stedelijke gebieden doorkruist, die geregeld worden gebruikt door voetgangers of fietsers of die overwegend residentieel zijn, zoals de omgeving van scholen, sportcentra, markten en woonwijken, wanneer er ook kinderen op straat spelen.\nDe zones “dertig” hoeven niet meer te worden aangeduid door versmallingen van de openbare ruimte. Net zoals in de Scandinavische landen, moedigen de Belgische overheden de uitbreiding van de “zones dertig” aan tot alle wijken die vooral voor bewoning dienen en die veelvuldig worden gebruikt door voetgangers en fietsers.",
-        "86_text": "Het OCMW moet zodanig worden ge(her)organiseerd dat het meer mensen (o.a. jongeren, veroordeeld tot gemeenschapswerk) kan ontvangen voor maatschappelijke stages.",
+        "84_text": "De gemeente moet zorgen dat de kiezers beschikken over een hulpsysteem bij het kiezen – een soort GPS voor kiezers.",
+        "84_notice": "De systemen van hulpverlening bij stemmingen (SHS), die een kandidaten selectie toelaten op basis van een politieke vragenlijst, zijn meer en meer populair. Om geloofbaar te zijn moeten ze opgesteld worden door neutrale instanties. Nederland is daarin een voorganger : voor de gemeentelijke verkiezingen van Maart 2018, hebben 44 steden het Instituut Prodemos betaald om een lokale SHS op te stellen. Gezien de kosten progressief verminderen zou dit hulpsysteem een prijs kosten die vergelijkbaar is met de prijs van verkiezingsaffiches. De waarde van een SHS ligt veel hoger ! Bij gemis aan financiële steun moet de verkiezings GPS van 2018 zich houden aan algemene vragen die passen bij elke gemeente. Hij kan onmogelijk rekening houden met de eigen kenmerken van elke gemeente of stad.",
+        "86_text": "Het OCMW moet meer vrijwilligers ontvangen, stagiaires en zelfs personen die veroordeeld werden tot werken van algemeen nut, om er sociale ervaring op te doen.",
         "88_text": "Zowel de verkiezingsprogramma’s als de voorstellen aan de gemeente- of provincieraad moeten rekening houden met de budgettaire gevolgen, op een onafhankelijke manier berekend.",
         "89_text": "Goed onderhoud, met inbegrip van netheid, van de bestaande infrastructuur heeft (budgettair) prioriteit boven nieuwe gemeentelijke initiatieven.",
         "93_text": "De overheid moet alle diensten uitbesteden die aan particuliere ondernemingen kunnen worden uitbesteed, middels een procedure in vrije concurrentie.",
         "95_text": "De gemeente moet een projectoproep organiseren om de integratie van en de zin voor burgerschap bij jongeren te stimuleren, door de beste initiatieven te subsidiêren.",
-        "96_text": "Er moeten meer autovrije komen.",
+        "96_text": "Er moeten meer autovrije straten komen.",
         "103_text": "Om de werkgelegenheid niet te benadelen, is het wenselijk de belasting op arbeid te verlagen (opcentiemen voor natuurlijke personen), ook al betekent dat dat de belastingen elders moeten worden verhoogd (onroerende voorheffing, milieubelastingen enz.).",
+        "103_notice": "Sommigen menen dat – omwille van de marktwet – elke vermeerdering van de belastig op werk dit werk penaliseert. Hoe duurder het werk hoe meer de markt alternatieven zoekt (delokalisatie, automaten, enz). De gemeente beslist over de opcentiemen wat de persoonsbelasting aangaat (deze betreft betaalde lonen, maar niet alleen deze inkomsten) en de onroerende voorheffing. De tax-shift kan gebeuren door de omgevingstaxatie te verhogen evenals de belasting op eigendommen en de waardevermeerderingen, de boetes, luxeproducten, enz.",
+        "105_text": "Elke petitie, aangevraagd door 0,5 % van de bevolking, moet verplicht voorgesteld worden aan de gemeenteraad.",
         "112_text": "Mandatarissen en ambtenaren van onze entiteit moeten onderworpen zijn aan een deontologische code, waarbij misbruiken ivm machtsuitoefening, verkiezingscampagnes, transparantie en belangenconflicten wordt gesanctioneerd.",
         "118_text": "We hebben meer bewakingscamera's op straat nodig.",
         "123_text": "Er is nood aan meer bomen, zelfs als die op voetpaden of parkeerplaatsen moeten komen.",
+        "130_text": "De partij discipline gaat voor de persoonlijke ethische overtuigingen als er moet gestemd worden volgens de door de partij gegeven richtlijnen.",
         "133_text": "Scholen zouden hun sportfaciliteiten met andere scholen en met sportclubs moeten delen.\n",
         "149_text": "Voorafgaande verkiezingsakkoorden tussen deelnemende partijen moeten ten minste drie weken voor de verkiezingen openbaar worden gemaakt.\n",
-        "207_text": "De stad moet er alles aan doen om een systeem van gedeelde autos in te voeren (vergelijkbaar met Cambio, Bolides, Zen Car, enz)."
+        "196_text": "De gemeente moet, zelfs al is het duurder, vooral hernieuwbare energie gebruiken.",
+        "200_text": "De gemachtigde moet de meningen volgen van de meerderheid, meningen die bekend worden door opiniepeilingen.",
+        "200_notice": "Het idee over afgevaardigden te beschikken die zich houden aan de wil van het volk is bekoorlijk. Maar vragen moeten gesteld worden. Welke is de waarde van opiniepeilingen : wetenschappelijke waarde van de uitvoering, het voorbereidingsniveau/het conditioneren van de deelnemers aan de peiling, enz?Wil men de bevolking bevragen wat een politiek besluit betreft, kan men dan niet beter gebruik maken van een referendum ? Moet de mandataris verantwoordelijk zijn tegenover de meerderheid van de bevolking of tegenover zij die voor hem stemden op basis van een duidelijk programma ? Wil men vertegenwoordigers zonder persoonlijke opinie ?",
+        "207_text": "De stad moet er alles aan doen om een systeem van gedeelde autos in te voeren (vergelijkbaar met Cambio, Bolides, Zen Car, enz).",
+        "218_text": "Bij het aanleggen van openbare pleinen, moet het esthetisch aspect van minder belang zijn dan het nuttige, economische, veilige.",
+        "230_text": "In geval de overheid zich niet houdt aan de wettelijke  termijn wat administratieve vergunningen betreft (zoals een bouwvergunning), moet zij de vrager, per dag vertraging, schadeloosstellen.",
+        "232_text": "De overheid moet een actieve politiek voeren om de LGBTQ+ personen een betere sociale erkenning te verzekeren.",
+        "232_notice": "De vereniging RainbowHouse voor LGBTQI+ personen bescherming , stelt o.a. de schepping van een dienst voor gelijke kansen voor, een klachten systeem ter beschikking van ambtenaren die met dreigingen of discriminatie te maken hebben, een grotere aanwezigheid van LGBTQI+ personen in de culturele programmatie en in pedagogische hulp, optreden wat opvoeding/bewustmaking van agenten die met het publiek werken betreft, enz. Deze vereniging vraagt de publieke verantwoordelijken de symbolen eigen aan minderheden te laten zien wanneer ze iets belangrijks vieren (b.v. Belgian Pride), en dit door gebruik te maken van publieke gebouwen (vlaggen) en/of de mogelijkheden tot mededelen (krant van de gemeente, aanplakbiljetten).",
+        "255_text": "Mijn gemeente moet een voorstel aannemen dat zich verzet tegen het geplande huisbezoek (betreffende vreemdelingen in onwettig verblijf).",
+        "255_notice": "Gesteld voor het probleem van de vreemdelingen in niet reguliere situatie, heeft de federale overheid in 2018 beslist de politie toe te laten – mits toestemming van een rechter – in een huis binnen te komen om een besluit van uitwijzing of transfer van een vreemdeling in niet regulier verblijf uit te voeren evenals het in beslag nemen van zijn idetiteitspapieren.Vele verenigingen en universiteits docenten hebben zeer zware kritiek en veroordelen dit project mits het een schending is van de fu ndamentele rechten van de personen in kwestie. Bovenop de symbolische waarde van een motie kan de gemeente de hulp van de lokale politie weigeren wanneer het gaat om dergelijke methodes.",
+        "257_text": "De gemeenten moeten meer hun vertrouwen geven aan de bevolking wat betreft het vaststellen van niet correcte handelingen.",
+        "262_text": "Wanneer het wettelijk kader dit zal toelaten moeten gemeente en OCMW fuseren.",
+        "262_notice": "De fusie tussen gemeenten en OCMW is nu al een werkelijkheid, verplicht door de Regio in Vlaanderen. De Waalse Regio denkt eraan een wettelijk kader te vormen die deze fusie toelaat op vrijwillige basis. Zonder de mogelijke synergieën tussen de OCMW van verschillende gemeenten te verwaarlozen, kunnen synergieën in stand komen op verschillend niveau en deze kunnen grote besparingen mogelijk maken en de verbanden evenals de doeltreffendheid van de verschillende diensten verbeteren. Dit kan o.a. gebeuren dankzij het verhinderen van dubbel personeel en tweemaal voorgestelde diensten. Informatica, juridische diensten (openbare markten, het volgen van dossiers), finantiële diensten, onderhoud van lokalen, personeel bijvoorbeeld kunnen zich nuttig maken voor de twee instellingen tegelijk.",
+        "264_text": "Dankzij een aangepast systeem van studiebeurzen moet de gemeente het aanleren van een beroep gemakkelijk maken, en dit in echte werkomstandigheden, speciaal voor mensen in stageperiode die moeilijk integreren."
       },
       "answer_format": {
         "item": {

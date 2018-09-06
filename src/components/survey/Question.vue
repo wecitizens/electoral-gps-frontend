@@ -8,7 +8,7 @@
             <foldable-icon :folded="isFolded"></foldable-icon>
             {{ $t('Voir la réponse') }}</a>
         <div v-show="isMoreInfo">
-            {{ question.notice}}
+            <p>{{ $t('gps.survey.' + question.notice) }}</p>
         </div>
         <div v-show="!isFolded">
             <div class="mt-3">

@@ -5,9 +5,9 @@
       <div class="text-center">
         <transition-group name="slide" tag="div" class="questions-slider">
           <div v-for="(question, idx) in questions.list.data.questions" :key="idx"  v-if="question.key === currentQuestionKey">
-            <h3 class="question mt-5">
+            <div class="question mt-5">
               <Question :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
-            </h3>
+            </div>
           </div>
         </transition-group>
       </div>
