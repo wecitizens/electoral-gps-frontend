@@ -14,13 +14,11 @@
             <div class="mt-3">
                 <div class="slider-wrapper">
                     <el-slider class="importance mt-5 mb-5" v-model="importance"
-                               :step="1" :min="1" :max="3" show-stop="true"
+                               :step="1" :min="1" :max="answerFormat.tolerance.items.length" show-stop="true"
                                :format-tooltip="showStepLabel" show-tooltip="show-tooltip">
                     </el-slider>
                     <div class="row slider-legend">
-                        <div class="col text-left">{{ $t("tolerance_1") }}</div>
-                        <div class="col text-center">{{ $t("tolerance_2") }}</div>
-                        <div class="col text-right">{{ $t("tolerance_3") }}</div>
+                        <div class="col"  v-for="item in answerFormat.tolerance.items" :key="item.id">{{ $t('gps.survey.' + item.name) }}</div>
                     </div>
                 </div>
             </div>

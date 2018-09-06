@@ -56,9 +56,9 @@ const surveyTemplate = {
             "tolerance": {
                 "items": [
                     {
-                        "key": "very_important",
-                        "name": "answer_format.tolerance.item.very_important",
-                        "weight": 2.5
+                        "key": "not_important",
+                        "name": "answer_format.tolerance.item.not_important",
+                        "weight": 0.4
                     },
                     {
                         "key": "important",
@@ -66,9 +66,9 @@ const surveyTemplate = {
                         "weight": 1
                     },
                     {
-                        "key": "not_important",
-                        "name": "answer_format.tolerance.item.not_important",
-                        "weight": 0.4
+                        "key": "very_important",
+                        "name": "answer_format.tolerance.item.very_important",
+                        "weight": 2.5
                     }
                 ]
             }
