@@ -1,7 +1,7 @@
 const csv = require('csvtojson');
 const fs = require("fs");
 
-const fileName = "districts.csv";
+const fileName = "Communes - Belgium Municipalities.csv";
 
 csv()
     .fromFile(fileName)

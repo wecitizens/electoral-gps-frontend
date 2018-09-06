@@ -1,0 +1,9 @@
+{
+  "key": "2018_be_municipal_8791_voter",
+  "survey_key": "2018_be_municipal_flandria_urban",
+  "segment_keys": [
+    "2018_be_municipal_8791_politician",
+    "2018_be_municipal_8791_party"
+  ],
+  "insufficient_data": false
+}
