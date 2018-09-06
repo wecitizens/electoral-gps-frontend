@@ -30,9 +30,10 @@
                         <a class="dropdown-item" @click="() => showDonate = true">{{$t('menu.item.donate',
                             {app_title:$t('app.title')})}}</a>
                         <a class="dropdown-item"
-                           href="http://www.wecitizens.be/about">{{$t('menu.item.about_app',
+                           :href="$t('about.gps_link')">{{$t('menu.item.about_app',
                             {app_title:$t('app.title')})}}</a>
-                        <a class="dropdown-item" href="http://www.wecitizens.be/about">{{$t('menu.item.about_association',
+                        <a class="dropdown-item"
+                           :href="$t('about.wecitizens_link')">{{$t('menu.item.about_association',
                             {association_name:$t('association.name')})}}</a>
                     </div>
                 </li>
