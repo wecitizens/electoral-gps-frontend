@@ -12,11 +12,11 @@ csv()
             const ep = "2018_be_municipal_"; 
             
             let poll = {
-                key: ep + district.code + "_voter",
+                key: ep + "be_" + district.code + "_voter",
                 survey_key: ep + district.region + "_" + district.type,
                 segment_keys : [
-                    ep + district.code + "_politician",
-                    ep + district.code + "_party"
+                    ep + "be_" + district.code + "_politician",
+                    ep + "be_" + district.code + "_party"
                 ],
                 insufficient_data: false
             };
