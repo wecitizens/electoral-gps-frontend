@@ -23,7 +23,6 @@
           </div>
           <div class="col">
             <a v-show="!last_question" class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("button.next_question") }} <i class="fas fa-chevron-right"></i>
-
             </a>
           </div>
         </div>

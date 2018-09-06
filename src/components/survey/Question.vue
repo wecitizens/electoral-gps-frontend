@@ -1,14 +1,14 @@
 <template>
     <div>
-        <h3>{{ $t('gps.survey.' + question.text) }}</h3>
+        <h3 class="title">{{ $t('gps.survey.' + question.text) }}</h3>
         <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
             <foldable-icon :folded="!isMoreInfo"></foldable-icon>
-            {{ $t('more_info') }}</a>
+            {{ $t('button.more_info') }}</a>
         <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
             <foldable-icon :folded="isFolded"></foldable-icon>
             {{ $t('Voir la réponse') }}</a>
-        <div v-show="isMoreInfo">
-            {{ question.notice}}
+        <div class="more-info" v-show="isMoreInfo">
+            {{ $t('gps.survey.' + question.notice) }}
         </div>
         <div v-show="!isFolded">
             <div class="mt-3">
@@ -133,4 +133,17 @@
             visibility: hidden;
         }
     }
+
+    h3.title {
+      max-width: 28em;
+      margin: auto;
+    }
+    div.more-info {
+      max-width: 35em;
+      margin: auto;
+      font-size: 60%;
+      text-align: justify;
+      font-weight: normal;
+    }
+
 </style>

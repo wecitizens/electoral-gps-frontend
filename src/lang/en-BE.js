@@ -55,7 +55,7 @@ const config = {
     see_results: 'Voir les résultats',
     previous_question: 'Précédent',
     next_question: 'Suivant',
-    more_info: '+ more infos'
+    more_info: 'more info'
   },
   share: {
     title: "Partager"
