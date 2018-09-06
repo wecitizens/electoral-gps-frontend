@@ -1,10 +1,10 @@
 [![Build Status](https://travis-ci.com/wecitizens/electoral-gps-frontend.svg?branch=master)](https://travis-ci.com/wecitizens/electoral-gps-frontend)
 
+> **Warning** : nuxt under removal. All the fun is happening on **develop branch**. Current prod version deprecated and issues are deprecated too. Stuff should be cleaned on 10/09/2018
+
 # wecitizens-front
 
-> Nuxt.js project
-> 
-> App starts at https://wecitizens.github.io/electoral-gps-frontend/municipality/
+> App starts at https://wecitizens.github.io/electoral-gps-frontend
 
 ## Build Setup
 
@@ -22,8 +22,4 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
-
-# Sitemap 
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
