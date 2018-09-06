@@ -87,9 +87,8 @@
         Vue.i18n.set(local);
       },
       handleShare(){
-        this.showShare = true;
-        window.addthis.init()
-        window.addthis.toolbox('.addthis_toolbox');
+        //this.showShare = true;
+        window.$('#share-modal').modal('show');
       }
     },
     data: () => {

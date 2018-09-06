@@ -1,7 +1,7 @@
 /* eslint-disable */
 const config = {
   app: {
-    title: 'GPS electoral'
+    title: 'GPS électoral'
   },
   association: {
     name: 'WeCitizens'
@@ -28,16 +28,17 @@ const config = {
     item: {
       welcome: 'Accueil',
       go_to_results: 'Sauter aux résultats',
-      share_app: 'Partager le {{app.title}}',
+      share_app: 'Partager le {app_title} ',
       share_results: 'Partager mes résultats',
       see_all_questions: 'Voir toutes les questions',
       start_from_scratch: 'Recommencer à zéro',
-      about_app: 'À propos du {{app.title}}',
-      about_association: 'À propos de {{association.name}}',
+      about_app: 'À propos du {app_title} ',
+      about_association: 'À propos de {association_name}',
       municipality: 'Commune',
       questions: 'Questions',
       stats: 'Stats',
-      results: 'Résultats'
+      results: 'Résultats',
+      donate: 'Donate'
     }
   },
   results: {
@@ -52,9 +53,16 @@ const config = {
   button: {
     lets_go: 'C\'est parti',
     see_results: 'Voir les résultats',
-    previous_question: 'Previous Question',
+    previous_question: 'Précédent',
+    next_question: 'Suivant',
     more_info: '+ more infos'
   },
+  share: {
+    title: "Partager"
+  },
+  tolerance_1: 'Less important',
+  tolerance_2: 'Neutral',
+  tolerance_3: 'Very important',
   title: {
     candidates: 'Candidats',
     parties: 'Listes'
@@ -63,7 +71,13 @@ const config = {
     place_holder: {
       your_postcode: 'Ton code postal'
     }
-  }
-}
+  },
+  donate: {
+    title: 'Sans vos donations, nous ne saurions vous informer sur les élections à venir\' not found for locale',
+    content: 'Faites un virement sur le compte de WeCitizens:',
+    account: 'IBAN : BE16 7350 3219 3274',
+  },
 
-module.exports = config
+};
+
+export default config

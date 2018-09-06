@@ -1,6 +1,6 @@
 <template>
     <div class="questions">
-        <div v-for="(question, idx) in questions.questions" :key="idx">
+        <div v-for="(question, idx) in questions.list.data.questions" :key="idx">
             <h3 class="question mt-5">
                 <Question :folded="true" :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
             </h3>
@@ -24,7 +24,7 @@
     methods: {
       ...mapActions(['getQuestions']),
       getAnswerFormat (answerFormatKey) {
-        return this.questions.answer_formats.find(f => f.key === answerFormatKey)
+        return this.questions.list.data.answer_formats.find(f => f.key === answerFormatKey)
       }
     },
     computed: {

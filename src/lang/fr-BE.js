@@ -60,9 +60,9 @@ const config = {
   share: {
     title: "Partager"
   },
-  tolerance_1: 'Less important',
-  tolerance_2: 'Neutral',
-  tolerance_3: 'Very important',
+  tolerance_1: 'Pas important',
+  tolerance_2: 'Moyen',
+  tolerance_3: 'Très important',
   title: {
     candidates: 'Candidats',
     parties: 'Listes'
@@ -77,6 +77,10 @@ const config = {
     content: 'Faites un virement sur le compte de WeCitizens:',
     account: 'IBAN : BE16 7350 3219 3274',
   },
+  about : {
+    gps_link: "http://www.wecitizens.be/fr/outils-2/",
+    wecitizens_link: "http://www.wecitizens.be/fr/nous-citoyens/"
+  }
 
 };
 

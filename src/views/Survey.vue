@@ -65,7 +65,7 @@
     watch: {
       'currentQuestionKey': (value) => {
         if (!value) {
-          this.goNext();
+          this.$router.push({path : '/results'});
         }
       }
     },
