@@ -22,38 +22,43 @@
 
 <script>
 
-  import {mapGetters, mapActions} from 'vuex';
-  import Steps from '../components/Steps';
+    import {mapGetters, mapActions} from 'vuex';
+    import Steps from '../components/Steps';
+    import districtService from '../store/district/services'
+    import Vue from 'vue';
 
-  export default {
-    name: 'municipality',
-    components: {Steps},
-    data() {
-      return {
-        municipality: null
-      }
-    },
-    computed: {
-      ...mapGetters(['municipalities']),
-      displayNextStepButton() {
-        return true
-      }
-    },
-    methods: {
-      ...mapActions(['setZipCode']),
-      querySearch(queryString, cb) {
-        const municipalities = this.municipalities
-        const results = queryString ? municipalities.filter(this.createFilter(queryString)) : municipalities
-        cb(results)
-      },
-      createFilter(queryString) {
-        return (municipality) => {
-          return (municipality.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
+    export default {
+        name: 'municipality',
+        components: {Steps},
+        data() {
+            return {
+                municipality: null
+            }
+        },
+        computed: {
+            ...mapGetters(['municipalities']),
+            displayNextStepButton() {
+                return true
+            }
+        },
+        methods: {
+            ...mapActions(['setZipCode']),
+            async querySearch(queryString, cb) {
+                const municipalities = await districtService.getDistricts();
+                const names = municipalities.map(m => { return { value: m.code + " " + Vue.i18n.translate('vote.' + m.name) }})
+                
+                const results = queryString ?
+                    names.filter(this.createFilter(queryString)) : names;
+                cb(results)
+            },
+            createFilter(queryString) {
+                return (municipality) => {
+                    return (municipality.value.toLowerCase().includes(queryString.toLowerCase()))
+                }
+            },
+            handleSelect() {
+                //
+            }
         }
-      },
-      handleSelect() {
-        //
-      }
-    }
-  };
+    };
 </script>
