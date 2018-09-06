@@ -18,6 +18,10 @@ const questionsService = {
 
       return request
     })
+  },
+  match(data){
+    console.log('@TODO in store/questions/services => the MATCH algorithm');
+    return data;
   }
 };
 

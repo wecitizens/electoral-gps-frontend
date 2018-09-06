@@ -60,9 +60,9 @@
                 :visible.sync="showDonate"
                 width="30%"
         >
-            <h3>{{ $t("Sans vos donations, nous ne saurions vous informer sur les élections à venir") }}</h3>
-            <p>{{ $t("Faites un virement sur le compte de WeCitizens:") }}</p>
-            <p>{{ $t("IBAN : BE16 7350 3219 3274") }}</p>
+            <h3>{{ $t("donate.title") }}</h3>
+            <p>{{ $t("donate.content") }}</p>
+            <p>{{ $t("donate.account") }}</p>
 
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">

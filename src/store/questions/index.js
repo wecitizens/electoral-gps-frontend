@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import mutationsCreator from '../_helpers/mutationsCreator'
 import promiseActionCreator from '../_helpers/promiseActionCreator'
 import questionsService from './services'
@@ -46,7 +45,9 @@ export default {
       key: null,
       text: null,
       notice: null
-    }
+    },
+    first_question : true,
+    last_question : false
   },
   mutations: {
     ...mutationsCreator(GET_QUESTIONS),
@@ -78,13 +79,46 @@ export default {
       const previousIndex = order.indexOf(questionKey)
 
       const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 1])
+      const previousQuestion = state.list.data.questions.find(q => q.key === order[previousIndex - 2])
+      const nextQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 2])
 
-      console.log('CurrentQuesion', currentQuestion);
+
+      if(previousQuestion) {
+        console.log('Has previous');
+      }
+
+      if(nextQuestion) {
+        console.log("Has next");
+      }
 
       commit(SET_CURRENT_QUESTION, {question: currentQuestion})
     },
     setQuestionImportance({commit}, data) {
       commit(SET_QUESTION_IMPORTANCE, data)
+    },
+    nextQuestion({commit, state}, data) {
+
+      const questionKey = data.questionKey
+      const order = state.list.data.question_order
+      const previousIndex = order.indexOf(questionKey)
+
+      const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 1])
+
+      if (currentQuestion) {
+        commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+      }
+    },
+    previousQuestion({commit, state}, data) {
+
+      const questionKey = data.questionKey
+      const order = state.list.data.question_order
+      const previousIndex = order.indexOf(questionKey)
+
+      const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex - 1])
+
+      if (currentQuestion) {
+        commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+      }
     }
   }
 }

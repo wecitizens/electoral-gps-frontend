@@ -1,8 +1,12 @@
 <template>
     <div>
         <h3>{{ $t('gps.survey.' + question.text) }}</h3>
-        <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo"><foldable-icon :folded="!isMoreInfo"></foldable-icon> {{ $t('more_info') }}</a>
-        <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded"><foldable-icon :folded="isFolded"></foldable-icon> {{ $t('Voir la réponse') }}</a>
+        <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
+            <foldable-icon :folded="!isMoreInfo"></foldable-icon>
+            {{ $t('more_info') }}</a>
+        <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
+            <foldable-icon :folded="isFolded"></foldable-icon>
+            {{ $t('Voir la réponse') }}</a>
         <div v-show="isMoreInfo">
             {{ question.notice}}
         </div>
@@ -14,9 +18,9 @@
                                :format-tooltip="showStepLabel" show-tooltip="show-tooltip">
                     </el-slider>
                     <div class="row slider-legend">
-                        <div class="col text-left">{{ $t("Less important") }}</div>
-                        <div class="col text-center">{{ $t("Neutral") }}</div>
-                        <div class="col text-right">{{ $t("Very important") }}</div>
+                        <div class="col text-left">{{ $t("tolerance_1") }}</div>
+                        <div class="col text-center">{{ $t("tolerance_2") }}</div>
+                        <div class="col text-right">{{ $t("tolerance_3") }}</div>
                     </div>
                 </div>
             </div>
@@ -35,6 +39,7 @@
 <script>
   import {mapActions} from 'vuex';
   import FoldableIcon from '../FoldableIcon';
+  import Vue from 'vue';
 
   export default {
     props: {
@@ -45,7 +50,7 @@
         default: false
       }
     },
-    components:{
+    components: {
       FoldableIcon
     },
     data() {
@@ -71,8 +76,10 @@
     methods: {
       ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
       showStepLabel: (index) => {
-        const key = 'tolerance_' + index
-        return key
+        if (index) {
+          return Vue.i18n.translate('tolerance_' + index)
+        }
+        return index;
       }
     }
   }

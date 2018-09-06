@@ -14,15 +14,15 @@
       <el-footer>
         <div class="row">
           <div class="col">
-            <a class="btn btn-outline-primary btn-block"><i class="fas fa-chevron-left"></i>
+            <a v-show="!first_question" class="btn btn-outline-primary btn-block" @click="goPrevious"><i class="fas fa-chevron-left"></i>
 
-               {{ $t("Previous") }} </a>
+               {{ $t("button.previous_question") }} </a>
           </div>
           <div class="col">
-            <a class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("Show my results") }} </a>
+            <a v-show="!first_question" class="btn btn-outline-primary btn-block" @click="goResults">{{ $t("button.see_results") }} </a>
           </div>
           <div class="col">
-            <a class="btn btn-outline-primary btn-block">{{ $t("Next") }} <i class="fas fa-chevron-right"></i>
+            <a v-show="!last_question" class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("button.next_question") }} <i class="fas fa-chevron-right"></i>
 
             </a>
           </div>
@@ -33,9 +33,10 @@
 </template>
 
 <script>
-  import Question from '@/components/survey/Question'
+  import Question from '../components/survey/Question'
   import {mapGetters, mapState, mapActions} from 'vuex'
-  import Steps from '@/components/Steps'
+  import Steps from '../components/Steps'
+
 
   export default {
     components: {
@@ -44,13 +45,20 @@
     },
     computed: {
       ...mapGetters(['questions', 'currentQuestionKey', 'survey']),
+      ...mapState(['first_question', 'last_question', 'current']),
     },
     methods: {
-      ...mapActions(['getQuestions']),
+      ...mapActions(['getQuestions', 'previousQuestion', 'nextQuestion']),
       getAnswerFormat (answerFormatKey) {
         return this.questions.list.data.answer_formats.filter(f => f.key === answerFormatKey)[0]
       },
       goNext(){
+        this.$store.dispatch('nextQuestion', {questionKey: this.currentQuestionKey});
+      },
+      goPrevious(){
+        this.$store.dispatch('previousQuestion', {questionKey: this.currentQuestionKey});
+      },
+      goResults(){
         this.$router.push({path : '/results'});
       }
     },

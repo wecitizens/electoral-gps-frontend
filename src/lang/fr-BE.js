@@ -4,7 +4,7 @@ const config = {
     title: 'GPS électoral'
   },
   association: {
-  	name: 'WeCitizens'
+    name: 'WeCitizens'
   },
   district: {
     what_is_your_postcode: 'Quel est ton code postal ?',
@@ -25,7 +25,7 @@ const config = {
     powered_by: 'Powered by:'
   },
   menu: {
-  	item: {
+    item: {
       welcome: 'Accueil',
       go_to_results: 'Sauter aux résultats',
       share_app: 'Partager le {app_title} ',
@@ -39,10 +39,10 @@ const config = {
       stats: 'Stats',
       results: 'Résultats',
       donate: 'Donate'
-  	}
+    }
   },
   results: {
-  	candatidates_sharing_my_position_the_most: 'Les candidats qui partagent le plus mes convictions'
+    candatidates_sharing_my_position_the_most: 'Les candidats qui partagent le plus mes convictions'
   },
   stats: {
     anonymous_question_to_improve_service: 'Ces dernières questions restent anonymes et nous permettent d’améliorer notre service',
@@ -53,24 +53,31 @@ const config = {
   button: {
     lets_go: 'C\'est parti',
     see_results: 'Voir les résultats',
-    previous_question: 'Previous Question',
+    previous_question: 'Précédent',
+    next_question: 'Suivant',
     more_info: '+ more infos'
   },
-  share:{
+  share: {
     title: "Partager"
   },
   tolerance_1: 'Less important',
   tolerance_2: 'Neutral',
   tolerance_3: 'Very important',
   title: {
-  	candidates: 'Candidats',
-  	parties: 'Listes'
+    candidates: 'Candidats',
+    parties: 'Listes'
   },
   input: {
     place_holder: {
       your_postcode: 'Ton code postal'
     }
-  }
-}
+  },
+  donate: {
+    title: 'Sans vos donations, nous ne saurions vous informer sur les élections à venir\' not found for locale',
+    content: 'Faites un virement sur le compte de WeCitizens:',
+    account: 'IBAN : BE16 7350 3219 3274',
+  },
+
+};
 
 export default config
