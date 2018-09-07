@@ -24,7 +24,7 @@
                     </ul>
                 </b-tab>
                 <b-tab title="Listes" class="col-md-6 tab-center">
-                    <ul class="list-group tab-scroll" v-for="(score, idx) in electoral_list__scores" :key="idx">
+                    <ul class="list-group tab-scroll" v-for="(score, idx) in electoral_list_scores" :key="idx">
                         <li class="list-group-item">
                             <h4>{{ electoral_lists.find(e => e.key == score.user_key).name }}</h4>
                             <div class="progress">
@@ -49,6 +49,7 @@
 <script>
 
     import CandidateLists from '@/components/CandidateList';
+    import MatchService from '../store/match/services'
 
     export default {
         name: 'results',
@@ -56,6 +57,83 @@
             CandidateLists
         },
         data: () => {
+
+            const matchRequest = {
+                "segment_key": '2018_be_municipal_be_1435_politician',
+                "answer_formats":
+                    [
+                        {
+                            "key": "agr_5_scale_tol_3_scale_abs",
+                            "items": [
+                                {
+                                    "key": "strongly_agree",
+                                    "name": "answer_format.item.strongly_agree",
+                                    "weight": 100
+                                },
+                                {
+                                    "key": "agree",
+                                    "name": "answer_format.item.agree",
+                                    "weight": 75
+                                },
+                                {
+                                    "key": "no_opinion",
+                                    "name": "answer_format.item.no_opinion",
+                                    "weight": 50
+                                },
+                                {
+                                    "key": "disagree",
+                                    "name": "answer_format.item.disagree",
+                                    "weight": 25
+                                },
+                                {
+                                    "key": "strongly_disagree",
+                                    "name": "answer_format.item.strongly_disagree",
+                                    "weight": 0
+                                }
+                            ],
+                            "tolerance": {
+                                "items": [
+                                    {
+                                        "key": "not_important",
+                                        "name": "answer_format.tolerance.item.not_important",
+                                        "weight": 0.4
+                                    },
+                                    {
+                                        "key": "important",
+                                        "name": "answer_format.tolerance.item.important",
+                                        "weight": 1
+                                    },
+                                    {
+                                        "key": "very_important",
+                                        "name": "answer_format.tolerance.item.very_important",
+                                        "weight": 2.5
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                answers: [
+                    {
+                        question_key: "question_103",
+                        answer_format: "agr_5_scale_tol_3_scale_abs",
+                        value: "strongly_agree",
+                        tolerance: "very_important"
+                    },
+                    {
+                        question_key: "question_104",
+                        answer_format: "agr_5_scale_tol_3_scale_abs",
+                        value: "disagree",
+                        tolerance: "important"
+                    }
+                ]
+            };
+
+            const politicianScores = MatchService.match(matchRequest);
+
+            matchRequest.segment_key = '2018_be_municipal_be_1435_electoral_list';
+
+            const electoralListScores = MatchService.match(matchRequest);
+
             const v = {
                 electoral_lists: [
                     {
@@ -100,30 +178,8 @@
                         last_name: "Wight"
                     }
                 ],
-                politician_scores: [
-                    {
-                        user_key: "be_politician_2",
-                        score: 75.23
-                    },
-                    {
-                        user_key: "be_politician_4",
-                        score: 40
-                    },
-                    {
-                        user_key: "be_politician_3",
-                        score: 25.4
-                    }
-                ],
-                electoral_list__scores: [
-                    {
-                        user_key: "be_1435_cohesion",
-                        score: 50.3
-                    },
-                    {
-                        user_key: "be_1435_ecolo",
-                        score: 25
-                    }
-                ]
+                politician_scores: politicianScores,
+                electoral_list_scores: electoralListScores
             };
 
             return v;
