@@ -7,16 +7,30 @@
                         <a href="#" class="badge badge-primary">+ d'infos</a>
                     </p>
 
-                    <candidate-lists class="list-scroll"></candidate-lists>
-
+                    <ul class="list-group" v-for="(score, idx) in politician_scores" :key="idx">
+                        <li class="list-group-item">
+                            <h4>{{ politicians.find(p => p.key == score.user_key).first_name + " " 
+                                + politicians.find(p => p.key == score.user_key).last_name }}</h4>
+                            <h6>{{ electoral_lists.filter(e => e.candidates.map(c =>
+                                c.key).includes(score.user_key)).map(e => e.name + " (" +  e.candidates.find(c => c.key ==
+                                score.user_key).order)[0] + ")" }}</h6>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
+                                     :aria-valuenow="score.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ score.score }}%
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </b-tab>
                 <b-tab title="Listes" class="col-md-6 tab-center">
                     <ul class="list-group tab-scroll" v-for="(score, idx) in electoral_list__scores" :key="idx">
                         <li class="list-group-item">
                             <h4>{{ electoral_lists.find(e => e.key == score.user_key).name }}</h4>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                                     aria-valuemin="0" aria-valuemax="100">75%
+                                <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
+                                     :aria-valuenow="score.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ score.score }}%
                                 </div>
                             </div>
                         </li>
@@ -24,17 +38,6 @@
                 </b-tab>
             </b-tabs>
         </b-card>
-        
-        <!--
-
-        <p>{{ politicians.find(p => p.Key = politician_scores[0].user_key).first_name + " " + politicians.find(p => p.Key =
-            politician_scores[0].user_key).last_name }}</p>
-        
-        <p>{{ electoral_lists[0].name }} ({{ electoral_lists[0].candidates.find(c => c.key == politician_scores[0].user_key).order }})</p>
-        
-        <p>{{ politician_scores[0].score }}</p>
-        
-        -->
 
         <div>
             <button type="button" class="btn btn-default">Corriger mes réponses</button>
@@ -53,16 +56,30 @@
             CandidateLists
         },
         data: () => {
-            return {
+            const v = {
                 electoral_lists: [
                     {
                         key: "be_1435_cohesion",
-                        name: "CoHésion",
+                        name: "CoHéSion",
                         candidates: [
                             {
                                 "order": 1,
                                 "key": "be_politician_2"
                             },
+                            {
+                                "order": 2,
+                                "key": "be_politician_3"
+                            }
+                        ]
+                    },
+                    {
+                        key: "be_1435_ecolo",
+                        name: "Ecolo",
+                        candidates: [
+                            {
+                                "order": 1,
+                                "key": "be_politician_4"
+                            }
                         ]
                     }
                 ],
@@ -71,21 +88,45 @@
                         key: "be_politician_2",
                         first_name: "John",
                         last_name: "Doe"
+                    },
+                    {
+                        key: "be_politician_3",
+                        first_name: "Walter",
+                        last_name: "Swan"
+                    },
+                    {
+                        key: "be_politician_4",
+                        first_name: "Amy",
+                        last_name: "Wight"
                     }
                 ],
                 politician_scores: [
                     {
                         user_key: "be_politician_2",
                         score: 75.23
+                    },
+                    {
+                        user_key: "be_politician_4",
+                        score: 40
+                    },
+                    {
+                        user_key: "be_politician_3",
+                        score: 25.4
                     }
                 ],
                 electoral_list__scores: [
                     {
                         user_key: "be_1435_cohesion",
                         score: 50.3
+                    },
+                    {
+                        user_key: "be_1435_ecolo",
+                        score: 25
                     }
                 ]
-            }
+            };
+
+            return v;
         }
     }
 </script>
