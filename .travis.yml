@@ -13,9 +13,8 @@ branches:
 install:
   - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
   - git fetch
-  - git merge origin/master-cms
   - npm install
-  - npm run generate:gh-pages
+  - npm run build
 
 script:
   - echo "Skipping tests"
