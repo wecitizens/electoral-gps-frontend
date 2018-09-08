@@ -14,15 +14,15 @@
       <el-footer>
         <div class="row">
           <div class="col">
-            <a v-show="!first_question" class="btn btn-outline-primary btn-block" @click="goPrevious"><i class="fas fa-chevron-left"></i>
+            <a v-show="questions.current.index > 1" class="btn btn-outline-primary btn-block" @click="goPrevious"><i class="fas fa-chevron-left"></i>
 
                {{ $t("button.previous_question") }} </a>
           </div>
           <div class="col">
-            <a v-show="!first_question" class="btn btn-outline-primary btn-block" @click="goResults">{{ $t("button.see_results") }} </a>
+            <a v-show="questions.current.index > 1" class="btn btn-outline-primary btn-block" @click="goResults">{{ $t("button.see_results") }} </a>
           </div>
           <div class="col">
-            <a v-show="!last_question" class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("button.next_question") }} <i class="fas fa-chevron-right"></i>
+            <a v-show="questions.current.index < questions.total" class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("button.next_question") }} <i class="fas fa-chevron-right"></i>
             </a>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
 <script>
   import Question from '../components/survey/Question'
-  import {mapGetters, mapState, mapActions} from 'vuex'
+  import {mapGetters, mapActions} from 'vuex'
   import Steps from '../components/Steps'
 
 
@@ -43,8 +43,7 @@
       Steps
     },
     computed: {
-      ...mapGetters(['questions', 'currentQuestionKey', 'survey']),
-      ...mapState(['first_question', 'last_question', 'current']),
+      ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
     },
     methods: {
       ...mapActions(['getQuestions', 'previousQuestion', 'nextQuestion']),

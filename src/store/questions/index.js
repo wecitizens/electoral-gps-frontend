@@ -6,6 +6,7 @@ export const GET_QUESTIONS = 'GET_QUESTIONS'
 export const SET_CURRENT_QUESTION = 'SET_CURRENT_QUESTION'
 export const SET_QUESTION_AGREEMENT = 'SET_QUESTION_AGREEMENT'
 export const SET_QUESTION_IMPORTANCE = 'SET_QUESTION_IMPORTANCE'
+export const SET_TOTAL = 'SET_TOTAL'
 
 export default {
   getters: {
@@ -45,10 +46,8 @@ export default {
       key: null,
       text: null,
       notice: null,
-      position: 1
+      index: 1
     },
-    first_question : true,
-    last_question : false,
     total : 30
   },
   mutations: {
@@ -63,6 +62,9 @@ export default {
     [SET_QUESTION_IMPORTANCE](state, mutation) {
       const questionKey = mutation.questionKey
       state.list.data.questions.filter(q => q.key === questionKey)[0].importance = mutation.importance
+    },
+    [SET_TOTAL](state, mutation) {
+      state.total = mutation.total;
     }
   },
   actions: {
@@ -70,8 +72,9 @@ export default {
       await promiseActionCreator(store, questionsService.getQuestions({}), GET_QUESTIONS)
       const questions = store.state.list.data.questions
       const currentQuestion = questions[0]
-      console.log('Current question', currentQuestion);
+      currentQuestion.index = 1;
       store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+      store.commit(SET_TOTAL, {total: store.state.list.data.question_order.length})
     },
     setQuestionAgreement({commit, state}, data) {
       commit(SET_QUESTION_AGREEMENT, data)
@@ -107,6 +110,7 @@ export default {
       const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 1])
 
       if (currentQuestion) {
+        currentQuestion.index = previousIndex + 1 +1; // as index start at 0
         commit(SET_CURRENT_QUESTION, {question: currentQuestion})
       }
     },
@@ -119,6 +123,9 @@ export default {
       const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex - 1])
 
       if (currentQuestion) {
+
+        currentQuestion.index = previousIndex;
+
         commit(SET_CURRENT_QUESTION, {question: currentQuestion})
       }
     }

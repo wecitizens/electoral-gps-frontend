@@ -1,6 +1,6 @@
 <template>
     <div v-if="question.text">
-        <h3 class="title">{{ $t('gps.survey.' + question.text) }}</h3>
+        <h3 class="title">{{questions.current.index}}/{{ questions.total }} {{ $t('gps.survey.' + question.text) }}</h3>
         <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
             <foldable-icon :folded="!isMoreInfo"></foldable-icon>
             {{ $t('button.more_info') }}</a>
@@ -23,7 +23,7 @@
                                :format-tooltip="showStepLabel" show-tooltip="show-tooltip">
                     </el-slider>
                     <div class="row slider-legend">
-                        <div class="col"  v-for="(item, key) in answerFormat.tolerance.items" :key="item.id">
+                        <div class="col" v-for="(item, key) in answerFormat.tolerance.items" :key="item.id">
                             <a @click="() => setImportance(key)">{{ $t('gps.survey.' + item.name) }}</a>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import {mapActions, mapState} from 'vuex';
+  import {mapActions, mapGetters} from 'vuex';
   import FoldableIcon from '../FoldableIcon';
   import Vue from 'vue';
 
@@ -61,15 +61,13 @@
     data() {
       return {
         agreement: null,
-        importance: 2,
+        importance: 1,
         isFolded: this.folded,
         isMoreInfo: false
       }
     },
-    computed : {
-      ...mapState([
-
-      ])
+    computed: {
+      ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
     },
     watch: {
       agreement: function (agreement) {
@@ -97,7 +95,7 @@
         this.importance = importance;
       }
     }
-  }
+  };
 </script>
 
 <style lang="scss">
@@ -150,15 +148,16 @@
     }
 
     h3.title {
-      max-width: 28em;
-      margin: auto;
+        max-width: 28em;
+        margin: auto;
     }
+
     div.more-info {
-      max-width: 35em;
-      margin: auto;
-      font-size: 60%;
-      text-align: justify;
-      font-weight: normal;
+        max-width: 35em;
+        margin: auto;
+        font-size: 60%;
+        text-align: justify;
+        font-weight: normal;
     }
 
 </style>
