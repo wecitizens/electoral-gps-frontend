@@ -7,7 +7,7 @@
     "watch": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "deploy": "cd dist && surge --domain wecitizens.surge.sh",
-    "deploy_prod": "node --harmony ./bin/deploy-prod.js",
+    "deploy_prod": "vue-cli-service build && bash deploy.sh",
     "sync-translations": "node --harmony ./bin/sync-translations.js",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e"

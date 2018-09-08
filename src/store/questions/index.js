@@ -48,7 +48,7 @@ export default {
       notice: null,
       index: 1
     },
-    total : 30
+    total: 30
   },
   mutations: {
     ...mutationsCreator(GET_QUESTIONS),
@@ -88,15 +88,22 @@ export default {
       const nextQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 2])
 
 
-      if(previousQuestion) {
+      if (previousQuestion) {
         console.log('Has previous');
       }
 
-      if(nextQuestion) {
+      if (nextQuestion) {
         console.log("Has next");
       }
 
-      commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+
+      if (currentQuestion) {
+
+        currentQuestion.index = previousIndex+2;
+
+        commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+      }
+
     },
     setQuestionImportance({commit}, data) {
       commit(SET_QUESTION_IMPORTANCE, data)
@@ -110,7 +117,7 @@ export default {
       const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 1])
 
       if (currentQuestion) {
-        currentQuestion.index = previousIndex + 1 +1; // as index start at 0
+        currentQuestion.index = previousIndex + 1 + 1; // as index start at 0
         commit(SET_CURRENT_QUESTION, {question: currentQuestion})
       }
     },

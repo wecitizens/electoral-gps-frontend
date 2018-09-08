@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/**
+ * W.I.P => timeout due to too many files ??
+ *
+ * @type {SSH}
+ */
+
 let node_ssh = require('node-ssh')
 let path = require('path')
 let ssh = new node_ssh()
