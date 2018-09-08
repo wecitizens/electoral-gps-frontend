@@ -4,7 +4,7 @@
         <main class="main text-white mt-5">
             <h1 class="mb-5">{{ $t("home.title") }}</h1>
             <router-link style="margin: auto !important;" to="/municipality" tag="el-button" class="btn-start m-5">{{ $t("home.cta") }}</router-link>
-            <div class="infos mt-3">{{ $t("home.description", {"userCount": usersCount}) }}</div>
+            <div class="infos mt-3">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
         </main>
         <footer class="footer container-fluid">
             <div class="row">
@@ -42,7 +42,10 @@
       ...mapActions(['getQuestions']),
     },
     computed: {
-      ...mapGetters(['questions', 'currentQuestionKey']),
+      ...mapGetters([
+          'questions', 
+          'currentQuestionKey', 
+          'campaignTotalParticipants']),
     },
     data: () => {
       return {

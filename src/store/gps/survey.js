@@ -1,10 +1,10 @@
-const gpsSurveyModule = {
+export default {
     state: {
         current:{
             poll: null,
             survey: null,
             campaign: {
-                totalParticipants: 2000
+                totalParticipants: 23122
             }
         }
     },
@@ -23,6 +23,8 @@ const gpsSurveyModule = {
         }
     },
     getters: {
-
+        campaignTotalParticipants(state) {
+            return state.current.campaign.totalParticipants;
+        }
     }
 };

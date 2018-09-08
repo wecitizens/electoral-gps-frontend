@@ -1,4 +1,4 @@
-const voteModule = {
+export default {
     state: {
         current: {
             district: null
@@ -13,6 +13,8 @@ const voteModule = {
             // return electoral lists and candidates for a given district
         }
     },
-    getters: {}
+    getters: {
+        
+    }
   
 };
