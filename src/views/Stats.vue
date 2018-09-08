@@ -11,7 +11,7 @@
                 </el-checkbox-group>
             </el-form-item>
             <el-form-item>
-                <router-link tag="el-button" v-bind:to="localePath('results')" type="primary" @click="onSubmit">{{$t('button.see_results')}}</router-link>
+                <router-link tag="el-button" to="results" type="primary">{{$t('button.see_results')}}</router-link>
             </el-form-item>
         </el-form>
     </div>

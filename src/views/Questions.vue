@@ -2,7 +2,7 @@
     <div class="questions">
         <div v-for="(question, idx) in questions.list.data.questions" :key="idx">
             <h3 class="question mt-5">
-                <Question :folded="true" :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
+                <Question :index="idx" :folded="true" :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
             </h3>
         </div>
     </div>

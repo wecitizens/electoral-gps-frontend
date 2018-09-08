@@ -1,6 +1,9 @@
 <template>
     <div v-if="question.text">
-        <h3 class="title">{{questions.current.index}}/{{ questions.total }} {{ $t('gps.survey.' + question.text) }}</h3>
+        <h3 class="title">
+            <span v-if="index">{{ index + 1  }}</span>
+            <span v-else>{{ questions.current.index }}</span>/{{ questions.total }} {{ $t('gps.survey.' + question.text) }}
+        </h3>
         <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
             <foldable-icon :folded="!isMoreInfo"></foldable-icon>
             {{ $t('button.more_info') }}</a>
@@ -52,6 +55,9 @@
       'answerFormat': {},
       folded: {
         type: Boolean,
+        default: false
+      },
+      index: {
         default: false
       }
     },
