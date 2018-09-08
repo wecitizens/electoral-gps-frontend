@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Survey from './views/Survey.vue'
 import Municipality from './views/Municipality.vue'
 import Results from './views/Results.vue'
+import Translations from './views/Translations.vue'
 import Questions from './views/Questions.vue'
 import PollInsufficientCandidates from './views/PollInsufficientCandidates.vue'
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/results',
       name: 'results',
       component: Results
+    },
+    {
+      path: '/translations',
+      name: 'translations',
+      component: Translations
     },
     {
       path: '/poll/insufficient-candidates',

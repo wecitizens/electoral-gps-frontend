@@ -1,9 +1,25 @@
 <template>
   <el-steps class="steps mt-20" align-center :active="active" finish-status="success">
-    <el-step :index="1" v-bind:title="$t('menu.item.municipality')"></el-step>
-    <el-step :index="2" v-bind:title="$t('menu.item.questions')"></el-step>
-    <el-step :index="3" v-bind:title="$t('menu.item.stats')"></el-step>
-    <el-step :index="4" v-bind:title="$t('menu.item.results')"></el-step>
+    <el-step :index="1">
+      <template slot="title">
+        <router-link to="/municipality">{{ $t('menu.item.municipality') }}</router-link>
+      </template>
+    </el-step>
+    <el-step :index="2">
+      <template slot="title">
+        <router-link to="/survey">{{ $t('menu.item.questions') }}</router-link>
+      </template>
+    </el-step>
+    <el-step :index="3">
+      <template slot="title">
+        <router-link to="/stats">{{ $t('menu.item.stats') }}</router-link>
+      </template>
+    </el-step>
+    <el-step :index="4">
+      <template slot="title">
+        <router-link to="/results">{{ $t('menu.item.results') }}</router-link>
+      </template>
+    </el-step>
   </el-steps>
 </template>
 

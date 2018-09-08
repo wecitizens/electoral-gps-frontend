@@ -11,7 +11,7 @@
                                      @select="setZipCode({ municipality })"></el-autocomplete>
                 </el-row>
                 <br/>
-                <el-row>
+                <el-row v-show="municipality">
                     <router-link to="/survey" tag="el-button">{{ $t("button.lets_go") }}
                     </router-link>
                 </el-row>

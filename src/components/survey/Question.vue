@@ -10,19 +10,21 @@
         <div class="more-info" v-show="isMoreInfo">
             {{ $t('gps.survey.' + question.notice) }}
         </div>
-        <div v-show="!isFolded">
+        <div v-show="!isFolded && answerFormat && answerFormat.tolerance">
             <div class="mt-3">
                 <div class="slider-wrapper">
                     <el-slider class="importance mt-5 mb-5" v-model="importance"
-                               :step="1" :min="1" :max="answerFormat.tolerance.items.length" show-stop="true"
+                               :step="1" :min="0" :max="answerFormat.tolerance.items.length -1" show-stop="true"
                                :format-tooltip="showStepLabel" show-tooltip="show-tooltip">
                     </el-slider>
                     <div class="row slider-legend">
-                        <div class="col"  v-for="item in answerFormat.tolerance.items" :key="item.id">{{ $t('gps.survey.' + item.name) }}</div>
+                        <div class="col"  v-for="(item, key) in answerFormat.tolerance.items" :key="item.id">
+                            <a @click="() => setImportance(key)">{{ $t('gps.survey.' + item.name) }}</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <el-radio-group v-model="agreement">
+            <el-radio-group v-model="agreement" v-if="answerFormat.items">
                 <el-row v-for="item in answerFormat.items" :key="item.id">
                     <el-col :xs="24">
                         <el-radio-button class="el-radio-button--custom"
@@ -66,18 +68,23 @@
         }, 1000)
       },
       importance: function (importance) {
+        console.log('Set importance', importance);
         setTimeout(() => {
           this.setQuestionImportance({questionKey: this.question.key, importance})
         }, 1000)
-      }
+      },
     },
     methods: {
       ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
       showStepLabel: (index) => {
         if (index) {
-          return Vue.i18n.translate('tolerance_' + index)
+          return Vue.i18n.translate('importance')[index];
         }
         return index;
+      },
+      setImportance: function (importance) {
+        console.log('Data', importance);
+        this.importance = importance;
       }
     }
   }
