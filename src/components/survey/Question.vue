@@ -6,7 +6,12 @@
             {{ $t('button.more_info') }}</a>
         <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
             <foldable-icon :folded="isFolded"></foldable-icon>
-            {{ $t('Voir la réponse') }}</a>
+            {{ $t('gps.survey.show_more_infos') }}</a>
+
+        <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
+            <foldable-icon :folded="isFolded"></foldable-icon>
+            {{ $t('gps.survey.show_importance') }}</a>
+
         <div class="more-info" v-show="isMoreInfo">
             {{ $t('gps.survey.' + question.notice) }}
         </div>
@@ -37,7 +42,7 @@
 </template>
 
 <script>
-  import {mapActions} from 'vuex';
+  import {mapActions, mapState} from 'vuex';
   import FoldableIcon from '../FoldableIcon';
   import Vue from 'vue';
 
@@ -60,6 +65,11 @@
         isFolded: this.folded,
         isMoreInfo: false
       }
+    },
+    computed : {
+      ...mapState([
+
+      ])
     },
     watch: {
       agreement: function (agreement) {

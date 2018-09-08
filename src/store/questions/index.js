@@ -44,10 +44,12 @@ export default {
     current: {
       key: null,
       text: null,
-      notice: null
+      notice: null,
+      position: 1
     },
     first_question : true,
-    last_question : false
+    last_question : false,
+    total : 30
   },
   mutations: {
     ...mutationsCreator(GET_QUESTIONS),

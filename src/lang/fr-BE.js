@@ -42,7 +42,9 @@ export default {
         "more_info": "détails",
         "see_results": "Voir les résultats",
         "next_question": "Suivant",
-        "previous_question": "Précédent"
+        "previous_question": "Précédent",
+        "show_more_infos": "+ d'infos",
+        "show_importance": "définir l'importance",
     },
     "menu": {
         "item": {

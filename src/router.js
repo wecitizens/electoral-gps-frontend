@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Survey from './views/Survey.vue'
 import Municipality from './views/Municipality.vue'
 import Results from './views/Results.vue'
+import Stats from './views/Stats.vue'
 import Translations from './views/Translations.vue'
 import Questions from './views/Questions.vue'
 import PollInsufficientCandidates from './views/PollInsufficientCandidates.vue'
@@ -31,6 +32,11 @@ export default new Router({
       path: '/questions',
       name: 'questions',
       component: Questions
+    },
+    {
+      path: '/stats',
+      name: 'stats',
+      component: Stats
     },
     {
       path: '/results',
