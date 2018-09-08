@@ -1,26 +1,20 @@
 const gpsMatchModule = {
     state: {
-        state: {
-            current : {
-                politicianSegmentAnswers: null,
-                electoralListSegmentAnswers: null,
-                politicianMatch: null,
-                electoralListMatch: null
-            }
-        },
-        mutations: {
+        current: {
+            politicianSegmentAnswers: null,
+            electoralListSegmentAnswers: null,
+            politicianMatch: null,
+            electoralListMatch: null
+        }
+    },
+    mutations: {},
+    actions: {
+        getSegmentAnswers(data) {
 
         },
-        actions: {
-            getSegmentAnswers(data){
-                
-            },
-            performMatch(data){
-                
-            }
-        },
-        getters: {
+        performMatch(data) {
 
         }
-    }
+    },
+    getters: {}
 };
