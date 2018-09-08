@@ -1,18 +1,18 @@
 <template>
-    <div>
+    <div v-if="question.text">
         <h3 class="title">{{ $t('gps.survey.' + question.text) }}</h3>
         <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
             <foldable-icon :folded="!isMoreInfo"></foldable-icon>
             {{ $t('button.more_info') }}</a>
         <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
             <foldable-icon :folded="isFolded"></foldable-icon>
-            {{ $t('gps.survey.show_more_infos') }}</a>
+            {{ $t('button.show_more_infos') }}</a>
 
         <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
             <foldable-icon :folded="isFolded"></foldable-icon>
-            {{ $t('gps.survey.show_importance') }}</a>
+            {{ $t('button.show_importance') }}</a>
 
-        <div class="more-info" v-show="isMoreInfo">
+        <div class="more-info" v-show="isMoreInfo" v-if="question.notice">
             {{ $t('gps.survey.' + question.notice) }}
         </div>
         <div v-show="!isFolded && answerFormat && answerFormat.tolerance">

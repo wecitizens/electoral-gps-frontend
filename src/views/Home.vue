@@ -8,14 +8,15 @@
         </main>
         <footer class="footer container-fluid">
             <div class="row">
-                <div class="col-sm-6 d-none d-sm-block text-left">
-                    <div class="mb-2">{{ $t("home.powered_by") }}</div>
-                    <img src="/img/logo-wecitizens.jpeg" height="30" class="h-10" alt="">
-                </div>
-                <div class="col-sm-6 col-xs-12 text-right">
+                <div class="col-sm-6 text-left">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
                     <img src="/img/partner-metro.png" height="30" class="h-10" alt="">
                     <img src="/img/partner-sudpress.png" height="30" class="ml-5 h-10" alt="">
+                </div>
+            </div>
+            <div class="row" style="background: #444;margin:10px -15px -10px;padding: 0.5em;">
+                <div class="col">
+                    {{ $t("home.powered_by") }} WeCitizens, ©2018
                 </div>
             </div>
         </footer>
