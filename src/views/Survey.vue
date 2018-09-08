@@ -14,15 +14,13 @@
       <el-footer>
         <div class="row">
           <div class="col">
-            <a v-show="questions.current.index > 1" class="btn btn-outline-primary btn-block" @click="goPrevious"><i class="fas fa-chevron-left"></i>
-
-               {{ $t("button.previous_question") }} </a>
+            <a v-show="questions.current.index > 1" class="btn btn-outline-primary btn-block" @click="goPrevious"><i class="fas fa-chevron-left"></i> <span class="d-none d-md-inline-block ml-2">{{ $t("button.previous_question") }} </span> </a>
           </div>
           <div class="col">
             <a v-show="questions.current.index > 1" class="btn btn-outline-primary btn-block" @click="goResults">{{ $t("button.see_results") }} </a>
           </div>
           <div class="col">
-            <a v-show="questions.current.index < questions.total" class="btn btn-outline-primary btn-block" @click="goNext">{{ $t("button.next_question") }} <i class="fas fa-chevron-right"></i>
+            <a v-show="questions.current.index < questions.total" class="btn btn-outline-primary btn-block" @click="goNext"><span class="d-none d-md-inline-block mr-2">{{ $t("button.next_question") }} </span> <i class="fas fa-chevron-right"></i>
             </a>
           </div>
         </div>
