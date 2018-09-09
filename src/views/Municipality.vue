@@ -42,7 +42,11 @@
             }
         },
         methods: {
-            ...mapMutations(["setCurrentDistrict"]),
+            setCurrentDistrict(data){
+                const district = this.$store.state.vote.districtSearchResults.find(r => r.value === data.district);
+                this.$store.commit("setCurrentDistrict", district);
+                this.$store.dispatch("setCurrentElection", district);
+            },
             async filterDistricts(data, cb){
                 await this.$store.dispatch('filterDistricts',data);
                 cb(this.$store.state.vote.districtSearchResults);
