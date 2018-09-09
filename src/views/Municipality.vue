@@ -6,12 +6,12 @@
                 <h1>{{ $t("district.what_is_your_postcode") }}</h1>
                 <p>{{ $t("district.help_customise_survey") }}</p><br/>
                 <el-row>
-                    <el-autocomplete class="inline-input" v-model="municipality" :fetch-suggestions="querySearch"
+                    <el-autocomplete class="inline-input" v-model="district" :fetch-suggestions="filterDistricts"
                                      v-bind:placeholder="$t('input.place_holder.your_postcode')"
-                                     @select="setZipCode({ municipality })"></el-autocomplete>
+                                     @select="setCurrentDistrict({ district })"></el-autocomplete>
                 </el-row>
                 <br/>
-                <el-row v-show="municipality">
+                <el-row v-show="district">
                     <router-link to="/survey" tag="el-button">{{ $t("button.lets_go") }}
                     </router-link>
                 </el-row>
@@ -22,42 +22,30 @@
 
 <script>
 
-    import {mapGetters, mapActions} from 'vuex';
+    import {mapGetters, mapActions, mapMutations} from 'vuex';
     import Steps from '../components/Steps';
-    import districtService from '../store/district/services'
-    import Vue from 'vue';
 
     export default {
-        name: 'municipality',
+        name: 'district',
         components: {Steps},
         data() {
             return {
-                municipality: null
+                district: null
             }
+        },  
+        created() {
+            this.$store.dispatch('getDistricts');
         },
         computed: {
-            ...mapGetters(['municipalities']),
             displayNextStepButton() {
                 return true
             }
         },
         methods: {
-            ...mapActions(['setZipCode']),
-            async querySearch(queryString, cb) {
-                const municipalities = await districtService.getDistricts();
-                const names = municipalities.map(m => { return { value: m.code + " " + Vue.i18n.translate('vote.' + m.name) }})
-                
-                const results = queryString ?
-                    names.filter(this.createFilter(queryString)) : names;
-                cb(results)
-            },
-            createFilter(queryString) {
-                return (municipality) => {
-                    return (municipality.value.toLowerCase().includes(queryString.toLowerCase()))
-                }
-            },
-            handleSelect() {
-                //
+            ...mapMutations(["setCurrentDistrict"]),
+            async filterDistricts(data, cb){
+                await this.$store.dispatch('filterDistricts',data);
+                cb(this.$store.state.vote.districtSearchResults);
             }
         }
     };

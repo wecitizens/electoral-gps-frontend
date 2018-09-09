@@ -46,11 +46,6 @@
           'questions', 
           'currentQuestionKey', 
           'campaignTotalParticipants']),
-    },
-    data: () => {
-      return {
-        usersCount: 23122
-      }
     }
   }
 </script>
