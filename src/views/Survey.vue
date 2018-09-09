@@ -66,6 +66,7 @@
       }
     },
     created () {
+      this.$store.dispatch('setCurrentPoll').then(() => this.$store.dispatch('setCurrentSurvey'));  
       this.getQuestions();
       let $ = window.jQuery;
       $("html, body").animate({ scrollTop: $(document).height() }, 1000);
