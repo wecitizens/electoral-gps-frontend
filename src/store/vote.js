@@ -70,12 +70,9 @@ export default {
         }
     },
     getters: {
-        districts: state => {
-            return state.districts;
-        },
-        districtSearchResults: state => {
-            return state.districtSearchResults;
-        }
+        districts: state => state.districts,
+        districtSearchResults: state => state.districtSearchResults,
+        currentElection: state => state.current.election
     }
   
 };

@@ -1,19 +1,18 @@
 export default {
     state: {
         current: {
-            politicianSegmentAnswers: null,
+            candidateSegmentAnswers: null,
             electoralListSegmentAnswers: null,
-            politicianMatch: null,
-            electoralListMatch: null
+            candidateScores: null,
+            electoralListScores: null
         }
     },
     mutations: {},
     actions: {
-        getSegmentAnswers(data) {
-
-        },
         performMatch(data) {
-
+            // TODO
+            // API get + mutate candidateSegmentAnswers or electoralListSegmentAnswers
+            // calculate the scores and mutate
         }
     },
     getters: {}
