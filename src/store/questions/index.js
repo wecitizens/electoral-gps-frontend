@@ -1,7 +1,3 @@
-import mutationsCreator from '../_helpers/mutationsCreator'
-import promiseActionCreator from '../_helpers/promiseActionCreator'
-import questionsService from './services'
-
 export const GET_QUESTIONS = 'GET_QUESTIONS'
 export const SET_CURRENT_QUESTION = 'SET_CURRENT_QUESTION'
 export const SET_QUESTION_AGREEMENT = 'SET_QUESTION_AGREEMENT'
@@ -51,7 +47,9 @@ export default {
     total: 30
   },
   mutations: {
-    ...mutationsCreator(GET_QUESTIONS),
+    setSurvey(state, mutation){
+      state.list.data = mutation   
+    }, 
     [SET_CURRENT_QUESTION](state, mutation) {
       state.current = mutation.question
     },
@@ -69,8 +67,11 @@ export default {
   },
   actions: {
     async getQuestions(store) {
-      await promiseActionCreator(store, questionsService.getQuestions({}), GET_QUESTIONS)
-      const questions = store.state.list.data.questions
+        console.log(store.rootState.survey.current.survey);
+      await store.commit("setSurvey", store.rootState.survey.current.survey); 
+      const questions = store.state.list.data.questions;
+        console.log("questions");
+        console.log(questions);  
       const currentQuestion = questions[0]
       currentQuestion.index = 1;
       store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})

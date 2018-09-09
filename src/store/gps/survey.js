@@ -29,7 +29,14 @@ export default {
         },   
         async setCurrentSurvey({ commit, state }){
             const survey = await API.get('/api/gps/survey/' + state.current.poll.survey_key  + '.json').then((request) => {
-                return request.data
+
+                const survey = request.data;
+                
+                Vue.i18n.add('en', { gps: { survey: survey.i18n.en } });
+                Vue.i18n.add('fr', { gps: { survey: survey.i18n.fr } });
+                Vue.i18n.add('nl', { gps: { survey: survey.i18n.nl } });
+                
+                return survey
             });
 
             console.log(survey);
@@ -46,6 +53,9 @@ export default {
     getters: {
         campaignTotalParticipants(state) {
             return state.current.campaign.totalParticipants;
+        },
+        currentSurvey(state){
+            return state.current.survey;
         }
     }
 };

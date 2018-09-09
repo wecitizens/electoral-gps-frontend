@@ -66,8 +66,10 @@
       }
     },
     created () {
-      this.$store.dispatch('setCurrentPoll').then(() => this.$store.dispatch('setCurrentSurvey'));  
-      this.getQuestions();
+      this.$store.dispatch('setCurrentPoll')
+          .then(() => this.$store.dispatch('setCurrentSurvey'))
+          .then(() => this.getQuestions());  
+      
       let $ = window.jQuery;
       $("html, body").animate({ scrollTop: $(document).height() }, 1000);
     }
