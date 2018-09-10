@@ -78,9 +78,11 @@ export default {
     "parties": "Listes",
     "candidates": "Candidats"
   },
-  "about": {
-    "gps_link": "http://www.wecitizens.be/fr/outils-2/",
-    "wecitizens_link": "http://www.wecitizens.be/fr/nous-citoyens/"
+  "links": {
+    "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
+    "wecitizens_link": "http://www.wecitizens.be/fr/nous-citoyens/",
+    "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
+    "register_as_candidate_link": "http://directory.wecitizens.be/fr/login/index/register_politician"
   },
   "button": {
     "lets_go": "C'est parti",
@@ -105,7 +107,9 @@ export default {
       "go_to_results": "Sauter aux résultats",
       "see_all_questions": "Voir toutes les questions",
       "about_association": "À propos de {association_name}",
-      "start_from_scratch": "Recommencer à zéro"
+      "start_from_scratch": "Recommencer à zéro",
+      "advice_to_elector" : "Conseil à l'électeur",
+      "register_as_candidate" : "M'inscrire comme candidat",
     }
   },
   "association": {

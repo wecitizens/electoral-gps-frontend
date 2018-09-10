@@ -16,24 +16,29 @@
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <router-link class="dropdown-item" to="/">{{$t('menu.item.welcome')}}</router-link>
-                        <router-link class="dropdown-item" to="/results">{{$t('menu.item.go_to_results')}}
-                        </router-link>
                         <a class="dropdown-item" @click="handleShare">{{$t('menu.item.share_app',
                             {'app_title' :
                             $t('app.title')}) }}
                         </a>
-                        <router-link class="dropdown-item" to="/questions">{{$t('menu.item.see_all_questions')}}
+                        <router-link class="d-none dropdown-item" to="/questions">{{$t('menu.item.see_all_questions')}}
                         </router-link>
                         <router-link class="dropdown-item" to="/">{{$t('menu.item.start_from_scratch')}}
                         </router-link>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" target="_blank"
+                           :href="$t('links.gps_link')">{{$t('menu.item.about_app',
+                            {app_title:$t('app.title')})}}</a>
+                        <a class="dropdown-item" target="_blank"
+                           :href="$t('links.wecitizens_link')">{{$t('menu.item.about_association',
+                            {association_name:$t('association.name')})}}</a>
+                        <a class="dropdown-item" target="_blank"
+                           :href="$t('links.advice_to_elector_link')">{{$t('menu.item.advice_to_elector',
+                            {association_name:$t('association.name')})}}</a>
                         <a class="dropdown-item" @click="() => showDonate = true">{{$t('menu.item.donate',
                             {app_title:$t('app.title')})}}</a>
-                        <a class="dropdown-item"
-                           :href="$t('about.gps_link')">{{$t('menu.item.about_app',
-                            {app_title:$t('app.title')})}}</a>
-                        <a class="dropdown-item"
-                           :href="$t('about.wecitizens_link')">{{$t('menu.item.about_association',
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" target="_blank"
+                           :href="$t('links.register_as_candidate_link')">{{$t('menu.item.register_as_candidate',
                             {association_name:$t('association.name')})}}</a>
                     </div>
                 </li>

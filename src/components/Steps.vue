@@ -12,6 +12,7 @@
     </el-step>
     <el-step :index="3">
       <template slot="title">
+        <span>{{ $t('')}}</span>
         <router-link to="/stats">{{ $t('menu.item.stats') }}</router-link>
       </template>
     </el-step>
@@ -24,10 +25,16 @@
 </template>
 
 <script>
+
+  import {mapGetters} from "vuex";
+
 export default {
   name: 'steps',
   props: {
     active: Number
+  },
+  computed : {
+    ...mapGetters(['questions'])
   }
 }
 </script>

@@ -22,7 +22,7 @@
 
 <script>
 
-    import {mapGetters, mapActions, mapMutations} from 'vuex';
+    import {mapMutations} from 'vuex';
     import Steps from '../components/Steps';
 
     export default {

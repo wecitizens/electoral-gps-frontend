@@ -53,7 +53,8 @@ export default {
         },
         
         getElection(data) {
-            // return electoral lists and candidates for a given district
+          console.log(data);
+          // return electoral lists and candidates for a given district
         }
     },
     getters: {

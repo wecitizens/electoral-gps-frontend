@@ -44,9 +44,11 @@ export default {
             commit('setCurrentSurvey',survey);
         },
         getSurvey(data){
-            // answer format, questions, question order
+          console.log('getSurvey', data);
+          // answer format, questions, question order
         },
         getCampaign(data){
+          console.log('getCampaign', data);
             // number of user who participated
         }
     },
