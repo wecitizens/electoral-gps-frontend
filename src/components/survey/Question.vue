@@ -36,7 +36,7 @@
                 <el-row v-for="item in answerFormat.items" :key="item.id">
                     <el-col :xs="24">
                         <el-radio-button class="el-radio-button--custom"
-                                         v-bind:label="$t('gps.survey.' + item.name)"></el-radio-button>
+                                         v-bind:label="item.key"></el-radio-button>
                     </el-col>
                 </el-row>
             </el-radio-group>
@@ -77,11 +77,13 @@
     },
     watch: {
       agreement: function (agreement) {
+        console.log('Set agreement', agreement);
         setTimeout(() => {
           this.setQuestionAgreement({questionKey: this.question.key, agreement})
         }, 1000)
       },
       importance: function (importance) {
+          
         console.log('Set importance', importance);
         setTimeout(() => {
           this.setQuestionImportance({questionKey: this.question.key, importance})

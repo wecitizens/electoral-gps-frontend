@@ -34,15 +34,15 @@ export default {
     actions: {
         async performMatch({commit}, matchRequest) {
 
-            const segmentAnswers = await API.get('/api/gps/answer/segment' + matchRequest.segment_key + '.json').then((request) => {
-                return request.data;
+            const segmentAnswers = await API.get('/api/gps/answer/segment/' + matchRequest.segment_key + '.json').then((request) => {
+                return request.data.data;
             });
 
-            if (matchRequest.key.includes("electoral_list")) {
+            if (matchRequest.segment_key.includes("electoral_list")) {
                 commit('setCurrentElectoralListSegmentAnswers', segmentAnswers)
             }
 
-            if (matchRequest.key.includes("candidate")) {
+            if (matchRequest.segment_key.includes("candidate")) {
                 commit('setCurrentCandidateSegmentAnswers', segmentAnswers)
             }
 
@@ -53,7 +53,7 @@ export default {
                 (accumulator, target) => ({
                     ...accumulator,
                     [target.question_key]:
-                    answer_formats.find(x => x.key = target.answer_format)
+                    answer_formats.find(x => x.key === target.answer_format)
                         .items.find(x => x.key === target.value).weight
                 }),
                 {});
@@ -62,7 +62,7 @@ export default {
                 (accumulator, target) => ({
                     ...accumulator,
                     [target.question_key]:
-                    answer_formats.find(x => x.key = target.answer_format).tolerance
+                    answer_formats.find(x => x.key === target.answer_format).tolerance
                         .items.find(x => x.key === target.tolerance).weight
                 }),
                 {});
@@ -147,11 +147,11 @@ export default {
                     return s;
                 });
 
-            if (matchRequest.key.includes("electoral_list")) {
+            if (matchRequest.segment_key.includes("electoral_list")) {
                 commit('setCurrentElectoralListScores', viewScores)
             }
 
-            if (matchRequest.key.includes("candidate")) {
+            if (matchRequest.segment_key.includes("candidate")) {
                 commit('setCurrentCandidateScores', viewScores)
             }
         }

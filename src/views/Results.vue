@@ -9,11 +9,8 @@
 
                     <ul class="list-group" v-for="(score, idx) in currentCandidateScores" :key="idx">
                         <li class="list-group-item">
-                            <h4>{{ currentElection.candidates.find(p => p.key == score.user_key).full_name</h4>
-                            <h6>{{ currentElection.electoral_lists.filter(e => e.candidates.map(c =>
-                                c.key).includes(score.user_key)).map(e => e.name + " (" + e.candidates.find(c => c.key
-                                ==
-                                score.user_key).order)[0] + ")" }}</h6>
+                            <h4>{{ currentElection.candidates.find(p => p.key == score.user_key).full_name }}</h4>
+                            <h6>{{ currentElection.electoral_lists.filter(e => e.candidates.map(c => c.key).includes(score.user_key)).map(e => e.name + " (" + e.candidates.find(c => c.key == score.user_key).order)[0] + ")" }}</h6>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
                                      :aria-valuenow="score.score"
@@ -71,9 +68,9 @@
                 .map(q => {
                     return {
                         question_key: q.key,
-                        answer_format: survey.questions.find(qu => qu.key === q.key).answer_format,
-                        value: q.agreement,
-                        tolerance: q.importance
+                        answer_format: 'agr_5_scale_tol_3_scale_abs', // TODO survey.questions.find(qu => qu.key === q.key).answer_format,
+                        value: q.agreement || 'no_opinion', // TODO, remove hardcoded
+                        tolerance: 'important' // TODO q.importance
                     }
                 });
             
