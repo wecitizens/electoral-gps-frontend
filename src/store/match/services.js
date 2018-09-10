@@ -6,63 +6,6 @@ const matchService = {
     // in current app, match will be called twice, once for politician, once for parties
     match(matchRequest = {}) {
 
-        // stub data
-        let data = [
-            {
-                "user_key": "be_politician_3",
-                "question_key": "question_103",
-                "value": "agree"
-            },
-            {
-                "user_key": "be_politician_3",
-                "question_key": "question_104",
-                "value": "strongly_disagree"
-            },
-            {
-                "user_key": "be_politician_2",
-                "question_key": "question_103",
-                "value": "agree"
-            },
-            {
-                "user_key": "be_politician_2",
-                "question_key": "question_104",
-                "value": "agree"
-            },
-            {
-                "user_key": "be_politician_4",
-                "question_key": "question_103",
-                "value": "strongly_disagree"
-            },
-            {
-                "user_key": "be_politician_4",
-                "question_key": "question_104",
-                "value": "strongly_disagree"
-            }
-        ];
-
-        if (matchRequest.segment_key.includes("electoral_list")) {
-            data = [
-                {
-                    "user_key": "be_1435_cohesion",
-                    "question_key": "question_103",
-                    "value": "disagree"
-                },
-                {
-                    "user_key": "be_1435_cohesion",
-                    "question_key": "question_104",
-                    "value": "agree"
-                },
-                {
-                    "user_key": "be_1435_ecolo",
-                    "question_key": "question_103",
-                    "value": "strongly_disagree"
-                },
-                {
-                    "user_key": "be_1435_ecolo",
-                    "question_key": "question_104",
-                    "value": "strongly_agree"
-                }]
-        }
 
         const answer_formats = matchRequest.answer_formats;
         const a = matchRequest.answers;

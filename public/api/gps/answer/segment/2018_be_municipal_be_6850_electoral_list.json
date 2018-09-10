@@ -1,9 +1,24 @@
 {
   "data": [
     {
-      "user_key": "be_party_1",
-      "question_key": "question_103",
+      "user_key": "be_1435_cohesion",
+      "question_key": "question_110",
       "value": "disagree"
+    },
+    {
+      "user_key": "be_1435_cohesion",
+      "question_key": "question_264",
+      "value": "agree"
+    },
+    {
+      "user_key": "be_1435_ecolo",
+      "question_key": "question_110",
+      "value": "strongly_disagree"
+    },
+    {
+      "user_key": "be_1435_ecolo",
+      "question_key": "question_264",
+      "value": "strongly_agree"
     }
   ]
 }
