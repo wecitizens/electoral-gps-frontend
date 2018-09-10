@@ -57,12 +57,17 @@
             CandidateLists
         },
         created() {
+
+            console.log(this.$store);
+            
             const poll = this.$store.state.survey.current.poll;
-            const answerFormats = this.$store.state.survey.current.survey.answer_formats;
 
             const survey = this.$store.state.survey.current.survey;
             
-            const answers = this.$store.state.list.data.questions
+            // TODO : q.agreement is "Tout à fait d'accord" must change !!
+            // TODO : q.importance not set if not defined and same prob as before I suppose ...
+            
+            const answers = this.$store.state.questions.list.data.questions
                 .map(q => {
                     return {
                         question_key: q.key,
@@ -75,7 +80,7 @@
             poll.segment_keys.forEach(s => 
                 this.$store.dispatch('performMatch', { 
                     segment_key: s,
-                    answer_formats: answerFormats,
+                    answer_formats: survey.answer_formats,
                     answers: answers
                 }));
         },

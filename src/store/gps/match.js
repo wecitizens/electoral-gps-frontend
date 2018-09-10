@@ -18,31 +18,31 @@ export default {
         currentElectoralListScores: state => state.current.electoralListScores
     },
     mutations: {
-        setCurrentCandidateScores(state, payload){
+        setCurrentCandidateScores(state, payload) {
             state.current.candidateScores = payload;
         },
-        setCurrentElectoralListScores(state, payload){
+        setCurrentElectoralListScores(state, payload) {
             state.current.electoralListScores = payload;
         },
-        setCurrentCandidateSegmentAnswers(state, payload){
+        setCurrentCandidateSegmentAnswers(state, payload) {
             state.current.candidateSegmentAnswers = payload;
         },
-        setCurrentElectoralListSegmentAnswers(state, payload){
+        setCurrentElectoralListSegmentAnswers(state, payload) {
             state.current.electoralListSegmentAnswers = payload;
         }
     },
     actions: {
-        async performMatch({ commit, state}, matchRequest) {
+        async performMatch({commit}, matchRequest) {
 
             const segmentAnswers = await API.get('/api/gps/answer/segment' + matchRequest.segment_key + '.json').then((request) => {
                 return request.data;
             });
 
-            if(matchRequest.key.includes("electoral_list")){
+            if (matchRequest.key.includes("electoral_list")) {
                 commit('setCurrentElectoralListSegmentAnswers', segmentAnswers)
             }
 
-            if(matchRequest.key.includes("candidate")){
+            if (matchRequest.key.includes("candidate")) {
                 commit('setCurrentCandidateSegmentAnswers', segmentAnswers)
             }
 
@@ -147,13 +147,13 @@ export default {
                     return s;
                 });
 
-            if(matchRequest.key.includes("electoral_list")){
+            if (matchRequest.key.includes("electoral_list")) {
                 commit('setCurrentElectoralListScores', viewScores)
             }
 
-            if(matchRequest.key.includes("candidate")){
+            if (matchRequest.key.includes("candidate")) {
                 commit('setCurrentCandidateScores', viewScores)
-            }            
+            }
         }
     }
 };
