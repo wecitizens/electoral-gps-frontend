@@ -4,16 +4,18 @@ import Vue from "vue";
 export default {
     state: {
         current: {
-            district: null
+            district: null,
+            election: null
         },
         districts: [],
-        districtSearchResults: []
+        districtSearchResults: [],
     },
     mutations: {
         setCurrentDistrict(state, payload) {
-            const district = state.districtSearchResults.find(r => r.value === payload.district);
-            console.log(district);
-            state.current.district = district;
+            state.current.district = payload;
+        },
+        setCurrentElection(state, payload) {
+            state.current.election = payload;
         },
         setDistricts(state, payload) {
             state.districts = payload;
@@ -52,9 +54,19 @@ export default {
             commit('setDistrictSearchResults',results);
         },
         
-        getElection(data) {
-          console.log(data);
-          // return electoral lists and candidates for a given district
+        async setCurrentElection({commit}, district) {
+            const election = await API.get('/api/vote/election/2018_be_municipal/district/' + district.key + '.json').then((request) => {
+
+                Vue.i18n.add('en', {vote: request.data.i18n.en});
+                Vue.i18n.add('fr', {vote: request.data.i18n.fr});
+                Vue.i18n.add('nl', {vote: request.data.i18n.nl});
+
+                return request.data
+            });
+
+            console.log(election);
+            
+            commit('setCurrentElection',election);
         }
     },
     getters: {

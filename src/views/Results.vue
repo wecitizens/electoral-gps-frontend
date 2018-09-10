@@ -56,6 +56,10 @@
         components: {
             CandidateLists
         },
+        created () {
+            this.$store.dispatch('setCurrentElection')
+                .then(() => this.$store.dispatch('setCurrentScore'))
+        },
         data: () => {
 
             const matchRequest = {
