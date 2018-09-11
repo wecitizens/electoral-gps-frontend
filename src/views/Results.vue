@@ -10,7 +10,7 @@
                     <ul class="list-group" v-for="(score, idx) in currentCandidateScores" :key="idx">
                         <li class="list-group-item">
                             <h4>{{ currentElection.candidates.find(p => p.key == score.user_key).full_name }}</h4>
-                            <h6>{{ currentElection.electoral_lists.filter(e => e.candidates.map(c => c.key).includes(score.user_key)).map(e => e.name + " (" + e.candidates.find(c => c.key == score.user_key).order)[0] + ")" }}</h6>
+                            <h6>{{ currentElection.electoral_lists.filter(e => e.candidates.map(c => c.key).includes(score.user_key)).map(e => $t("vote." + e.name || "test") + " (" + e.candidates.find(c => c.key == score.user_key).order)[0] + ")" }}</h6>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
                                      :aria-valuenow="score.score"
@@ -23,7 +23,7 @@
                 <b-tab title="Listes" class="col-md-6 tab-center">
                     <ul class="list-group tab-scroll" v-for="(score, idx) in currentElectoralListScores" :key="idx">
                         <li class="list-group-item">
-                            <h4>{{ currentElection.electoral_lists.find(e => e.key == score.user_key).name }}</h4>
+                            <h4>{{ $t("vote." + currentElection.electoral_lists.find(e => e.key == score.user_key).name) }}</h4>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
                                      :aria-valuenow="score.score"
@@ -69,10 +69,10 @@
                     return {
                         question_key: q.key,
                         answer_format: 'agr_5_scale_tol_3_scale_abs', // TODO survey.questions.find(qu => qu.key === q.key).answer_format,
-                        value: q.agreement || 'no_opinion', // TODO, remove hardcoded
+                        value: q.agreement, // TODO, remove hardcoded
                         tolerance: 'important' // TODO q.importance
                     }
-                });
+                }).filter(q => q.value != null);
             
             poll.segment_keys.forEach(s => 
                 this.$store.dispatch('performMatch', { 
