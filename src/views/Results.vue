@@ -66,13 +66,26 @@
             
             const answers = this.$store.state.questions.list.data.questions
                 .map(q => {
+                    
+                    // TODO remove this mapping in source
+                    let tolerance = "not_important";
+                    
+                    if(q.importance === 1)
+                        tolerance = "important";
+                    
+                    if(q.importance === 2)
+                        tolerance = "very_important";
+                    
                     return {
                         question_key: q.key,
                         answer_format: 'agr_5_scale_tol_3_scale_abs', // TODO survey.questions.find(qu => qu.key === q.key).answer_format,
-                        value: q.agreement, // TODO, remove hardcoded
-                        tolerance: 'important' // TODO q.importance
+                        value: q.agreement,
+                        tolerance: tolerance
                     }
                 }).filter(q => q.value != null);
+            
+            console.log("candidates answers");
+            console.log(answers);
             
             poll.segment_keys.forEach(s => 
                 this.$store.dispatch('performMatch', { 
