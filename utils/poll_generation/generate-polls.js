@@ -15,8 +15,8 @@ csv()
                 key: ep + "be_" + district.code + "_voter",
                 survey_key: ep + district.region + "_" + district.type,
                 segment_keys : [
-                    ep + "be_" + district.code + "_politician",
-                    ep + "be_" + district.code + "_party"
+                    ep + "be_" + district.code + "_candidate",
+                    ep + "be_" + district.code + "_electoral_list"
                 ],
                 insufficient_data: false
             };
