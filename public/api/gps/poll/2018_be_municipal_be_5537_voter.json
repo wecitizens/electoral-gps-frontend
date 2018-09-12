@@ -2,8 +2,8 @@
   "key": "2018_be_municipal_be_5537_voter",
   "survey_key": "2018_be_municipal_wallonia_rural",
   "segment_keys": [
-    "2018_be_municipal_be_5537_politician",
-    "2018_be_municipal_be_5537_party"
+    "2018_be_municipal_be_5537_candidate",
+    "2018_be_municipal_be_5537_electoral_list"
   ],
   "insufficient_data": false
 }

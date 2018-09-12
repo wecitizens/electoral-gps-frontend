@@ -2,8 +2,8 @@
   "key": "2018_be_municipal_be_1547_voter",
   "survey_key": "2018_be_municipal_flanders_rural",
   "segment_keys": [
-    "2018_be_municipal_be_1547_politician",
-    "2018_be_municipal_be_1547_party"
+    "2018_be_municipal_be_1547_candidate",
+    "2018_be_municipal_be_1547_electoral_list"
   ],
   "insufficient_data": false
 }
