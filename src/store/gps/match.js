@@ -77,6 +77,9 @@ export default {
 
                     const q = a.find(aa => aa.question_key == t.question_key);
 
+                    if (q == null) // otherwise when question answer not found in segment, there might be a question_id mismatch
+                        return acc;
+
                     u[t.question_key] = answer_formats.find(x => x.key == q.answer_format).items.find(x => x.key == t.value).weight;
                     acc[t.user_key] = u;
                     return acc;
