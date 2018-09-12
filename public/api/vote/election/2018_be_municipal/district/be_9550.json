@@ -5,7 +5,7 @@
   "date": "2018-10-14T00:00:00.000Z",
   "main_election_key": "2018_be_municipal",
   "district_key": "be_9550",
-  "parties": [
+  "electoral_lists": [
     [
       {
         "key": "be_9550_leef_groen",

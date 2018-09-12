@@ -57,7 +57,7 @@ csv()
                 date: "2018-10-14T00:00:00.000Z",
                 main_election_key: "2018_be_municipal",
                 district_key: k.replace('2018_be_municipal_', '').replace('_electoral_list', ''),
-                parties: [ removeDuplicates(data[k].map(d => {
+                electoral_lists: [ removeDuplicates(data[k].map(d => {
                     return { // hack to get first record
                         key: d.user_key,
                         name: d.user_key + "_name"
