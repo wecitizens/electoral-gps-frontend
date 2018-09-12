@@ -2,7 +2,7 @@ SELECT
     a.id,
     CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
     'electoral_list' AS segment_type,
-    CONCAT('be_', j.postcode, '_', j.institution) AS user_key,
+    CONCAT('be_', j.postcode, '_', lower(replace(replace(j.institution,'! &',''),' ','_'))) AS user_key,
     CONCAT('question_', a.opinion_id) AS question_key,
     CASE
         WHEN a.opinion_answer = 5 THEN 'fully_agree'
