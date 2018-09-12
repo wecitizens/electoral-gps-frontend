@@ -1,4 +1,5 @@
 SELECT 
+    a.id,
     CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
     'electoral_list' AS segment_type,
     CONCAT('be_', j.postcode, '_', j.institution) AS user_key,
@@ -19,4 +20,5 @@ FROM
 WHERE
     opinion_received > '2018-09-08'
         AND j.num = 1
+        AND a.id_politician != 5439 # Jean-Paul
 ORDER BY opinion_received DESC
