@@ -7,8 +7,8 @@
   "district_key": "be_municipal_1435",
   "electoral_lists": [
     {
-      "key": "be_6850_cohesion",
-      "name": "be_6850_cohesion_name",
+      "key": "be_1435_cohesion",
+      "name": "be_1435_cohesion_name",
       "candidates": [
         {
           "order": 1,
@@ -26,7 +26,7 @@
       "candidates": [
         {
           "order": 1,
-          "key": "be_politician_4"
+          "key": "be_politician_3"
         }
       ]
     }
