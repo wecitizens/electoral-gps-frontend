@@ -43,7 +43,8 @@ csv()
             });
 
             // a lot of hacks
-
+            // @TODO handle candidate answers (not only electoral list) 
+            
             const removeDuplicates = function removeDuplicates(array) {
                 let uniq = {};
                 return array.filter(obj => !uniq[obj.id] && (uniq[obj.id] = true))
