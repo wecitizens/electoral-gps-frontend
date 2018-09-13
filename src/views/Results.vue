@@ -23,7 +23,7 @@
                 <b-tab title="Listes" class="col-md-6 tab-center">
                     <ul class="list-group tab-scroll" v-for="(score, idx) in currentElectoralListScores" :key="idx">
                         <li class="list-group-item">
-                            <h4>{{ $t("vote." + currentElection.electoral_lists.find(e => e.key == score.user_key).name) }}</h4>
+                            <h4>{{ $t("vote." + getElectoralListForScore(currentElection,score).name) }}</h4>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
                                      :aria-valuenow="score.score"
@@ -52,6 +52,11 @@
         name: 'results',
         components: {
             CandidateLists
+        },
+        methods: {
+            getElectoralListForScore(currentElection,score){
+                return currentElection.electoral_lists.find(e => e.key == score.user_key);
+            }
         },
         created() {
 

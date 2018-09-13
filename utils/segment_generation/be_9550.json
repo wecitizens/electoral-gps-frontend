@@ -6,16 +6,16 @@
   "main_election_key": "2018_be_municipal",
   "district_key": "be_9550",
   "electoral_lists": [
-    [
-      {
-        "key": "be_9550_leef_groen",
-        "name": "be_9550_leef_groen_name"
-      }
-    ]
+    {
+      "key": "be_9550_leef_groen",
+      "name": "be_9550_leef_groen_name"
+    }
   ],
   "i18n": {
     "en": {},
-    "fr": {},
+    "fr": {
+      "be_9550_leef_groen_name": "LEEF! & GROEN"
+    },
     "nl": {}
   }
 }

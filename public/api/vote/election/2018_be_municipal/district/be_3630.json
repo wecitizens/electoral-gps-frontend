@@ -6,16 +6,16 @@
   "main_election_key": "2018_be_municipal",
   "district_key": "be_3630",
   "electoral_lists": [
-    [
-      {
-        "key": "be_3630_open_maasmechelen",
-        "name": "be_3630_open_maasmechelen_name"
-      }
-    ]
+    {
+      "key": "be_3630_open_maasmechelen",
+      "name": "be_3630_open_maasmechelen_name"
+    }
   ],
   "i18n": {
     "en": {},
-    "fr": {},
+    "fr": {
+      "be_3630_open_maasmechelen_name": "Open Maasmechelen"
+    },
     "nl": {}
   }
 }

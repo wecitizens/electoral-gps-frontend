@@ -12,6 +12,7 @@ SELECT
         WHEN a.opinion_answer = 1 THEN 'fully_disagree'
         ELSE 'no_opinion'
     END AS value,
+    j.institution as user_name, # added to ease compatibility but should not be part of segments
     a.opinion_received
 FROM
     opinions_answers a
