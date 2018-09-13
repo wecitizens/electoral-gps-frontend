@@ -2,7 +2,8 @@
     <div v-if="question.text">
         <h3 class="title">
             <span v-if="index">{{ index + 1  }}</span>
-            <span v-else>{{ questions.current.index }}</span>/{{ questions.total }} {{ $t('gps.survey.' + question.text) }}
+            <span v-else>{{ questions.current.index }}</span>/{{ questions.total }} {{ $t('gps.survey.' + question.text)
+            }}
         </h3>
         <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
             <foldable-icon :folded="!isMoreInfo"></foldable-icon>
@@ -23,7 +24,7 @@
                 <div class="slider-wrapper">
                     <el-slider class="importance mt-5 mb-5" v-model="importance"
                                :step="1" :min="0" :max="answerFormat.tolerance.items.length -1" show-stop="true"
-                               :format-tooltip="showStepLabel" show-tooltip="show-tooltip">
+                               :format-tooltip="(id) => showStepLabel(answerFormat,id)" show-tooltip="show-tooltip">
                     </el-slider>
                     <div class="row slider-legend">
                         <div class="col" v-for="(item, key) in answerFormat.tolerance.items" :key="item.id">
@@ -47,65 +48,73 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex';
-  import FoldableIcon from '../FoldableIcon';
-  import Vue from 'vue';
+    import {mapActions, mapGetters} from 'vuex';
+    import FoldableIcon from '../FoldableIcon';
+    import Vue from 'vue';
 
-  export default {
-    props: {
-      'question': {},
-      'answerFormat': {},
-      folded: {
-        type: Boolean,
-        default: false
-      },
-      index: {
-        default: false
-      }
-    },
-    components: {
-      FoldableIcon
-    },
-    data() {
-      return {
-        agreement: null,
-        importance: 1,
-        isFolded: this.folded,
-        isMoreInfo: false
-      }
-    },
-    computed: {
-      ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
-    },
-    watch: {
-      agreement: function (agreement) {
-        console.log('Set agreement', agreement);
-        setTimeout(() => {
-          this.setQuestionAgreement({questionKey: this.question.key, agreement})
-        }, 1000)
-      },
-      importance: function (importance) {
-          
-        console.log('Set importance', importance);
-        setTimeout(() => {
-          this.setQuestionImportance({questionKey: this.question.key, importance})
-        }, 1000)
-      },
-    },
-    methods: {
-      ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
-      showStepLabel: (index) => {
-        if (index) {
-          return Vue.i18n.translate('importance')[index];
+    export default {
+        props: {
+            'question': {},
+            'answerFormat': {},
+            folded: {
+                type: Boolean,
+                default: false
+            },
+            index: {
+                default: false
+            }
+        },
+        components: {
+            FoldableIcon
+        },
+        data() {
+            return {
+                agreement: null,
+                importance: 1,
+                isFolded: this.folded,
+                isMoreInfo: false
+            }
+        },
+        computed: {
+            ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
+        },
+        watch: {
+            agreement: function (agreement) {
+                console.log('Set agreement', agreement);
+                setTimeout(() => {
+
+                    let tolerance = this.answerFormat.tolerance.items[this.importance].key;
+                    console.log('Set tolerance', tolerance);
+                    this.setQuestionImportance({questionKey: this.question.key, importance: tolerance });
+                    
+                    this.setQuestionAgreement({questionKey: this.question.key, agreement});
+                }, 1000)
+            },
+            importance: function (importance) {
+
+                let tolerance = this.answerFormat.tolerance.items[importance].key;
+
+                console.log('Set tolerance', tolerance);
+
+                setTimeout(() => {
+                    this.setQuestionImportance({questionKey: this.question.key, tolerance})
+                }, 1000)
+            },
+        },
+        methods: {
+            ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
+            showStepLabel: (answerFormat, index) => {
+                if (index) {
+                    return Vue.i18n.translate('gps.survey.' + answerFormat.tolerance.items[index].name);
+                }
+                return index;
+            },
+            setImportance: function (importance) {
+                console.log('Data', importance);
+                this.importance = importance;
+            }
         }
-        return index;
-      },
-      setImportance: function (importance) {
-        console.log('Data', importance);
-        this.importance = importance;
-      }
-    }
-  };
+    };
 </script>
 
 <style lang="scss">
