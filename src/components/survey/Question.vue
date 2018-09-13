@@ -36,7 +36,9 @@
                 <el-row v-for="item in answerFormat.items" :key="item.id">
                     <el-col :xs="24">
                         <el-radio-button class="el-radio-button--custom"
-                                         v-bind:label="item.key"></el-radio-button>
+                                         v-bind:label="item.key">
+                            {{ $t('gps.survey.' + item.name) }}
+                        </el-radio-button>
                     </el-col>
                 </el-row>
             </el-radio-group>
