@@ -58,7 +58,9 @@ export default {
                 }),
                 {});
 
-            const weights = matchRequest.answers.reduce(
+          console.log('answers', matchRequest.answers, answer_formats);
+
+          const weights = matchRequest.answers.reduce(
                 (accumulator, target) => ({
                     ...accumulator,
                     [target.question_key]:

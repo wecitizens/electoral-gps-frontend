@@ -21,8 +21,8 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
-                    <img src="/img/partner-metro.png" height="20"  class="ml-5 h-10" alt="">
-                    <img src="/img/partner-sudpress.png" height="20"  class="ml-5 h-10" alt="">
+                    <img src="/img/partner-metro.png" height="20" class="ml-5 h-10" alt="">
+                    <img src="/img/partner-sudpress.png" height="20" class="ml-5 h-10" alt="">
                     <img src="/img/partner-dh.png" height="20" class="ml-5 h-10" alt="">
                 </div>
             </div>
@@ -84,7 +84,7 @@
             margin-left: -200px;
         }
 
-        .btn-start{
+        .btn-start {
             background: #EA3434;
             color: #ffffff;
             height: 110px;
@@ -97,13 +97,13 @@
             display: block;
             padding-top: 32px;
             font-weight: bold;
-            
-            &:hover{
+
+            &:hover {
                 text-decoration: none;
                 background: #F8E71C;
             }
 
-            span{
+            span {
                 width: 100%;
                 display: inline-block;
             }
@@ -124,6 +124,12 @@
         padding: 0.5em;
         margin: 0;
         text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .footer {
+            position: fixed;
+        }
     }
 
     h1 {

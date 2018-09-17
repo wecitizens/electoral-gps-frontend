@@ -12,8 +12,7 @@
                 <el-button title="test" :disabled="!question.notice" @click="showMoreInfo = !showMoreInfo"
                            :icon="showMoreInfo ? 'el-icon-minus' : 'el-icon-info'" circle></el-button>
             </el-tooltip>
-
-            <el-tooltip class="item" effect="dark" content="Top Left prompts info" placement="bottom">
+            <el-tooltip class="item" effect="dark" :content="$t('importance_tooltip')" placement="bottom">
                 <el-button title="test" @click="showImportance = !showImportance"
                            :icon="showImportance ? 'el-icon-minus' : 'el-icon-star-off'" circle></el-button>
             </el-tooltip>
