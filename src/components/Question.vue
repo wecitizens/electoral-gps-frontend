@@ -25,7 +25,7 @@
         <div v-show="showImportance && answerFormat.tolerance" class="importances mt-3">
             <el-radio-group v-model="importance">
                 <el-radio-button v-for="(importance, key) in answerFormat.tolerance.items" :key="key"
-                                 :label="key">{{ key}} {{ $t('gps.survey.' + importance.name) }}</el-radio-button>
+                                 :label="key">{{key}} {{ $t('gps.survey.' + importance.name) }}</el-radio-button>
             </el-radio-group>
         </div>
 
@@ -79,13 +79,16 @@
       agreement: function (agreement) {
         console.log('Set agreement', agreement);
         setTimeout(() => {
-          this.setQuestionImportance({questionKey: this.question.key, importance : this.importance});
+          let tolerance = this.answerFormat.tolerance.items[this.importance].key;
+          this.setQuestionImportance({questionKey: this.question.key, importance : tolerance});
           this.setQuestionAgreement({questionKey: this.question.key, agreement});
         }, 1000)
       },
       importance: function (importance) {
         setTimeout(() => {
-          this.setQuestionImportance({questionKey: this.question.key, importance})
+          let tolerance = this.answerFormat.tolerance.items[importance].key;
+
+          this.setQuestionImportance({questionKey: this.question.key, tolerance})
         }, 100)
       },
     },
