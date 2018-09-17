@@ -33,6 +33,7 @@ export default {
           Vue.i18n.add('nl', {vote: request.data.i18n.nl})
           return request.data.data
         })
+
       commit('setDistricts', districts)
     },
     filterDistricts ({commit, state}, queryString) {

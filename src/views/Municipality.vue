@@ -11,7 +11,8 @@
                                      @select="setCurrentDistrict({ district })"></el-autocomplete>
                 </el-row>
                 <br/>
-                <el-row v-show="district">
+                Current : {{ survey }}
+                <el-row v-if="district">
                     <router-link to="/survey" tag="el-button">{{ $t("button.lets_go") }}
                     </router-link>
                 </el-row>
@@ -22,34 +23,39 @@
 
 <script>
 
-    import Steps from '../components/Steps';
+  import {mapState} from 'vuex';
+  import Steps from '../components/Steps';
 
-    export default {
-        name: 'district',
-        components: {Steps},
-        data() {
-            return {
-                district: null
-            }
-        },  
-        created() {
-            this.$store.dispatch('getDistricts');
-        },
-        computed: {
-            displayNextStepButton() {
-                return true
-            }
-        },
-        methods: {
-            setCurrentDistrict(data){
-                const district = this.$store.state.vote.districtSearchResults.find(r => r.value === data.district);
-                this.$store.commit("setCurrentDistrict", district);
-                this.$store.dispatch("setCurrentElection", district);
-            },
-            async filterDistricts(data, cb){
-                await this.$store.dispatch('filterDistricts',data);
-                cb(this.$store.state.vote.districtSearchResults);
-            }
-        }
-    };
+  export default {
+    name: 'district',
+    components: {Steps},
+    data() {
+      return {
+        district: null,
+      }
+    },
+    created() {
+      this.$store.dispatch('getDistricts');
+    },
+    computed: {
+      displayNextStepButton() {
+        return true
+      },
+      survey () {
+        return this.$store.state.survey.current;
+      },
+      ...mapState(['current'])
+    },
+    methods: {
+      setCurrentDistrict(data) {
+        const district = this.$store.state.vote.districtSearchResults.find(r => r.value === data.district);
+        this.$store.commit("setCurrentDistrict", district);
+        this.$store.dispatch("setCurrentElection", district);
+      },
+      async filterDistricts(data, cb) {
+        await this.$store.dispatch('filterDistricts', data);
+        cb(this.$store.state.vote.districtSearchResults);
+      }
+    }
+  };
 </script>

@@ -9,8 +9,8 @@ export default {
         current: {
             candidateSegmentAnswers: null,
             electoralListSegmentAnswers: null,
-            candidateScores: null,
-            electoralListScores: null
+            candidateScores: [],
+            electoralListScores : []
         }
     },
     getters: {
