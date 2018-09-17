@@ -23,22 +23,14 @@
             {{ question.notice }}
         </div>
 
-        <div v-show="showImportance" class="importances mt-3">
+        <div v-show="showImportance && answerFormat.tolerance" class="importances mt-3">
             <el-radio-group v-model="importance">
-                <el-radio-button label="Pas important"></el-radio-button>
-                <el-radio-button label="Importance moyenne"></el-radio-button>
-                <el-radio-button label="Neutre"></el-radio-button>
-                <el-radio-button label="Très important"></el-radio-button>
-                <el-radio-button label="Non-négociable"></el-radio-button>
+                <el-radio-button v-for="(importance, key) in answerFormat.tolerance.items" :key="key"
+                                 :label="key">{{ key}} {{ $t('gps.survey.' + importance.name) }}</el-radio-button>
             </el-radio-group>
         </div>
 
         <div class="mt-5">
-            <div class="row">
-                <div class="col">Pas du tout d'accord</div>
-                <div class="col">Je ne me prononce pas</div>
-                <div class="col">Tout à fait d'accord</div>
-            </div>
             <el-radio-group v-model="agreement" v-if="answerFormat.items">
                 <el-row>
                     <el-radio-button class="el-radio-button--custom" circle v-for="item in answerFormat.items"
@@ -54,7 +46,7 @@
 
 <script>
   import {mapActions, mapGetters} from 'vuex';
-  import FoldableIcon from '../FoldableIcon';
+  import FoldableIcon from './FoldableIcon';
   import Vue from 'vue';
 
   export default {
@@ -88,23 +80,14 @@
       agreement: function (agreement) {
         console.log('Set agreement', agreement);
         setTimeout(() => {
-
-          let tolerance = this.answerFormat.tolerance.items[this.importance].key;
-          console.log('Set tolerance', tolerance);
-          this.setQuestionImportance({questionKey: this.question.key, importance: tolerance});
-
+          this.setQuestionImportance({questionKey: this.question.key, importance : this.importance});
           this.setQuestionAgreement({questionKey: this.question.key, agreement});
         }, 1000)
       },
       importance: function (importance) {
-
-        let tolerance = this.answerFormat.tolerance.items[importance].key;
-
-        console.log('Set tolerance', tolerance);
-
         setTimeout(() => {
-          this.setQuestionImportance({questionKey: this.question.key, tolerance})
-        }, 1000)
+          this.setQuestionImportance({questionKey: this.question.key, importance})
+        }, 100)
       },
     },
     methods: {

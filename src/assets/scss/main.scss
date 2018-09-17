@@ -13,11 +13,26 @@ h1, h2, h3, h4, h5, h6 {
   color: #000000;
 }
 
-a{
-  color : #000;
+a {
+  color: #000;
 }
 
-.alert-primary{
+.alert-primary {
   background: #F8E71C;
   color: #FFFFFF;
+}
+
+.el-step__head {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .el-step.is-simple .el-step__title {
+    font-size: 10px;
+    max-width: 100%;
+  }
+
+  .el-step.is-simple .el-step__arrow{
+    display: none;
+  }
 }

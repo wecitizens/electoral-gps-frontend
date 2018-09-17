@@ -9,6 +9,7 @@ export default {
   "app": {
     "title": "GPS électoral"
   },
+  "There is no campaign for the moment" : "Il n'y a pas de campagne pour l'instant",
   "share": {
     "title": "Partager"
   },

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <main class="main text-white mt-5">
+        <main class="main text-white mt-5 clearfix">
             <h1>GPS<br>ELECTORAL</h1>
             <h2>{{ $t("home.title") }}</h2>
             <div class="infos">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
@@ -21,9 +21,9 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
-                    <img src="/img/partner-metro.png" height="30"  class="ml-5 h-10" alt="">
-                    <img src="/img/partner-sudpress.png" height="30"  class="ml-5 h-10" alt="">
-                    <img src="/img/partner-dh.png" height="30" class="ml-5 h-10" alt="">
+                    <img src="/img/partner-metro.png" height="20"  class="ml-5 h-10" alt="">
+                    <img src="/img/partner-sudpress.png" height="20"  class="ml-5 h-10" alt="">
+                    <img src="/img/partner-dh.png" height="20" class="ml-5 h-10" alt="">
                 </div>
             </div>
         </footer>
@@ -120,7 +120,6 @@
     .footer {
         bottom: 0;
         color: #000;
-        position: fixed;
         width: 100%;
         padding: 0.5em;
         margin: 0;

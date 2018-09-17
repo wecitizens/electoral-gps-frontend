@@ -11,7 +11,7 @@
 <script>
 
   import {mapActions, mapGetters} from 'vuex';
-  import Question from '@/components/survey/Question';
+  import Question from './../components/Question';
 
   export default {
     name: 'questions',

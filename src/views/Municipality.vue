@@ -1,27 +1,27 @@
 <template>
-    <div class="h-screen">
-        <el-main>
-            <steps :active="1"></steps>
-            <div class="text-center mt-5">
-                <h1>{{ $t("district.what_is_your_postcode") }}</h1>
-                <p>{{ $t("district.help_customise_survey") }}</p><br/>
-                <el-row>
-                    <el-autocomplete class="inline-input" v-model="district" :fetch-suggestions="filterDistricts"
-                                     v-bind:placeholder="$t('input.place_holder.your_postcode')"
-                                     @select="setCurrentDistrict({ district })"></el-autocomplete>
-                </el-row>
-                <br/>
-                <el-row v-if="vote.current.election">
-                    <router-link v-if="vote.current.election.candidates.length > 3" :to="'/survey/'+district_key" tag="el-button">{{ $t("button.lets_go") }}
-                    </router-link>
-                    <router-link v-else :to="'/insufficient-candidates/'+district_key" tag="el-button">{{ $t("button.lets_go") }}
-                    </router-link>
-                </el-row>
-                <el-row v-else-if="district">
-                    <div>{{ $t('There is no campaign for the moment')}}</div>
-                </el-row>
-            </div>
-        </el-main>
+    <div>
+        <steps :active="1"></steps>
+        <div class="text-center mt-5">
+            <h1>{{ $t("district.what_is_your_postcode") }}</h1>
+            <p>{{ $t("district.help_customise_survey") }}</p><br/>
+            <el-row>
+                <el-autocomplete class="inline-input" v-model="district" :fetch-suggestions="filterDistricts"
+                                 v-bind:placeholder="$t('input.place_holder.your_postcode')"
+                                 @select="setCurrentDistrict({ district })"></el-autocomplete>
+            </el-row>
+            <br/>
+            <el-row v-if="vote.current.election">
+                <router-link v-if="vote.current.election.candidates.length > 3" :to="'/survey/'+district_key"
+                             tag="el-button">{{ $t("button.lets_go") }}
+                </router-link>
+                <router-link v-else :to="'/insufficient-candidates/'+district_key" tag="el-button">{{
+                    $t("button.lets_go") }}
+                </router-link>
+            </el-row>
+            <el-row v-else-if="district">
+                <div>{{ $t('There is no campaign for the moment')}}</div>
+            </el-row>
+        </div>
     </div>
 </template>
 
@@ -47,7 +47,7 @@
       displayNextStepButton() {
         return true
       },
-      survey () {
+      survey() {
         console.log(this.$store.state);
         return this.$store.state.survey.current;
       },

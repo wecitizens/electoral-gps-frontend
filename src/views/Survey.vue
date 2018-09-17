@@ -1,54 +1,50 @@
 <template>
     <div>
-        <el-main
-                v-loading="loading">
-            <steps :active="1"></steps>
-            <div class="text-center">
-                <transition-group name="slide" tag="div" class="questions-slider">
-                    <div v-for="(question, idx) in questions.list.data.questions" :key="idx"
-                         v-if="question.key === currentQuestionKey">
-                        <div class="question mt-5">
-                            <Question :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
-                        </div>
-                    </div>
-                </transition-group>
-            </div>
-            <el-footer class="footer-fixed">
-                <div class="row">
-                    <div class="col-1">
-                        <a v-show="questions.current.index > 1" class="btn btn-block"
-                           @click="goPrevious"><i class="fas fa-chevron-left"></i></a>
-                    </div>
-                    <div class="col">
-                        <a v-show="questions.current.index > 1" class="btn btn-block"
-                           @click="goResults">{{ $t("button.see_results") }} </a>
-                    </div>
-                    <div class="col-1">
-                        <a v-show="questions.current.index < questions.total" class="btn btn-block"
-                           @click="goNext"><i
-                                class="fas fa-chevron-right"></i>
-                        </a>
+        <steps :active="1"></steps>
+        <div class="text-center">
+            <transition-group name="slide" tag="div" class="questions-slider">
+                <div v-for="(question, idx) in questions.list.data.questions" :key="idx"
+                     v-if="question.key === currentQuestionKey">
+                    <div class="question mt-5">
+                        <Question :question="question" :answerFormat="getAnswerFormat(question.answer_format)"/>
                     </div>
                 </div>
-            </el-footer>
-        </el-main>
+            </transition-group>
+        </div>
+        <el-footer class="footer-fixed">
+            <div class="row">
+                <div class="col-1">
+                    <a v-show="questions.current.index > 1" class="btn btn-block"
+                       @click="goPrevious"><i class="fas fa-chevron-left"></i></a>
+                </div>
+                <div class="col">
+                    <a v-show="questions.current.index > 1" class="btn btn-block"
+                       @click="goResults">{{ $t("button.see_results") }} </a>
+                </div>
+                <div class="col-1">
+                    <a v-show="questions.current.index < questions.total" class="btn btn-block"
+                       @click="goNext"><i
+                            class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </el-footer>
     </div>
 </template>
 
 <script>
-  import Question from '../components/survey/Question'
+  import Question from '../components/Question'
   import {mapGetters, mapActions} from 'vuex'
   import Steps from '../components/Steps'
-
 
   export default {
     components: {
       Question,
       Steps
     },
-    data(){
+    data() {
       return {
-        loading : true
+        loading: true
       }
     },
     computed: {
@@ -126,7 +122,7 @@
         right: 0;
     }
 
-    .footer-fixed{
+    .footer-fixed {
         background: #F5F5F1;
         height: 70px;
         position: fixed;
