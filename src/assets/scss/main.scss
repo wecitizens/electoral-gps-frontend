@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/dist/bootstrap-vue.css";
+@import "components/menuslider";
+
+body {
+  background: #F5F5F1;
+  color: #000000;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+}
+
+a{
+  color : #000;
+}
+
+.alert-primary{
+  background: #F8E71C;
+  color: #FFFFFF;
+}

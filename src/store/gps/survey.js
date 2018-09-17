@@ -21,6 +21,9 @@ export default {
   },
   actions: {
     async setCurrentPoll ({ commit, rootState }, data) {
+
+      console.log('-> setCurrentPoll', data);
+
       const poll = await API.get('/api/gps/poll/2018_be_municipal_' +
         rootState.vote.current.district.key + '_voter.json', data)
         .then(request => {

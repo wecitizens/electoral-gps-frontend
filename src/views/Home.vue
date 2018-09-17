@@ -1,22 +1,29 @@
 <template>
     <div>
-        <div class="bg"></div>
         <main class="main text-white mt-5">
-            <h1 class="mb-5">{{ $t("home.title") }}</h1>
-            <router-link style="margin: auto !important;" to="/municipality" tag="el-button" class="btn-start m-5">{{ $t("home.cta") }}</router-link>
-            <div class="infos mt-3">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
+            <h1>GPS<br>ELECTORAL</h1>
+            <h2>{{ $t("home.title") }}</h2>
+            <div class="infos">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
+
+            <div class="cta-section">
+                <div class="perso-left">
+                    <img src="/img/perso-1.svg" alt="">
+                </div>
+                <router-link to="/municipality" tag="a" class="btn-start">
+                    {{ $t("home.cta") }}
+                </router-link>
+                <div class="perso-right">
+                    <img src="/img/perso-2.svg" alt="">
+                </div>
+            </div>
         </main>
         <footer class="footer container-fluid">
             <div class="row">
-                <div class="col-sm-6 text-left">
+                <div class="col text-center">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
-                    <img src="/img/partner-metro.png" height="30" class="h-10" alt="">
-                    <img src="/img/partner-sudpress.png" height="30" class="ml-5 h-10" alt="">
-                </div>
-            </div>
-            <div class="row" style="background: #444;margin:10px -15px -10px;padding: 0.5em;">
-                <div class="col">
-                    {{ $t("home.powered_by") }} WeCitizens, ©2018
+                    <img src="/img/partner-metro.png" height="30"  class="ml-5 h-10" alt="">
+                    <img src="/img/partner-sudpress.png" height="30"  class="ml-5 h-10" alt="">
+                    <img src="/img/partner-dh.png" height="30" class="ml-5 h-10" alt="">
                 </div>
             </div>
         </footer>
@@ -43,9 +50,9 @@
     },
     computed: {
       ...mapGetters([
-          'questions', 
-          'currentQuestionKey', 
-          'campaignTotalParticipants']),
+        'questions',
+        'currentQuestionKey',
+        'campaignTotalParticipants']),
     }
   }
 </script>
@@ -56,73 +63,74 @@
         height: 100%;
     }
 
-    .bg {
-        background-image: url("/img/bg-home.jpg");
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        overflow: hidden;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: -1;
+    .infos {
+        font-family: IBMPlexSans-Italic;
+        font-size: 14px;
+        color: #000000;
+        text-align: center;
+    }
+
+    .cta-section {
+        background: #000000;
+        margin-top: 200px;
+        height: 140px;
+        position: relative;
+        padding-top: 20px;
+
+        .perso-left {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            margin-left: -200px;
+        }
+
+        .btn-start{
+            background: #EA3434;
+            color: #ffffff;
+            height: 110px;
+            width: 110px;
+            border: none;
+            border-radius: 110px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 auto !important;
+            display: block;
+            padding-top: 32px;
+            font-weight: bold;
+            
+            &:hover{
+                text-decoration: none;
+                background: #F8E71C;
+            }
+
+            span{
+                width: 100%;
+                display: inline-block;
+            }
+        }
+
+        .perso-right {
+            position: absolute;
+            top: -100px;
+            right: 50%;
+            margin-right: -200px;
+        }
     }
 
     .footer {
         bottom: 0;
-        color: #fff;
+        color: #000;
         position: fixed;
         width: 100%;
         padding: 0.5em;
         margin: 0;
+        text-align: center;
     }
 
     h1 {
         margin-top: 30px;
         text-align: center;
         font-size: 48px;
-    }
-
-    .btn-start {
-        display: block;
-        margin: 50px auto 50px !important;
-        width: 200px;
-        color: #FFF;
-
-        &:hover {
-            opacity: 0.8;
-            color: #FFFFFF;
-        }
-
-        background: linear-gradient(209deg, #2e1c1a, #781518, #ad1e24, #de7229, #e1b121, #63b642, #1d3e81, #492771, #9f1c84, #34332e);
-        background-size: 2000% 2000%;
-
-        -webkit-animation: wecitizens 39s ease infinite;
-        -moz-animation: wecitizens 39s ease infinite;
-        -o-animation: wecitizens 39s ease infinite;
-        animation: wecitizens 39s ease infinite;
-
-        @-webkit-keyframes wecitizens {
-            0%{background-position:93% 0%}
-            50%{background-position:0% 100%}
-            100%{background-position:93% 0%}
-        }
-        @-moz-keyframes wecitizens {
-            0%{background-position:93% 0%}
-            50%{background-position:0% 100%}
-            100%{background-position:93% 0%}
-        }
-        @-o-keyframes wecitizens {
-            0%{background-position:93% 0%}
-            50%{background-position:0% 100%}
-            100%{background-position:93% 0%}
-        }
-        @keyframes wecitizens {
-            0%{background-position:93% 0%}
-            50%{background-position:0% 100%}
-            100%{background-position:93% 0%}
-        }
+        color: #000000;
     }
 </style>

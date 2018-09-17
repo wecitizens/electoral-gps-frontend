@@ -5,42 +5,47 @@
             <span v-else>{{ questions.current.index }}</span>/{{ questions.total }} {{ $t('gps.survey.' + question.text)
             }}
         </h3>
-        <a class="btn" v-show="question.notice" @click="() => isMoreInfo = !isMoreInfo">
-            <foldable-icon :folded="!isMoreInfo"></foldable-icon>
-            {{ $t('button.more_info') }}</a>
-        <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
-            <foldable-icon :folded="isFolded"></foldable-icon>
-            {{ $t('button.show_more_infos') }}</a>
 
-        <a v-show="folded" class="btn btn-default" @click="() => isFolded = !isFolded">
-            <foldable-icon :folded="isFolded"></foldable-icon>
-            {{ $t('button.show_importance') }}</a>
+        <el-row class="actions">
 
-        <div class="more-info" v-show="isMoreInfo" v-if="question.notice">
-            {{ $t('gps.survey.' + question.notice) }}
+            <el-tooltip class="item" effect="dark" content="Top Left prompts info" placement="bottom">
+                <el-button title="test" :disabled="!question.notice" @click="showMoreInfo = !showMoreInfo"
+                           :icon="showMoreInfo ? 'el-icon-minus' : 'el-icon-info'" circle></el-button>
+            </el-tooltip>
+
+            <el-tooltip class="item" effect="dark" content="Top Left prompts info" placement="bottom">
+                <el-button title="test" @click="showImportance = !showImportance"
+                           :icon="showImportance ? 'el-icon-minus' : 'el-icon-star-off'" circle></el-button>
+            </el-tooltip>
+        </el-row>
+
+        <div v-show="showMoreInfo" class="moreInfos mt-3">
+            {{ question.notice }}
         </div>
-        <div v-show="!isFolded && answerFormat && answerFormat.tolerance">
-            <div class="mt-3">
-                <div class="slider-wrapper">
-                    <el-slider class="importance mt-5 mb-5" v-model="importance"
-                               :step="1" :min="0" :max="answerFormat.tolerance.items.length -1" show-stop="true"
-                               :format-tooltip="(id) => showStepLabel(answerFormat,id)" show-tooltip="show-tooltip">
-                    </el-slider>
-                    <div class="row slider-legend">
-                        <div class="col" v-for="(item, key) in answerFormat.tolerance.items" :key="item.id">
-                            <a @click="() => setImportance(key)">{{ $t('gps.survey.' + item.name) }}</a>
-                        </div>
-                    </div>
-                </div>
+
+        <div v-show="showImportance" class="importances mt-3">
+            <el-radio-group v-model="importance">
+                <el-radio-button label="Pas important"></el-radio-button>
+                <el-radio-button label="Importance moyenne"></el-radio-button>
+                <el-radio-button label="Neutre"></el-radio-button>
+                <el-radio-button label="Très important"></el-radio-button>
+                <el-radio-button label="Non-négociable"></el-radio-button>
+            </el-radio-group>
+        </div>
+
+        <div class="mt-5">
+            <div class="row">
+                <div class="col">Pas du tout d'accord</div>
+                <div class="col">Je ne me prononce pas</div>
+                <div class="col">Tout à fait d'accord</div>
             </div>
             <el-radio-group v-model="agreement" v-if="answerFormat.items">
-                <el-row v-for="item in answerFormat.items" :key="item.id">
-                    <el-col :xs="24">
-                        <el-radio-button class="el-radio-button--custom"
-                                         v-bind:label="item.key">
-                            {{ $t('gps.survey.' + item.name) }}
-                        </el-radio-button>
-                    </el-col>
+                <el-row>
+                    <el-radio-button class="el-radio-button--custom" circle v-for="item in answerFormat.items"
+                                     :key="item.id"
+                                     v-bind:label="item.key">
+                        {{ $t('gps.survey.' + item.name) }}
+                    </el-radio-button>
                 </el-row>
             </el-radio-group>
         </div>
@@ -48,76 +53,81 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex';
-    import FoldableIcon from '../FoldableIcon';
-    import Vue from 'vue';
+  import {mapActions, mapGetters} from 'vuex';
+  import FoldableIcon from '../FoldableIcon';
+  import Vue from 'vue';
 
-    export default {
-        props: {
-            'question': {},
-            'answerFormat': {},
-            folded: {
-                type: Boolean,
-                default: false
-            },
-            index: {
-                default: false
-            }
-        },
-        components: {
-            FoldableIcon
-        },
-        data() {
-            return {
-                agreement: null,
-                importance: 1,
-                isFolded: this.folded,
-                isMoreInfo: false
-            }
-        },
-        computed: {
-            ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
-        },
-        watch: {
-            agreement: function (agreement) {
-                console.log('Set agreement', agreement);
-                setTimeout(() => {
+  export default {
+    props: {
+      'question': {},
+      'answerFormat': {},
+      folded: {
+        type: Boolean,
+        default: false
+      },
+      index: {
+        default: false
+      }
+    },
+    components: {
+      FoldableIcon
+    },
+    data() {
+      return {
+        agreement: null,
+        importance: 1,
+        isFolded: this.folded,
+        showMoreInfo: false,
+        showImportance: false
+      }
+    },
+    computed: {
+      ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
+    },
+    watch: {
+      agreement: function (agreement) {
+        console.log('Set agreement', agreement);
+        setTimeout(() => {
 
-                    let tolerance = this.answerFormat.tolerance.items[this.importance].key;
-                    console.log('Set tolerance', tolerance);
-                    this.setQuestionImportance({questionKey: this.question.key, importance: tolerance });
-                    
-                    this.setQuestionAgreement({questionKey: this.question.key, agreement});
-                }, 1000)
-            },
-            importance: function (importance) {
+          let tolerance = this.answerFormat.tolerance.items[this.importance].key;
+          console.log('Set tolerance', tolerance);
+          this.setQuestionImportance({questionKey: this.question.key, importance: tolerance});
 
-                let tolerance = this.answerFormat.tolerance.items[importance].key;
+          this.setQuestionAgreement({questionKey: this.question.key, agreement});
+        }, 1000)
+      },
+      importance: function (importance) {
 
-                console.log('Set tolerance', tolerance);
+        let tolerance = this.answerFormat.tolerance.items[importance].key;
 
-                setTimeout(() => {
-                    this.setQuestionImportance({questionKey: this.question.key, tolerance})
-                }, 1000)
-            },
-        },
-        methods: {
-            ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
-            showStepLabel: (answerFormat, index) => {
-                if (index) {
-                    return Vue.i18n.translate('gps.survey.' + answerFormat.tolerance.items[index].name);
-                }
-                return index;
-            },
-            setImportance: function (importance) {
-                console.log('Data', importance);
-                this.importance = importance;
-            }
+        console.log('Set tolerance', tolerance);
+
+        setTimeout(() => {
+          this.setQuestionImportance({questionKey: this.question.key, tolerance})
+        }, 1000)
+      },
+    },
+    methods: {
+      ...mapActions(['setQuestionAgreement', 'setQuestionImportance']),
+      showStepLabel: (answerFormat, index) => {
+        if (index) {
+          return Vue.i18n.translate('gps.survey.' + answerFormat.tolerance.items[index].name);
         }
-    };
+        return index;
+      },
+      setImportance: function (importance) {
+        console.log('Data', importance);
+        this.importance = importance;
+      }
+    }
+  };
 </script>
 
 <style lang="scss">
+
+    .answers {
+        background: #000000;
+    }
 
     .slider-wrapper {
         width: 60%;

@@ -21,6 +21,7 @@
     "element-ui": "^2.4.6",
     "flat": "^4.1.0",
     "fs": "^0.0.1-security",
+    "hamburgers": "^0.9.3",
     "look-alike": "^1.0.1",
     "node-ssh": "^5.1.2",
     "register-service-worker": "^1.0.0",

@@ -68,11 +68,14 @@ export default {
   actions: {
     async getQuestions (store) {
       await store.commit('setSurvey', store.rootState.survey.current.survey)
-      const questions = store.state.list.data.questions
-      const currentQuestion = questions[0]
-      currentQuestion.index = 1
-      store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})
-      store.commit(SET_TOTAL, {total: store.state.list.data.question_order.length})
+
+      if(store.state.list.data){
+        const questions = store.state.list.data.questions
+        const currentQuestion = questions[0]
+        currentQuestion.index = 1
+        store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+        store.commit(SET_TOTAL, {total: store.state.list.data.question_order.length})
+      }
     },
     setQuestionAgreement ({commit, state}, data) {
       commit(SET_QUESTION_AGREEMENT, data)

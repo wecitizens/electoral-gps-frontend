@@ -4,7 +4,7 @@ export default {
     "title": "Trouve les candidats qui te correspondent",
     "powered_by": "Powered by:",
     "description": "Déjà {userCount} matchs",
-    "with_help_from": "Avec le soutient de :"
+    "with_help_from": "Avec la participation de :"
   },
   "app": {
     "title": "GPS électoral"
@@ -85,7 +85,7 @@ export default {
     "register_as_candidate_link": "http://directory.wecitizens.be/fr/login/index/register_politician"
   },
   "button": {
-    "lets_go": "C'est parti",
+    "lets_go": "C'est parti !",
     "more_info": "détails",
     "see_results": "Voir les résultats",
     "next_question": "Suivant",

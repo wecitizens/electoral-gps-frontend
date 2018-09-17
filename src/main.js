@@ -16,8 +16,7 @@ import fr from './lang/fr-BE'
 import nl from './lang/nl-BE'
 import en from './lang/en-BE'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/scss/main.scss'
 
 Vue.use(ElementUI)
 

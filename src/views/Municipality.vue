@@ -11,10 +11,14 @@
                                      @select="setCurrentDistrict({ district })"></el-autocomplete>
                 </el-row>
                 <br/>
-                Current : {{ survey }}
-                <el-row v-if="district">
-                    <router-link to="/survey" tag="el-button">{{ $t("button.lets_go") }}
+                <el-row v-if="vote.current.election">
+                    <router-link v-if="vote.current.election.candidates.length > 3" :to="'/survey/'+district_key" tag="el-button">{{ $t("button.lets_go") }}
                     </router-link>
+                    <router-link v-else :to="'/insufficient-candidates/'+district_key" tag="el-button">{{ $t("button.lets_go") }}
+                    </router-link>
+                </el-row>
+                <el-row v-else-if="district">
+                    <div>{{ $t('There is no campaign for the moment')}}</div>
                 </el-row>
             </div>
         </el-main>
@@ -32,6 +36,8 @@
     data() {
       return {
         district: null,
+        zip_code: null,
+        district_key: null
       }
     },
     created() {
@@ -42,13 +48,15 @@
         return true
       },
       survey () {
+        console.log(this.$store.state);
         return this.$store.state.survey.current;
       },
-      ...mapState(['current'])
+      ...mapState(['vote'])
     },
     methods: {
       setCurrentDistrict(data) {
         const district = this.$store.state.vote.districtSearchResults.find(r => r.value === data.district);
+        this.district_key = district.key;
         this.$store.commit("setCurrentDistrict", district);
         this.$store.dispatch("setCurrentElection", district);
       },
