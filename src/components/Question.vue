@@ -25,9 +25,12 @@
         </div>
 
         <div v-show="showImportance && answerFormat.tolerance" class="importances mt-3">
+
+            <h4>{{ $t('importance.title') }}</h4>
+
             <el-radio-group v-model="importance">
                 <el-radio-button v-for="(importance, key) in answerFormat.tolerance.items" :key="key"
-                                 :label="key">{{key}} {{ $t('gps.survey.' + importance.name) }}
+                                 :label="key">{{ $t('gps.survey.' + importance.name) }}
                 </el-radio-button>
             </el-radio-group>
         </div>

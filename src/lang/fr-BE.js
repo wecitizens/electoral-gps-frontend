@@ -13,6 +13,7 @@ export default {
   "share": {
     "title": "Partager"
   },
+  "importance_tooltip" : "Text",
   "importance": [
     "Pas important",
     "Moyen",
