@@ -1,12 +1,14 @@
 <template>
     <div v-if="question.text">
-        <h3 class="title">
-            <span v-if="index">{{ index + 1  }}</span>
-            <span v-else>{{ questions.current.index }}</span>/{{ questions.total }} {{ $t('gps.survey.' + question.text)
-            }}
-        </h3>
 
-        <el-row class="actions">
+        <div class="alert-primary">
+            <span v-if="index">{{ (index + 1)  }}</span>
+            <span v-else>{{ questions.current.index }}</span>/{{ questions.total }}
+        </div>
+
+        <h3 class="title mt-3">{{ $t('gps.survey.' + question.text) }}</h3>
+
+        <el-row class="actions mt-3">
 
             <el-tooltip class="item" effect="dark" content="Top Left prompts info" placement="bottom">
                 <el-button title="test" :disabled="!question.notice" @click="showMoreInfo = !showMoreInfo"
@@ -25,20 +27,17 @@
         <div v-show="showImportance && answerFormat.tolerance" class="importances mt-3">
             <el-radio-group v-model="importance">
                 <el-radio-button v-for="(importance, key) in answerFormat.tolerance.items" :key="key"
-                                 :label="key">{{key}} {{ $t('gps.survey.' + importance.name) }}</el-radio-button>
+                                 :label="key">{{key}} {{ $t('gps.survey.' + importance.name) }}
+                </el-radio-button>
             </el-radio-group>
         </div>
 
-        <div class="mt-5">
-            <el-radio-group v-model="agreement" v-if="answerFormat.items">
-                <el-row>
-                    <el-radio-button class="el-radio-button--custom" circle v-for="item in answerFormat.items"
-                                     :key="item.id"
-                                     v-bind:label="item.key">
-                        {{ $t('gps.survey.' + item.name) }}
-                    </el-radio-button>
-                </el-row>
-            </el-radio-group>
+        <div class="answers mt-5">
+            <el-button icon="el-icon-check"
+                       v-bind:class="{'is-active': answer_key === item.key}" circle
+                       v-for="item in answerFormat.items"
+                       :key="item.id" @click="() => setAnswer(item.key)">
+            </el-button>
         </div>
     </div>
 </template>
@@ -67,6 +66,7 @@
       return {
         agreement: null,
         importance: 1,
+        answer_key: null,
         isFolded: this.folded,
         showMoreInfo: false,
         showImportance: false
@@ -80,7 +80,7 @@
         console.log('Set agreement', agreement);
         setTimeout(() => {
           let tolerance = this.answerFormat.tolerance.items[this.importance].key;
-          this.setQuestionImportance({questionKey: this.question.key, importance : tolerance});
+          this.setQuestionImportance({questionKey: this.question.key, importance: tolerance});
           this.setQuestionAgreement({questionKey: this.question.key, agreement});
         }, 1000)
       },
@@ -100,6 +100,10 @@
         }
         return index;
       },
+      setAnswer: function (key) {
+        this.answer_key = key;
+        this.agreement = key;
+      },
       setImportance: function (importance) {
         console.log('Data', importance);
         this.importance = importance;
@@ -110,41 +114,62 @@
 
 <style lang="scss">
 
+    .alert-primary{
+        width: auto;
+        display: inline-block;
+        padding: 0.2em;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    h3.title{
+        margin-top: 1em;
+        font-size: 22px;
+    }
+
     .answers {
         background: #000000;
-    }
+        padding: 0.5em;
 
-    .slider-wrapper {
-        width: 60%;
-        margin: -40px auto 1em;
+        .el-button {
+            height: 50px;
+            width: 50px;
+            background: #FFFFFF;
+            border: none;
 
-        .slider-legend {
-
-            color: #5a676e;
-            font-size: 12px;
-            margin-top: -50px;
-
-            .text-left {
-                margin-left: -50px;
+            i {
+                color: #000000;
+                font-size: 24px;
+                opacity: 0;
             }
 
-            .text-right {
-                margin-right: -50px;
-            }
-        }
-    }
-
-    .el-radio-button--custom {
-        margin: 10px 0 10px 0;
-
-        .el-radio-button__inner {
-            width: 250px !important;
-        }
-
-        &.is-active {
-            .el-radio-button__inner {
+            &.is-active {
+                opacity: 1;
                 animation: blink-animation 0.4s steps(5, start) 2;
                 -webkit-animation: blink-animation 0.4s steps(5, start) 2;
+                i {
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:nth-child(2) {
+                background: #fdcad1;
+            }
+
+            &:nth-child(3) {
+                background: #f09aa3;
+            }
+
+            &:nth-child(4) {
+                background: #f56073;
+            }
+
+            &:nth-child(5) {
+                background: #E4001C;
             }
         }
     }

@@ -13,7 +13,7 @@
         </div>
         <el-footer class="footer-fixed">
             <div class="row">
-                <div class="col-1">
+                <div class="col-2">
                     <a v-show="questions.current.index > 1" class="btn btn-block"
                        @click="goPrevious"><i class="fas fa-chevron-left"></i></a>
                 </div>
@@ -21,7 +21,7 @@
                     <a v-show="questions.current.index > 1" class="btn btn-block"
                        @click="goResults">{{ $t("button.see_results") }} </a>
                 </div>
-                <div class="col-1">
+                <div class="col-2">
                     <a v-show="questions.current.index < questions.total" class="btn btn-block"
                        @click="goNext"><i
                             class="fas fa-chevron-right"></i>
