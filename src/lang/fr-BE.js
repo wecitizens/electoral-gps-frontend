@@ -1,132 +1,134 @@
 export default {
-  "home": {
-    "cta": "Je fais le test!",
-    "title": "Trouve les candidats qui te correspondent",
-    "powered_by": "Powered by:",
-    "description": "Déjà {userCount} matchs",
-    "with_help_from": "Avec la participation de :"
-  },
-  "app": {
-    "title": "GPS électoral"
-  },
-  "There is no campaign for the moment" : "Il n'y a pas de campagne pour l'instant",
-  "share": {
-    "title": "Partager"
-  },
-  "importance_tooltip" : "Text",
-  "importance": [
-    "Pas important",
-    "Moyen",
-    "Peu important",
-    "Non négociable",
-  ],
-  "donate": {
-    "title": "Sans vos donations, nous ne saurions vous informer sur les élections à venir' not found for locale",
-    "account": "IBAN : BE16 7350 3219 3274",
-    "content": "Faites un virement sur le compte de WeCitizens:"
-  },
-  "stats": {
-    "anonymous_question_to_improve_service": "Ces dernières questions restent anonymes et nous permettent d’améliorer notre service",
-    "questions": [
-      {
-        "type": "radio",
-        "title": "I was informed of the existence of the Electoral GPS through:",
-        "key": "source",
-        "options": {
-          "tv_radio": "TV /  Radio",
-          "paper_press": "Paper press",
-          "social_media": "Social media",
-          "mailing": "WeCitizens mailing",
-          "friend": "Friend",
-          "googlesearch": "Google search",
-          "other": "Other",
+    "0": "La méthodologie de calcul du score (le 'matching') est décrite ici [http://www.wecitizens.be/docs-en/Q22-Matching_methodology.pdf]\nDisclaimer:\nNousCitoyens ne peut pas garantir la sincérité ni la fiabilité des réponses des candidats. Le 'matching' n'est qu'une indication, parmi d'autres pour se former un jugement : les projets, les compétences et l'intégrité du candidat.\nIl est recommandé de visiter le profil du candidat en cliquant sur son nom.\nTenez aussi compte que votre commune connaît des enjeux qui lui sont propres et qui ne sont pas repris dans cet outil. \nAvec votre soutien, nous espérons pouvoir vous aider encore mieux lors des élections fédérales, régionales et européenne de mai 2019.",
+    "home": {
+        "cta": "Je fais le test !",
+        "title": "Je trouve les candidats qui me correspondent",
+        "powered_by": "Powered by:",
+        "description": "{userCount} électeurs ont déjà fait l'expérience",
+        "with_help_from": "En partenariat avec :"
+    },
+    "app": {
+        "title": "GPS électoral"
+    },
+    "share": {
+        "title": "Partager"
+    },
+    "importance_5": "Tout à fait d'accord",
+    "donate": {
+        "title": "Sans vos dons, nous ne saurions vous informer sur les élections à venir",
+        "account": "IBAN : BE16 7350 3219 3274",
+        "content": "Faites un virement sur le compte de WeCitizens:"
+    },
+    "importance": [
+        "Peu important",
+        "Importance moyenne",
+        "Très important",
+        "Non-négociable"
+    ],
+    "title": {
+        "parties": "Listes",
+        "candidates": "Candidats"
+    },
+    "links": {
+        "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
+        "wecitizens_link": "http://www.wecitizens.be/fr",
+        "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
+        "register_as_candidate_link": "http://directory.wecitizens.be/fr/login/index/register_politician"
+    },
+    "button": {
+        "lets_go": "C'est parti",
+        "more_info": "détails",
+        "see_results": "Voir les résultats",
+        "next_question": "Suivant",
+        "show_more_infos": "d'infos",
+        "show_importance": "définir l'importance",
+        "previous_question": "Précédent"
+    },
+    "menu": {
+        "item": {
+            "stats": "Stats",
+            "donate": "Soutenir",
+            "results": "Résultats",
+            "welcome": "Accueil",
+            "share_app": "Partager le {app_title}",
+            "questions": "Questions",
+            "about_app": "À propos du {app_title}",
+            "municipality": "Commune",
+            "go_to_results": "Sauter aux résultats",
+            "share_results": "Partager mes résultats",
+            "about_association": "À propos de {association_name}",
+            "see_all_questions": "Voir toutes les questions",
+            "advice_to_elector": "Conseil à l'électeur",
+            "start_from_scratch": "Recommencer à zéro",
+            "register_as_candidate": "M'inscrire comme candidat"
         }
-      },
-      {
-        "type": "radio",
-        "title": "My age:",
-        "key": "age",
-        "options": {
-          "over_55": "+ 55 ans",
-          "less_than_35": "-35 ans",
-          "between_35_and_55": "35 à 55",
+    },
+    "association": {
+        "name": "NousCitoyens"
+    },
+    "results": {
+        "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
+        "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
+    },
+    "stats": {
+        "questions": [
+            {
+                "key": "source",
+                "type": "radio",
+                "title": "Je suis tombé sur le GPS électoral grâce à:",
+                "options": {
+                    "other": "Autre",
+                    "friend": "Bouche à oreille",
+                    "mailing": "Mailing de NousCitoyens",
+                    "tv_radio": "TV / Radio",
+                    "paper_press": "Presse papier",
+                    "googlesearch": "Moteur de recherche Google",
+                    "social_media": "Réseaux sociaux"
+                }
+            },
+            {
+                "key": "âge",
+                "type": "radio",
+                "title": "Mon âge:",
+                "options": {
+                    "over_55": "+ 55 ans",
+                    "less_than_35": "-35 ans",
+                    "between_35_and_55": "35 à 55"
+                }
+            },
+            {
+                "key": "party_vote",
+                "type": "checkbox",
+                "title": "Lors des élections fédérale de 2014, j'ai voté pour ce parti:",
+                "options": {
+                    "ps": "PS",
+                    "mr": "MR",
+                    "cdh": "cdH",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
+                    "spa": "sp.a",
+                    "none": "Aucun",
+                    "defi": "Défi",
+                    "groen": "Groen",
+                    "other": "Autre parti",
+                    "ecolo": "Ecolo",
+                    "openvld": "Open VLD",
+                    "ptbpvda": "PTB",
+                    "vlaaamsbelang": "Vlaams Belang",
+                    "partipopulaire": "Parti Populaire"
+                }
+            }
+        ],
+        "anonymous_question_to_improve_service": "Ces dernières questions restent anonymes, nous permettent d’améliorer notre service et de faire des analyses statistiques."
+    },
+    "meaning_of_the_importance": "Le calcul du score de chaque candidat tient compte du poids que j’accorde à chaque question. Par défaut, la question est considéré “d’importance moyenne”. Si je clique sur “non-négociable” je donne le poids maximal à la question et d’exclue tous les candidats qui ne vont pas dans mon sens.",
+    "district": {
+        "help_customise_survey": "Je recevrai le classement des candidats de ma commune.",
+        "what_is_your_postcode": "Mon code postal"
+    },
+    "input": {
+        "place_holder": {
+            "your_postcode": "xxxx"
         }
-      },
-      {
-        "type": "checkbox",
-        "title": "For the Federal elections of 2014, I voted for following party:",
-        "key": "party_vote",
-        "options": {
-          "none": "Aucun",
-          "cdv" : "CD&V",
-          "cdh" : "cdH",
-          "defi" : "Défi",
-          "ecolo" : "Ecolo",
-          "groen" : "Groen",
-          "mr" : "MR",
-          "nva" : "N-VA",
-          "openvld" : "Open VLD",
-          "partipopulaire" : "Parti Populaire",
-          "ps" : "PS",
-          "ptbpvda" : "PTB - PVDA",
-          "spa" : "sp.a",
-          "vlaaamsbelang" : "Vlaams Belang",
-          "other" : "Autre parti",
-        }
-      }
-    ]
-  },
-  "title": {
-    "parties": "Listes",
-    "candidates": "Candidats"
-  },
-  "links": {
-    "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
-    "wecitizens_link": "http://www.wecitizens.be/fr/nous-citoyens/",
-    "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
-    "register_as_candidate_link": "http://directory.wecitizens.be/fr/login/index/register_politician"
-  },
-  "button": {
-    "lets_go": "C'est parti !",
-    "more_info": "détails",
-    "see_results": "Voir les résultats",
-    "next_question": "Suivant",
-    "previous_question": "Précédent",
-    "show_more_infos": "d'infos",
-    "show_importance": "définir l'importance",
-  },
-  "menu": {
-    "item": {
-      "stats": "Stats",
-      "donate": "Donate",
-      "results": "Résultats",
-      "welcome": "Accueil",
-      "about_app": "À propos du {app_title}",
-      "questions": "Questions",
-      "share_app": "Partager le {app_title}",
-      "municipality": "Commune",
-      "share_results": "Partager mes résultats",
-      "go_to_results": "Sauter aux résultats",
-      "see_all_questions": "Voir toutes les questions",
-      "about_association": "À propos de {association_name}",
-      "start_from_scratch": "Recommencer à zéro",
-      "advice_to_elector" : "Conseil à l'électeur",
-      "register_as_candidate" : "M'inscrire comme candidat",
     }
-  },
-  "association": {
-    "name": "WeCitizens"
-  },
-  "district": {
-    "help_customise_survey": "Ceci nous aidera à personnaliser ton questionnaire",
-    "what_is_your_postcode": "Quel est ton code postal ?"
-  },
-  "input": {
-    "place_holder": {
-      "your_postcode": "Ton code postal"
-    }
-  },
-  "results": {
-    "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
-  }
 }

@@ -24,7 +24,7 @@ export default {
 
       console.log('-> setCurrentPoll', data);
 
-      const poll = await API.get('/api/gps/poll/2018_be_municipal_' +
+      const poll = await API.get('gps/poll/2018_be_municipal_' +
         rootState.vote.current.district.key + '_voter.json', data)
         .then(request => {
           return request.data
@@ -32,7 +32,7 @@ export default {
       commit('setCurrentPoll', poll)
     },
     async setCurrentSurvey ({ commit, state }) {
-      const survey = await API.get('/api/gps/survey/' + state.current.poll.survey_key + '.json').then(request => {
+      const survey = await API.get('gps/survey/' + state.current.poll.survey_key + '.json').then(request => {
         const survey = request.data
         Vue.i18n.add('en', { gps: { survey: survey.i18n.en } })
         Vue.i18n.add('fr', { gps: { survey: survey.i18n.fr } })

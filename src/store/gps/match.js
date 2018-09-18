@@ -34,7 +34,7 @@ export default {
     actions: {
         async performMatch({commit}, matchRequest) {
 
-            const segmentAnswers = await API.get('/api/gps/answer/segment/' + matchRequest.segment_key + '.json').then((request) => {
+            const segmentAnswers = await API.get('gps/answer/segment/' + matchRequest.segment_key + '.json').then((request) => {
                 return request.data.data;
             });
 

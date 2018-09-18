@@ -10,7 +10,7 @@
                                  @select="setCurrentDistrict({ district })"></el-autocomplete>
             </el-row>
             <br/>
-            <el-row v-if="vote.current.election">
+            <el-row v-if="vote.current.election && vote.current.election.candidates">
                 <router-link v-if="vote.current.election.candidates.length > 3" :to="'/survey/'+district_key"
                              tag="el-button">{{ $t("button.lets_go") }}
                 </router-link>

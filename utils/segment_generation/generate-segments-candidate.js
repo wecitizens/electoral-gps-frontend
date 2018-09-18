@@ -22,7 +22,6 @@ csv()
           "value": item.value
         }
       );
-
     });
 
     for (let key in data){
