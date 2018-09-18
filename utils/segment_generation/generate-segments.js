@@ -34,17 +34,14 @@ csv()
                 console.log("File has been created");
             });
 
-            fs.writeFile(k.replace('electoral_list', 'candidate') + ".json", JSON.stringify({data: []}, null, 2), (err) => {
+            /*fs.writeFile(k.replace('electoral_list', 'candidate') + ".json", JSON.stringify({data: []}, null, 2), (err) => {
                 if (err) {
                     console.error(err);
                     return;
                 }
 
                 console.log("File has been created");
-            });
-
-            // a lot of hacks
-            // @TODO handle candidate answers (not only electoral list) 
+            });*/
 
             const removeDuplicates = function removeDuplicates(array) {
                 let uniq = {};

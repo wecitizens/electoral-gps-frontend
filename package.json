@@ -9,6 +9,7 @@
     "deploy": "cd dist && surge --domain wecitizens.surge.sh",
     "deploy_prod": "vue-cli-service build && bash deploy.sh",
     "sync-translations": "node --harmony ./bin/sync-translations.js",
+    "get-answers": "node --harmony ./utils/segment_generation/generate-segments-candidate.js",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e"
   },
