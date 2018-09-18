@@ -1,7 +1,8 @@
 <template>
     <div>
-        <main class="main text-white mt-5 clearfix">
-            <h1>GPS<br>ELECTORAL</h1>
+        <main class="main text-white clearfix">
+            <h1 class="big-title"><span class="big-title__big">GPS</span><span class="big-title__small">ELECTORAL</span></h1>
+            <div class="subtitle">Communales 2018</div>
             <h2>{{ $t("home.title") }}</h2>
             <div class="infos">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
 
@@ -60,7 +61,43 @@
 <style lang="scss" rel="stylesheet/scss">
 
     body, html {
-        height: 100%;
+        min-height: 100vh;
+    }
+
+    .big-title {
+        margin-top: 0;
+        text-align: center;
+        font-size: 48px;
+        color: #000000;
+        font-weight: bold;
+        font-family: 'IBM Plex Sans Condensed', sans-serif;
+
+        &__big {
+            font-size: 70px;
+            display: block;
+        }
+
+        &__small{
+            display: block;
+            font-size: 19px;
+            margin: -10px;
+        }
+
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        width: 90%;
+        margin: 10px auto 0 !important;
+    }
+
+    .subtitle {
+        background: #F8E71C;
+        text-transform: uppercase;
+        font-size: 18px;
+        display: inline-block;
+        padding: 0.3em 0.8em;
+        font-weight: bold;
     }
 
     .infos {
@@ -72,8 +109,8 @@
 
     .cta-section {
         background: #000000;
-        margin-top: 200px;
-        height: 140px;
+        margin-top: 120px;
+        height: 150px;
         position: relative;
         padding-top: 20px;
 
@@ -124,18 +161,13 @@
         padding: 0.5em;
         margin: 0;
         text-align: center;
+        background: #F5F5F1;
+        position: absolute;
     }
 
     @media (min-width: 768px) {
         .footer {
             position: fixed;
         }
-    }
-
-    h1 {
-        margin-top: 30px;
-        text-align: center;
-        font-size: 48px;
-        color: #000000;
     }
 </style>
