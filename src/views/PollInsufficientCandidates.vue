@@ -7,7 +7,7 @@
         <div class="container mt-3 mb-5" v-else>
             <h2>Seuls {{ vote.current.election.candidates.length }} candidats ont répondu au test dans votre commune</h2>
             <ul class="list-unstyled mt-4">
-                <li class="media mb-3" v-for="(item) in vote.current.election.candidates">
+                <li class="media mb-3" v-for="(key, item) in vote.current.election.candidates" :key="key">
                     <img class="mr-3 align-self-start img-thumbnail" src="https://cediv.travel/wp-content/uploads/2017/09/no-avatar-9.png" width="64" alt="Generic placeholder image">
                     <div class="media-body text-left">
                         <h5>{{ item.full_name }}</h5>

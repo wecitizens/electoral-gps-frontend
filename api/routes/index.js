@@ -7,6 +7,7 @@ router.get('/v1/dir/politician/:key.json', function (req, res) {
   var key = req.params['key'];
 
   key = key.replace('politician_be_', '');
+  key = key.replace('be_politician_', '');
 
   db.query("SELECT * from politician WHERE id = ?", key, function (err, rows) {
     if (err) throw err;
