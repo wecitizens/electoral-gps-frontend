@@ -2,7 +2,7 @@
     <div>
         <steps :active="1"></steps>
         <div class="text-center">
-            <transition-group name="slide" tag="div" class="questions-slider">
+            <transition-group name="slide" tag="div" class="questions-slider" v-if="questions.list.data">
                 <div v-for="(question, idx) in questions.list.data.questions" :key="idx"
                      v-if="question.key === currentQuestionKey">
                     <div class="question mt-5">
@@ -11,7 +11,7 @@
                 </div>
             </transition-group>
         </div>
-        <el-footer class="footer-fixed">
+        <el-footer class="footer-fixed" v-if="questions">
             <div class="row">
                 <div class="col-2">
                     <a v-show="questions.current.index > 1" class="btn btn-block"
