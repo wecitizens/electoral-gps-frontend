@@ -30,7 +30,7 @@ router.get('/v1/gps/answer/segment/2018_be_municipal_be_:key.json', function (re
     key = key.replace('_electoral_list', '');
 
     db.query(`
-SELECT 
+SELECT
     a.id,
     CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
     'electoral_list' AS segment_type,
@@ -106,26 +106,29 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
 
   let key = req.params['key'];
 
-  db.query(`SELECT 
+  db.query(`SELECT
     a.id,
     CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
     'electoral_list' AS segment_type,
     CONCAT('be_', j.postcode, '_', lower(replace(replace(j.institution,'! &',''),' ','_'))) AS list_key,
     CONCAT('be_politician_', p.id) AS politician_key,
     j.institution,
-    CONCAT(p.name, ' ', p.surname) AS full_name
+    CONCAT(p.name, ' ', p.surname) AS full_name,
+    pic.full_path as img
 FROM
     opinions_answers a
         JOIN
     politician_job j ON j.id_politician = a.id_politician
         JOIN
     politician p ON p.id = a.id_politician
+        LEFT JOIN
+    politician_photos pic ON pic.id_politician = a.id_politician
 WHERE
     opinion_received > '2018-09-08'
         AND j.num = 1
         AND j.postcode = ?
         AND a.id_politician != 5439 # Jean-Paul
-GROUP BY j.id_politician        
+GROUP BY j.id_politician
 ORDER BY opinion_received DESC`, key, (err, rows) => {
 
     if(err) {
@@ -161,10 +164,15 @@ ORDER BY opinion_received DESC`, key, (err, rows) => {
 
     rows.map((item) => {
 
+      let imgUrl = (url) => {
+        return url ? url.replace('/home/wecitizens/domains/wecitizens.be/public_html/directory/', 'http://directory.wecitizens.be/') : null
+      }
+
       if(typeof lists[item.list_key] === 'undefined'){
         lists[item.list_key] = {
           "key": item.list_key,
           "name": item.list_key+"_name",
+          "img": imgUrl(item.img),
           "candidates": {}
         };
       }
@@ -178,7 +186,8 @@ ORDER BY opinion_received DESC`, key, (err, rows) => {
 
       candidates[item.politician_key] = {
         key: item.politician_key,
-        full_name : item.full_name
+        full_name : item.full_name,
+        img: imgUrl(item.img)
       };
     });
 

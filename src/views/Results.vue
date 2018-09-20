@@ -1,8 +1,47 @@
 <template>
     <div class="results">
 
-        {{ currentCandidateScores }}
-        {{ currentElectoralListScores }}
+        <b-card no-body>
+            <b-tabs card>
+                <b-tab title="Candidates" class="col-md-6 tab-center" active>
+                    <p class="list-legend">Les candidats qui partagent le plus mes convictions sont:</p>
+                    <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
+                         :key="idx">
+                        <div class="col-3">
+                            <img :src="item.img" class="img-thumbnail"/>
+                        </div>
+                        <div class="col-9">
+                            <div class="title">{{ item.name }}</div>
+                            <div class="subtitle">#{{ item.position }} {{ item.group }}</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
+                                     :aria-valuenow="item.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ Math.round(item.score) }}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </b-tab>
+                <b-tab title="Listes" class="col-md-6 tab-center">
+                    <p class="list-legend">Les listes qui partagent le plus mes convictions sont:</p>
+                    <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
+                         :key="idx">
+                        <div class="col-3">
+                            <img :src="item.img" class="img-thumbnail"/>
+                        </div>
+                        <div class="col-9">
+                            <div class="title">{{ item.name }}</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
+                                     :aria-valuenow="item.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ Math.round(item.score) }}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </b-tab>
+            </b-tabs>
+        </b-card>
 
         <div>
             <button type="button" class="btn btn-default">Corriger mes réponses</button>
@@ -13,14 +52,10 @@
 
 <script>
 
-  import CandidateLists from '@/components/CandidateList';
   import {mapGetters} from 'vuex'
 
   export default {
     name: 'results',
-    components: {
-      CandidateLists
-    },
     methods: {
       getElectoralListForScore(score) {
         return this.currentElection.electoral_lists.find(e => e.key == score.user_key);
@@ -28,41 +63,32 @@
       extractCandidate(score) {
 
         console.log("Extract", score.user_key);
-
-        if (!score.user && score.user_key) {
-          const rest = axios.get('/politician/' + score.user_key + '.json').then((err, data) => {
-            console.log('rest', rest);
-          });
-        } else if (score.user) {
-          let group = this.currentElection.electoral_lists
-            .filter(e => e.candidates.map(c => c.key).includes(score.user_key))[0]
-
-          console.log('Extract candidate', score.user.key, this.currentElection.candidate);
-
+        let group = this.currentElection.electoral_lists
+          .filter(e => e.candidates.map(c => c.key).includes(score.user_key))[0]
+        let candidate = this.currentElection.candidates.find(p => p.key == score.user_key)
+        if (candidate) {
           return {
-            name: this.currentElection.candidates.find(p => p.key == score.user_key).full_name,
+            name: candidate.full_name,
             group: this.$t('vote.' + group.name),
             position: group.candidates.find(c => c.key == score.user_key).order,
             score: score.score,
-            img: 'http://directory.wecitizens.be/assets/media/vignette_user/2dbd727a0959bff621ae57de378261c4.jpeg'
-          } // @TODO fix image src
+            img: candidate.img
+          }
         } else {
-          console.log('User not found', score);
-          return {
-            name: "user_key",
-            group: "user_key",
-            position: "user_key",
-            score: "user_key",
-            img: "user"
-          };
+          return {}
         }
       },
       extractList(score) {
-        return {
-          name: this.$t('vote.' + this.getElectoralListForScore(score).name),
-          score: score.score,
-          img: 'http://directory.wecitizens.be/assets/media/vignette_user/73b0e2fd2a3db4d9da41811ca74507a2.png'
-        } // @TODO fix image src
+        let list = this.getElectoralListForScore(score)
+        if (list) {
+          return {
+            name: this.$t('vote.' + list.name),
+            score: score.score,
+            img: 'http://directory.wecitizens.be/assets/media/vignette_user/73b0e2fd2a3db4d9da41811ca74507a2.png'
+          } // @TODO fix image src
+        } else {
+          return {}
+        }
       }
     },
     created() {
@@ -79,9 +105,6 @@
 
         const answers = this.$store.state.questions.list.data.questions
           .map(q => {
-
-            console.log('Q', q);
-
             return {
               question_key: q.key,
               answer_format: 'agr_5_scale_tol_3_scale_abs', // TODO survey.questions.find(qu => qu.key === q.key).answer_format,
@@ -114,6 +137,7 @@
 </script>
 
 <style scoped>
+
     .tab-center {
         margin: auto;
     }
@@ -141,12 +165,17 @@
     }
 
     .list-item .subtitle {
+        background: transparent;
         font-size: 120%;
     }
 
     .list-item .progress {
         margin-top: .6em;
         border-radius: 10px;
+    }
+    .list-item .progress-bar {
+      background-color: #F8E71C;
+      color: black;
     }
 
     .list-scroll {
