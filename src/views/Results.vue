@@ -84,8 +84,8 @@
           return {
             name: this.$t('vote.' + list.name),
             score: score.score,
-            img: 'http://directory.wecitizens.be/assets/media/vignette_user/73b0e2fd2a3db4d9da41811ca74507a2.png'
-          } // @TODO fix image src
+            img: list.img
+          }
         } else {
           return {}
         }
