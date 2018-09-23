@@ -105,7 +105,11 @@ export default {
           if (q == null) // otherwise when question answer not found in segment, there might be a question_id mismatch
             return acc;
 
-          u[t.question_key] = answer_formats.find(x => x.key == q.answer_format).items.find(x => x.key == t.value).weight;
+          try{
+              u[t.question_key] = answer_formats.find(x => x.key == q.answer_format).items.find(x => x.key == t.value).weight;
+          } catch(err){
+            console.log('cannot find ', t.question_key, q.answer_format, t.value, answer_formats);
+          }
           acc[t.user_key] = u;
           return acc;
 

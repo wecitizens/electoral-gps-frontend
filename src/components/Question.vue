@@ -35,7 +35,12 @@
             </el-radio-group>
         </div>
 
-        <div class="answers mt-5">
+        <div class="row answers__legend mt-5">
+            <div class="col text-left">{{ $t("Pas du tout d'accord")}}</div>
+            <div class="col text-center">{{ $t("Je ne me prononce pas")}}</div>
+            <div class="col text-right">{{ $t("Tout à fait d'accord")}}</div>
+        </div>
+        <div class="answers">
             <el-button icon="el-icon-check"
                        v-bind:class="{'is-active': answer_key === item.key}" circle
                        v-for="item in answerFormat.items"
@@ -128,6 +133,18 @@
     h3.title{
         margin-top: 1em;
         font-size: 22px;
+    }
+
+
+
+    .answers__legend{
+        width: 320px;
+        color: #000000;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 10px;
     }
 
     .answers {

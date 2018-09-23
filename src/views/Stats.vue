@@ -1,30 +1,27 @@
 <template>
     <div>
         <steps :active="3"></steps>
-        <h1 class="text-center">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
+        <h1 class="text-center mt-5">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
-            <el-form-item v-for="(q, key) in $t('stats.questions')" :key="key" :label="q.title">
-                <el-checkbox-group v-if="q.type === 'checkbox'">
-                    <el-checkbox v-for="(name, value) in q.options" :v-model="'form.'+form[q.key]" :key="value" v-bind:label="name" :name="q.key"
-                                 v-bind:value="value"></el-checkbox>
-                </el-checkbox-group>
-                <el-radio-group  v-if="q.type === 'radio'">
-                    <el-radio v-for="(name, value) in q.options" :v-model="'form.'+form[q.key]" :key="value" v-bind:label="name" :name="q.key"
-                              v-bind:value="value"></el-radio>
-                </el-radio-group>
+
+            <el-form-item :label="q[0].title">
+
+                <el-select :v-model="'form.'+q.key" v-if="q.type === 'select'" placeholder="" :value="'form.'+form[q.key]">
+                    <el-option v-for="(name, value) in q.options"  :key="value" v-bind:label="name" :name="q.key" value="value"></el-option>
+                </el-select>
             </el-form-item>
+
             <el-form-item>
-                <router-link tag="el-button" to="results" type="primary">{{$t('button.see_results')}}</router-link>
+                <el-button @click="seeResults"> {{ $t('button.see_results') }}</el-button>
             </el-form-item>
         </el-form>
     </div>
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
-
   import Steps from '../components/Steps'
   import ElRadio from "element-ui/packages/radio/src/radio"
+  import Api from '../store/_helpers/api';
 
 
   export default {
@@ -37,31 +34,21 @@
         municipality: null,
         type: null,
         form: {
-
-        }
+          source:null,
+          age: null,
+          party_vote: null
+        },
+        q : this.$t('stats.questions')
       }
     },
     computed: {
-      ...mapGetters(['municipalities']),
-      displayNextStepButton() {
-        return true
-        // return this.municipalities.includes({ value: this.municipality })
-      }
+
     },
     methods: {
-      ...mapActions(['setZipCode']),
-      querySearch(queryString, cb) {
-        const municipalities = this.municipalities
-        const results = queryString ? municipalities.filter(this.createFilter(queryString)) : municipalities
-        cb(results)
-      },
-      createFilter(queryString) {
-        return (municipality) => {
-          return (municipality.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
-        }
-      },
-      handleSelect() {
-        //
+      seeResults(){
+        Api.post('stats', this.form).then(() => {
+          this.$router.push('/results');
+        });
       }
     }
   }

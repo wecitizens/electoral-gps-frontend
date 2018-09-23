@@ -4,7 +4,7 @@
         <b-card no-body>
             <b-tabs card>
                 <b-tab title="Candidates" class="col-md-6 tab-center" active>
-                    <p class="list-legend">Les candidats qui partagent le plus mes convictions sont:</p>
+                    <p class="list-legend">{{ $t('Les candidats qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
                          :key="idx">
                         <div class="col-3">
@@ -23,7 +23,7 @@
                     </div>
                 </b-tab>
                 <b-tab title="Listes" class="col-md-6 tab-center">
-                    <p class="list-legend">Les listes qui partagent le plus mes convictions sont:</p>
+                    <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
                          :key="idx">
                         <div class="col-3">
@@ -42,11 +42,6 @@
                 </b-tab>
             </b-tabs>
         </b-card>
-
-        <div>
-            <button type="button" class="btn btn-default">Corriger mes réponses</button>
-            <button type="button" class="btn btn-default">Faire un don</button>
-        </div>
     </div>
 </template>
 

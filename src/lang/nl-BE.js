@@ -33,7 +33,7 @@ export default {
         "gps_link": "http://www.wecitizens.be/nl/onze-tools/kieswijzer/",
         "wecitizens_link": "http://www.wecitizens.be/nl",
         "advice_to_elector_link": "http://www.wecitizens.be/nl/tips_voor_de_kiezer/",
-        "register_as_candidate_link": "http://directory.wecitizens.be/nl/login/index/register_politician"
+        "register_as_candidate_link": "http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/"
     },
     "button": {
         "lets_go": "Van start !",
@@ -73,8 +73,8 @@ export default {
     "stats": {
         "questions": [
             {
-                "key": "bron",
-                "type": "radio",
+                "key": "source",
+                "type": "select",
                 "title": "Ik ken de KiesWijzer dankzij :",
                 "options": {
                     "other": "Andere",
@@ -87,8 +87,8 @@ export default {
                 }
             },
             {
-                "key": "leeftijd",
-                "type": "radio",
+                "key": "age",
+                "type": "select",
                 "title": "Mjn leeftijd:",
                 "options": {
                     "over_55": "+ 55 jaar",
@@ -98,7 +98,7 @@ export default {
             },
             {
                 "key": "party_vote",
-                "type": "checkbox",
+                "type": "multiselect",
                 "title": "Bij de federale verkiezingen van 2014, heb ik voor volgende partij gestemd:",
                 "options": {
                     "ps": "PS",
@@ -130,5 +130,12 @@ export default {
         "place_holder": {
             "your_postcode": "xxxx"
         }
-    }
+    },
+  "Les candidats qui partagent le plus mes convictions sont": "Les candidats qui partagent le plus mes convictions sont",
+  "Les listes qui partagent le plus mes convictions sont" : "Les listes qui partagent le plus mes convictions sont",
+  "importance_tooltip": "importance de la question",
+  "importance_title": "Importance",
+
+  "Pas du tout d'accord" : "Pas du tout d'accord",
+  "Je ne me prononce pas" : "Je ne me prononce pas"
 }

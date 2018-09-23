@@ -5,17 +5,20 @@
 
         </div>
         <div class="container mt-3 mb-5" v-else>
-            <h2>Seuls {{ vote.current.election.candidates.length }} candidats ont répondu au test dans votre commune</h2>
+
+            {{ vote.current.election.candidates }}
+
+            <h2>{{ $t('Seuls {number} candidats ont répondu au test dans votre commune', {'number': vote.current.election.candidates.length}) }}</h2>
             <ul class="list-unstyled mt-4">
-                <li class="media mb-3" v-for="(key, item) in vote.current.election.candidates" >
-                    <img class="mr-3 align-self-start img-thumbnail" src="https://cediv.travel/wp-content/uploads/2017/09/no-avatar-9.png" width="64" alt="Generic placeholder image">
+                <li class="media mb-3" v-for="(key, item) in vote.current.election.candidates"  :key="key">
+                    <img class="mr-3 align-self-start img-thumbnail" :src="item.thumb" width="64" alt="">
                     <div class="media-body text-left">
                         <h5>{{ item.full_name }}</h5>
-                        <h6>Liste du Bourgmestre</h6>
+                        <h6>{{ item.list }}</h6>
                     </div>
                 </li>
             </ul>
-            <router-link :to="'/survey/'+district_key" class="btn btn-block btn-danger mt-3">Je fais quand même le test!</router-link>
+            <router-link :to="'/survey/'+district_key" class="btn btn-block btn-danger mt-3">{{ $t('Je fais quand même le test!') }}</router-link>
             <div class="row mt-3">
                 <div class="col">
                     <a href="" class="btn btn-outline-danger btn-block">{{ $t('Partager le gps')}}</a>
