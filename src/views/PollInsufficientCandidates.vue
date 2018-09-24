@@ -5,13 +5,11 @@
 
         </div>
         <div class="container mt-3 mb-5" v-else>
-
-            {{ vote.current.election.candidates }}
-
             <h2>{{ $t('Seuls {number} candidats ont répondu au test dans votre commune', {'number': vote.current.election.candidates.length}) }}</h2>
             <ul class="list-unstyled mt-4">
-                <li class="media mb-3" v-for="(key, item) in vote.current.election.candidates"  :key="key">
-                    <img class="mr-3 align-self-start img-thumbnail" :src="item.thumb" width="64" alt="">
+                <li class="media mb-3" v-for="(item, key) in vote.current.election.candidates"  :key="key">
+                    <img class="mr-3 align-self-start img-thumbnail" :src="item.thumb" width="64" alt="" v-if="item.thumb">
+                    <img class="mr-3 align-self-start img-thumbnail" src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" width="64" alt="" v-else>
                     <div class="media-body text-left">
                         <h5>{{ item.full_name }}</h5>
                         <h6>{{ item.list }}</h6>

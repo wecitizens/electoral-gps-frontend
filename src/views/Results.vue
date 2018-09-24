@@ -8,7 +8,8 @@
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
                          :key="idx">
                         <div class="col-3">
-                            <img :src="item.img" class="img-thumbnail"/>
+                            <img :src="item.img" v-if="item.img" class="img-thumbnail" />
+                            <img src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-if="item.img" class="img-thumbnail" />
                         </div>
                         <div class="col-9">
                             <div class="title">{{ item.name }}</div>
