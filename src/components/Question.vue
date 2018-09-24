@@ -6,11 +6,10 @@
             <span v-else>{{ questions.current.index }}</span>/{{ questions.total }}
         </div>
 
-        <h3 class="title mt-3">{{ $t('gps.survey.' + question.text) }}</h3>
+        <h3 class="title m-3">{{ $t('gps.survey.' + question.text) }}</h3>
 
-        <el-row class="actions mt-3">
-
-            <el-tooltip class="item" effect="dark" content="Top Left prompts info" placement="bottom">
+        <el-row class="actions mt-3 d-none">
+            <el-tooltip class="item" effect="dark" :content="$t('moreinfo_tooltip')" placement="bottom">
                 <el-button title="test" :disabled="!question.notice" @click="showMoreInfo = !showMoreInfo"
                            :icon="showMoreInfo ? 'el-icon-minus' : 'el-icon-info'" circle></el-button>
             </el-tooltip>

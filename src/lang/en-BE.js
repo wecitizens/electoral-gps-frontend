@@ -137,5 +137,5 @@ export default {
         }
     },
     "Les listes qui partagent le plus mes convictions sont": "The politic list sharing my opinions are",
-    "Les candidats qui partagent le plus mes convictions sont": "The candidates sharing my opinions are"
+    "Les candidats qui partagent le plus mes convictions sont": "The candidates sharing my opinions are",
 }

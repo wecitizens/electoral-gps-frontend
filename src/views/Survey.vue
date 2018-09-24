@@ -125,8 +125,10 @@
     .footer-fixed {
         background: #F5F5F1;
         height: 70px;
-        position: fixed;
+        position: relative;
         bottom: 0;
         width: 100%;
     }
+
+
 </style>
