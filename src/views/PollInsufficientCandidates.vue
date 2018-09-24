@@ -17,7 +17,7 @@
                 </li>
             </ul>
             <router-link :to="'/survey/'+district_key" class="btn btn-block btn-danger mt-3">{{ $t('Je fais quand même le test!') }}</router-link>
-            <div class="row mt-3">
+            <div class="row mt-3 d-none"><!-- @TODO => dynamise this -->
                 <div class="col">
                     <a href="" class="btn btn-outline-danger btn-block">{{ $t('Partager le gps')}}</a>
                 </div>

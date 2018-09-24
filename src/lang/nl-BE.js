@@ -3,6 +3,9 @@ export default {
     "home": {
         "cta": "Ik doe de test !",
         "title": "Ik vind hier de kandidaten die mij het best liggen",
+        "title_2": "ELECTORAL",
+        "title_1": "GPS",
+        "subtitle": "Communales 2018",
         "powered_by": "Powered by:",
         "description": "{userCount} kiezers hebben het al gedaan",
         "with_help_from": "In samenwerking met:"
@@ -29,12 +32,6 @@ export default {
         "parties": "Kieslijsten",
         "candidates": "Kandidaten"
     },
-    "links": {
-        "gps_link": "http://www.wecitizens.be/nl/onze-tools/kieswijzer/",
-        "wecitizens_link": "http://www.wecitizens.be/nl",
-        "advice_to_elector_link": "http://www.wecitizens.be/nl/tips_voor_de_kiezer/",
-        "register_as_candidate_link": "http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/"
-    },
     "button": {
         "lets_go": "Van start !",
         "more_info": "lees meer",
@@ -44,36 +41,43 @@ export default {
         "show_more_infos": "info",
         "previous_question": "Voorgaande"
     },
+    "links": {
+        "gps_link": "http://www.wecitizens.be/nl/onze-tools/kieswijzer/",
+        "wecitizens_link": "http://www.wecitizens.be/nl",
+        "advice_to_elector_link": "http://www.wecitizens.be/nl/tips_voor_de_kiezer/",
+        "register_as_candidate_link": "http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/"
+    },
     "menu": {
         "item": {
             "stats": "Statistiek",
             "donate": "Steun",
-            "results": "Resultaat",
             "welcome": "Welkom",
+            "results": "Resultaat",
             "questions": "Vragen",
             "share_app": "Ik deel de {app_title}",
             "about_app": "Meer over {app_title}",
             "municipality": "Gemeent",
-            "go_to_results": "Nu al naar het resultaat",
             "share_results": "Mijn resultaat delen",
-            "see_all_questions": "Alle vragen bekijken",
-            "about_association": "Meer over {association_name}",
+            "go_to_results": "Nu al naar het resultaat",
             "advice_to_elector": "Tips voor de kiezer",
+            "about_association": "Meer over {association_name}",
+            "see_all_questions": "Alle vragen bekijken",
             "start_from_scratch": "Van nul herbeginnen",
             "register_as_candidate": "Mij inschrijven als kandidaat"
         }
     },
-    "importance_title": "Importance",
+    "moreinfo_tooltip": "Meer infos",
     "association": {
         "name": "WijBurgers"
     },
+    "importance_title": "Importance",
     "importance_tooltip": "importance de la question",
     "results": {
         "lists_title": "Kieslijsten in de volgorde van politieke affiniteit",
         "candatidates_sharing_my_position_the_most": "De kandidaten die het best mijn overtuigingen delen"
     },
-    "Tout à fait d'accord": "Tout à fait d'accord",
     "Pas du tout d'accord": "Pas du tout d'accord",
+    "Tout à fait d'accord": "Tout à fait d'accord",
     "stats": {
         "questions": [
             {
@@ -107,17 +111,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
-                    "nva": "N-VA",
-                    "cdv": "CD&V",
-                    "cdh": "cdH",
                     "spa": "sp.a",
-                    "none": "Geen enkele partij",
+                    "cdh": "cdH",
+                    "cdv": "CD&V",
+                    "nva": "N-VA",
                     "defi": "Défi",
-                    "other": "Andere partij",
-                    "groen": "Groen",
+                    "none": "Geen enkele partij",
                     "ecolo": "Ecolo",
-                    "ptbpvda": "PVDA",
+                    "groen": "Groen",
+                    "other": "Andere partij",
                     "openvld": "Open VLD",
+                    "ptbpvda": "PVDA",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }

@@ -1,11 +1,10 @@
 <template>
     <div>
         <main class="main text-white clearfix">
-            <h1 class="big-title"><span class="big-title__big">GPS</span><span class="big-title__small">ELECTORAL</span></h1>
-            <div class="subtitle">Communales 2018</div>
+            <h1 class="big-title"><span class="big-title__big">{{$t('home.title_1')}}</span><span class="big-title__small">{{$t('home.title_2')}}</span></h1>
+            <div class="subtitle">{{ $t('home.subtitle') }}</div>
             <h2>{{ $t("home.title") }}</h2>
-            <div class="infos">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
-
+            <div class="infos d-none">{{ $t("home.description", {"userCount": campaignTotalParticipants}) }}</div>
             <div class="cta-section">
                 <div class="perso-left">
                     <img src="/img/perso-1.svg" alt="">
@@ -150,7 +149,7 @@
             position: absolute;
             top: -100px;
             right: 50%;
-            margin-right: -200px;
+            margin-right: -180px;
         }
     }
 

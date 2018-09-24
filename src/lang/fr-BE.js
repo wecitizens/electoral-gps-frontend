@@ -3,6 +3,9 @@ export default {
     "home": {
         "cta": "Je fais le test !",
         "title": "Je trouve les candidats qui me correspondent",
+        "title_2": "ELECTORAL",
+        "title_1": "GPS",
+        "subtitle": "Communales 2018",
         "powered_by": "Powered by:",
         "description": "{userCount} électeurs ont déjà fait l'expérience",
         "with_help_from": "En partenariat avec :"
@@ -29,12 +32,6 @@ export default {
         "parties": "Listes",
         "candidates": "Candidats"
     },
-    "links": {
-        "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
-        "wecitizens_link": "http://www.wecitizens.be/fr",
-        "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
-        "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
-    },
     "button": {
         "lets_go": "C'est parti",
         "more_info": "détails",
@@ -44,36 +41,43 @@ export default {
         "show_more_infos": "d'infos",
         "previous_question": "Précédent"
     },
+    "links": {
+        "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
+        "wecitizens_link": "http://www.wecitizens.be/fr",
+        "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
+        "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
+    },
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Soutenir",
-            "results": "Résultats",
             "welcome": "Accueil",
+            "results": "Résultats",
             "questions": "Questions",
             "share_app": "Partager le {app_title}",
             "about_app": "À propos du {app_title}",
             "municipality": "Commune",
-            "go_to_results": "Sauter aux résultats",
             "share_results": "Partager mes résultats",
-            "see_all_questions": "Voir toutes les questions",
-            "about_association": "À propos de {association_name}",
+            "go_to_results": "Sauter aux résultats",
             "advice_to_elector": "Conseil à l'électeur",
+            "about_association": "À propos de {association_name}",
+            "see_all_questions": "Voir toutes les questions",
             "start_from_scratch": "Recommencer à zéro",
             "register_as_candidate": "M'inscrire comme candidat"
         }
     },
-    "importance_title": "Importance",
+    "moreinfo_tooltip": "Plus d'infos",
     "association": {
         "name": "NousCitoyens"
     },
+    "importance_title": "Importance",
     "importance_tooltip": "importance de la question",
     "results": {
         "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
         "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
     },
-    "Tout à fait d'accord": "Tout à fait d'accord",
     "Pas du tout d'accord": "Pas du tout d'accord",
+    "Tout à fait d'accord": "Tout à fait d'accord",
     "stats": {
         "questions": [
             {
@@ -107,17 +111,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
-                    "nva": "N-VA",
-                    "cdv": "CD&V",
-                    "cdh": "cdH",
                     "spa": "sp.a",
-                    "none": "Aucun",
+                    "cdh": "cdH",
+                    "cdv": "CD&V",
+                    "nva": "N-VA",
                     "defi": "Défi",
-                    "other": "Autre parti",
-                    "groen": "Groen",
+                    "none": "Aucun",
                     "ecolo": "Ecolo",
-                    "ptbpvda": "PTB",
+                    "groen": "Groen",
+                    "other": "Autre parti",
                     "openvld": "Open VLD",
+                    "ptbpvda": "PTB",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }

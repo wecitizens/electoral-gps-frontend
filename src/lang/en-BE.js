@@ -3,6 +3,9 @@ export default {
     "home": {
         "cta": "I do the test!",
         "title": "Find the candidates that match with you",
+        "title_2": "GPS",
+        "title_1": "ELECTORAL",
+        "subtitle": "Communales 2018",
         "powered_by": "Powered by:",
         "description": "Already {userCount} matchs",
         "with_help_from": "With the help of:"
@@ -26,14 +29,8 @@ export default {
         "account": "IBAN : BE16 7350 3219 3274"
     },
     "title": {
-        "parties": "Candidates list",
+        "parties": "Canddate list",
         "candidates": "Candidates"
-    },
-    "links": {
-        "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
-        "wecitizens_link": "http://www.wecitizens.be",
-        "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
-        "register_as_candidate_link": "http://directory.wecitizens.be/en/login/index/register_politician"
     },
     "button": {
         "lets_go": "Let's go!",
@@ -44,36 +41,43 @@ export default {
         "show_more_infos": "info",
         "previous_question": "Previous"
     },
+    "links": {
+        "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
+        "wecitizens_link": "http://www.wecitizens.be",
+        "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
+        "register_as_candidate_link": "http://directory.wecitizens.be/en/login/index/register_politician"
+    },
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Donate",
-            "results": "Results",
             "welcome": "Home",
+            "results": "Results",
             "questions": "Questions",
             "share_app": "Share the {app_title}",
             "about_app": "About {app_title}",
             "municipality": "Municipality",
-            "go_to_results": "Skip to results",
             "share_results": "Share my results",
-            "see_all_questions": "See all questions",
-            "about_association": "About {association_name}",
+            "go_to_results": "Skip to results",
             "advice_to_elector": "Advise to the voters",
+            "about_association": "About {association_name}",
+            "see_all_questions": "See all questions",
             "start_from_scratch": "Start from scratch",
             "register_as_candidate": "Register as candidate"
         }
     },
-    "importance_title": "Importance",
+    "moreinfo_tooltip": "More infos",
     "association": {
         "name": "WeCitizens"
     },
+    "importance_title": "Importance",
     "importance_tooltip": "importance de la question",
     "results": {
         "lists_title": "Electoral lists in the order of political affinity",
         "candatidates_sharing_my_position_the_most": "Candidates that share my ideas the most"
     },
-    "Tout à fait d'accord": "Strongly agree",
     "Pas du tout d'accord": "Strongly disagree",
+    "Tout à fait d'accord": "Strongly agree",
     "stats": {
         "questions": [
             {
@@ -107,17 +111,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
-                    "nva": "N-VA",
-                    "cdv": "CD&V",
-                    "cdh": "cdH",
                     "spa": "sp.a",
-                    "none": "None",
+                    "cdh": "cdH",
+                    "cdv": "CD&V",
+                    "nva": "N-VA",
                     "defi": "Défi (FDF)",
-                    "other": "Other party",
-                    "groen": "Groen",
+                    "none": "None",
                     "ecolo": "Ecolo",
-                    "ptbpvda": "PTB - PVDA",
+                    "groen": "Groen",
+                    "other": "Other party",
                     "openvld": "Open VLD",
+                    "ptbpvda": "PTB - PVDA",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -137,5 +141,5 @@ export default {
         }
     },
     "Les listes qui partagent le plus mes convictions sont": "The politic list sharing my opinions are",
-    "Les candidats qui partagent le plus mes convictions sont": "The candidates sharing my opinions are",
+    "Les candidats qui partagent le plus mes convictions sont": "The candidates sharing my opinions are"
 }

@@ -6,7 +6,7 @@
             <span v-else>{{ questions.current.index }}</span>/{{ questions.total }}
         </div>
 
-        <h3 class="title m-3">{{ $t('gps.survey.' + question.text) }}</h3>
+        <h3 class="title p-3">{{ $t('gps.survey.' + question.text) }}</h3>
 
         <el-row class="actions mt-3 d-none">
             <el-tooltip class="item" effect="dark" :content="$t('moreinfo_tooltip')" placement="bottom">

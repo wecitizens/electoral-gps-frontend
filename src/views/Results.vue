@@ -9,7 +9,7 @@
                          :key="idx">
                         <div class="col-3">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail" />
-                            <img src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>
                         <div class="col-9">
                             <div class="title">{{ item.name }}</div>
@@ -29,7 +29,7 @@
                          :key="idx">
                         <div class="col-3">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
-                            <img src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>
                         <div class="col-9">
                             <div class="title">{{ item.name }}</div>
