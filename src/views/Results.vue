@@ -1,9 +1,8 @@
 <template>
     <div class="results">
-
         <b-card no-body>
             <b-tabs card>
-                <b-tab title="Candidates" class="col-md-6 tab-center" active>
+                <b-tab :title="$t('Candidates')" class="col-md-6 tab-center" active>
                     <p class="list-legend">{{ $t('Les candidats qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
                          :key="idx">
@@ -12,8 +11,27 @@
                             <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>
                         <div class="col-9">
-                            <div class="title">{{ item.name }}</div>
+                            <div class="title"><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.id">{{ item.name }}</a></div>
                             <div class="subtitle d-none">#{{ item.position }} {{ item.group }}</div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
+                                     :aria-valuenow="item.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ Math.round(item.score) }}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </b-tab>
+                <b-tab :title="$t('Listes')" class="col-md-6 tab-center d-none">
+                    <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
+                    <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
+                         :key="idx">
+                        <div class="col-3">
+                            <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
+                            <img src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                        </div>
+                        <div class="col-9">
+                            <div class="title">{{ item.name }}</div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
                                      :aria-valuenow="item.score"
