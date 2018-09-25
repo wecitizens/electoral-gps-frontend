@@ -1,5 +1,7 @@
 export default {
+    "agree": "Rather yes",
     "notice": "The method of calculating the score (the 'matching') is described here [http://www.wecitizens.be/docs-en/Q22-Matching_methodology.pdf]\nDisclaimer:\nWeCitizens can not guarantee the sincerity or the reliability of the answers of the candidates. The matching score is only one element to take into account when picking a candidate to vote for. We encourage you also jude the candidate's projects, skills and integrity. You can visit the profile of the candidate by clicking on his name.\nAlso take into account that your municipality faces challenges that are unique to it and that are not included in this tool.\nWith your support, we hope to help you even better in the federal, regional and European elections of May 2019.",
+    "disagree": "Rather no",
     "home": {
         "cta": "I do the test!",
         "title": "Find the candidates that match with you",
@@ -13,9 +15,7 @@ export default {
     "app": {
         "title": "Electoral GPS"
     },
-    "rather_no": "Rather no",
-    "rather_yes": "Rather yes",
-    "fully_agree": "Fully agree",
+    "no_opinion": "I give no opinion",
     "share": {
         "title": "Share"
     },
@@ -50,15 +50,16 @@ export default {
         "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
         "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
     },
+    "strongly_agree": "Fully agree",
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Donate",
             "results": "Results",
             "welcome": "Home",
-            "share_app": "Share the {app_title}",
-            "about_app": "About {app_title}",
             "questions": "Questions",
+            "about_app": "About {app_title}",
+            "share_app": "Share the {app_title}",
             "municipality": "Municipality",
             "go_to_results": "Skip to results",
             "share_results": "Share my results",
@@ -70,12 +71,11 @@ export default {
         }
     },
     "accept_condition": "J'accepte les conditions",
+    "importance_title": "Importance",
+    "moreinfo_tooltip": "More infos",
     "association": {
         "name": "WeCitizens"
     },
-    "importance_title": "Importance",
-    "moreinfo_tooltip": "More infos",
-    "i_give_no_opinion": "I give no opinion",
     "strongly_disagree": "Strongly disagree",
     "insuffisant_number": "The number of participating candidates in the municipality is insufficient to go further with the GPS electoral. By clicking on the name of a candidate, you open his profile. The \"Opinions\" tab gives you his answers to the questionnaire.",
     "importance_tooltip": "importance de la question",

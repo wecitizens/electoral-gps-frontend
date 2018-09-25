@@ -1,5 +1,7 @@
 export default {
+    "agree": "Eerder akkoord",
     "notice": "De methode voor het berekenen van de score (de 'matching') wordt hier beschreven [http://www.wecitizens.be/docs-en/Q22-Matching_methodology.pdf] Disclaimer: WijBurgers kan de oprechtheid of de betrouwbaarheid van de antwoorden van de kandidaten niet garanderen. De ‘matching’ is slechts één indicatie om een oordeel te vellen, naast andere: de projecten, vaardigheden en integriteit van de kandidaat. Het wordt aanbevolen om het profiel van de kandidaat te bezoeken door op zijn naam te klikken. Houd er ook rekening mee dat uw gemeente uitdagingen kent die haar eigen zijn en die niet zijn opgenomen in deze tool. Met uw steun hopen we u nog beter te kunnen helpen bij de federale, regionale en Europese verkiezingen van mei 2019.",
+    "disagree": "Eerder niet akkoord",
     "home": {
         "cta": "Ik doe de test !",
         "title": "Ik vind hier de kandidaten die mij het best liggen",
@@ -13,9 +15,7 @@ export default {
     "app": {
         "title": "KiesWijzer"
     },
-    "rather_no": "Eerder niet akkoord",
-    "rather_yes": "Eerder akkoord",
-    "fully_agree": "Helemaal akkoord",
+    "no_opinion": "Ik spreek mij niet uit",
     "share": {
         "title": "Delen"
     },
@@ -50,15 +50,16 @@ export default {
         "advice_to_elector_link": "http://www.wecitizens.be/nl/tips_voor_de_kiezer/",
         "register_as_candidate_link": "http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/"
     },
+    "strongly_agree": "Helemaal akkoord",
     "menu": {
         "item": {
             "stats": "Statistiek",
             "donate": "Steun",
             "results": "Resultaat",
             "welcome": "Welkom",
-            "share_app": "Ik deel de {app_title}",
-            "about_app": "Meer over {app_title}",
             "questions": "Vragen",
+            "about_app": "Meer over {app_title}",
+            "share_app": "Ik deel de {app_title}",
             "municipality": "Gemeent",
             "go_to_results": "Nu al naar het resultaat",
             "share_results": "Mijn resultaat delen",
@@ -70,12 +71,11 @@ export default {
         }
     },
     "accept_condition": "J'accepte les conditions",
+    "importance_title": "Weging",
+    "moreinfo_tooltip": "Meer infos",
     "association": {
         "name": "WijBurgers"
     },
-    "importance_title": "Weging",
-    "moreinfo_tooltip": "Meer infos",
-    "i_give_no_opinion": "Ik spreek mij niet uit",
     "strongly_disagree": "Helemaal niet akkoord",
     "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is onvoldoende om verder te gaan met de KiesWijzer. Klik op de naam van een kandidaat en open zijn profiel. Op het tabblad 'Opinies' vindt je zijn antwoorden op de vragenlijst.",
     "importance_tooltip": "importance de la question",

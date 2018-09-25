@@ -1,5 +1,7 @@
 export default {
+    "agree": "Plutôt d'accord",
     "notice": "La méthodologie de calcul du score (le 'matching') est décrite ici [http://www.wecitizens.be/docs-en/Q22-Matching_methodology.pdf] Disclaimer: NousCitoyens ne peut pas garantir la sincérité ni la fiabilité des réponses des candidats. Le 'matching' n'est qu'une indication, parmi d'autres pour se former un jugement : les projets, les compétences et l'intégrité du candidat. Il est recommandé de visiter le profil du candidat en cliquant sur son nom. Tenez aussi compte que votre commune connaît des enjeux qui lui sont propres et qui ne sont pas repris dans cet outil. Avec votre soutien, nous espérons pouvoir vous aider encore mieux lors des élections fédérales, régionales et européenne de mai 2019.",
+    "disagree": "Plutôt pas d'accord",
     "home": {
         "cta": "Je fais le test !",
         "title": "Je trouve les candidats qui me correspondent",
@@ -13,9 +15,7 @@ export default {
     "app": {
         "title": "GPS électoral"
     },
-    "rather_no": "Plutôt pas d'accord",
-    "rather_yes": "Plutôt d'accord",
-    "fully_agree": "Tout à fait d'accord",
+    "no_opinion": "Je ne me prononce pas",
     "share": {
         "title": "Partager"
     },
@@ -50,15 +50,16 @@ export default {
         "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
         "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
     },
+    "strongly_agree": "Tout à fait d'accord",
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Soutenir",
             "results": "Résultats",
             "welcome": "Accueil",
-            "share_app": "Partager le {app_title}",
-            "about_app": "À propos du {app_title}",
             "questions": "Questions",
+            "about_app": "À propos du {app_title}",
+            "share_app": "Partager le {app_title}",
             "municipality": "Commune",
             "go_to_results": "Sauter aux résultats",
             "share_results": "Partager mes résultats",
@@ -69,13 +70,12 @@ export default {
             "register_as_candidate": "M'inscrire comme candidat"
         }
     },
-    "accept_condition": "J'accepte les conditions",
+    "accept_condition": "J'accepte les conditions générales de nous Citoyens",
+    "importance_title": "Pondération",
+    "moreinfo_tooltip": "Plus d'infos",
     "association": {
         "name": "NousCitoyens"
     },
-    "importance_title": "Pondération",
-    "moreinfo_tooltip": "Plus d'infos",
-    "i_give_no_opinion": "Je ne me prononce pas",
     "strongly_disagree": "Pas du tout d'accord",
     "insuffisant_number": "Le nombre de candidats participants dans la commune est insuffisant pour poursuivre GPS électoral. En cliquant sur le nom d'un candidat, tu ouvres son profil. L'onglet \"Opinions\" te donne ses réponses au questionnaire.",
     "importance_tooltip": "importance de la question",
