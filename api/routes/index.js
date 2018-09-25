@@ -34,7 +34,7 @@ SELECT
     a.id,
     CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
     'electoral_list' AS segment_type,
-    CONCAT('be_', j.postcode, '_', lower(replace(replace(j.institution,'! &',''),' ','_'))) AS user_key,
+    CONCAT('be_', j.postcode, '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS user_key,
     CONCAT('question_', a.opinion_id) AS question_key,
     CASE
         WHEN a.opinion_answer = 5 THEN 'fully_agree'
@@ -44,17 +44,22 @@ SELECT
         WHEN a.opinion_answer = 1 THEN 'fully_disagree'
         ELSE 'no_opinion'
     END AS value,
-    j.institution as user_name, # added to ease compatibility but should not be part of segments
+    party.abbr as user_name, # added to ease compatibility but should not be part of segments
     a.opinion_received
 FROM
     opinions_answers a
         JOIN
     politician_job j ON j.id_politician = a.id_politician
+        JOIN
+    politician p ON p.id = a.id_politician
+        JOIN
+    politician_election e ON e.id_politician = a.id_politician
+        LEFT JOIN
+    party party ON party.id = e.roll
 WHERE
     opinion_received > '2018-09-08'
-        AND j.num = 1
-        AND a.id_politician != 5439 # Jean-Paul
-    AND j.postcode = ` + key + `
+        AND j.postcode != ?
+        AND a.id_politician != 5439
 ORDER BY opinion_received DESC
   `, key, function (err, rows) {
       if (err) throw err;
@@ -110,32 +115,34 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
     a.id,
     CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
     'electoral_list' AS segment_type,
-    CONCAT('be_', j.postcode, '_', lower(replace(replace(j.institution,'! &',''),' ','_'))) AS list_key,
+    CONCAT('be_', j.postcode, '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS list_key,
     CONCAT('be_politician_', p.id) AS politician_key,
-    j.institution,
     CONCAT(p.name, ' ', p.surname) AS full_name,
-    pic.full_path as img
+    pic.full_path as img,
+    party.abbr AS party
 FROM
     opinions_answers a
         JOIN
     politician_job j ON j.id_politician = a.id_politician
         JOIN
     politician p ON p.id = a.id_politician
+        JOIN
+    politician_election e ON e.id_politician = a.id_politician
+        LEFT JOIN
+    party party ON party.id = e.roll
         LEFT JOIN
     politician_photos pic ON pic.id_politician = a.id_politician
 WHERE
     opinion_received > '2018-09-08'
-        AND j.num = 1
         AND j.postcode = ?
         AND a.id_politician != 5439 # Jean-Paul
-GROUP BY j.id_politician
 ORDER BY opinion_received DESC`, key, (err, rows) => {
 
     if(err) {
       throw  err;
     }
 
-    //console.log('ANSWERS', rows);
+    console.log('ANSWERS', rows);
 
     let data = {
       "key": "2018_be_municipal_"+key,
@@ -177,7 +184,7 @@ ORDER BY opinion_received DESC`, key, (err, rows) => {
         };
       }
 
-      names[item.list_key+'_name'] = item.institution;
+      names[item.list_key+'_name'] = item.party;
 
       lists[item.list_key].candidates[item.politician_key] = {
         "order": Object.values(lists[item.list_key].candidates).length + 1,

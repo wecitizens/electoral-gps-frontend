@@ -56,14 +56,14 @@
         </div>
         <el-dialog
                 :visible.sync="showShare"
-                width="30%">
+                width="90%">
             <h1>{{ $t("share.title") }}</h1>
             <br>
             <div class="addthis_toolbox addthis_inline_share_toolbox"></div>
         </el-dialog>
         <el-dialog
                 :visible.sync="showDonate"
-                width="30%"
+                width="90%"
         >
             <h3>{{ $t("donate.title") }}</h3>
             <p>{{ $t("donate.content") }}</p>
