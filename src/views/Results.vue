@@ -12,7 +12,7 @@
                         </div>
                         <div class="col-9">
                             <div class="title"><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.id">{{ item.name }}</a></div>
-                            <div class="subtitle d-none">#{{ item.position }} {{ item.group }}</div>
+                            <div class="subtitle">#{{ item.position }} {{ item.group }}</div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
                                      :aria-valuenow="item.score"
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </b-tab>
-                <b-tab :title="$t('Listes')" class="col-md-6 tab-center d-none">
+                <b-tab :title="$t('Listes')" class="col-md-6 tab-center">
                     <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
                          :key="idx">
@@ -57,13 +57,12 @@
         return this.currentElection.electoral_lists.find(e => e.key == score.user_key);
       },
       extractCandidate(score) {
-
-        console.log("Extract", score.user_key);
         let group = this.currentElection.electoral_lists
           .filter(e => e.candidates.map(c => c.key).includes(score.user_key))[0]
         let candidate = this.currentElection.candidates.find(p => p.key == score.user_key)
         if (candidate) {
           return {
+            id: candidate.politician_id,
             name: candidate.full_name,
             group: this.$t('vote.' + group.name),
             position: group.candidates.find(c => c.key == score.user_key).order,
@@ -96,6 +95,7 @@
       const survey = this.$store.state.survey.current.survey;
 
       if (survey) {
+
         // TODO : q.agreement is "Tout à fait d'accord" must change !!
         // TODO : q.importance not set if not defined and same prob as before I suppose ...
 
@@ -103,7 +103,7 @@
           .map(q => {
             return {
               question_key: q.key,
-              answer_format: 'agr_5_scale_tol_3_scale_abs', // TODO survey.questions.find(qu => qu.key === q.key).answer_format,
+              answer_format: 'agr_5_scale_tol_3_scale_abs',
               value: q.agreement,
               tolerance: q.importance
             }

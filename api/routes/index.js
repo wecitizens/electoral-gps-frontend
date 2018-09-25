@@ -28,13 +28,14 @@ router.get('/v1/gps/answer/segment/2018_be_municipal_be_:key.json', function (re
   if(key.includes('_electoral_list')){
 
     key = key.replace('_electoral_list', '');
+    const district = 'BE'+key;
 
     db.query(`
 SELECT
     a.id,
-    CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
+    CONCAT('2018_be_municipal_be_', '`+key+`') AS segment_key,
     'electoral_list' AS segment_type,
-    CONCAT('be_', j.postcode, '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS user_key,
+    CONCAT('be_', replace(e.district,'BE',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS user_key,
     CONCAT('question_', a.opinion_id) AS question_key,
     CASE
         WHEN a.opinion_answer = 5 THEN 'fully_agree'
@@ -62,25 +63,23 @@ FROM
     localite_menu ON localite_menu.id_gps = election.id_gps    
 WHERE
     opinion_received > '2018-09-08'
-    AND p.home_postcode = ?
+    AND e.district = ?
     AND a.id_politician != 5439
     AND e.id_election >= 16
 ORDER BY opinion_received DESC
-  `, key, function (err, rows) {
+  `, district, function (err, rows) {
       if (err) throw err;
-
-      let item = rows;
-
-      res.json({data: item});
+      res.json({data: rows});
     });
 
   } else {
     key = key.replace('_candidate', '');
+    const district = 'BE'+key;
 
     db.query(`
   SELECT
     a.id,
-    CONCAT('2018_be_municipal_be_', j.postcode) AS segment_key,
+    CONCAT('2018_be_municipal_be_', '`+key+`') AS segment_key,
     'candidate' AS segment_type,
     CONCAT('be_politician_',a.id_politician) AS user_key,
     CONCAT('question_', a.opinion_id) AS question_key,
@@ -94,13 +93,13 @@ ORDER BY opinion_received DESC
     END AS value
 FROM
     opinions_answers a
-        JOIN
+        LEFT JOIN
     politician_job j ON j.id_politician = a.id_politician
-        JOIN
+        LEFT JOIN
     politician p ON p.id = a.id_politician
-        JOIN
+        LEFT JOIN
     politician_election e ON e.id_politician = a.id_politician
-        JOIN
+        LEFT JOIN
     election ON election.id = e.id_election  
         LEFT JOIN
     localite_menu ON localite_menu.id_gps = election.id_gps    
@@ -108,15 +107,13 @@ WHERE
     opinion_received > '2018-09-08'
     AND j.num = 1
     AND a.id_politician != 5439 # Jean-Paul
-    AND p.home_postcode = ?
+    AND e.district = ?
     AND e.id_election >= 16
     ORDER BY opinion_received DESC
-  `, key, function (err, rows) {
+  `, district, function (err, rows) {
       if (err) throw err;
 
-      let item = rows;
-
-      res.json({data: item});
+      res.json({data: rows});
     });
   }
 });
@@ -124,12 +121,12 @@ WHERE
 router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function (req, res) {
 
   let key = req.params['key'];
+  const district = 'BE'+key;
 
   db.query(`SELECT
-    a.id,
     CONCAT('2018_be_municipal_be_', replace(localite_menu.postcodes_principal,'.000','')) AS segment_key,
     'electoral_list' AS segment_type,
-    CONCAT('be_', replace(localite_menu.postcodes_principal,'.000',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS list_key,
+    CONCAT('be_', replace(e.district,'BE',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS list_key,
     CONCAT('be_politician_', p.id) AS politician_key,
     p.id AS politician_id,
     CONCAT(p.name, ' ', p.surname) AS full_name,
@@ -140,34 +137,27 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
     e.questionnaire as has_answered,
     e.id_election AS id_election
 FROM
-    opinions_answers a
+    politician_election e
         JOIN
-    politician_job j ON j.id_politician = a.id_politician
+    politician_job j ON j.id_politician = e.id_politician
         JOIN
-    politician p ON p.id = a.id_politician
-        JOIN
-    politician_election e ON e.id_politician = a.id_politician
+    politician p ON p.id = e.id_politician
         LEFT JOIN
     party party ON party.id = e.roll
         LEFT JOIN
-    politician_photos pic ON pic.id_politician = a.id_politician
+    politician_photos pic ON pic.id_politician = e.id_politician
         JOIN
     election ON election.id = e.id_election  
         LEFT JOIN
     localite_menu ON localite_menu.id_gps = election.id_gps    
 WHERE
-    opinion_received > '2018-09-08'
-    AND p.home_postcode = ?
-    AND a.id_politician != 5439
+    e.district = ?
     AND e.id_election >= 16
-GROUP BY a.id_politician        
-ORDER BY opinion_received DESC`, key, (err, rows) => {
+GROUP BY e.id_politician`, district, (err, rows) => {
 
     if(err) {
       throw  err;
     }
-
-    console.log('ANSWERS', rows);
 
     let data = {
       "key": "2018_be_municipal_"+key,
@@ -220,6 +210,7 @@ ORDER BY opinion_received DESC`, key, (err, rows) => {
 
       candidates[item.politician_key] = {
         key: item.politician_key,
+        politician_id: item.politician_id,
         full_name : item.full_name,
         img: imgUrl(item.img),
         order: item.position,
