@@ -153,8 +153,11 @@ FROM
 WHERE
     e.district = ?
     AND e.id_election >= 16
-    AND e.questionnaire = 1
 GROUP BY e.id_politician`, district, (err, rows) => {
+
+    /**
+     * @TODO => activate e.questionnaire = 1 when candidates answers to everything
+     */
 
     if(err) {
       throw  err;
