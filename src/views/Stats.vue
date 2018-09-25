@@ -1,7 +1,7 @@
 <template>
     <div>
         <steps :active="3"></steps>
-        <h1 class="text-center mt-5">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
+        <h1 class="text-center m-3">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
             <el-form-item :label="q[0].title">
                 <el-select v-model="form.source" placeholder="">

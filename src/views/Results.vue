@@ -26,7 +26,7 @@
                     <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
                          :key="idx">
-                        <div class="col-3">
+                        <div class="col-3 d-none">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
                             <img src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>

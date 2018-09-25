@@ -62,13 +62,13 @@
         this.$store.dispatch('previousQuestion', {questionKey: this.currentQuestionKey});
       },
       goResults() {
-        this.$router.push({path: '/results'});
+        this.$router.push({path: '/stats'});
       }
     },
     watch: {
       'currentQuestionKey': (value) => {
         if (!value) {
-          this.$router.push({path: '/results'});
+          this.$router.push({path: '/stats'});
         }
       }
     },
