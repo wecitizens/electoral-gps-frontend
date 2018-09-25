@@ -3,9 +3,9 @@ export default {
     "home": {
         "cta": "Ik doe de test !",
         "title": "Ik vind hier de kandidaten die mij het best liggen",
-        "title_2": "ELECTORAL",
-        "title_1": "GPS",
-        "subtitle": "Communales 2018",
+        "title_2": "",
+        "title_1": "KIESWIJZER",
+        "subtitle": "Gemeenteraadsverkiezingen 2018",
         "powered_by": "Powered by:",
         "description": "{userCount} kiezers hebben het al gedaan",
         "with_help_from": "In samenwerking met:"
@@ -13,6 +13,9 @@ export default {
     "app": {
         "title": "KiesWijzer"
     },
+    "rather_no": "Eerder niet akkoord",
+    "rather_yes": "Eerder akkoord",
+    "fully_agree": "Helemaal akkoord",
     "share": {
         "title": "Delen"
     },
@@ -22,12 +25,12 @@ export default {
         "Zeer belangrijk",
         "Onbespreekbaar"
     ],
-    "importance_5": "Helemaal akkoord",
     "donate": {
         "title": "Zonder uw steun kunnen wij u niet meer informeren bij volgende verkiezingen",
         "content": "Stort een gift op de rekening van WijBurgers:",
         "account": "IBAN : BE16 7350 3219 3274"
     },
+    "importance_5": "Helemaal akkoord",
     "title": {
         "parties": "Kieslijsten",
         "candidates": "Kandidaten"
@@ -51,37 +54,44 @@ export default {
         "item": {
             "stats": "Statistiek",
             "donate": "Steun",
-            "welcome": "Welkom",
             "results": "Resultaat",
-            "questions": "Vragen",
+            "welcome": "Welkom",
             "share_app": "Ik deel de {app_title}",
             "about_app": "Meer over {app_title}",
+            "questions": "Vragen",
             "municipality": "Gemeent",
-            "share_results": "Mijn resultaat delen",
             "go_to_results": "Nu al naar het resultaat",
+            "share_results": "Mijn resultaat delen",
+            "see_all_questions": "Alle vragen bekijken",
             "advice_to_elector": "Tips voor de kiezer",
             "about_association": "Meer over {association_name}",
-            "see_all_questions": "Alle vragen bekijken",
             "start_from_scratch": "Van nul herbeginnen",
             "register_as_candidate": "Mij inschrijven als kandidaat"
         }
     },
-    "moreinfo_tooltip": "Meer infos",
+    "accept_condition": "J'accepte les conditions",
     "association": {
         "name": "WijBurgers"
     },
-    "importance_title": "Importance",
+    "importance_title": "Weging",
+    "moreinfo_tooltip": "Meer infos",
+    "i_give_no_opinion": "Ik spreek mij niet uit",
+    "strongly_disagree": "Helemaal niet akkoord",
+    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is onvoldoende om verder te gaan met de KiesWijzer. Klik op de naam van een kandidaat en open zijn profiel. Op het tabblad 'Opinies' vindt je zijn antwoorden op de vragenlijst.",
     "importance_tooltip": "importance de la question",
     "results": {
         "lists_title": "Kieslijsten in de volgorde van politieke affiniteit",
         "candatidates_sharing_my_position_the_most": "De kandidaten die het best mijn overtuigingen delen"
     },
-    "Pas du tout d'accord": "Pas du tout d'accord",
+    "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
     "Tout à fait d'accord": "Tout à fait d'accord",
+    "Pas du tout d'accord": "Helemaal niet akkoord",
+    "im_doing_test_anyway": "Ik doe de test hoe dan ook!",
+    "Je ne me prononce pas": "Je ne me prononce pas",
     "stats": {
         "questions": [
             {
-                "key": "source",
+                "key": "bron",
                 "type": "select",
                 "title": "Ik ken de KiesWijzer dankzij :",
                 "options": {
@@ -90,14 +100,14 @@ export default {
                     "mailing": "WijBurgers' mailing",
                     "tv_radio": "TV / Radio",
                     "paper_press": "Geschreven pers",
-                    "googlesearch": "Google search",
-                    "social_media": "Social netwerken"
+                    "social_media": "Social netwerken",
+                    "googlesearch": "Google search"
                 }
             },
             {
-                "key": "age",
+                "key": "leeftijd",
                 "type": "select",
-                "title": "Mjn leeftijd:",
+                "title": "Mijn leeftijd:",
                 "options": {
                     "over_55": "+ 55 jaar",
                     "less_than_35": "- 35 jaar",
@@ -111,17 +121,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
                     "spa": "sp.a",
                     "cdh": "cdH",
-                    "cdv": "CD&V",
-                    "nva": "N-VA",
                     "defi": "Défi",
                     "none": "Geen enkele partij",
                     "ecolo": "Ecolo",
                     "groen": "Groen",
                     "other": "Andere partij",
-                    "openvld": "Open VLD",
                     "ptbpvda": "PVDA",
+                    "openvld": "Open VLD",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -129,12 +139,13 @@ export default {
         ],
         "anonymous_question_to_improve_service": "Deze laatste vragen blijven anoniem, stellen ons in staat om onze service te verbeteren en om statistische analyses te maken."
     },
-    "Je ne me prononce pas": "Je ne me prononce pas",
-    "meaning_of_the_importance": "De berekening van de score van elke kandidaat houdt rekening met het gewicht dat ik aan elke vraag geef. Standaard wordt de vraag beschouwd als \"van gemiddeld belang\". Als ik op \"onbespreekbaar\" klik, geef ik het maximale gewicht aan de vraag en sluit ik alle kandidaten uit die niet in mijn richting gaan.",
+    "only_3_candidates_message": "In uw gemeente nemen slechts 3 kandidaten deel aan de KiesWijzer",
+    "meaning_of_the_importance": "De berekening van de score van elke kandidaat houdt rekening met het gewicht dat ik aan elke vraag geef. Standaard wordt de vraag beschouwd als \"van gemiddeld belang\". Als ik op \"onbespreekbaar\" klik, geef ik het maximale gewicht aan de vraag en sluit ik alle kandidaten uit die het niet met mij eens zijn.",
     "district": {
         "what_is_your_postcode": "Mijn postcode",
         "help_customise_survey": "Ik krijg een rangschikking beperkt tot de kandidaten van mijn gemeente."
     },
+    "not_enough_candidates_answered": "Minder dan zes kandidaten hebben deze vragenlijst beantwoord",
     "input": {
         "place_holder": {
             "your_postcode": "xxxx"

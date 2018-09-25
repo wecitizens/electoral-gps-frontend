@@ -14,12 +14,15 @@
                 <router-link v-if="vote.current.election.candidates.length > 6" :to="'/survey/'+district_key"
                              tag="el-button">{{ $t("button.lets_go") }}
                 </router-link>
-                <router-link v-else :to="'/insufficient-candidates/'+district_key" tag="el-button">{{
-                    $t("button.lets_go") }}
+                <router-link v-else :to="'/insufficient-candidates/'+district_key" tag="el-button">
+                    {{$t("button.lets_go") }}
                 </router-link>
+                <div class="mt-2">
+                    {{ $t('accept_condition') }}
+                </div>
             </el-row>
             <el-row v-else-if="district">
-                <div>{{ $t('No candidates answered for the moment')}}</div>
+                <div>{{ $t('not_enough_candidates_answered')}}</div>
             </el-row>
         </div>
     </div>

@@ -2,7 +2,7 @@
     <div class="results">
         <b-card no-body>
             <b-tabs card>
-                <b-tab :title="$t('Candidates')" class="col-md-6 tab-center" active>
+                <b-tab :title="$t('title.candidates')" class="col-md-6 tab-center" active>
                     <p class="list-legend">{{ $t('Les candidats qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
                          :key="idx">
@@ -11,7 +11,7 @@
                             <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>
                         <div class="col-9">
-                            <div class="title"><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.id">{{ item.name }}</a></div>
+                            <div class="title"><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.id" target="_blank">{{ item.name }}</a></div>
                             <div class="subtitle">#{{ item.position }} {{ item.group }}</div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </b-tab>
-                <b-tab :title="$t('Listes')" class="col-md-6 tab-center">
+                <b-tab :title="$t('title.parties')" class="col-md-6 tab-center">
                     <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
                          :key="idx">

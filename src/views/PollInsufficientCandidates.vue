@@ -8,15 +8,18 @@
             <h2>{{ $t('Seuls {number} candidats ont répondu au test dans votre commune', {'number': vote.current.election.candidates.length}) }}</h2>
             <ul class="list-unstyled mt-4">
                 <li class="media mb-3" v-for="(item, key) in vote.current.election.candidates"  :key="key">
-                    <img class="mr-3 align-self-start img-thumbnail" :src="item.thumb" width="64" alt="" v-if="item.thumb">
-                    <img class="mr-3 align-self-start img-thumbnail" src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" width="64" alt="" v-else>
+                    <a :href="'//directory.wecitizens.be/en/politician/profil/'+item.politician_id" target="_blank"><img class="mr-3 align-self-start img-thumbnail" :src="item.img" width="64" alt="" v-if="item.img">
+                        <img class="mr-3 align-self-start img-thumbnail" src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" width="64" alt="" v-else></a>
                     <div class="media-body text-left">
-                        <h5>{{ item.full_name }}</h5>
-                        <h6>{{ item.list }}</h6>
+                        <h5><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.politician_id" target="_blank">{{ item.full_name }}</a></h5>
+                        <h6>{{ item.list }} #{{item.order}}</h6>
                     </div>
                 </li>
             </ul>
-            <router-link :to="'/survey/'+district_key" class="btn btn-block btn-danger mt-3">{{ $t('Je fais quand même le test!') }}</router-link>
+            <div class="alert alert-warning">
+                {{ $t('insuffisant_number') }}
+            </div>
+            <router-link :to="'/survey/'+district_key" class="btn btn-block btn-danger mt-3 d-none">{{ $t('Je fais quand même le test!') }}</router-link>
             <div class="row mt-3 d-none"><!-- @TODO => dynamise this -->
                 <div class="col">
                     <a href="" class="btn btn-outline-danger btn-block">{{ $t('Partager le gps')}}</a>

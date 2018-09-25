@@ -5,7 +5,7 @@ export default {
         "title": "Find the candidates that match with you",
         "title_2": "GPS",
         "title_1": "ELECTORAL",
-        "subtitle": "Communales 2018",
+        "subtitle": "Municipal elections 2018",
         "powered_by": "Powered by:",
         "description": "Already {userCount} matchs",
         "with_help_from": "With the help of:"
@@ -13,6 +13,9 @@ export default {
     "app": {
         "title": "Electoral GPS"
     },
+    "rather_no": "Rather no",
+    "rather_yes": "Rather yes",
+    "fully_agree": "Fully agree",
     "share": {
         "title": "Share"
     },
@@ -22,12 +25,12 @@ export default {
         "Very important",
         "Not negotiable"
     ],
-    "importance_5": "Fully agree",
     "donate": {
         "title": "We won't be able to inform you on the upcoming elections without your donations",
         "content": "Wire money straight on WeCitizens' account:",
         "account": "IBAN : BE16 7350 3219 3274"
     },
+    "importance_5": "Fully agree",
     "title": {
         "parties": "Canddate list",
         "candidates": "Candidates"
@@ -45,39 +48,46 @@ export default {
         "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
         "wecitizens_link": "http://www.wecitizens.be",
         "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
-        "register_as_candidate_link": "http://directory.wecitizens.be/en/login/index/register_politician"
+        "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
     },
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Donate",
-            "welcome": "Home",
             "results": "Results",
-            "questions": "Questions",
+            "welcome": "Home",
             "share_app": "Share the {app_title}",
             "about_app": "About {app_title}",
+            "questions": "Questions",
             "municipality": "Municipality",
-            "share_results": "Share my results",
             "go_to_results": "Skip to results",
+            "share_results": "Share my results",
+            "see_all_questions": "See all questions",
             "advice_to_elector": "Advise to the voters",
             "about_association": "About {association_name}",
-            "see_all_questions": "See all questions",
             "start_from_scratch": "Start from scratch",
             "register_as_candidate": "Register as candidate"
         }
     },
-    "moreinfo_tooltip": "More infos",
+    "accept_condition": "J'accepte les conditions",
     "association": {
         "name": "WeCitizens"
     },
     "importance_title": "Importance",
+    "moreinfo_tooltip": "More infos",
+    "i_give_no_opinion": "I give no opinion",
+    "strongly_disagree": "Strongly disagree",
+    "insuffisant_number": "The number of participating candidates in the municipality is insufficient to go further with the GPS electoral. By clicking on the name of a candidate, you open his profile. The \"Opinions\" tab gives you his answers to the questionnaire.",
     "importance_tooltip": "importance de la question",
     "results": {
         "lists_title": "Electoral lists in the order of political affinity",
         "candatidates_sharing_my_position_the_most": "Candidates that share my ideas the most"
     },
-    "Pas du tout d'accord": "Strongly disagree",
+    "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "Tout à fait d'accord": "Strongly agree",
+    "Pas du tout d'accord": "Strongly disagree",
+    "im_doing_test_anyway": "I'm doing the test anyway!",
+    "Je ne me prononce pas": "Neutral",
     "stats": {
         "questions": [
             {
@@ -90,8 +100,8 @@ export default {
                     "mailing": "WeCitizens mailing",
                     "tv_radio": "TV / Radio",
                     "paper_press": "Paper press",
-                    "googlesearch": "Google search",
-                    "social_media": "Social media"
+                    "social_media": "Social media",
+                    "googlesearch": "Google search"
                 }
             },
             {
@@ -111,17 +121,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
                     "spa": "sp.a",
                     "cdh": "cdH",
-                    "cdv": "CD&V",
-                    "nva": "N-VA",
                     "defi": "Défi (FDF)",
                     "none": "None",
                     "ecolo": "Ecolo",
                     "groen": "Groen",
                     "other": "Other party",
-                    "openvld": "Open VLD",
                     "ptbpvda": "PTB - PVDA",
+                    "openvld": "Open VLD",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -129,12 +139,13 @@ export default {
         ],
         "anonymous_question_to_improve_service": "These last questions remain anonymous and allow us to improve our service and make statistical analysis."
     },
-    "Je ne me prononce pas": "Neutral",
-    "meaning_of_the_importance": "The calculation of each candidate's score take the weight i give to each question into account. By default, the question is considered to be of “medium importance”. By opting for \"non-negotiable\", I give the maximum weight to this question and exclude any candidate that does not agree with me on that question.",
+    "only_3_candidates_message": "In your town, only 3 candidates participate in the electoral GPS",
+    "meaning_of_the_importance": "The calculation of each candidate's score takes the weight I give to each question into account. By default, the question is considered to be of “medium importance”. By opting for \"non-negotiable\", I give the maximum weight to this question and I exclude any candidate that does not agree with me on that question.",
     "district": {
         "what_is_your_postcode": "My postal code",
         "help_customise_survey": "I will receive the ranking of candidates in my municipality."
     },
+    "not_enough_candidates_answered": "Less than six candidates answered the questionnaire",
     "input": {
         "place_holder": {
             "your_postcode": "Your postal code"

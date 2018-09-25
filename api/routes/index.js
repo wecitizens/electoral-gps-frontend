@@ -153,6 +153,7 @@ FROM
 WHERE
     e.district = ?
     AND e.id_election >= 16
+    AND e.questionnaire = 1
 GROUP BY e.id_politician`, district, (err, rows) => {
 
     if(err) {
@@ -215,7 +216,8 @@ GROUP BY e.id_politician`, district, (err, rows) => {
         img: imgUrl(item.img),
         order: item.position,
         status : item.status,
-        has_answered : item.has_answered
+        has_answered : item.has_answered,
+        list: item.party
       };
     });
 
@@ -238,6 +240,15 @@ GROUP BY e.id_politician`, district, (err, rows) => {
 router.get('/v1/vote/district.json', function (req, res) {
   //let key = req.params['key'];
   res.json({});
+});
+
+router.all('/v1/stats', function(req, res){
+  /**
+   * @TODO => check where to save that
+   */
+  res.json({
+    'data' : ['ok']
+  });
 });
 
 /**

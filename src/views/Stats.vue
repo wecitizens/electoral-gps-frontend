@@ -3,11 +3,24 @@
         <steps :active="3"></steps>
         <h1 class="text-center mt-5">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
-
             <el-form-item :label="q[0].title">
+                <el-select v-model="form.source" placeholder="">
+                    <el-option v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
+                               :value="value"></el-option>
+                </el-select>
+            </el-form-item>
 
-                <el-select :v-model="'form.'+q.key" v-if="q.type === 'select'" placeholder="" :value="'form.'+form[q.key]">
-                    <el-option v-for="(name, value) in q.options"  :key="value" v-bind:label="name" :name="q.key" value="value"></el-option>
+            <el-form-item :label="q[1].title">
+                <el-select v-model="form.age" placeholder="">
+                    <el-option v-for="(name, value) in q[1].options" :key="value" v-bind:label="name" :name="q[1].key"
+                               :value="value"></el-option>
+                </el-select>
+            </el-form-item>
+
+            <el-form-item :label="q[2].title">
+                <el-select v-model="form.party_vote" placeholder="">
+                    <el-option v-for="(name, value) in q[2].options" :key="value" v-bind:label="name" :name="q[2].key"
+                               :value="value"></el-option>
                 </el-select>
             </el-form-item>
 
@@ -34,20 +47,20 @@
         municipality: null,
         type: null,
         form: {
-          source:null,
+          source: null,
           age: null,
           party_vote: null
         },
-        q : this.$t('stats.questions')
+        q: this.$t('stats.questions')
       }
     },
-    computed: {
-
-    },
+    computed: {},
     methods: {
-      seeResults(){
-        Api.post('stats', this.form).then(() => {
-          this.$router.push('/results');
+      seeResults() {
+        Api.get('stats', {
+          stats: this.form,
+        }).then(() => {
+          this.$router.push({name: 'results'});
         });
       }
     }

@@ -41,8 +41,8 @@
         </div>
         <div class="answers">
             <el-button icon="el-icon-check"
-                       v-bind:class="{'is-active': answer_key === item.key}" circle
                        v-for="item in answerFormat.items"
+                       v-bind:class="{'is-active': answer_key === item.key}" circle
                        :key="item.id" @click="() => setAnswer(item.key)">
             </el-button>
         </div>

@@ -13,6 +13,9 @@ export default {
     "app": {
         "title": "GPS électoral"
     },
+    "rather_no": "Plutôt pas d'accord",
+    "rather_yes": "Plutôt d'accord",
+    "fully_agree": "Tout à fait d'accord",
     "share": {
         "title": "Partager"
     },
@@ -22,12 +25,12 @@ export default {
         "Très important",
         "Non-négociable"
     ],
-    "importance_5": "Tout à fait d'accord",
     "donate": {
         "title": "Sans vos dons, nous ne saurions vous informer sur les élections à venir",
         "content": "Faites un virement sur le compte de WeCitizens:",
         "account": "IBAN : BE16 7350 3219 3274"
     },
+    "importance_5": "Tout à fait d'accord",
     "title": {
         "parties": "Listes",
         "candidates": "Candidats"
@@ -51,33 +54,40 @@ export default {
         "item": {
             "stats": "Stats",
             "donate": "Soutenir",
-            "welcome": "Accueil",
             "results": "Résultats",
-            "questions": "Questions",
+            "welcome": "Accueil",
             "share_app": "Partager le {app_title}",
             "about_app": "À propos du {app_title}",
+            "questions": "Questions",
             "municipality": "Commune",
-            "share_results": "Partager mes résultats",
             "go_to_results": "Sauter aux résultats",
+            "share_results": "Partager mes résultats",
+            "see_all_questions": "Voir toutes les questions",
             "advice_to_elector": "Conseil à l'électeur",
             "about_association": "À propos de {association_name}",
-            "see_all_questions": "Voir toutes les questions",
             "start_from_scratch": "Recommencer à zéro",
             "register_as_candidate": "M'inscrire comme candidat"
         }
     },
-    "moreinfo_tooltip": "Plus d'infos",
+    "accept_condition": "J'accepte les conditions",
     "association": {
         "name": "NousCitoyens"
     },
-    "importance_title": "Importance",
+    "importance_title": "Pondération",
+    "moreinfo_tooltip": "Plus d'infos",
+    "i_give_no_opinion": "Je ne me prononce pas",
+    "strongly_disagree": "Pas du tout d'accord",
+    "insuffisant_number": "Le nombre de candidats participants dans la commune est insuffisant pour poursuivre GPS électoral. En cliquant sur le nom d'un candidat, tu ouvres son profil. L'onglet \"Opinions\" te donne ses réponses au questionnaire.",
     "importance_tooltip": "importance de la question",
     "results": {
         "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
         "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
     },
-    "Pas du tout d'accord": "Pas du tout d'accord",
+    "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "Tout à fait d'accord": "Tout à fait d'accord",
+    "Pas du tout d'accord": "Pas du tout d'accord",
+    "im_doing_test_anyway": "Je fais quand-même le test !",
+    "Je ne me prononce pas": "Je ne me prononce pas",
     "stats": {
         "questions": [
             {
@@ -90,12 +100,12 @@ export default {
                     "mailing": "Mailing de NousCitoyens",
                     "tv_radio": "TV / Radio",
                     "paper_press": "Presse papier",
-                    "googlesearch": "Moteur de recherche Google",
-                    "social_media": "Réseaux sociaux"
+                    "social_media": "Réseaux sociaux",
+                    "googlesearch": "Moteur de recherche Google"
                 }
             },
             {
-                "key": "age",
+                "key": "âge",
                 "type": "select",
                 "title": "Mon âge:",
                 "options": {
@@ -111,17 +121,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
                     "spa": "sp.a",
                     "cdh": "cdH",
-                    "cdv": "CD&V",
-                    "nva": "N-VA",
                     "defi": "Défi",
                     "none": "Aucun",
                     "ecolo": "Ecolo",
                     "groen": "Groen",
                     "other": "Autre parti",
-                    "openvld": "Open VLD",
                     "ptbpvda": "PTB",
+                    "openvld": "Open VLD",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -129,12 +139,13 @@ export default {
         ],
         "anonymous_question_to_improve_service": "Ces dernières questions restent anonymes, nous permettent d’améliorer notre service et de faire des analyses statistiques."
     },
-    "Je ne me prononce pas": "Je ne me prononce pas",
+    "only_3_candidates_message": "Dans ta commune, seuls 3 candidats participent au GPS électoral",
     "meaning_of_the_importance": "Le calcul du score de chaque candidat tient compte du poids que j’accorde à chaque question. Par défaut, la question est considéré “d’importance moyenne”. Si je clique sur “non-négociable” je donne le poids maximal à la question et d’exclue tous les candidats qui ne vont pas dans mon sens.",
     "district": {
         "what_is_your_postcode": "Mon code postal",
         "help_customise_survey": "Je recevrai le classement des candidats de ma commune."
     },
+    "not_enough_candidates_answered": "Moins de six candidats ont répondu à ce questionnaire",
     "input": {
         "place_holder": {
             "your_postcode": "xxxx"
