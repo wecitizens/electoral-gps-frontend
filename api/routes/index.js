@@ -65,7 +65,6 @@ WHERE
     opinion_received > '2018-09-08'
     AND e.district = ?
     AND a.id_politician != 5439
-    AND e.questionnaire = 1
     AND e.id_election >= 16
 ORDER BY opinion_received DESC
   `, district, function (err, rows) {
@@ -110,7 +109,6 @@ WHERE
     AND a.id_politician != 5439 # Jean-Paul
     AND e.district = ?
     AND e.id_election >= 16
-    AND e.questionnaire = 1
     ORDER BY opinion_received DESC
   `, district, function (err, rows) {
       if (err) throw err;
@@ -155,7 +153,6 @@ FROM
 WHERE
     e.district = ?
     AND e.id_election >= 16
-    AND e.questionnaire = 1
 GROUP BY e.id_politician`, district, (err, rows) => {
 
     /**
