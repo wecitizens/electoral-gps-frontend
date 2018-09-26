@@ -14,6 +14,8 @@ class API {
     // check if we are in a local env or production env
     if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
       axios.defaults.baseURL = "http://localhost:3010/v1/";
+    } else if (location.hostname === "demo-gps.wecitizens.be") {
+      axios.defaults.baseURL = "http://demo-api.wecitizens.be/v1";
     } else {
       axios.defaults.baseURL = "http://api.wecitizens.be/v1";
     }
