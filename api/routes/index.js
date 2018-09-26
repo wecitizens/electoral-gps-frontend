@@ -23,7 +23,7 @@ router.get('/v1/dir/politician/:key.json', function (req, res) {
 
 router.get('/v1/gps/answer/segment/2018_be_municipal_be_:key.json', function (req, res) {
 
-  var key = req.params['key'];
+  let key = req.params['key'];
 
   if(key.includes('_electoral_list')){
 
@@ -65,6 +65,7 @@ WHERE
     opinion_received > '2018-09-08'
     AND e.district = ?
     AND a.id_politician != 5439
+    AND e.questionnaire = 1
     AND e.id_election >= 16
 ORDER BY opinion_received DESC
   `, district, function (err, rows) {
@@ -109,6 +110,7 @@ WHERE
     AND a.id_politician != 5439 # Jean-Paul
     AND e.district = ?
     AND e.id_election >= 16
+    AND e.questionnaire = 1
     ORDER BY opinion_received DESC
   `, district, function (err, rows) {
       if (err) throw err;
@@ -153,6 +155,7 @@ FROM
 WHERE
     e.district = ?
     AND e.id_election >= 16
+    AND e.questionnaire = 1
 GROUP BY e.id_politician`, district, (err, rows) => {
 
     /**
