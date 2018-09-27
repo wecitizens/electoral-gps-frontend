@@ -30,7 +30,7 @@
                             <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
                             <img src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>
-                        <div class="col-9">
+                        <div class="col-12">
                             <div class="title">{{ item.name }}</div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"

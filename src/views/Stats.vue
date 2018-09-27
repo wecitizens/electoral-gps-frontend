@@ -68,5 +68,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+  h1 {
+    font-size: 40px;
+    font-size: 5vw;
+  }
 </style>

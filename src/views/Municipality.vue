@@ -1,7 +1,7 @@
 <template>
     <div>
         <steps :active="1"></steps>
-        <div class="text-center mt-5">
+        <div class="text-center container mt-5">
             <h1>{{ $t("district.what_is_your_postcode") }}</h1>
             <p>{{ $t("district.help_customise_survey") }}</p><br/>
             <el-row>
@@ -21,7 +21,7 @@
                     {{ $t('accept_condition') }}
                 </div>
             </el-row>
-            <el-row v-else-if="district">
+            <el-row v-else-if="district && vote.current.election">
                 <div>{{ $t('not_enough_candidates_answered')}}</div>
             </el-row>
         </div>

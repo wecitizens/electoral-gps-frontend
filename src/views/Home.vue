@@ -72,7 +72,7 @@
         font-family: 'IBM Plex Sans Condensed', sans-serif;
 
         &__big {
-            font-size: 70px;
+            font-size: 60px;
             display: block;
         }
 
@@ -117,7 +117,7 @@
             position: absolute;
             top: -100px;
             left: 50%;
-            margin-left: -200px;
+            margin-left: -140px;
         }
 
         .btn-start {
@@ -149,7 +149,7 @@
             position: absolute;
             top: -100px;
             right: 50%;
-            margin-right: -180px;
+            margin-right: -130px;
         }
     }
 

@@ -12,7 +12,10 @@
                         <img class="mr-3 align-self-start img-thumbnail" src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" width="64" alt="" v-else></a>
                     <div class="media-body text-left">
                         <h5><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.politician_id" target="_blank">{{ item.full_name }}</a></h5>
-                        <h6>{{ item.list }} #{{item.order}}</h6>
+                        <h6>
+                          {{ item.list }}
+                          <span v-if="item.order">#{{item.order}}</span>
+                         </h6>
                     </div>
                 </li>
             </ul>
