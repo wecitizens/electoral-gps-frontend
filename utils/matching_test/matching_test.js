@@ -72,21 +72,21 @@ const matchRequest = {
 };
 
 const data = [
-    {
+   /* {
         "user_key": "be_politician_1",
         "question_key": "question_103",
         "value": "agree"
-    },
+    }, */
     {
         "user_key": "be_politician_1",
         "question_key": "question_104",
         "value": "strongly_disagree"
     },
-    {
+   /* {
         "user_key": "be_politician_2",
         "question_key": "question_103",
         "value": "agree"
-    },
+    },*/
     {
         "user_key": "be_politician_2",
         "question_key": "question_104",
@@ -139,49 +139,53 @@ console.log(subject);
 console.log("My tolerance : ");
 console.log(weights);
 
-const answers = Object.keys(t).map(k => {return {key: k, answers: t[k]}});
-console.log("Segment answers : ");
-console.log(answers);
+const score2 = Object.keys(t).map(key => {
+    
+    const set = t[key];
+        
+    // for all subject keys, get the sample one. if it does not exist, remove the one 
+    
+    let filteredSet = {};
+    let filteredSubject = {};
+    let filteredWeight = {};
+    let i = 0;
+    
+    Object.keys(subject).forEach(f => {
+        if(set.hasOwnProperty(f)) {
+            filteredSet[f] = set[f];
+            filteredSubject[f] = subject[f];
+            filteredWeight[f] = weights[f];
+            i++;
+        }
+    });
+    
+    const subjectLength = Object.keys(subject).length;
+    
+    const distance = LAUtil.distance(filteredSet, filteredSubject, {weights: filteredWeight});
 
-const tree = new LA(answers,
-    null,
-    function (r) {
-        return r.answers;
-    }
-);
+    // works for one format only
+    const itemWeightMax = answer_formats[0].items.map(i => i.weight).reduce((p,c) => {
+        return c > p ? c : p;
+    },0);
 
-const results = tree.query({key: "subject", answers: subject}, {
-    k: answers.length, // number of match
-    normalize: false,
-    weights: weights
-});
+    const distanceMax = Math.sqrt(
+        Object.values(filteredWeight).reduce((p,c) => {
+            return p + Math.pow(c*itemWeightMax,2)
+        }, 0));
 
-// works for one format only
-const itemWeightMax = answer_formats[0].items.map(i => i.weight).reduce((p,c) => {
-    return c > p ? c : p;
-},0);
+    console.log("Max weight : ");
+    console.log(itemWeightMax);
 
-const distanceMax = Math.sqrt(
-    Object.values(weights).reduce((p,c) => {
-        return p + Math.pow(c*itemWeightMax,2)
-    }, 0));
-
-console.log("Max weight : ");
-console.log(itemWeightMax);
-
-console.log("Max distance : ");
-console.log(distanceMax);
-
-const scores = results.map(r => {
-
-    const distance = LAUtil.distance(r.answers, subject, {weights: weights});
-    const match = 100 * (1 - distance / distanceMax);
+    console.log("Max distance : ");
+    console.log(distanceMax);
+    
+    const match = 100 * (1 - distance / distanceMax) * (2/3 + 1/3 * i/subjectLength);
 
     return {
-        key: r.key,
+        key: key,
         score: match
     }
 });
 
 console.log("My scores : ");
-console.log(scores);
+console.log(score2);
