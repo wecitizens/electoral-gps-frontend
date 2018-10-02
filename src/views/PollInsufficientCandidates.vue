@@ -2,9 +2,9 @@
     <div>
         <steps :active="1"></steps>
         <div class="container mt-3 mb-5" v-if="vote.current.election && vote.current.election.candidates">
-            <h2>{{ $t('only_3_candidates_message', {'number': vote.current.election.candidates.filter((item) => item.has_answered).length}) }}</h2>
+            <h2>{{ $t('only_3_candidates_message', {'number': vote.current.election.candidates.filter((item) => item.total_received).length}) }}</h2>
             <ul class="list-unstyled mt-4">
-                <li class="media mb-3" v-for="(item, key) in vote.current.election.candidates" :key="key" v-bind:class="{ disabled: !item.has_answered }">
+                <li class="media mb-3" v-for="(item, key) in vote.current.election.candidates" :key="key" v-bind:class="{ disabled: !item.total_received }">
                     <a :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.politician_id" target="_blank"><img class="mr-3 align-self-start img-thumbnail" :src="item.img" width="64" alt="" v-if="item.img">
                         <img class="mr-3 align-self-start img-thumbnail" src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" width="64" alt="" v-else></a>
                     <div class="media-body text-left">
