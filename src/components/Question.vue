@@ -41,7 +41,7 @@
         </div>
         <div class="answers">
             <el-button icon="el-icon-check"
-                       v-for="item in answerFormat.items.sort((a,b) => a.weight > b.weight)"
+                       v-for="item in answerFormatOrdered"
                        v-bind:class="{'is-active': answer_key === item.key}" circle
                        :key="item.id" @click="() => setAnswer(item.key)">
             </el-button>
@@ -80,7 +80,15 @@
       }
     },
     computed: {
-      ...mapGetters(['questions', 'currentQuestionKey', 'survey'])
+      ...mapGetters(['questions', 'currentQuestionKey', 'survey']),
+      answerFormatOrdered() {
+
+        if (this.answerFormat) {
+          return this.answerFormat.items.sort((a, b) => a.weight > b.weight);
+        }
+
+        return [];
+      }
     },
     watch: {
       agreement: function (agreement) {
@@ -121,7 +129,7 @@
 
 <style lang="scss">
 
-    .alert-primary{
+    .alert-primary {
         width: auto;
         display: inline-block;
         padding: 0.2em;
@@ -129,14 +137,12 @@
         font-size: 18px;
     }
 
-    h3.title{
+    h3.title {
         margin-top: 1em;
         font-size: 22px;
     }
 
-
-
-    .answers__legend{
+    .answers__legend {
         width: 320px;
         color: #000000;
         margin-left: auto !important;
