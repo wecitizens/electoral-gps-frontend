@@ -1,7 +1,7 @@
 <template>
     <div>
         <steps :active="3"></steps>
-        <h1 class="text-center m-3">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
+        <h3 class="text-center m-3">{{$t('stats.anonymous_question_to_improve_service')}}</h3>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
             <el-form-item :label="q[0].title">
                 <el-select v-model="form.source" placeholder="">
@@ -69,7 +69,6 @@
 
 <style lang="scss" scoped>
   h1 {
-    font-size: 40px;
-    font-size: 5vw;
+
   }
 </style>
