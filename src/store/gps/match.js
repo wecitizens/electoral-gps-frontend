@@ -66,7 +66,9 @@ function getSamples(matchRequest, data) {
                 u[t.question_key] = matchRequest.answer_formats.find(x => x.key == q.answer_format).items.find(x => x.key == t.value).weight;
             } catch (err) {
                 console.log('cannot find ', t.question_key, q.answer_format, t.value, matchRequest.answer_formats);
+                return acc;
             }
+            
             acc[t.user_key] = u;
             return acc;
 
