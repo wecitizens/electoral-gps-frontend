@@ -41,7 +41,7 @@
         </div>
         <div class="answers">
             <el-button icon="el-icon-check"
-                       v-for="item in answerFormat.items"
+                       v-for="item in answerFormat.items.sort((a,b) => a.weight > b.weight)"
                        v-bind:class="{'is-active': answer_key === item.key}" circle
                        :key="item.id" @click="() => setAnswer(item.key)">
             </el-button>
