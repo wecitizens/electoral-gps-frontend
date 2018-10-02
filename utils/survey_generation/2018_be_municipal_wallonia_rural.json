@@ -15,10 +15,10 @@
     "question_124",
     "question_123",
     "question_121",
-    "question_121",
     "question_120",
-    "question_113",
-    "question_100",
+    "question_110",
+    "question_98",
+    "question_101",
     "question_20",
     "question_103",
     "question_104",
@@ -26,11 +26,10 @@
     "question_119",
     "question_108",
     "question_108",
-    "question_110",
-    "question_101",
+    "question_100",
+    "question_113",
     "question_114",
     "question_118",
-    "question_98",
     "question_93",
     "question_89",
     "question_88",
@@ -118,27 +117,27 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_121",
-      "text": "question.121_text",
-      "notice": "question.121_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
       "key": "question_120",
       "text": "question.120_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_113",
-      "text": "question.113_text",
+      "key": "question_110",
+      "text": "question.110_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_100",
-      "text": "question.100_text",
-      "notice": "question.100_notice",
+      "key": "question_98",
+      "text": "question.98_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_101",
+      "text": "question.101_text",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -184,14 +183,14 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_110",
-      "text": "question.110_text",
-      "notice": null,
+      "key": "question_100",
+      "text": "question.100_text",
+      "notice": "question.100_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_101",
-      "text": "question.101_text",
+      "key": "question_113",
+      "text": "question.113_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -204,12 +203,6 @@
     {
       "key": "question_118",
       "text": "question.118_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_98",
-      "text": "question.98_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -320,7 +313,7 @@
     "en": {
       "question": {
         "4_text": "Taxes should be lowered, even if it means a reduction in public services.",
-        "20_text": "The State may own 'private' companies operating in competitive markets (e.g. telecom operators, media, banking).",
+        "20_text": " The public authority may own companies exposed to competition (telephone, newspaper, bank, etc.).",
         "21_text": "To alleviate poverty, some basic goods and services should be provided free of charge or at low cost.",
         "22_text": "All public officials should be required to report their income (including benefits in kind) derived from their public activity.",
         "23_text": "Public employees may wear signs of their religious or philosophical beliefs even if they are in contact with the public.",
@@ -345,7 +338,7 @@
         "110_text": "Pre-electoral agreements between political parties must be made public before the elections.",
         "113_text": "Most of the commune's energy use should come from sustainable sources, even if that is more expensive.",
         "114_text": "The elected politician should align his positions with the results of public opinion polls.",
-        "118_text": "When designing public spaces, aesthetic concerns are less important than practical, economic and security concerns.",
+        "118_text": "When designing public spaces, aesthetic concerns must not overrule practical, economic and security concerns.",
         "119_text": "There must be, in the commune, at least one crèche with extended hours, until 21h30.",
         "120_text": "Public authorities that do not respect the time limit for administrative decisions (such as building permits) must pay a daily compensation to the applicant.",
         "121_text": "Public authorities should have an active policy for the social recognition of LGBTQI+ people.",
@@ -411,10 +404,10 @@
         "114_notice": "L’idée d’avoir des mandataires qui s’alignent sur les tendances populaires est séduisante. Elle soulève toutefois quelques questions. Quelle est la valeur des sondages : qualité scientifique de l’exécution, niveau de préparation/conditionnement des participants au sondage, etc ? Si on veut consulter la population en vue d’une décision politique, ne faut-il pas se baser sur un référendum ? Le mandataire doit-il rendre des comptes à la majorité de la population, ou à ceux qui l’ont élu sur base d’un programme précis ? Souhaite-t-on un mandataire sans convictions personnelles ?",
         "118_text": "Dans l'aménagement des espaces publics, l'objectif esthétique doit rester subordonné aux aspects utilitaires, économiques et sécuritaires.",
         "119_text": "Il doit y avoir, dans la commune, au moins une crèche avec horaire élargi, jusque 21h30.",
-        "120_text": "L'autorité qui ne respecte pas les délais pour accorder des autorisations administratives (comme un permis d'urbanisme), doit indemniser le demandeur, par jour de retard.",
+        "120_text": "\nL'autorité qui ne respecte pas les délais pour accorder des autorisations administratives (comme un permis d'urbanisme), doit indemniser le demandeur, par jour de retard.",
         "121_text": "Les autorités doivent mener une politique active pour assurer aux personnes LGBTQI+ une meilleure reconnaissance sociale.",
         "121_notice": "L'association RainbowHouse, de défense des personnes LGBTQI+, préconise e.a.: la création d'un service en charge de l'égalité des chances, un système de plainte à disposition des fonctionnaires victimes de menaces ou de discrimination , une plus grande présence des personnes LGBTQI+ dans la programmation culturelle et dans les supports pédagogiques, des actions de formation/sensibilisation des agents publics, etc. Cette association invite les autorités publiques à Afficher les symboles des communautés minorisées lors de leurs principaux événements (p.ex. Belgian Pride), en utilisant, selon les cas, less bâtiments publics (drapeaux) et/ou less supports de communication (journal communal, panneaux d'affichage).",
-        "123_text": "Les communes doivent davantage s'appuyer sur la population pour constater les incivilités.",
+        "123_text": "La commune doit davantage s'appuyer sur la population pour constater les incivilités.",
         "124_text": "Lorsque le cadre légal le permettra, la commune et le CPAS doivent fusionner.",
         "124_notice": "La fusion entre la commune et le CPAS est déjà un fait, imposé par la Région, en Flandre. La Région wallonne envisage de créer un cadre légal permettant une fusion sur base volontaire. Sans négliger les synergies envisageables entre les CPAS de différentes communes, les synergies à mettre en place entre la commune et le CPAS peuvent s’imaginer à différents niveaux et permettent sans doute d’importantes économies d’échelle et un renforcement de l’efficacité et de la cohérence des services pour les deux institutions, notamment en limitant les doublons en matière de personnel et de services proposés. Ainsi, les services informatiques, juridiques (marchés publics, suivi des dossiers), financiers, d’entretien des locaux, du personnel, par exemple, pourraient fonctionner au bénéfice direct des deux institutions.",
         "125_text": "Le CPAS doit privilégier le partenariat avec des associations spécialisées dans l'accompagnement social, en particulier pour réorienter des bénéficiaires vers le marché de l’emploi."
@@ -450,7 +443,7 @@
         "23_text": "Ambtenaren mogen hun godsdienstige - of filosofische overtuiging kenbaar maken zelfs bij contacten met de bevolking.",
         "23_notice": "In België is het door de wet van 28/04/2011 verboden een volledige sluier (boerka) te dragen, die het gezicht bedekt. Volgens die wet moet iedereen in de openbare ruimte voortdurend herkenbaar zijn en mag het gezicht dus zelfs niet gedeeltelijk worden bedekt. De bezwaren die bij het Grondwettelijk Hof werden ingediend wegens aantasting van de vrije meningsuiting en van de bescherming van de persoonlijke levenssfeer, werden afgewezen.",
         "31_text": "In het algemeen zouden misdrijven strenger bestraft moeten worden.",
-        "38_text": "Bij grote overheidsprojecten, inz. bij grote investeringen, moet een volksraadpleging plaatsvinden.",
+        "38_text": "Grote economische en sociale projecten, b.v. grote investeringen met zich meebrengen, moeten aan een openbare raadpleging worden voorgelegd.",
         "38_notice": "Plannen voor grote werken van algemeen belang mikken per definitie op de lange termijn, terwijl de uitvoering ervan zelf ook lang duurt! Eender welke instantie die zulk een beslissing neemt, moet afstand kunnen nemen van het onmiddellijke voordeel om op lange termijn te denken. In tegenstelling tot het referendum, waarvan het resultaat bindend is voor de overheid die het heeft georganiseerd, kunnen de organisatoren van een volksraadpleging oordelen over de gevolgen die ze er zullen aan geven. Tegenwoordig worden beslissingen over grote werken voorafgegaan door een effectenstudie en door een openbaar onderzoek waarbij de deelnemers vragen kunnen stellen en bezwaren uiten. De initiatiefnemers van het project moeten daarop antwoorden en hun plannen desgevallend corrigeren.",
         "46_text": "Staatsleningen mogen niet dienen om lopende uigaven te financieren. Zij moeten bestemd zijn voor investeringen (gebouwen, infrastructuur).",
         "49_text": "Sociale bijstand aan immigranten moet worden gemoduleerd op basis van hun vorderingen in een integratieproces.",
@@ -475,12 +468,12 @@
         "113_text": "De gemeente moet, zelfs al is het duurder, vooral hernieuwbare energie gebruiken.",
         "114_text": "De politieke mandataris moet zich aansluiten bij de meerderheidstrends die uit opiniepeilingen blijken.",
         "114_notice": "Het idee over afgevaardigden te beschikken die zich houden aan de wil van het volk is bekoorlijk. Maar vragen moeten gesteld worden. Welke is de waarde van opiniepeilingen : wetenschappelijke waarde van de uitvoering, het voorbereidingsniveau/het conditioneren van de deelnemers aan de peiling, enz?Wil men de bevolking bevragen wat een politiek besluit betreft, kan men dan niet beter gebruik maken van een referendum ? Moet de mandataris verantwoordelijk zijn tegenover de meerderheid van de bevolking of tegenover zij die voor hem stemden op basis van een duidelijk programma ? Wil men vertegenwoordigers zonder persoonlijke opinie ?",
-        "118_text": "Bij het aanleggen van openbare pleinen, moet het esthetisch aspect van minder belang zijn dan het nuttige, economische, veilige.",
+        "118_text": "Bij het inrichten van de openbare ruimte, moet het esthetisch aspect ondergeschikt blijven aan het nuttige, economische, veilige.",
         "119_text": "In de gemeente moet minstens één kinderdagverblijf open blijven tot 21:30u.",
-        "120_text": "In geval de overheid zich niet houdt aan de wettelijke  termijn wat administratieve vergunningen betreft (zoals een bouwvergunning), moet zij de vrager, per dag vertraging, schadeloosstellen.",
+        "120_text": "De overheid die zich niet houdt aan de wettelijke termijn voor de toekenning van administratieve vergunningen (zoals een bouwvergunning), moet de vrager, per dag vertraging, schadeloosstellen.",
         "121_text": "De overheid moet een actieve politiek voeren om de LGBTQ+ personen een betere sociale erkenning te verzekeren.",
         "121_notice": "De vereniging RainbowHouse voor LGBTQI+ personen bescherming , stelt o.a. de schepping van een dienst voor gelijke kansen voor, een klachten systeem ter beschikking van ambtenaren die met dreigingen of discriminatie te maken hebben, een grotere aanwezigheid van LGBTQI+ personen in de culturele programmatie en in pedagogische hulp, optreden wat opvoeding/bewustmaking van agenten die met het publiek werken betreft, enz. Deze vereniging vraagt de publieke verantwoordelijken de symbolen eigen aan minderheden te laten zien wanneer ze iets belangrijks vieren (b.v. Belgian Pride), en dit door gebruik te maken van publieke gebouwen (vlaggen) en/of de mogelijkheden tot mededelen (krant van de gemeente, aanplakbiljetten).",
-        "123_text": "De gemeenten moeten meer hun vertrouwen geven aan de bevolking wat betreft het vaststellen van niet correcte handelingen.",
+        "123_text": "De gemeente moet meer samenwerken met de bevolking om de inbreuken vast te stellen.",
         "124_text": "Wanneer het wettelijk kader dit zal toelaten moeten gemeente en OCMW fuseren.",
         "124_notice": "De fusie tussen gemeenten en OCMW is nu al een werkelijkheid, verplicht door de Regio in Vlaanderen. De Waalse Regio denkt eraan een wettelijk kader te vormen die deze fusie toelaat op vrijwillige basis. Zonder de mogelijke synergieën tussen de OCMW van verschillende gemeenten te verwaarlozen, kunnen synergieën in stand komen op verschillend niveau en deze kunnen grote besparingen mogelijk maken en de verbanden evenals de doeltreffendheid van de verschillende diensten verbeteren. Dit kan o.a. gebeuren dankzij het verhinderen van dubbel personeel en tweemaal voorgestelde diensten. Informatica, juridische diensten (openbare markten, het volgen van dossiers), finantiële diensten, onderhoud van lokalen, personeel bijvoorbeeld kunnen zich nuttig maken voor de twee instellingen tegelijk.",
         "125_text": "Het OCMW moet liefst een partnerschap aangaan met de verenigingen gespecialiseerd in sociale begeleiding, en dit vooral om uitkeringsgerechtigden opniew aan het werk te krijgen."
