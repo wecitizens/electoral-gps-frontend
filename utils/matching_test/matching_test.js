@@ -1,113 +1,7 @@
 LA = require('look-alike');
 LAUtil = require('../../node_modules/look-alike/lib/util');
+Match = require('../../src/store/gps/match');
 
-function getSubject(matchRequest) {
-    return matchRequest.answers.reduce(
-        (accumulator, target) => ({
-            ...accumulator,
-            [target.question_key]:
-            matchRequest.answer_formats.find(x => x.key = target.answer_format)
-                .items.find(x => x.key === target.value).weight
-        }),
-        {});
-}
-
-function getWeights(matchRequest) {
-    return matchRequest.answers.reduce(
-        (accumulator, target) => ({
-            ...accumulator,
-            [target.question_key]:
-            matchRequest.answer_formats.find(x => x.key = target.answer_format).tolerance
-                .items.find(x => x.key === target.tolerance).weight
-        }),
-        {});
-}
-
-function getSamples(matchRequest, data) {
-
-    return data.reduce(
-        function (acc, t) {
-
-            let u = {};
-
-            if (acc.hasOwnProperty(t.user_key))
-                u = acc[t.user_key];
-
-            const q = matchRequest.answers.find(aa => aa.question_key == t.question_key);
-
-            u[t.question_key] = matchRequest.answer_formats.find(x => x.key == q.answer_format).items.find(x => x.key == t.value).weight;
-            acc[t.user_key] = u;
-            return acc;
-
-        }
-        , {});
-}
-
-function individualDistance(answer_formats, subject, weights, set) {
-    let filteredSet = {};
-    let filteredSubject = {};
-    let filteredWeights = {};
-    let i = 0;
-
-    Object.keys(subject).forEach(f => {
-        if (set.hasOwnProperty(f)) {
-            filteredSet[f] = set[f];
-            filteredSubject[f] = subject[f];
-            filteredWeights[f] = weights[f];
-            i++;
-        }
-    });
-
-    const subjectLength = Object.keys(subject).length;
-
-    const distance = LAUtil.distance(filteredSet, filteredSubject, {weights: filteredWeights});
-
-    // works for one format only
-    const itemWeightMax = answer_formats[0].items.map(i => i.weight).reduce((p, c) => {
-        return c > p ? c : p;
-    }, 0);
-
-    const distanceMax = Math.sqrt(
-        Object.values(filteredWeights).reduce((p, c) => {
-            return p + Math.pow(c * itemWeightMax, 2)
-        }, 0));
-
-    console.log("Max weight : ");
-    console.log(itemWeightMax);
-
-    console.log("Max distance : ");
-    console.log(distanceMax);
-
-    return 100 * (1 - distance / distanceMax) * (2 / 3 + 1 / 3 * i / subjectLength);
-}
-
-function performMatch(matchRequest, segmentAnswers) {
-
-    const subject = getSubject(matchRequest);
-    const weights = getWeights(matchRequest);
-    const samples = getSamples(matchRequest, segmentAnswers);
-
-    console.log("My choice : ");
-    console.log(subject);
-
-    console.log("My tolerance : ");
-    console.log(weights);
-
-    return Object.keys(samples).map(key => {
-
-        const sample = samples[key];
-
-        // for all subject keys, get the sample one. if it does not exist, remove the one 
-
-        const match = individualDistance(matchRequest.answer_formats, subject, weights, sample);
-
-        return {
-            key: key,
-            score: match
-        }
-
-    });
-}
 
 function perform() {
     const matchRequest = {
@@ -203,7 +97,8 @@ function perform() {
         }
     ];
 
-    const score = performMatch(matchRequest, segmentData);
+    // TODO : How to unit test vue modules ...
+    const score = Match.performMatch(matchRequest, segmentData);
 
     console.log("My scores : ");
     console.log(score);
