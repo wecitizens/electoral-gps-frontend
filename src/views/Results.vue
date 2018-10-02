@@ -5,14 +5,17 @@
                 <b-tab :title="$t('title.candidates')" class="col-md-6 tab-center" active>
                     <p class="list-legend">{{ $t('Les candidats qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
-                         :key="idx">
+                         :key="idx" v-bind:class="{ disabled: !item.has_answered }">
                         <div class="col-3">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail" />
                             <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
                         </div>
                         <div class="col-9">
-                            <div class="title"><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.id" target="_blank">{{ item.name }}</a></div>
-                            <div class="subtitle">#{{ item.position }} {{ item.group }}</div>
+                            <div class="title">
+                                <a v-if="item.completeness > 12" :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.id" target="_blank">{{ item.name }}</a>
+                                <span v-else>{{ item.name }}</span>
+                            </div>
+                            <div class="subtitle"><span v-if="item.position > 0">#{{ item.position }}</span> {{ item.group }}</div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
                                      :aria-valuenow="item.score"
@@ -67,7 +70,9 @@
             group: this.$t('vote.' + group.name),
             position: group.candidates.find(c => c.key == score.user_key).order,
             score: score.score,
-            img: candidate.img
+            img: candidate.img,
+            has_answered: candidate.has_answered,
+            completeness : candidate.completeness
           }
         } else {
           return {}

@@ -21,9 +21,10 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="mb-2">{{ $t("home.with_help_from") }}</div>
-                    <img src="/img/partner-metro.png" height="20" class="ml-5 h-10" alt="">
-                    <img src="/img/partner-sudpress.png" height="20" class="ml-5 h-10" alt="">
-                    <img src="/img/partner-dh.png" height="20" class="ml-5 h-10" alt="">
+                    <img src="/img/partner-metro.png" height="20" class="m-2">
+                    <img src="/img/partner-sudpress.png" height="20" class="m-2">
+                    <img src="/img/partner-levif.png" height="20" class="m-2">
+                    <img src="/img/partner-knack.png" height="20" class="m-2">
                 </div>
             </div>
         </footer>
@@ -161,12 +162,12 @@
         margin: 0;
         text-align: center;
         background: #F5F5F1;
-        position: absolute;
+        position: relative;
     }
 
     @media (min-width: 768px) {
         .footer {
-            position: fixed;
+            position: relative;
         }
     }
 </style>

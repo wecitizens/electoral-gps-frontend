@@ -5,8 +5,8 @@ export default {
     "home": {
         "cta": "Je fais le test !",
         "title": "Je trouve les candidats qui me correspondent",
-        "title_2": "ELECTORAL",
         "title_1": "GPS",
+        "title_2": "ELECTORAL",
         "subtitle": "Communales 2018",
         "powered_by": "Powered by:",
         "description": "{userCount} électeurs ont déjà fait l'expérience",
@@ -20,7 +20,7 @@ export default {
         "title": "Partager"
     },
     "importance": [
-        "Peu important",
+        "Moins important",
         "Importance moyenne",
         "Très important",
         "Non-négociable"
@@ -35,31 +35,32 @@ export default {
         "parties": "Listes",
         "candidates": "Candidats"
     },
-    "button": {
-        "lets_go": "C'est parti",
-        "more_info": "détails",
-        "see_results": "Voir les résultats",
-        "next_question": "Suivant",
-        "show_importance": "définir l'importance",
-        "show_more_infos": "d'infos",
-        "previous_question": "Précédent"
-    },
+    "PayPal-button": "Faire un don par PayPal",
+    "strongly_agree": "Tout à fait d'accord",
     "links": {
         "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
         "wecitizens_link": "http://www.wecitizens.be/fr",
         "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
         "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
     },
-    "strongly_agree": "Tout à fait d'accord",
+    "button": {
+        "lets_go": "C'est parti",
+        "more_info": "détails",
+        "see_results": "Voir les résultats",
+        "next_question": "Suivant",
+        "show_more_infos": "d'infos",
+        "show_importance": "définir l'importance",
+        "previous_question": "Précédent"
+    },
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Soutenir",
             "results": "Résultats",
             "welcome": "Accueil",
-            "questions": "Questions",
-            "about_app": "À propos du {app_title}",
             "share_app": "Partager le {app_title}",
+            "about_app": "À propos du {app_title}",
+            "questions": "Questions",
             "municipality": "Commune",
             "go_to_results": "Sauter aux résultats",
             "share_results": "Partager mes résultats",
@@ -70,24 +71,24 @@ export default {
             "register_as_candidate": "M'inscrire comme candidat"
         }
     },
-    "accept_condition": "J'accepte les conditions générales de nous Citoyens",
+    "accept_condition": "J'accepte les conditions générales de NousCitoyens",
     "importance_title": "Pondération",
-    "moreinfo_tooltip": "Plus d'infos",
     "association": {
         "name": "NousCitoyens"
     },
+    "moreinfo_tooltip": "Plus d'infos",
     "strongly_disagree": "Pas du tout d'accord",
-    "insuffisant_number": "Le nombre de candidats participants dans la commune est insuffisant pour poursuivre GPS électoral. En cliquant sur le nom d'un candidat, tu ouvres son profil. L'onglet \"Opinions\" te donne ses réponses au questionnaire.",
-    "importance_tooltip": "importance de la question",
+    "importance_tooltip": "Niveau d'importance pour moi",
+    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. Tu pourrais réessayer après le 10 octobre. En cliquant sur le nom d'un candidat, tu ouvres son profil. L'onglet \"Opinions\" te donne ses réponses au questionnaire.",
+    "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {
         "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
         "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
     },
-    "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
-    "Tout à fait d'accord": "Tout à fait d'accord",
     "Pas du tout d'accord": "Pas du tout d'accord",
     "im_doing_test_anyway": "Je fais quand-même le test !",
-    "Je ne me prononce pas": "Je ne me prononce pas",
+    "Tout à fait d'accord": "Tout à fait d'accord",
+    "accept_condition_link": "http://www.wecitizens.be/fr/nous-citoyens/termes-et-conditions/",
     "stats": {
         "questions": [
             {
@@ -111,7 +112,7 @@ export default {
                 "options": {
                     "over_55": "+ 55 ans",
                     "less_than_35": "-35 ans",
-                    "between_35_and_55": "35 à 55"
+                    "between_35_and_55": "35 à 55 ans"
                 }
             },
             {
@@ -122,16 +123,16 @@ export default {
                     "ps": "PS",
                     "mr": "MR",
                     "nva": "N-VA",
-                    "cdv": "CD&V",
                     "spa": "sp.a",
                     "cdh": "cdH",
-                    "defi": "Défi",
+                    "cdv": "CD&V",
                     "none": "Aucun",
-                    "ecolo": "Ecolo",
-                    "groen": "Groen",
+                    "defi": "Défi",
                     "other": "Autre parti",
-                    "ptbpvda": "PTB",
+                    "groen": "Groen",
+                    "ecolo": "Ecolo",
                     "openvld": "Open VLD",
+                    "ptbpvda": "PTB",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -139,18 +140,20 @@ export default {
         ],
         "anonymous_question_to_improve_service": "Ces dernières questions restent anonymes, nous permettent d’améliorer notre service et de faire des analyses statistiques."
     },
-    "only_3_candidates_message": "Dans ta commune, seuls 3 candidats participent au GPS électoral",
+    "Je ne me prononce pas": "Je ne me prononce pas",
+    "invite_politician_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/",
     "meaning_of_the_importance": "Le calcul du score de chaque candidat tient compte du poids que j’accorde à chaque question. Par défaut, la question est considéré “d’importance moyenne”. Si je clique sur “non-négociable” je donne le poids maximal à la question et d’exclue tous les candidats qui ne vont pas dans mon sens.",
+    "only_3_candidates_message": "Dans ta commune, {number} candidats participent au GPS électoral",
+    "not_enough_candidates_answered": "Dans cette commune, moins de six candidats ont répondu au questionnaire du GPS électoral. Désolé, mais la procédure s'arrête ici.",
     "district": {
-        "what_is_your_postcode": "Mon code postal",
-        "help_customise_survey": "Je recevrai le classement des candidats de ma commune."
+        "help_customise_survey": "Je recevrai le classement des candidats de ma commune.",
+        "what_is_your_postcode": "Mon code postal"
     },
-    "not_enough_candidates_answered": "Moins de six candidats ont répondu à ce questionnaire",
     "input": {
         "place_holder": {
             "your_postcode": "xxxx"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "Les listes qui partagent le plus mes convictions sont",
-    "Les candidats qui partagent le plus mes convictions sont": "Les candidats qui partagent le plus mes convictions sont"
+    "Les listes qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les candidats",
+    "Les candidats qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les listes électorale"
 }
