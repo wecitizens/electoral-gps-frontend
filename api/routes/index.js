@@ -50,8 +50,6 @@ SELECT
 FROM
     opinions_answers a
         JOIN
-    politician_job j ON j.id_politician = a.id_politician
-        JOIN
     politician p ON p.id = a.id_politician
         JOIN
     politician_election e ON e.id_politician = a.id_politician
