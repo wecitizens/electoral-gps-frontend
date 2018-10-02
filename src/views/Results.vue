@@ -63,6 +63,7 @@
         let group = this.currentElection.electoral_lists
           .filter(e => e.candidates.map(c => c.key).includes(score.user_key))[0]
         let candidate = this.currentElection.candidates.find(p => p.key == score.user_key)
+        console.log(score)  
         if (candidate) {
           return {
             id: candidate.politician_id,

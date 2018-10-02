@@ -20,7 +20,7 @@ function getSubject(matchRequest) {
                     console.log('currentItemNotFound', currentAnswerFormat.items, target.value);
                 }
             } else {
-                console.log('currentAnswerFormatNotFound', target.answer_format, answer_formats);
+                console.log('currentAnswerFormatNotFound', target.answer_format, matchRequest.answer_formats);
             }
         }, {});
 }
@@ -42,7 +42,7 @@ function getWeights(matchRequest) {
                     console.log('currentItemNotFound', currentAnswerFormat.items, target.value);
                 }
             } else {
-                console.log('currentAnswerFormatNotFound', target.answer_format, answer_formats);
+                console.log('currentAnswerFormatNotFound', target.answer_format, matchRequest.answer_formats);
             }
         }, {});
 }
@@ -65,7 +65,7 @@ function getSamples(matchRequest, data) {
             try {
                 u[t.question_key] = matchRequest.answer_formats.find(x => x.key == q.answer_format).items.find(x => x.key == t.value).weight;
             } catch (err) {
-                console.log('cannot find ', t.question_key, q.answer_format, t.value, answer_formats);
+                console.log('cannot find ', t.question_key, q.answer_format, t.value, matchRequest.answer_formats);
             }
             acc[t.user_key] = u;
             return acc;
@@ -133,7 +133,7 @@ function performMatch(matchRequest, segmentAnswers) {
         const match = individualDistance(matchRequest.answer_formats, subject, weights, sample);
 
         return {
-            key: key,
+            user_key: key,
             score: match
         }
 
