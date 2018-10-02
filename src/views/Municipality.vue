@@ -11,7 +11,7 @@
             </el-row>
             <br/>
             <el-row v-if="vote.current.election && vote.current.election.candidates && vote.current.election.candidates.length">
-                <router-link v-if="vote.current.election.candidates.length > 6" :to="'/survey/'+district_key"
+                <router-link v-if="participatingCandidates > 6" :to="'/survey/'+district_key"
                              tag="el-button">{{ $t("button.lets_go") }}
                 </router-link>
                 <router-link v-else :to="'/insufficient-candidates/'+district_key" tag="el-button">
@@ -32,6 +32,7 @@
 
   import {mapState} from 'vuex';
   import Steps from '../components/Steps';
+  import { Loading } from 'element-ui';
 
   export default {
     name: 'district',
@@ -54,14 +55,27 @@
         console.log(this.$store.state);
         return this.$store.state.survey.current;
       },
+      participatingCandidates() {
+
+        if (this.$store.state.vote.current.election.candidates.length) {
+          let candidates = this.$store.state.vote.current.election.candidates.filter((item) => item.total_received > 0);
+          console.log('Candidates', candidates);
+          return candidates.length;
+        }
+
+        return 0;
+      },
       ...mapState(['vote'])
     },
     methods: {
       setCurrentDistrict(data) {
+        const loading = Loading.service();
         const district = this.$store.state.vote.districtSearchResults.find(r => r.value === data.district);
         this.district_key = district.key;
         this.$store.commit("setCurrentDistrict", district);
-        this.$store.dispatch("setCurrentElection", district);
+        this.$store.dispatch("setCurrentElection", district).then(() => {
+          loading.close();
+        });
       },
       async filterDistricts(data, cb) {
         await this.$store.dispatch('filterDistricts', data);
