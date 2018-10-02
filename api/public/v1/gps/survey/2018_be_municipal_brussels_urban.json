@@ -14,27 +14,25 @@
     "question_20",
     "question_123",
     "question_121",
-    "question_121",
     "question_120",
     "question_118",
     "question_117",
-    "question_116",
-    "question_114",
-    "question_97",
+    "question_113",
+    "question_96",
+    "question_14",
     "question_101",
     "question_104",
     "question_105",
-    "question_115",
+    "question_116",
     "question_107",
     "question_108",
     "question_110",
-    "question_113",
-    "question_14",
-    "question_96",
+    "question_97",
+    "question_114",
+    "question_115",
     "question_95",
     "question_93",
     "question_88",
-    "question_84",
     "question_84",
     "question_58",
     "question_52",
@@ -114,12 +112,6 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_121",
-      "text": "question.121_text",
-      "notice": "question.121_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
       "key": "question_120",
       "text": "question.120_text",
       "notice": null,
@@ -138,21 +130,21 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_116",
-      "text": "question.116_text",
+      "key": "question_113",
+      "text": "question.113_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_114",
-      "text": "question.114_text",
-      "notice": "question.114_notice",
+      "key": "question_96",
+      "text": "question.96_text",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_97",
-      "text": "question.97_text",
-      "notice": null,
+      "key": "question_14",
+      "text": "question.14_text",
+      "notice": "question.14_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -174,8 +166,8 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_115",
-      "text": "question.115_text",
+      "key": "question_116",
+      "text": "question.116_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -198,20 +190,20 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_113",
-      "text": "question.113_text",
+      "key": "question_97",
+      "text": "question.97_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_14",
-      "text": "question.14_text",
-      "notice": "question.14_notice",
+      "key": "question_114",
+      "text": "question.114_text",
+      "notice": "question.114_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_96",
-      "text": "question.96_text",
+      "key": "question_115",
+      "text": "question.115_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -231,12 +223,6 @@
       "key": "question_88",
       "text": "question.88_text",
       "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_84",
-      "text": "question.84_text",
-      "notice": "question.84_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -335,7 +321,7 @@
       "question": {
         "4_text": "Taxes should be lowered, even if it means a reduction in public services.",
         "14_text": "Cars entering the city centre during the work week should be charged a congestion fee.",
-        "20_text": "The State may own 'private' companies operating in competitive markets (e.g. telecom operators, media, banking).",
+        "20_text": " The public authority may own companies exposed to competition (telephone, newspaper, bank, etc.).",
         "22_text": "All public officials should be required to report their income (including benefits in kind) derived from their public activity.",
         "23_text": "Public employees may wear signs of their religious or philosophical beliefs even if they are in contact with the public.",
         "31_text": "In general, penalties for criminal offenses should be more severe.",
@@ -362,8 +348,8 @@
         "114_text": "The elected politician should align his positions with the results of public opinion polls.",
         "115_text": "In order to help students learn the second national language, some of their courses should be given in that language.",
         "116_text": "In written communication with the public (web, signs, etc), public services in Brussels should also use English.",
-        "117_text": "The city has to do everything possible to introduce a system for car-sharing (similar to Cambio, Boldes, Zen Car, etc).",
-        "118_text": "When designing public spaces, aesthetic concerns are less important than practical, economic and security concerns.",
+        "117_text": "The city must facilitate the implementation and extension of a system for car-sharing (similar to Cambio, Boldes, Zen Car, etc).",
+        "118_text": "When designing public spaces, aesthetic concerns must not overrule practical, economic and security concerns.",
         "120_text": "Public authorities that do not respect the time limit for administrative decisions (such as building permits) must pay a daily compensation to the applicant.",
         "121_text": "Public authorities should have an active policy for the social recognition of LGBTQI+ people.",
         "123_text": "The commune should get the local population to more actively report uncivil behaviour.",
@@ -429,12 +415,12 @@
         "114_notice": "L’idée d’avoir des mandataires qui s’alignent sur les tendances populaires est séduisante. Elle soulève toutefois quelques questions. Quelle est la valeur des sondages : qualité scientifique de l’exécution, niveau de préparation/conditionnement des participants au sondage, etc ? Si on veut consulter la population en vue d’une décision politique, ne faut-il pas se baser sur un référendum ? Le mandataire doit-il rendre des comptes à la majorité de la population, ou à ceux qui l’ont élu sur base d’un programme précis ? Souhaite-t-on un mandataire sans convictions personnelles ?",
         "115_text": "Pour améliorer l'apprentissage de la deuxième langue nationale, une partie des cours doit être donnée dans cette langue-là.",
         "116_text": "Dans leur communication écrite avec le public (web, signalisation, etc), les services publics à Bruxelles devraient ajouter l'anglais.",
-        "117_text": "La ville doit factiliter l'implantation d'un système de voitures partagées (comparable à Cambio, Bolides, Zen Car, etc).",
+        "117_text": "La ville doit faciliter l'implantation et l'extension d'un système de voitures partagées (comparable à Cambio, Bolides, Zen Car, etc).",
         "118_text": "Dans l'aménagement des espaces publics, l'objectif esthétique doit rester subordonné aux aspects utilitaires, économiques et sécuritaires.",
-        "120_text": "L'autorité qui ne respecte pas les délais pour accorder des autorisations administratives (comme un permis d'urbanisme), doit indemniser le demandeur, par jour de retard.",
+        "120_text": "\nL'autorité qui ne respecte pas les délais pour accorder des autorisations administratives (comme un permis d'urbanisme), doit indemniser le demandeur, par jour de retard.",
         "121_text": "Les autorités doivent mener une politique active pour assurer aux personnes LGBTQI+ une meilleure reconnaissance sociale.",
         "121_notice": "L'association RainbowHouse, de défense des personnes LGBTQI+, préconise e.a.: la création d'un service en charge de l'égalité des chances, un système de plainte à disposition des fonctionnaires victimes de menaces ou de discrimination , une plus grande présence des personnes LGBTQI+ dans la programmation culturelle et dans les supports pédagogiques, des actions de formation/sensibilisation des agents publics, etc. Cette association invite les autorités publiques à Afficher les symboles des communautés minorisées lors de leurs principaux événements (p.ex. Belgian Pride), en utilisant, selon les cas, less bâtiments publics (drapeaux) et/ou less supports de communication (journal communal, panneaux d'affichage).",
-        "123_text": "Les communes doivent davantage s'appuyer sur la population pour constater les incivilités.",
+        "123_text": "La commune doit davantage s'appuyer sur la population pour constater les incivilités.",
         "125_text": "Le CPAS doit privilégier le partenariat avec des associations spécialisées dans l'accompagnement social, en particulier pour réorienter des bénéficiaires vers le marché de l’emploi."
       },
       "answer_format": {
@@ -468,7 +454,7 @@
         "23_text": "Ambtenaren mogen hun godsdienstige - of filosofische overtuiging kenbaar maken zelfs bij contacten met de bevolking.",
         "23_notice": "In België is het door de wet van 28/04/2011 verboden een volledige sluier (boerka) te dragen, die het gezicht bedekt. Volgens die wet moet iedereen in de openbare ruimte voortdurend herkenbaar zijn en mag het gezicht dus zelfs niet gedeeltelijk worden bedekt. De bezwaren die bij het Grondwettelijk Hof werden ingediend wegens aantasting van de vrije meningsuiting en van de bescherming van de persoonlijke levenssfeer, werden afgewezen.",
         "31_text": "In het algemeen zouden misdrijven strenger bestraft moeten worden.",
-        "38_text": "Bij grote overheidsprojecten, inz. bij grote investeringen, moet een volksraadpleging plaatsvinden.",
+        "38_text": "Grote economische en sociale projecten, b.v. grote investeringen met zich meebrengen, moeten aan een openbare raadpleging worden voorgelegd.",
         "38_notice": "Plannen voor grote werken van algemeen belang mikken per definitie op de lange termijn, terwijl de uitvoering ervan zelf ook lang duurt! Eender welke instantie die zulk een beslissing neemt, moet afstand kunnen nemen van het onmiddellijke voordeel om op lange termijn te denken. In tegenstelling tot het referendum, waarvan het resultaat bindend is voor de overheid die het heeft georganiseerd, kunnen de organisatoren van een volksraadpleging oordelen over de gevolgen die ze er zullen aan geven. Tegenwoordig worden beslissingen over grote werken voorafgegaan door een effectenstudie en door een openbaar onderzoek waarbij de deelnemers vragen kunnen stellen en bezwaren uiten. De initiatiefnemers van het project moeten daarop antwoorden en hun plannen desgevallend corrigeren.",
         "46_text": "Staatsleningen mogen niet dienen om lopende uigaven te financieren. Zij moeten bestemd zijn voor investeringen (gebouwen, infrastructuur).",
         "49_text": "Sociale bijstand aan immigranten moet worden gemoduleerd op basis van hun vorderingen in een integratieproces.",
@@ -497,12 +483,12 @@
         "114_notice": "Het idee over afgevaardigden te beschikken die zich houden aan de wil van het volk is bekoorlijk. Maar vragen moeten gesteld worden. Welke is de waarde van opiniepeilingen : wetenschappelijke waarde van de uitvoering, het voorbereidingsniveau/het conditioneren van de deelnemers aan de peiling, enz?Wil men de bevolking bevragen wat een politiek besluit betreft, kan men dan niet beter gebruik maken van een referendum ? Moet de mandataris verantwoordelijk zijn tegenover de meerderheid van de bevolking of tegenover zij die voor hem stemden op basis van een duidelijk programma ? Wil men vertegenwoordigers zonder persoonlijke opinie ?",
         "115_text": "Om de kennis van de tweede landstaal te verbeteren, moet een deel van de lessen in die taal gegeven worden.",
         "116_text": "In hun schriftelijke contacten met het publiek (web, signalisatie enz..) zouden de Brusselse openbare diensten het Engels moeten toevoegen.",
-        "117_text": "De stad moet er alles aan doen om een systeem van gedeelde autos in te voeren (vergelijkbaar met Cambio, Bolides, Zen Car, enz).",
-        "118_text": "Bij het aanleggen van openbare pleinen, moet het esthetisch aspect van minder belang zijn dan het nuttige, economische, veilige.",
-        "120_text": "In geval de overheid zich niet houdt aan de wettelijke  termijn wat administratieve vergunningen betreft (zoals een bouwvergunning), moet zij de vrager, per dag vertraging, schadeloosstellen.",
+        "117_text": "De stad moet de invoering en uitbreiding van een gedeeld autosysteem faciliteren (vergelijkbaar met Cambio, Bolides, Zen Car, enz).",
+        "118_text": "Bij het inrichten van de openbare ruimte, moet het esthetisch aspect ondergeschikt blijven aan het nuttige, economische, veilige.",
+        "120_text": "De overheid die zich niet houdt aan de wettelijke termijn voor de toekenning van administratieve vergunningen (zoals een bouwvergunning), moet de vrager, per dag vertraging, schadeloosstellen.",
         "121_text": "De overheid moet een actieve politiek voeren om de LGBTQ+ personen een betere sociale erkenning te verzekeren.",
         "121_notice": "De vereniging RainbowHouse voor LGBTQI+ personen bescherming , stelt o.a. de schepping van een dienst voor gelijke kansen voor, een klachten systeem ter beschikking van ambtenaren die met dreigingen of discriminatie te maken hebben, een grotere aanwezigheid van LGBTQI+ personen in de culturele programmatie en in pedagogische hulp, optreden wat opvoeding/bewustmaking van agenten die met het publiek werken betreft, enz. Deze vereniging vraagt de publieke verantwoordelijken de symbolen eigen aan minderheden te laten zien wanneer ze iets belangrijks vieren (b.v. Belgian Pride), en dit door gebruik te maken van publieke gebouwen (vlaggen) en/of de mogelijkheden tot mededelen (krant van de gemeente, aanplakbiljetten).",
-        "123_text": "De gemeenten moeten meer hun vertrouwen geven aan de bevolking wat betreft het vaststellen van niet correcte handelingen.",
+        "123_text": "De gemeente moet meer samenwerken met de bevolking om de inbreuken vast te stellen.",
         "125_text": "Het OCMW moet liefst een partnerschap aangaan met de verenigingen gespecialiseerd in sociale begeleiding, en dit vooral om uitkeringsgerechtigden opniew aan het werk te krijgen."
       },
       "answer_format": {
