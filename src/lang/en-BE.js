@@ -5,8 +5,8 @@ export default {
     "home": {
         "cta": "I do the test!",
         "title": "Find the candidates that match with you",
-        "title_2": "GPS",
         "title_1": "ELECTORAL",
+        "title_2": "GPS",
         "subtitle": "Municipal elections 2018",
         "powered_by": "Powered by:",
         "description": "Already {userCount} matchs",
@@ -20,7 +20,7 @@ export default {
         "title": "Share"
     },
     "importance": [
-        "Little importance",
+        "Less important",
         "Medium importance",
         "Very important",
         "Not negotiable"
@@ -35,31 +35,32 @@ export default {
         "parties": "Canddate list",
         "candidates": "Candidates"
     },
-    "button": {
-        "lets_go": "Let's go!",
-        "more_info": "more info",
-        "see_results": "See results",
-        "next_question": "Next",
-        "show_importance": "define the importance",
-        "show_more_infos": "info",
-        "previous_question": "Previous"
-    },
+    "PayPal-button": "Donate (using PayPal)",
+    "strongly_agree": "Fully agree",
     "links": {
         "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
         "wecitizens_link": "http://www.wecitizens.be",
         "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
         "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
     },
-    "strongly_agree": "Fully agree",
+    "button": {
+        "lets_go": "Let's go!",
+        "more_info": "more info",
+        "see_results": "See results",
+        "next_question": "Next",
+        "show_more_infos": "info",
+        "show_importance": "define the importance",
+        "previous_question": "Previous"
+    },
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Donate",
             "results": "Results",
             "welcome": "Home",
-            "questions": "Questions",
-            "about_app": "About {app_title}",
             "share_app": "Share the {app_title}",
+            "about_app": "About {app_title}",
+            "questions": "Questions",
             "municipality": "Municipality",
             "go_to_results": "Skip to results",
             "share_results": "Share my results",
@@ -70,28 +71,28 @@ export default {
             "register_as_candidate": "Register as candidate"
         }
     },
-    "accept_condition": "J'accepte les conditions",
+    "accept_condition": "I accept the terms & conditions of WeCitizens",
     "importance_title": "Importance",
-    "moreinfo_tooltip": "More infos",
     "association": {
         "name": "WeCitizens"
     },
+    "moreinfo_tooltip": "More infos",
     "strongly_disagree": "Strongly disagree",
-    "insuffisant_number": "The number of participating candidates in the municipality is insufficient to go further with the GPS electoral. By clicking on the name of a candidate, you open his profile. The \"Opinions\" tab gives you his answers to the questionnaire.",
-    "importance_tooltip": "importance de la question",
+    "importance_tooltip": "How important for me",
+    "insuffisant_number": "The number of participating candidates in the municipality is still insufficient to perform a matching with the Electoral GPS. You could try again after October 10. By clicking on the name of a candidate, you open his profile. The \"Opinions\" tab gives you his answers to the questionnaire.",
+    "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {
         "lists_title": "Electoral lists in the order of political affinity",
         "candatidates_sharing_my_position_the_most": "Candidates that share my ideas the most"
     },
-    "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
-    "Tout à fait d'accord": "Strongly agree",
     "Pas du tout d'accord": "Strongly disagree",
     "im_doing_test_anyway": "I'm doing the test anyway!",
-    "Je ne me prononce pas": "Neutral",
+    "Tout à fait d'accord": "Strongly agree",
+    "accept_condition_link": "http://www.wecitizens.be/fr/nous-citoyens/termes-et-conditions/",
     "stats": {
         "questions": [
             {
-                "key": "source",
+                "key": "lead",
                 "type": "select",
                 "title": "I discovered the Electoral GPS through:",
                 "options": {
@@ -122,16 +123,16 @@ export default {
                     "ps": "PS",
                     "mr": "MR",
                     "nva": "N-VA",
-                    "cdv": "CD&V",
                     "spa": "sp.a",
                     "cdh": "cdH",
-                    "defi": "Défi (FDF)",
+                    "cdv": "CD&V",
                     "none": "None",
-                    "ecolo": "Ecolo",
-                    "groen": "Groen",
+                    "defi": "Défi (FDF)",
                     "other": "Other party",
-                    "ptbpvda": "PTB - PVDA",
+                    "groen": "Groen",
+                    "ecolo": "Ecolo",
                     "openvld": "Open VLD",
+                    "ptbpvda": "PTB - PVDA",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -139,18 +140,20 @@ export default {
         ],
         "anonymous_question_to_improve_service": "These last questions remain anonymous and allow us to improve our service and make statistical analysis."
     },
-    "only_3_candidates_message": "In your town, only 3 candidates participate in the electoral GPS",
+    "Je ne me prononce pas": "I give no opinion",
+    "invite_politician_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/",
     "meaning_of_the_importance": "The calculation of each candidate's score takes the weight I give to each question into account. By default, the question is considered to be of “medium importance”. By opting for \"non-negotiable\", I give the maximum weight to this question and I exclude any candidate that does not agree with me on that question.",
+    "only_3_candidates_message": "In your town, {number} candidates participate in the Electoral GPS",
+    "not_enough_candidates_answered": "In this municipality, less than six candidates answered the questionnaire of the Electoral GPS. Sorry, but we can not help you further.",
     "district": {
-        "what_is_your_postcode": "My postal code",
-        "help_customise_survey": "I will receive the ranking of candidates in my municipality."
+        "help_customise_survey": "I will receive the ranking of candidates in my municipality.",
+        "what_is_your_postcode": "My postal code"
     },
-    "not_enough_candidates_answered": "Less than six candidates answered the questionnaire",
     "input": {
         "place_holder": {
             "your_postcode": "Your postal code"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "The politic list sharing my opinions are",
-    "Les candidats qui partagent le plus mes convictions sont": "The candidates sharing my opinions are"
+    "Les listes qui partagent le plus mes convictions sont": "Matching with electoral lists",
+    "Les candidats qui partagent le plus mes convictions sont": "Matching with candidates"
 }

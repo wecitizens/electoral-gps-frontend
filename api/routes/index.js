@@ -60,7 +60,7 @@ FROM
         JOIN
     election ON election.id = e.id_election  
         LEFT JOIN
-    localite_menu ON localite_menu.id_gps = election.id_gps    
+    localite_menu ON localite_menu.id_gps = election.id_gps
 WHERE
     opinion_received > '2018-09-08'
     AND e.district = ?
@@ -135,7 +135,10 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
     e.place as position,
     e.status as status,
     e.questionnaire as has_answered,
-    e.id_election AS id_election
+    e.id_election AS id_election,
+    p.completeness_of_profile AS completeness,
+    a.opinion_total_sent AS total_questions,
+    a.opinion_total_received AS total_received
 FROM
     politician_election e
         JOIN
@@ -149,7 +152,9 @@ FROM
         JOIN
     election ON election.id = e.id_election  
         LEFT JOIN
-    localite_menu ON localite_menu.id_gps = election.id_gps    
+    localite_menu ON localite_menu.id_gps = election.id_gps 
+        LEFT JOIN
+    opinions_answers a ON a.id_politician = e.id_politician    
 WHERE
     e.district = ?
     AND e.id_election >= 16
@@ -220,7 +225,10 @@ GROUP BY e.id_politician`, district, (err, rows) => {
         order: item.position,
         status : item.status,
         has_answered : item.has_answered,
-        list: item.party
+        completeness : item.completeness,
+        list: item.party,
+        total_questions : item.total_questions,
+        total_received: item.total_received
       };
     });
 

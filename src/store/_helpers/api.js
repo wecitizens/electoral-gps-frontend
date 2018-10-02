@@ -15,9 +15,9 @@ class API {
     if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
       axios.defaults.baseURL = "http://localhost:3010/v1/";
     } else if (location.hostname === "demo-gps.wecitizens.be") {
-      axios.defaults.baseURL = "http://demo-api.wecitizens.be/v1";
+      axios.defaults.baseURL = "//demo-api.wecitizens.be/v1";
     } else {
-      axios.defaults.baseURL = "http://api.wecitizens.be/v1";
+      axios.defaults.baseURL = "https://api.wecitizens.be/v1";
     }
 
     this.init = {

@@ -1,20 +1,17 @@
 <template>
     <div>
         <steps :active="1"></steps>
-        <div v-if="!vote.current.election.candidates">
-
-        </div>
-        <div class="container mt-3 mb-5" v-else>
-            <h2>{{ $t('Seuls {number} candidats ont répondu au test dans votre commune', {'number': vote.current.election.candidates.length}) }}</h2>
+        <div class="container mt-3 mb-5" v-if="vote.current.election && vote.current.election.candidates">
+            <h2>{{ $t('only_3_candidates_message', {'number': vote.current.election.candidates.filter((item) => item.has_answered).length}) }}</h2>
             <ul class="list-unstyled mt-4">
-                <li class="media mb-3" v-for="(item, key) in vote.current.election.candidates"  :key="key">
-                    <a :href="'//directory.wecitizens.be/en/politician/profil/'+item.politician_id" target="_blank"><img class="mr-3 align-self-start img-thumbnail" :src="item.img" width="64" alt="" v-if="item.img">
+                <li class="media mb-3" v-for="(item, key) in vote.current.election.candidates" :key="key" v-bind:class="{ disabled: !item.has_answered }">
+                    <a :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.politician_id" target="_blank"><img class="mr-3 align-self-start img-thumbnail" :src="item.img" width="64" alt="" v-if="item.img">
                         <img class="mr-3 align-self-start img-thumbnail" src="http://directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" width="64" alt="" v-else></a>
                     <div class="media-body text-left">
-                        <h5><a :href="'//directory.wecitizens.be/en/politician/profil/'+item.politician_id" target="_blank">{{ item.full_name }}</a></h5>
+                        <h5><a :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.politician_id" target="_blank">{{ item.full_name }}</a></h5>
                         <h6>
                           {{ item.list }}
-                          <span v-if="item.order">#{{item.order}}</span>
+                          <span v-if="item.order > 0">#{{item.order}}</span>
                          </h6>
                     </div>
                 </li>
@@ -83,5 +80,10 @@
     .list-scroll {
         height: 70vh;
         overflow-y: scroll;
+    }
+
+    .disabled{
+        color: rgba(64, 64, 64, 0.59) !important;
+        opacity: 0.6;
     }
 </style>

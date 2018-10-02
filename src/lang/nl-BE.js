@@ -5,8 +5,8 @@ export default {
     "home": {
         "cta": "Ik doe de test !",
         "title": "Ik vind hier de kandidaten die mij het best liggen",
-        "title_2": "",
         "title_1": "KIESWIJZER",
+        "title_2": "",
         "subtitle": "Gemeenteraadsverkiezingen 2018",
         "powered_by": "Powered by:",
         "description": "{userCount} kiezers hebben het al gedaan",
@@ -20,7 +20,7 @@ export default {
         "title": "Delen"
     },
     "importance": [
-        "Weinig belangrijk",
+        "Minder belangrijk",
         "Van gemiddeld belang",
         "Zeer belangrijk",
         "Onbespreekbaar"
@@ -35,31 +35,32 @@ export default {
         "parties": "Kieslijsten",
         "candidates": "Kandidaten"
     },
-    "button": {
-        "lets_go": "Van start !",
-        "more_info": "lees meer",
-        "see_results": "Zie het resultaat",
-        "next_question": "Volgende",
-        "show_importance": "het gewicht bepalen",
-        "show_more_infos": "info",
-        "previous_question": "Voorgaande"
-    },
+    "PayPal-button": "Ik doe een gift via PayPal",
+    "strongly_agree": "Helemaal akkoord",
     "links": {
         "gps_link": "http://www.wecitizens.be/nl/onze-tools/kieswijzer/",
         "wecitizens_link": "http://www.wecitizens.be/nl",
         "advice_to_elector_link": "http://www.wecitizens.be/nl/tips_voor_de_kiezer/",
         "register_as_candidate_link": "http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/"
     },
-    "strongly_agree": "Helemaal akkoord",
+    "button": {
+        "lets_go": "Van start !",
+        "more_info": "lees meer",
+        "see_results": "Zie het resultaat",
+        "next_question": "Volgende",
+        "show_more_infos": "info",
+        "show_importance": "het gewicht bepalen",
+        "previous_question": "Voorgaande"
+    },
     "menu": {
         "item": {
             "stats": "Statistiek",
             "donate": "Steun",
             "results": "Resultaat",
             "welcome": "Welkom",
-            "questions": "Vragen",
-            "about_app": "Meer over {app_title}",
             "share_app": "Ik deel de {app_title}",
+            "about_app": "Meer over {app_title}",
+            "questions": "Vragen",
             "municipality": "Gemeent",
             "go_to_results": "Nu al naar het resultaat",
             "share_results": "Mijn resultaat delen",
@@ -70,24 +71,24 @@ export default {
             "register_as_candidate": "Mij inschrijven als kandidaat"
         }
     },
-    "accept_condition": "J'accepte les conditions",
+    "accept_condition": "Ik aanvaard de algemene voorwaarden van WijBurgers",
     "importance_title": "Weging",
-    "moreinfo_tooltip": "Meer infos",
     "association": {
         "name": "WijBurgers"
     },
+    "moreinfo_tooltip": "Meer infos",
     "strongly_disagree": "Helemaal niet akkoord",
-    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is onvoldoende om verder te gaan met de KiesWijzer. Klik op de naam van een kandidaat en open zijn profiel. Op het tabblad 'Opinies' vindt je zijn antwoorden op de vragenlijst.",
-    "importance_tooltip": "importance de la question",
+    "importance_tooltip": "Hoe belangrijk voor mij",
+    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is nog onvoldoende om het matching-proces van de KiesWijzer door te voeren. Probeer opnieuw na 10 oktober. Klik op de naam van een kandidaat en open zijn profiel. Op het tabblad 'Opinies' vindt je zijn antwoorden op de vragenlijst.",
+    "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
     "results": {
         "lists_title": "Kieslijsten in de volgorde van politieke affiniteit",
         "candatidates_sharing_my_position_the_most": "De kandidaten die het best mijn overtuigingen delen"
     },
-    "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
-    "Tout à fait d'accord": "Tout à fait d'accord",
     "Pas du tout d'accord": "Helemaal niet akkoord",
     "im_doing_test_anyway": "Ik doe de test hoe dan ook!",
-    "Je ne me prononce pas": "Je ne me prononce pas",
+    "Tout à fait d'accord": "Tout à fait d'accord",
+    "accept_condition_link": "http://www.wecitizens.be/fr/nous-citoyens/termes-et-conditions/",
     "stats": {
         "questions": [
             {
@@ -111,7 +112,7 @@ export default {
                 "options": {
                     "over_55": "+ 55 jaar",
                     "less_than_35": "- 35 jaar",
-                    "between_35_and_55": "35 à 55"
+                    "between_35_and_55": "35 à 55 jaar"
                 }
             },
             {
@@ -122,16 +123,16 @@ export default {
                     "ps": "PS",
                     "mr": "MR",
                     "nva": "N-VA",
-                    "cdv": "CD&V",
                     "spa": "sp.a",
                     "cdh": "cdH",
-                    "defi": "Défi",
+                    "cdv": "CD&V",
                     "none": "Geen enkele partij",
-                    "ecolo": "Ecolo",
-                    "groen": "Groen",
+                    "defi": "Défi",
                     "other": "Andere partij",
-                    "ptbpvda": "PVDA",
+                    "groen": "Groen",
+                    "ecolo": "Ecolo",
                     "openvld": "Open VLD",
+                    "ptbpvda": "PVDA",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -139,18 +140,20 @@ export default {
         ],
         "anonymous_question_to_improve_service": "Deze laatste vragen blijven anoniem, stellen ons in staat om onze service te verbeteren en om statistische analyses te maken."
     },
-    "only_3_candidates_message": "In uw gemeente nemen slechts 3 kandidaten deel aan de KiesWijzer",
+    "Je ne me prononce pas": "Ik spreek mij niet uit",
+    "invite_politician_link": "http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/",
     "meaning_of_the_importance": "De berekening van de score van elke kandidaat houdt rekening met het gewicht dat ik aan elke vraag geef. Standaard wordt de vraag beschouwd als \"van gemiddeld belang\". Als ik op \"onbespreekbaar\" klik, geef ik het maximale gewicht aan de vraag en sluit ik alle kandidaten uit die het niet met mij eens zijn.",
+    "only_3_candidates_message": "In uw gemeente nemen {number} kandidaten deel aan de KiesWijzer",
+    "not_enough_candidates_answered": "In deze gemeente hebben minder dan zes kandidaten de vragenlijst van de KiesWijzer beantwoord. Sorry, maar we kunnen niet verder.",
     "district": {
-        "what_is_your_postcode": "Mijn postcode",
-        "help_customise_survey": "Ik krijg een rangschikking beperkt tot de kandidaten van mijn gemeente."
+        "help_customise_survey": "Ik krijg een rangschikking beperkt tot de kandidaten van mijn gemeente.",
+        "what_is_your_postcode": "Mijn postcode"
     },
-    "not_enough_candidates_answered": "Minder dan zes kandidaten hebben deze vragenlijst beantwoord",
     "input": {
         "place_holder": {
             "your_postcode": "xxxx"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "Les listes qui partagent le plus mes convictions sont",
-    "Les candidats qui partagent le plus mes convictions sont": "Les candidats qui partagent le plus mes convictions sont"
+    "Les listes qui partagent le plus mes convictions sont": "Hoe sterk delen de kieslijsten mijn standpunten",
+    "Les candidats qui partagent le plus mes convictions sont": "Hoe sterk delen de kandidaten mijn standpunten"
 }
