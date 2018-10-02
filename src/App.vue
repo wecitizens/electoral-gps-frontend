@@ -22,6 +22,13 @@
 </script>
 
 <style lang="scss">
+
+    body, html{
+        background: #F5F5F1;
+        color: #000000;
+
+    }
+
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;

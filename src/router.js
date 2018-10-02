@@ -19,7 +19,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/survey',
+      path: '/survey/:key',
       name: 'survey',
       component: Survey
     },
@@ -27,6 +27,11 @@ export default new Router({
       path: '/municipality',
       name: 'municipality',
       component: Municipality
+    },
+    {
+      path: '/insufficient-candidates/:key',
+      name: 'poll-insufficient-candidates',
+      component: PollInsufficientCandidates
     },
     {
       path: '/questions',
@@ -47,11 +52,6 @@ export default new Router({
       path: '/translations',
       name: 'translations',
       component: Translations
-    },
-    {
-      path: '/poll/insufficient-candidates',
-      name: 'poll-insufficient-candidates',
-      component: PollInsufficientCandidates
     }
   ],
   scrollBehavior() {

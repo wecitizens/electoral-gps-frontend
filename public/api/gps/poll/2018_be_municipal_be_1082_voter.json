@@ -2,8 +2,8 @@
   "key": "2018_be_municipal_be_1082_voter",
   "survey_key": "2018_be_municipal_brussels_urban",
   "segment_keys": [
-    "2018_be_municipal_be_1082_politician",
-    "2018_be_municipal_be_1082_party"
+    "2018_be_municipal_be_1082_candidate",
+    "2018_be_municipal_be_1082_electoral_list"
   ],
   "insufficient_data": false
 }

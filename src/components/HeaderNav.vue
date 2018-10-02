@@ -1,26 +1,20 @@
 <template>
-    <nav class="header-nav navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#/"><img src="/img/logo.png" height="20px" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ $t("app.title") }}
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <nav class="header-nav clearfix">
+        <div class="row">
+            <div class="col-4 text-right">
+                <div class="btn-group float-left">
+                    <button type="button" class="header-button hamburger btn hamburger--slider" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                    <div class="dropdown-menu">
                         <router-link class="dropdown-item" to="/">{{$t('menu.item.welcome')}}</router-link>
                         <a class="dropdown-item" @click="handleShare">{{$t('menu.item.share_app',
                             {'app_title' :
                             $t('app.title')}) }}
                         </a>
-                        <router-link class="d-none dropdown-item" to="/questions">{{$t('menu.item.see_all_questions')}}
+                        <router-link class="d-none dropdown-item" to="/questions">
+                            {{$t('menu.item.see_all_questions')}}
                         </router-link>
                         <router-link class="dropdown-item" to="/">{{$t('menu.item.start_from_scratch')}}
                         </router-link>
@@ -41,30 +35,35 @@
                            :href="$t('links.register_as_candidate_link')">{{$t('menu.item.register_as_candidate',
                             {association_name:$t('association.name')})}}</a>
                     </div>
-                </li>
-            </ul>
-        </div>
-
-        <ul class="nav nav-lang">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarLang" data-toggle="dropdown" href="#" role="button"
-                   aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
-                <div class="dropdown-menu" aria-labelledby="navbarLang">
-                    <a class="dropdown-item" v-for="(locale, key) in $i18n.locales()" :key="key"
-                       v-if="locale !== $i18n.locale()" @click="() => setLocale(locale)">{{ locale }}</a>
                 </div>
-            </li>
-        </ul>
+            </div>
+            <div class="col-4 text-center">
+                <router-link to="/"><img src="/img/logo.svg" alt=""></router-link>
+            </div>
+            <div class="col-4 text-right">
+                <ul class="nav nav-lang">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarLang" data-toggle="dropdown" href="#"
+                           role="button"
+                           aria-haspopup="true" aria-expanded="false">{{ $i18n.locale() }}</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarLang">
+                            <a class="dropdown-item" v-for="(locale, key) in $i18n.locales()" :key="key"
+                               v-if="locale !== $i18n.locale()" @click="() => setLocale(locale)">{{ locale }}</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <el-dialog
                 :visible.sync="showShare"
-                width="30%">
+                width="90%">
             <h1>{{ $t("share.title") }}</h1>
             <br>
             <div class="addthis_toolbox addthis_inline_share_toolbox"></div>
         </el-dialog>
         <el-dialog
                 :visible.sync="showDonate"
-                width="30%"
+                width="90%"
         >
             <h3>{{ $t("donate.title") }}</h3>
             <p>{{ $t("donate.content") }}</p>
@@ -72,10 +71,10 @@
 
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="C7836NSGCC2X6">
-                <input type="image" src="https://www.paypalobjects.com/fr_FR/BE/i/btn/btn_donate_SM.gif" border="0"
-                       name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-                <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                <input type="hidden" name="hosted_button_id" value="V5SWJKELNVZQE">
+                <input type="hidden" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <button type="submit" name="submit" class="btn btn-primary">{{ $t("PayPal-button") }}</button>
+                <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
             </form>
 
         </el-dialog>
@@ -92,7 +91,7 @@
         console.log('-> Switch lang', local);
         Vue.i18n.set(local);
       },
-      handleShare(){
+      handleShare() {
         //this.showShare = true;
         window.$('#share-modal').modal('show');
       }
@@ -102,16 +101,45 @@
         'showShare': false,
         'showDonate': false
       }
+    },
+    created() {
+      let $ = window.jQuery;
+
+      $('#navbar-toggler').each(function () {
+        $(this).on('click', function () {
+          $('body').toggleClass('menu__open');
+        });
+        $('.wrap').on('click', function () {
+          console.log('click');
+          $('body').removeClass('menu__open');
+        });
+        $(window).on('resize', function () {
+          $('body').removeClass('menu__open');
+        });
+      });
     }
   }
 </script>
 
 <style lang="scss" scoped>
-    .nav-lang {
-        a{
-            &:hover{
-                color: #FFFFFF;
+
+    .header-nav {
+        padding: 10px 16px;
+        .nav-lang {
+            float: right;
+            a {
+                color: #000;
+                &:hover {
+                    color: #444444;
+                }
             }
+        }
+
+        .header-button{
+            background: none;
+            padding: 0.5em;
+            margin: 0;
+            font-size: 15px;
         }
     }
 </style>

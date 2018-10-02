@@ -2,198 +2,182 @@
     <div class="results">
         <b-card no-body>
             <b-tabs card>
-                <b-tab title="Candidates" class="col-md-6 tab-center" active>
-                    <p>Les candidats qui partagent le plus mes convictions
-                        <a href="#" class="badge badge-primary">+ d'infos</a>
-                    </p>
-
-                    <ul class="list-group" v-for="(score, idx) in politician_scores" :key="idx">
-                        <li class="list-group-item">
-                            <h4>{{ politicians.find(p => p.key == score.user_key).first_name + " " 
-                                + politicians.find(p => p.key == score.user_key).last_name }}</h4>
-                            <h6>{{ electoral_lists.filter(e => e.candidates.map(c =>
-                                c.key).includes(score.user_key)).map(e => e.name + " (" +  e.candidates.find(c => c.key ==
-                                score.user_key).order)[0] + ")" }}</h6>
+                <b-tab :title="$t('title.candidates')" class="col-md-6 tab-center" active>
+                    <p class="list-legend">{{ $t('Les candidats qui partagent le plus mes convictions sont') }}:</p>
+                    <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
+                         :key="idx" v-bind:class="{ disabled: !item.has_answered }">
+                        <div class="col-3">
+                            <img :src="item.img" v-if="item.img" class="img-thumbnail" />
+                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                        </div>
+                        <div class="col-9">
+                            <div class="title">
+                                <a v-if="item.completeness > 12" :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.id" target="_blank">{{ item.name }}</a>
+                                <span v-else>{{ item.name }}</span>
+                            </div>
+                            <div class="subtitle"><span v-if="item.position > 0">#{{ item.position }}</span> {{ item.group }}</div>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
-                                     :aria-valuenow="score.score"
-                                     aria-valuemin="0" aria-valuemax="100">{{ score.score }}%
+                                <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
+                                     :aria-valuenow="item.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ Math.round(item.score) }}%
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </b-tab>
-                <b-tab title="Listes" class="col-md-6 tab-center">
-                    <ul class="list-group tab-scroll" v-for="(score, idx) in electoral_list_scores" :key="idx">
-                        <li class="list-group-item">
-                            <h4>{{ electoral_lists.find(e => e.key == score.user_key).name }}</h4>
+                <b-tab :title="$t('title.parties')" class="col-md-6 tab-center">
+                    <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
+                    <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
+                         :key="idx">
+                        <div class="col-3 d-none">
+                            <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
+                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                        </div>
+                        <div class="col-12">
+                            <div class="title">{{ item.name }}</div>
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" :style="'width:' + score.score + '%;'"
-                                     :aria-valuenow="score.score"
-                                     aria-valuemin="0" aria-valuemax="100">{{ score.score }}%
+                                <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
+                                     :aria-valuenow="item.score"
+                                     aria-valuemin="0" aria-valuemax="100">{{ Math.round(item.score) }}%
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </b-tab>
             </b-tabs>
         </b-card>
-
-        <div>
-            <button type="button" class="btn btn-default">Corriger mes réponses</button>
-            <button type="button" class="btn btn-default">Faire un don</button>
-        </div>
     </div>
 </template>
 
 <script>
 
-    import CandidateLists from '@/components/CandidateList';
-    import MatchService from '../store/match/services'
+  import {mapGetters} from 'vuex'
 
-    export default {
-        name: 'results',
-        components: {
-            CandidateLists
-        },
-        created () {
-            this.$store.dispatch('setCurrentElection')
-                .then(() => this.$store.dispatch('setCurrentScore'))
-        },
-        data: () => {
-
-            const matchRequest = {
-                "segment_key": '2018_be_municipal_be_1435_politician',
-                "answer_formats":
-                    [
-                        {
-                            "key": "agr_5_scale_tol_3_scale_abs",
-                            "items": [
-                                {
-                                    "key": "strongly_agree",
-                                    "name": "answer_format.item.strongly_agree",
-                                    "weight": 100
-                                },
-                                {
-                                    "key": "agree",
-                                    "name": "answer_format.item.agree",
-                                    "weight": 75
-                                },
-                                {
-                                    "key": "no_opinion",
-                                    "name": "answer_format.item.no_opinion",
-                                    "weight": 50
-                                },
-                                {
-                                    "key": "disagree",
-                                    "name": "answer_format.item.disagree",
-                                    "weight": 25
-                                },
-                                {
-                                    "key": "strongly_disagree",
-                                    "name": "answer_format.item.strongly_disagree",
-                                    "weight": 0
-                                }
-                            ],
-                            "tolerance": {
-                                "items": [
-                                    {
-                                        "key": "not_important",
-                                        "name": "answer_format.tolerance.item.not_important",
-                                        "weight": 0.4
-                                    },
-                                    {
-                                        "key": "important",
-                                        "name": "answer_format.tolerance.item.important",
-                                        "weight": 1
-                                    },
-                                    {
-                                        "key": "very_important",
-                                        "name": "answer_format.tolerance.item.very_important",
-                                        "weight": 2.5
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                answers: [
-                    {
-                        question_key: "question_103",
-                        answer_format: "agr_5_scale_tol_3_scale_abs",
-                        value: "strongly_agree",
-                        tolerance: "very_important"
-                    },
-                    {
-                        question_key: "question_104",
-                        answer_format: "agr_5_scale_tol_3_scale_abs",
-                        value: "disagree",
-                        tolerance: "important"
-                    }
-                ]
-            };
-
-            const politicianScores = MatchService.match(matchRequest);
-
-            matchRequest.segment_key = '2018_be_municipal_be_1435_electoral_list';
-
-            const electoralListScores = MatchService.match(matchRequest);
-
-            const v = {
-                electoral_lists: [
-                    {
-                        key: "be_1435_cohesion",
-                        name: "CoHéSion",
-                        candidates: [
-                            {
-                                "order": 1,
-                                "key": "be_politician_2"
-                            },
-                            {
-                                "order": 2,
-                                "key": "be_politician_3"
-                            }
-                        ]
-                    },
-                    {
-                        key: "be_1435_ecolo",
-                        name: "Ecolo",
-                        candidates: [
-                            {
-                                "order": 1,
-                                "key": "be_politician_4"
-                            }
-                        ]
-                    }
-                ],
-                politicians: [
-                    {
-                        key: "be_politician_2",
-                        first_name: "John",
-                        last_name: "Doe"
-                    },
-                    {
-                        key: "be_politician_3",
-                        first_name: "Walter",
-                        last_name: "Swan"
-                    },
-                    {
-                        key: "be_politician_4",
-                        first_name: "Amy",
-                        last_name: "Wight"
-                    }
-                ],
-                politician_scores: politicianScores,
-                electoral_list_scores: electoralListScores
-            };
-
-            return v;
+  export default {
+    name: 'results',
+    methods: {
+      getElectoralListForScore(score) {
+        return this.currentElection.electoral_lists.find(e => e.key == score.user_key);
+      },
+      extractCandidate(score) {
+        let group = this.currentElection.electoral_lists
+          .filter(e => e.candidates.map(c => c.key).includes(score.user_key))[0]
+        let candidate = this.currentElection.candidates.find(p => p.key == score.user_key)
+        console.log(score)  
+        if (candidate) {
+          return {
+            id: candidate.politician_id,
+            name: candidate.full_name,
+            group: this.$t('vote.' + group.name),
+            position: group.candidates.find(c => c.key == score.user_key).order,
+            score: score.score,
+            img: candidate.img,
+            has_answered: candidate.has_answered,
+            completeness : candidate.completeness
+          }
+        } else {
+          return {}
         }
+      },
+      extractList(score) {
+        let list = this.getElectoralListForScore(score)
+        if (list) {
+          return {
+            name: this.$t('vote.' + list.name),
+            score: score.score,
+            img: list.img
+          }
+        } else {
+          return {}
+        }
+      }
+    },
+    created() {
+
+      console.log('Store', this.$store);
+
+      const poll = this.$store.state.survey.current.poll;
+
+      const survey = this.$store.state.survey.current.survey;
+
+      if (survey) {
+
+        // TODO : q.agreement is "Tout à fait d'accord" must change !!
+        // TODO : q.importance not set if not defined and same prob as before I suppose ...
+
+        const answers = this.$store.state.questions.list.data.questions
+          .map(q => {
+            return {
+              question_key: q.key,
+              answer_format: 'agr_5_scale_tol_3_scale_abs',
+              value: q.agreement,
+              tolerance: q.importance
+            }
+          }).filter(q => q.value != null);
+
+        if (typeof poll.segment_keys !== 'undefined') {
+          poll.segment_keys.forEach(s =>
+            this.$store.dispatch('performMatch', {
+              segment_key: s,
+              answer_formats: survey.answer_formats,
+              answers: answers
+            }));
+        }
+      }
+    },
+    mounted() {
+
+      // Redirect to homepage if no survey defined !
+      if (!this.$store.state.survey.current.poll) {
+        this.$router.push('/');
+      }
+    },
+    computed: {
+      ...mapGetters(['currentElection', 'currentCandidateScores', 'currentElectoralListScores'])
     }
+  }
 </script>
 
 <style scoped>
+
     .tab-center {
         margin: auto;
+    }
+
+    .list-legend {
+        font-weight: bold;
+        font-style: italic;
+        font-size: 120%;
+        padding: 1em;
+    }
+
+    .list-item {
+        padding: .6em 0;
+        text-align: left;
+    }
+
+    .list-item img {
+        border-radius: 100%;
+    }
+
+    .list-item .title {
+        margin-top: .4em;
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    .list-item .subtitle {
+        background: transparent;
+        font-size: 120%;
+    }
+
+    .list-item .progress {
+        margin-top: .6em;
+        border-radius: 10px;
+    }
+    .list-item .progress-bar {
+      background-color: #F8E71C;
+      color: black;
     }
 
     .list-scroll {

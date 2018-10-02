@@ -1,30 +1,40 @@
 <template>
     <div>
         <steps :active="3"></steps>
-        <h1 class="text-center">{{$t('stats.anonymous_question_to_improve_service')}}</h1>
+        <h3 class="text-center m-3">{{$t('stats.anonymous_question_to_improve_service')}}</h3>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
-            <el-form-item v-for="(q, key) in $t('stats.questions')" :key="key" :label="q.title">
-                <el-checkbox-group v-if="q.type === 'checkbox'">
-                    <el-checkbox v-for="(name, value) in q.options" :v-model="'form.'+form[q.key]" :key="value" v-bind:label="name" :name="q.key"
-                                 v-bind:value="value"></el-checkbox>
-                </el-checkbox-group>
-                <el-radio-group  v-if="q.type === 'radio'">
-                    <el-radio v-for="(name, value) in q.options" :v-model="'form.'+form[q.key]" :key="value" v-bind:label="name" :name="q.key"
-                              v-bind:value="value"></el-radio>
-                </el-radio-group>
+            <el-form-item :label="q[0].title">
+                <el-select v-model="form.source" placeholder="">
+                    <el-option v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
+                               :value="value"></el-option>
+                </el-select>
             </el-form-item>
+
+            <el-form-item :label="q[1].title">
+                <el-select v-model="form.age" placeholder="">
+                    <el-option v-for="(name, value) in q[1].options" :key="value" v-bind:label="name" :name="q[1].key"
+                               :value="value"></el-option>
+                </el-select>
+            </el-form-item>
+
+            <el-form-item :label="q[2].title">
+                <el-select v-model="form.party_vote" placeholder="">
+                    <el-option v-for="(name, value) in q[2].options" :key="value" v-bind:label="name" :name="q[2].key"
+                               :value="value"></el-option>
+                </el-select>
+            </el-form-item>
+
             <el-form-item>
-                <router-link tag="el-button" to="results" type="primary">{{$t('button.see_results')}}</router-link>
+                <el-button @click="seeResults"> {{ $t('button.see_results') }}</el-button>
             </el-form-item>
         </el-form>
     </div>
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
-
   import Steps from '../components/Steps'
   import ElRadio from "element-ui/packages/radio/src/radio"
+  import Api from '../store/_helpers/api';
 
 
   export default {
@@ -37,36 +47,28 @@
         municipality: null,
         type: null,
         form: {
-
-        }
+          source: null,
+          age: null,
+          party_vote: null
+        },
+        q: this.$t('stats.questions')
       }
     },
-    computed: {
-      ...mapGetters(['municipalities']),
-      displayNextStepButton() {
-        return true
-        // return this.municipalities.includes({ value: this.municipality })
-      }
-    },
+    computed: {},
     methods: {
-      ...mapActions(['setZipCode']),
-      querySearch(queryString, cb) {
-        const municipalities = this.municipalities
-        const results = queryString ? municipalities.filter(this.createFilter(queryString)) : municipalities
-        cb(results)
-      },
-      createFilter(queryString) {
-        return (municipality) => {
-          return (municipality.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0)
-        }
-      },
-      handleSelect() {
-        //
+      seeResults() {
+        Api.get('stats', {
+          stats: this.form,
+        }).then(() => {
+          this.$router.push({name: 'results'});
+        });
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  h1 {
 
+  }
 </style>

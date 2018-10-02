@@ -47,37 +47,37 @@ export default {
     total: 30
   },
   mutations: {
-    setSurvey(state, mutation){
-      state.list.data = mutation   
-    }, 
-    [SET_CURRENT_QUESTION](state, mutation) {
+    setSurvey (state, mutation) {
+      state.list.data = mutation
+    },
+    [SET_CURRENT_QUESTION] (state, mutation) {
       state.current = mutation.question
     },
-    [SET_QUESTION_AGREEMENT](state, mutation) {
+    [SET_QUESTION_AGREEMENT] (state, mutation) {
       const questionKey = mutation.questionKey
       state.list.data.questions.filter(q => q.key === questionKey)[0].agreement = mutation.agreement
     },
-    [SET_QUESTION_IMPORTANCE](state, mutation) {
+    [SET_QUESTION_IMPORTANCE] (state, mutation) {
       const questionKey = mutation.questionKey
       state.list.data.questions.filter(q => q.key === questionKey)[0].importance = mutation.importance
     },
-    [SET_TOTAL](state, mutation) {
-      state.total = mutation.total;
+    [SET_TOTAL] (state, mutation) {
+      state.total = mutation.total
     }
   },
   actions: {
-    async getQuestions(store) {
-        console.log(store.rootState.survey.current.survey);
-      await store.commit("setSurvey", store.rootState.survey.current.survey); 
-      const questions = store.state.list.data.questions;
-        console.log("questions");
-        console.log(questions);  
-      const currentQuestion = questions[0]
-      currentQuestion.index = 1;
-      store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})
-      store.commit(SET_TOTAL, {total: store.state.list.data.question_order.length})
+    async getQuestions (store) {
+      await store.commit('setSurvey', store.rootState.survey.current.survey)
+
+      if(store.state.list.data){
+        const questions = store.state.list.data.questions
+        const currentQuestion = questions[0]
+        currentQuestion.index = 1
+        store.commit(SET_CURRENT_QUESTION, {question: currentQuestion})
+        store.commit(SET_TOTAL, {total: store.state.list.data.question_order.length})
+      }
     },
-    setQuestionAgreement({commit, state}, data) {
+    setQuestionAgreement ({commit, state}, data) {
       commit(SET_QUESTION_AGREEMENT, data)
 
       const questionKey = data.questionKey
@@ -88,29 +88,23 @@ export default {
       const previousQuestion = state.list.data.questions.find(q => q.key === order[previousIndex - 2])
       const nextQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 2])
 
-
       if (previousQuestion) {
-        console.log('Has previous');
+        console.log('Has previous')
       }
 
       if (nextQuestion) {
-        console.log("Has next");
+        console.log('Has next')
       }
-
 
       if (currentQuestion) {
-
-        currentQuestion.index = previousIndex+2;
-
+        currentQuestion.index = previousIndex + 2
         commit(SET_CURRENT_QUESTION, {question: currentQuestion})
       }
-
     },
-    setQuestionImportance({commit}, data) {
+    setQuestionImportance ({commit}, data) {
       commit(SET_QUESTION_IMPORTANCE, data)
     },
-    nextQuestion({commit, state}, data) {
-
+    nextQuestion ({commit, state}, data) {
       const questionKey = data.questionKey
       const order = state.list.data.question_order
       const previousIndex = order.indexOf(questionKey)
@@ -118,12 +112,11 @@ export default {
       const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex + 1])
 
       if (currentQuestion) {
-        currentQuestion.index = previousIndex + 1 + 1; // as index start at 0
+        currentQuestion.index = previousIndex + 1 + 1 // as index start at 0
         commit(SET_CURRENT_QUESTION, {question: currentQuestion})
       }
     },
-    previousQuestion({commit, state}, data) {
-
+    previousQuestion ({commit, state}, data) {
       const questionKey = data.questionKey
       const order = state.list.data.question_order
       const previousIndex = order.indexOf(questionKey)
@@ -131,9 +124,7 @@ export default {
       const currentQuestion = state.list.data.questions.find(q => q.key === order[previousIndex - 1])
 
       if (currentQuestion) {
-
-        currentQuestion.index = previousIndex;
-
+        currentQuestion.index = previousIndex
         commit(SET_CURRENT_QUESTION, {question: currentQuestion})
       }
     }
