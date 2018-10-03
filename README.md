@@ -49,5 +49,5 @@ yarn install
 ## Run the app
 
 ```
-yarn run serve
+yarn run start
 ```
