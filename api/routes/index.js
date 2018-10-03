@@ -65,6 +65,7 @@ WHERE
     AND a.id_politician != 5439
     AND e.id_election >= 16    
     AND a.opinion_answer in ('1','2','3','4','5')
+    AND party.abbr <> 'Other party'
     AND is_party_local = 1
 ORDER BY opinion_received DESC
   `;
