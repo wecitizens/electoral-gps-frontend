@@ -23,7 +23,7 @@ Vue.use(ElementUI)
 Vue.use(vuexI18n.plugin, store, {
   moduleName: 'i18n',
   onTranslationNotFound (locale, key) {
-    console.warn(`i18n :: Key '${key}' not found for locale '${locale}'`)
+    //console.warn(`i18n :: Key '${key}' not found for locale '${locale}'`)
     return key
   }
 })
