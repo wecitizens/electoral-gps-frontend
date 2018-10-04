@@ -105,13 +105,25 @@ function individualDistance(answer_formats, subject, weights, set) {
             return p + Math.pow(c * itemWeightMax, 2)
         }, 0));
 
+    console.log("Distance : ");
+    console.log(distance);
+    
+    console.log("Score");
+    console.log((1 - distance / distanceMax));
+
+    console.log("i");
+    console.log(i);
+
+    console.log("subjectLength");
+    console.log(subjectLength);
+    
     console.log("Max weight : ");
     console.log(itemWeightMax);
 
     console.log("Max distance : ");
     console.log(distanceMax);
 
-    return 100 * (1 - distance / distanceMax) * (2 / 3 + 1 / 3 * i / subjectLength);
+    return 100 * (1 - distance / distanceMax) * (0.75 + 0.25 * i / subjectLength);
 }
 
 function performMatch(matchRequest, segmentAnswers) {
@@ -132,7 +144,15 @@ function performMatch(matchRequest, segmentAnswers) {
 
         // for all subject keys, get the sample one. if it does not exist, remove the one 
 
+
+        console.log('Individual - subject', subject);
+        console.log('Individual - weight', weights);
+        console.log('Individual - sample', sample);
+        
         const match = individualDistance(matchRequest.answer_formats, subject, weights, sample);
+
+        console.log('Individual - match', match);
+        console.log('Individual - user_key', key);
 
         return {
             user_key: key,
@@ -184,15 +204,13 @@ export default {
                 commit('setCurrentCandidateSegmentAnswers', segmentAnswers)
             }
 
-            console.log('Answers', matchRequest.answer_formats, matchRequest.answers);
-
             const scores = performMatch(matchRequest, segmentAnswers);
 
             console.log("My scores : ");
             console.log(scores);
 
             const viewScores = scores
-                .sort((a, b) => a.score < b.score)
+                .sort((a, b) => -(a.score - b.score))
                 .map(s => {
                     s.score = s.score.toFixed(2);
                     return s;
