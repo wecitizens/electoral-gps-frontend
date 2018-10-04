@@ -65,8 +65,8 @@ WHERE
     AND a.id_politician != 5439
     AND e.id_election >= 16    
     AND a.opinion_answer in ('1','2','3','4','5')
-    AND party.abbr <> 'Other party'
-    AND is_party_local = 1
+    AND party.abbr <> 'Other party'    
+    AND p.personal_gender in ('i')
 ORDER BY opinion_received DESC
   `;
         console.log(electoralListQuery);
@@ -111,7 +111,7 @@ WHERE
     AND e.district = ?
     AND e.id_election >= 16
     AND a.opinion_answer in ('1','2','3','4','5')
-    AND is_party_local = 0
+    AND p.personal_gender in ('m','f')
     ORDER BY opinion_received DESC
   `;
         console.log(candidateQuery);
