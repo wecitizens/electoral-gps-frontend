@@ -79,7 +79,7 @@ export default {
     "moreinfo_tooltip": "Meer infos",
     "strongly_disagree": "Helemaal niet akkoord",
     "importance_tooltip": "Hoe belangrijk voor mij",
-    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is nog onvoldoende om het matching-proces van de KiesWijzer door te voeren. Probeer opnieuw na 10 oktober. Klik op de naam van een kandidaat en open zijn profiel. Op het tabblad 'Opinies' vindt je zijn antwoorden op de vragenlijst.",
+    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is nog onvoldoende om het matching-proces van de KiesWijzer door te voeren. Probeer opnieuw na 10 oktober. Klik op de naam van een kandidaat en open zijn profiel. De eerste namen (in het zwart gedrukt) hebben op vragen geantwoord. Op het tabblad 'Opinies' (in hun profiel) vind je zijn antwoorden.",
     "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
     "results": {
         "lists_title": "Kieslijsten in de volgorde van politieke affiniteit",
@@ -154,6 +154,6 @@ export default {
             "your_postcode": "xxxx"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "Hoe sterk delen de kieslijsten mijn standpunten",
-    "Les candidats qui partagent le plus mes convictions sont": "Hoe sterk delen de kandidaten mijn standpunten"
+    "Les listes qui partagent le plus mes convictions sont": "Hoe sterk delen de kieslijsten mijn standpunten (de kandidaten verschijnen op het ander tabblad):",
+    "Les candidats qui partagent le plus mes convictions sont": "Hoe sterk delen de kandidaten mijn standpunten (de kieslijsten verschijnen op het tweede tabblad):"
 }

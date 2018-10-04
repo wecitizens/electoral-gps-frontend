@@ -79,7 +79,7 @@ export default {
     "moreinfo_tooltip": "Plus d'infos",
     "strongly_disagree": "Pas du tout d'accord",
     "importance_tooltip": "Niveau d'importance pour moi",
-    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. Tu pourrais réessayer après le 10 octobre. En cliquant sur le nom d'un candidat, tu ouvres son profil. L'onglet \"Opinions\" te donne ses réponses au questionnaire.",
+    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. Tu pourrais réessayer après le 10 octobre. En cliquant sur le nom d'un candidat, tu ouvres son profil. Les premiers noms (affichés en noir) ont répondu à des questions. L'onglet \"Opinions\" (dans leur profil) affiche leurs réponses.",
     "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {
         "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
@@ -154,6 +154,6 @@ export default {
             "your_postcode": "xxxx"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les candidats",
-    "Les candidats qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les listes électorale"
+    "Les listes qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les listes électorales (pour les candidats, voir l'autre onglet):",
+    "Les candidats qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les candidats (pour les listes électorales, voir l'autre onglet):"
 }

@@ -32,7 +32,7 @@ export default {
     },
     "importance_5": "Fully agree",
     "title": {
-        "parties": "Canddate list",
+        "parties": "Candidate list",
         "candidates": "Candidates"
     },
     "PayPal-button": "Donate (using PayPal)",
@@ -79,7 +79,7 @@ export default {
     "moreinfo_tooltip": "More infos",
     "strongly_disagree": "Strongly disagree",
     "importance_tooltip": "How important for me",
-    "insuffisant_number": "The number of participating candidates in the municipality is still insufficient to perform a matching with the Electoral GPS. You could try again after October 10. By clicking on the name of a candidate, you open his profile. The \"Opinions\" tab gives you his answers to the questionnaire.",
+    "insuffisant_number": "The number of participating candidates in the municipality is still insufficient to perform a matching with the Electoral GPS. You could try again after October 10. By clicking on the name of a candidate, you open his profile. The first names (displayed in black) have answered some questions. The \"Opinions\" tab (in their profile) gives you their answers.",
     "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {
         "lists_title": "Electoral lists in the order of political affinity",
@@ -154,6 +154,6 @@ export default {
             "your_postcode": "Your postal code"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "Matching with electoral lists",
-    "Les candidats qui partagent le plus mes convictions sont": "Matching with candidates"
+    "Les listes qui partagent le plus mes convictions sont": "Matching with electoral lists (see also the other tab):",
+    "Les candidats qui partagent le plus mes convictions sont": "Matching with candidates (see also the other tab):"
 }
