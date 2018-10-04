@@ -165,7 +165,9 @@ csv()
             surveyObj.key = survey;
             surveyObj.name = "survey_" + survey;
             
-            const questions = c.filter(r => r.key === survey).sort((a,b) => a.questionOrder < b.questionOrder);
+            const questions = c.filter(r => r.key === survey).sort((a,b) => parseInt(a.questionOrder, 10) - parseInt(b.questionOrder,10) );
+            
+            console.log(questions);
 
             surveyObj.question_order = questions.map(q => "question_" + q.questionId);
             

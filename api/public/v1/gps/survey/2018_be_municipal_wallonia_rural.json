@@ -2,58 +2,58 @@
   "key": "2018_be_municipal_wallonia_rural",
   "name": "survey_2018_be_municipal_wallonia_rural",
   "question_order": [
-    "question_102",
-    "question_125",
-    "question_49",
+    "question_4",
+    "question_20",
+    "question_21",
     "question_22",
     "question_23",
     "question_31",
     "question_38",
     "question_46",
-    "question_107",
-    "question_21",
-    "question_124",
-    "question_123",
-    "question_121",
-    "question_120",
-    "question_110",
+    "question_49",
+    "question_58",
+    "question_84",
+    "question_88",
+    "question_89",
+    "question_93",
     "question_98",
+    "question_100",
     "question_101",
-    "question_20",
+    "question_102",
     "question_103",
     "question_104",
     "question_105",
-    "question_119",
+    "question_107",
     "question_108",
     "question_108",
-    "question_100",
+    "question_110",
     "question_113",
     "question_114",
     "question_118",
-    "question_93",
-    "question_89",
-    "question_88",
-    "question_84",
-    "question_58",
-    "question_4"
+    "question_119",
+    "question_120",
+    "question_121",
+    "question_123",
+    "question_124",
+    "question_125"
   ],
   "questions": [
     {
-      "key": "question_102",
-      "text": "question.102_text",
+      "key": "question_4",
+      "text": "question.4_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_125",
-      "text": "question.125_text",
-      "notice": null,
+      "key": "question_20",
+      "text": "question.20_text",
+      "notice": "question.20_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_49",
-      "text": "question.49_text",
-      "notice": null,
+      "key": "question_21",
+      "text": "question.21_text",
+      "notice": "question.21_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -87,44 +87,38 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_107",
-      "text": "question.107_text",
+      "key": "question_49",
+      "text": "question.49_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_21",
-      "text": "question.21_text",
-      "notice": "question.21_notice",
+      "key": "question_58",
+      "text": "question.58_text",
+      "notice": "question.58_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_124",
-      "text": "question.124_text",
-      "notice": "question.124_notice",
+      "key": "question_84",
+      "text": "question.84_text",
+      "notice": "question.84_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_123",
-      "text": "question.123_text",
+      "key": "question_88",
+      "text": "question.88_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_121",
-      "text": "question.121_text",
-      "notice": "question.121_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_120",
-      "text": "question.120_text",
+      "key": "question_89",
+      "text": "question.89_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_110",
-      "text": "question.110_text",
+      "key": "question_93",
+      "text": "question.93_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -135,15 +129,21 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
+      "key": "question_100",
+      "text": "question.100_text",
+      "notice": "question.100_notice",
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
       "key": "question_101",
       "text": "question.101_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_20",
-      "text": "question.20_text",
-      "notice": "question.20_notice",
+      "key": "question_102",
+      "text": "question.102_text",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -165,8 +165,8 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_119",
-      "text": "question.119_text",
+      "key": "question_107",
+      "text": "question.107_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -183,9 +183,9 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_100",
-      "text": "question.100_text",
-      "notice": "question.100_notice",
+      "key": "question_110",
+      "text": "question.110_text",
+      "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -207,38 +207,38 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_93",
-      "text": "question.93_text",
+      "key": "question_119",
+      "text": "question.119_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_89",
-      "text": "question.89_text",
+      "key": "question_120",
+      "text": "question.120_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_88",
-      "text": "question.88_text",
+      "key": "question_121",
+      "text": "question.121_text",
+      "notice": "question.121_notice",
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_123",
+      "text": "question.123_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_84",
-      "text": "question.84_text",
-      "notice": "question.84_notice",
+      "key": "question_124",
+      "text": "question.124_text",
+      "notice": "question.124_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_58",
-      "text": "question.58_text",
-      "notice": "question.58_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_4",
-      "text": "question.4_text",
+      "key": "question_125",
+      "text": "question.125_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     }
