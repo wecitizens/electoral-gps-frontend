@@ -60,10 +60,10 @@ FROM
         LEFT JOIN
     localite_menu ON localite_menu.id_gps = election.id_gps
 WHERE
-    opinion_received > '2018-09-08'
-    AND e.district = ?
+    e.district = ?
+    AND e.id_election >= 16  
     AND a.id_politician != 5439
-    AND e.id_election >= 16    
+    AND a.opinion_id in ('4','14','20','21','22','23','31','38','46','49','52','58','84','88','89','90','93','95','96','97','98','99','100','101','102','103','104','105','106','107','108','110','112','113','114','115','116','117','118','119','120','121','123','124','125')
     AND a.opinion_answer in ('1','2','3','4','5')
     AND party.abbr <> 'Other party'    
     AND p.personal_gender in ('i')
@@ -106,11 +106,11 @@ FROM
         INNER JOIN
     localite_menu ON localite_menu.id_gps = election.id_gps  
 WHERE
-    opinion_received > '2018-09-08'
-    AND a.id_politician != 5439 # Jean-Paul
-    AND e.district = ?
+    a.id_politician != 5439 # Jean-Paul
     AND e.id_election >= 16
+    AND e.district = ?
     AND a.opinion_answer in ('1','2','3','4','5')
+    AND a.opinion_id in ('4','14','20','21','22','23','31','38','46','49','52','58','84','88','89','90','93','95','96','97','98','99','100','101','102','103','104','105','106','107','108','110','112','113','114','115','116','117','118','119','120','121','123','124','125')
     AND p.personal_gender in ('m','f')
     ORDER BY opinion_received DESC
   `;
