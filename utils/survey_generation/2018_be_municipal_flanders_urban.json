@@ -2,41 +2,54 @@
   "key": "2018_be_municipal_flanders_urban",
   "name": "survey_2018_be_municipal_flanders_urban",
   "question_order": [
+    "question_120",
+    "question_23",
+    "question_49",
     "question_4",
     "question_14",
-    "question_20",
-    "question_21",
-    "question_22",
-    "question_23",
-    "question_31",
-    "question_38",
-    "question_46",
-    "question_49",
-    "question_58",
-    "question_84",
-    "question_88",
-    "question_89",
-    "question_93",
-    "question_95",
-    "question_96",
     "question_100",
-    "question_102",
-    "question_105",
-    "question_106",
+    "question_22",
     "question_107",
-    "question_108",
-    "question_108",
-    "question_110",
-    "question_113",
-    "question_114",
-    "question_117",
+    "question_38",
     "question_118",
-    "question_120",
-    "question_121",
+    "question_20",
+    "question_105",
+    "question_127",
+    "question_46",
+    "question_58",
+    "question_114",
     "question_123",
-    "question_125"
+    "question_31",
+    "question_126",
+    "question_21",
+    "question_106",
+    "question_110",
+    "question_93",
+    "question_121",
+    "question_117",
+    "question_102",
+    "question_125",
+    "question_111"
   ],
   "questions": [
+    {
+      "key": "question_120",
+      "text": "question.120_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_23",
+      "text": "question.23_text",
+      "notice": "question.23_notice",
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_49",
+      "text": "question.49_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
     {
       "key": "question_4",
       "text": "question.4_text",
@@ -50,15 +63,9 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_20",
-      "text": "question.20_text",
-      "notice": "question.20_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_21",
-      "text": "question.21_text",
-      "notice": "question.21_notice",
+      "key": "question_100",
+      "text": "question.100_text",
+      "notice": "question.100_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
@@ -68,14 +75,8 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_23",
-      "text": "question.23_text",
-      "notice": "question.23_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_31",
-      "text": "question.31_text",
+      "key": "question_107",
+      "text": "question.107_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -86,14 +87,32 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_46",
-      "text": "question.46_text",
+      "key": "question_118",
+      "text": "question.118_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_49",
-      "text": "question.49_text",
+      "key": "question_20",
+      "text": "question.20_text",
+      "notice": "question.20_notice",
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_105",
+      "text": "question.105_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_127",
+      "text": "question.127_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_46",
+      "text": "question.46_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -104,80 +123,38 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_84",
-      "text": "question.84_text",
-      "notice": "question.84_notice",
+      "key": "question_114",
+      "text": "question.114_text",
+      "notice": "question.114_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_88",
-      "text": "question.88_text",
+      "key": "question_123",
+      "text": "question.123_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_89",
-      "text": "question.89_text",
+      "key": "question_31",
+      "text": "question.31_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_93",
-      "text": "question.93_text",
+      "key": "question_126",
+      "text": "question.126_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_95",
-      "text": "question.95_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_96",
-      "text": "question.96_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_100",
-      "text": "question.100_text",
-      "notice": "question.100_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_102",
-      "text": "question.102_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_105",
-      "text": "question.105_text",
-      "notice": null,
+      "key": "question_21",
+      "text": "question.21_text",
+      "notice": "question.21_notice",
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_106",
       "text": "question.106_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_107",
-      "text": "question.107_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_108",
-      "text": "question.108_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_108",
-      "text": "question.108_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -188,32 +165,8 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_113",
-      "text": "question.113_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_114",
-      "text": "question.114_text",
-      "notice": "question.114_notice",
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_117",
-      "text": "question.117_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_118",
-      "text": "question.118_text",
-      "notice": null,
-      "answer_format": "agr_5_scale_tol_3_scale_abs"
-    },
-    {
-      "key": "question_120",
-      "text": "question.120_text",
+      "key": "question_93",
+      "text": "question.93_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
@@ -224,14 +177,26 @@
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
-      "key": "question_123",
-      "text": "question.123_text",
+      "key": "question_117",
+      "text": "question.117_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_102",
+      "text": "question.102_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     },
     {
       "key": "question_125",
       "text": "question.125_text",
+      "notice": null,
+      "answer_format": "agr_5_scale_tol_3_scale_abs"
+    },
+    {
+      "key": "question_111",
+      "text": "question.111_text",
       "notice": null,
       "answer_format": "agr_5_scale_tol_3_scale_abs"
     }
@@ -316,27 +281,23 @@
         "46_text": "Public debt should only be used for investments (buildings, infrastructure) and not for the day-to-day costs of running public services.",
         "49_text": "Welfare benefits to immigrants should depend on their successful completion of an integration programme.",
         "58_text": "Speed limits of 30 km/h should only be enforced in dangerous places.",
-        "84_text": "The commune should ensure that voters have access to a voting advice application (such as the electoral GPS).",
-        "88_text": "The programmes of political parties should include the budgetary impact of their proposals.",
-        "89_text": "The maintenance, including cleaning, of existing infrastructure should be given budgetary priority over new public projects.",
         "93_text": "All services that can be entrusted to third parties, should be subcontracted by the public authority, subject to competition rules.",
-        "95_text": "The municipality should publish calls for projects to stimulate the integration and civic sense of youth, and fund the best initiatives.",
-        "96_text": "There should be more pedestrian streets.",
         "100_text": "Taxes on labour should be reduced, even if taxes will need to be raised elsewhere.",
         "102_text": "The commune must create urban vegetable gardens and chicken coops.",
         "105_text": "More CCTV security cameras should be installed in public streets.",
         "106_text": "More trees should be planted, even if that reduces the sidewalk or parking spaces.",
         "107_text": "Party loyalty, requiring that voting follows the party line, is more important than personal ethical principles.",
-        "108_text": "Schools need to share their sports infrastructure with each other and with sports clubs.",
         "110_text": "Pre-electoral agreements between political parties must be made public before the elections.",
-        "113_text": "Most of the commune's energy use should come from sustainable sources, even if that is more expensive.",
+        "111_text": "When a mayor/alderman represents the city/municipality in an intermunicipal, this derived mandate must not be remunerated in addition to the mayor/alderman salary.",
         "114_text": "The elected politician should align his positions with the results of public opinion polls.",
         "117_text": "The city must facilitate the implementation and extension of a system for car-sharing (similar to Cambio, Boldes, Zen Car, etc).",
         "118_text": "When designing public spaces, aesthetic concerns must not overrule practical, economic and security concerns.",
         "120_text": "Public authorities that do not respect the time limit for administrative decisions (such as building permits) must pay a daily compensation to the applicant.",
         "121_text": "Public authorities should have an active policy for the social recognition of LGBTQI+ people.",
         "123_text": "The commune should get the local population to more actively report uncivil behaviour.",
-        "125_text": "The social welfare office should prioritise partnership with associations specialised in social work, particularly to help the unemployed find work."
+        "125_text": "The social welfare office should prioritise partnership with associations specialised in social work, particularly to help the unemployed find work.",
+        "126_text": "The police must intervene not only against drug traffickers, but also against drug addicts.",
+        "127_text": "The municipality must grant the maximum freedom to shops to open on Sundays."
       },
       "answer_format": {
         "item": {
@@ -377,22 +338,15 @@
         "49_text": "L’aide sociale aux immigrés doit être modulée en fonction de leur réussite d'un parcours d'intégration.",
         "58_text": "Les limitations de vitesse à 30 km/h doivent être strictement réservées à des points sensibles.",
         "58_notice": "La limitation de vitesse à 30km/h se justifie particulièrement lorsque la circulation automobile traverse des zones urbaines fréquentées régulièrement par des piétons et des cyclistes et où la fonction de séjour est prépondérante  comme les abords d’écoles, de centres sportifs, les marchés  ou dans les quartiers d’habitations  lorsque la voirie sert également d’aire de jeux pour les enfants.\nLes zones « trente » ne doivent plus obligatoirement être annoncées par des rétrécissements de l’espace public. Les autorités publiques en Belgique comme dans les pays scandinaves encouragent l’extension des « zones trente » à l’ensemble des quartiers où prédomine l’habitat et les activités à forte fréquentation de piétons et de cyclistes.",
-        "84_text": "La commune doit veiller à ce que les électeurs disposent d'un système d'aide au vote (comme le GPS électoral).",
-        "84_notice": "Les systèmes d'aide au vote (SAV), permettant de sélectionner les candidats sur base d'un questionnaire politique, sont de plus en plus populaires. Pour être crédibles, ils doivent être produits par des instances impartiales. Les Pays-Bas sont des précurseurs: pour les élections communales de mars 2018, 44 villes y ont payé l'institut Prodemos pour produire un SAV local.  La réduction progressive des coûts fait que le système d'aide au vote représenterait un coût, pour la commune, comparable aux panneaux d’affichage électoraux. Or la valeur ajoutée d'un bon SAV est largement supérieure. Faute de soutien financier, le GPS électoral de 2018 doit se limiter à des questions générales valables pour l'ensemble des communes. Il ne peut pas prendre en compte les spécificités de la ville/commune.",
-        "88_text": "Les programmes électoraux doivent inclure l'impact budgétaire des propositions.",
-        "89_text": "Le bon entretien, y compris la propreté, des infrastructures existantes a budgétairement priorité sur les nouvelles initiatives communales.",
         "93_text": "Il faut sous-traiter tous les services qu'il est possible de confier à des tiers, moyennant mise en concurrence.",
-        "95_text": "La commune doit organiser des appels à projets visant à stimuler l'intégration et le sens civique des jeunes. Les meilleures initiatives doivent être subsidiées.",
-        "96_text": "Il faut augmenter le nombre de rues piétonnes.",
         "100_text": "Il convient de réduire l'impôt sur le travail, quitte à augmenter l'impôt ailleurs.",
         "100_notice": "Certains considèrent qu'en vertu de la loi du marché, toute augmentation de l'impôt sur le travail pénalise l'emploi. Plus la main-d'œuvre est chère, plus le marché cherche des solutions alternatives (délocalisation, robotisation, etc). La commune décide les centimes additionnels sur l'impôt des personnes physiques (qui vise la rémunération professionnelle, mais pas uniquement ces revenus) et sur le précompte immobilier. Le tax-shift peut se faire en augmentant les taxes environnementales, la fiscalité sur le patrimoine et les plus-values, les amendes, les produits de luxe, etc.",
         "102_text": "Des espaces pour des potagers et des poulaillers communautaires doivent être aménagés par les communes.",
         "105_text": "Il faut installer davantage de caméras de surveillance dans les rues.",
         "106_text": "Il faut plus d'arbres, même si cela empiète sur les trottoirs ou les emplacements de parking.",
         "107_text": "La discipline de parti, exigeant de voter selon des orientations reçues du parti, passe avant les principes éthiques personnels.",
-        "108_text": "Les écoles devraient partager leur infrastructures sportives avec les autres écoles, et avec les clubs sportifs.",
         "110_text": "Les accords pré-électoraux entre partis doivent être rendus publics bien avant les élections.",
-        "113_text": "Même si cela coûte plus cher, la commune doit s'approvisionner principalement en énergie durable.",
+        "111_text": "Quand un bourgmestre/échevin représente la ville/commune dans une intercommunale, ce mandat dérivé ne doit pas être rémunéré en sus du traitement de bourgmestre/échevin.",
         "114_text": "L'élu devrait s'aligner sur les tendances majoritaires qui se dégagent dans les sondages de l'opinion publique.",
         "114_notice": "L’idée d’avoir des mandataires qui s’alignent sur les tendances populaires est séduisante. Elle soulève toutefois quelques questions. Quelle est la valeur des sondages : qualité scientifique de l’exécution, niveau de préparation/conditionnement des participants au sondage, etc ? Si on veut consulter la population en vue d’une décision politique, ne faut-il pas se baser sur un référendum ? Le mandataire doit-il rendre des comptes à la majorité de la population, ou à ceux qui l’ont élu sur base d’un programme précis ? Souhaite-t-on un mandataire sans convictions personnelles ?",
         "117_text": "La ville doit faciliter l'implantation et l'extension d'un système de voitures partagées (comparable à Cambio, Bolides, Zen Car, etc).",
@@ -401,7 +355,9 @@
         "121_text": "Les autorités doivent mener une politique active pour assurer aux personnes LGBTQI+ une meilleure reconnaissance sociale.",
         "121_notice": "L'association RainbowHouse, de défense des personnes LGBTQI+, préconise e.a.: la création d'un service en charge de l'égalité des chances, un système de plainte à disposition des fonctionnaires victimes de menaces ou de discrimination , une plus grande présence des personnes LGBTQI+ dans la programmation culturelle et dans les supports pédagogiques, des actions de formation/sensibilisation des agents publics, etc. Cette association invite les autorités publiques à Afficher les symboles des communautés minorisées lors de leurs principaux événements (p.ex. Belgian Pride), en utilisant, selon les cas, less bâtiments publics (drapeaux) et/ou less supports de communication (journal communal, panneaux d'affichage).",
         "123_text": "La commune doit davantage s'appuyer sur la population pour constater les incivilités.",
-        "125_text": "Le CPAS doit privilégier le partenariat avec des associations spécialisées dans l'accompagnement social, en particulier pour réorienter des bénéficiaires vers le marché de l’emploi."
+        "125_text": "Le CPAS doit privilégier le partenariat avec des associations spécialisées dans l'accompagnement social, en particulier pour réorienter des bénéficiaires vers le marché de l’emploi.",
+        "126_text": "La police doit intervenir non seulement contre les trafiquants de drogue, mais aussi contre les toxicomanes.",
+        "127_text": "La commune doit accorder le maximum de liberté aux commerces pour ouvrir le dimanche."
       },
       "answer_format": {
         "item": {
@@ -442,22 +398,15 @@
         "49_text": "Sociale bijstand aan immigranten moet worden gemoduleerd op basis van hun vorderingen in een integratieproces.",
         "58_text": "De snelheidsbeperkingen van 30 km/u moeten strikt beperkt worden tot de gevoelige punten.",
         "58_notice": "De snelheidsbeperking tot 30km/u is in het bijzonder verantwoord wanneer het autoverkeer stedelijke gebieden doorkruist, die geregeld worden gebruikt door voetgangers of fietsers of die overwegend residentieel zijn, zoals de omgeving van scholen, sportcentra, markten en woonwijken, wanneer er ook kinderen op straat spelen.\nDe zones “dertig” hoeven niet meer te worden aangeduid door versmallingen van de openbare ruimte. Net zoals in de Scandinavische landen, moedigen de Belgische overheden de uitbreiding van de “zones dertig” aan tot alle wijken die vooral voor bewoning dienen en die veelvuldig worden gebruikt door voetgangers en fietsers.",
-        "84_text": "De gemeente moet zorgen dat de kiezers beschikken over een stemhulpsysteem (zoals de KiesWijzer).",
-        "84_notice": "De systemen van hulpverlening bij stemmingen (SHS), die een kandidaten selectie toelaten op basis van een politieke vragenlijst, zijn meer en meer populair. Om geloofbaar te zijn moeten ze opgesteld worden door neutrale instanties. Nederland is daarin een voorganger : voor de gemeentelijke verkiezingen van Maart 2018, hebben 44 steden het Instituut Prodemos betaald om een lokale SHS op te stellen. Gezien de kosten progressief verminderen zou dit hulpsysteem een prijs kosten die vergelijkbaar is met de prijs van verkiezingsaffiches. De waarde van een SHS ligt veel hoger ! Bij gemis aan financiële steun moet de verkiezings GPS van 2018 zich houden aan algemene vragen die passen bij elke gemeente. Hij kan onmogelijk rekening houden met de eigen kenmerken van elke gemeente of stad.",
-        "88_text": "De verkiezingsprogramma’s moeten de budgettaire gevolgen van de voorstellen vermelden.",
-        "89_text": "Goed onderhoud, met inbegrip van netheid, van de bestaande infrastructuur heeft (budgettair) prioriteit boven nieuwe overheidsinitiatieven.",
         "93_text": "Alle diensten die aan derden kunnen worden toevertrouwd, moeten worden uitbesteed door de overheid, met inachtneming van de mededingingsregels.",
-        "95_text": "De gemeente moet projectoproepen organiseren om de integratie van en de zin voor burgerschap bij jongeren te stimuleren. De beste initiatieven moeten een subsidie krijgen.",
-        "96_text": "Er moeten meer autovrije straten komen.",
         "100_text": "Belasting op arbeid moet worden verlaagd, ook al betekent dat dat de belastingen elders moeten worden verhoogd.",
         "100_notice": "Sommigen menen dat – omwille van de marktwet – elke vermeerdering van de belastig op werk dit werk penaliseert. Hoe duurder het werk hoe meer de markt alternatieven zoekt (delokalisatie, automaten, enz). De gemeente beslist over de opcentiemen wat de persoonsbelasting aangaat (deze betreft betaalde lonen, maar niet alleen deze inkomsten) en de onroerende voorheffing. De tax-shift kan gebeuren door de omgevingstaxatie te verhogen evenals de belasting op eigendommen en de waardevermeerderingen, de boetes, luxeproducten, enz.",
         "102_text": "Er moeten gemeenschappelijke groentetuinen en kippenhokken worden aangelegd.",
         "105_text": "We hebben meer bewakingscamera's op straat nodig.",
         "106_text": "Er moeten meer bomen zijn, zelfs als die op voetpaden of parkeerplaatsen moeten komen.",
         "107_text": "Persoonlijke ethische principes moeten wijken voor partijdiscipline, die vereist te stemmen volgens de richtlijnen van de partij.",
-        "108_text": "Scholen zouden hun sportfaciliteiten met andere scholen en met sportclubs delen.\n",
         "110_text": "Voorafgaande verkiezingsakkoorden tussen deelnemende partijen moeten ruim voor de verkiezingen openbaar worden gemaakt.\n",
-        "113_text": "De gemeente moet, zelfs al is het duurder, vooral hernieuwbare energie gebruiken.",
+        "111_text": "Wanneer een burgemeester/schepen de stad/gemeente in een intercommunale vertegenwoordigt, moet dat afgeleid mandaat niet extra worden vergoed.",
         "114_text": "De politieke mandataris moet zich aansluiten bij de meerderheidstrends die uit opiniepeilingen blijken.",
         "114_notice": "Het idee over afgevaardigden te beschikken die zich houden aan de wil van het volk is bekoorlijk. Maar vragen moeten gesteld worden. Welke is de waarde van opiniepeilingen : wetenschappelijke waarde van de uitvoering, het voorbereidingsniveau/het conditioneren van de deelnemers aan de peiling, enz?Wil men de bevolking bevragen wat een politiek besluit betreft, kan men dan niet beter gebruik maken van een referendum ? Moet de mandataris verantwoordelijk zijn tegenover de meerderheid van de bevolking of tegenover zij die voor hem stemden op basis van een duidelijk programma ? Wil men vertegenwoordigers zonder persoonlijke opinie ?",
         "117_text": "De stad moet de invoering en uitbreiding van een gedeeld autosysteem faciliteren (vergelijkbaar met Cambio, Bolides, Zen Car, enz).",
@@ -466,7 +415,9 @@
         "121_text": "De overheid moet een actieve politiek voeren om de LGBTQ+ personen een betere sociale erkenning te verzekeren.",
         "121_notice": "De vereniging RainbowHouse voor LGBTQI+ personen bescherming , stelt o.a. de schepping van een dienst voor gelijke kansen voor, een klachten systeem ter beschikking van ambtenaren die met dreigingen of discriminatie te maken hebben, een grotere aanwezigheid van LGBTQI+ personen in de culturele programmatie en in pedagogische hulp, optreden wat opvoeding/bewustmaking van agenten die met het publiek werken betreft, enz. Deze vereniging vraagt de publieke verantwoordelijken de symbolen eigen aan minderheden te laten zien wanneer ze iets belangrijks vieren (b.v. Belgian Pride), en dit door gebruik te maken van publieke gebouwen (vlaggen) en/of de mogelijkheden tot mededelen (krant van de gemeente, aanplakbiljetten).",
         "123_text": "De gemeente moet meer samenwerken met de bevolking om de inbreuken vast te stellen.",
-        "125_text": "Het OCMW moet liefst een partnerschap aangaan met de verenigingen gespecialiseerd in sociale begeleiding, en dit vooral om uitkeringsgerechtigden opniew aan het werk te krijgen."
+        "125_text": "Het OCMW moet liefst een partnerschap aangaan met de verenigingen gespecialiseerd in sociale begeleiding, en dit vooral om uitkeringsgerechtigden opniew aan het werk te krijgen.",
+        "126_text": "De politie moet niet alleen tegen drugsdealers, maar ook tegen drugsgebruikers optreden.",
+        "127_text": "De gemeente moet winkels maximale vrijheid geven om zondag open te blijven."
       },
       "answer_format": {
         "item": {
