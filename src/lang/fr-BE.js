@@ -50,7 +50,22 @@ export default {
         "next_question": "Suivant",
         "show_more_infos": "d'infos",
         "show_importance": "définir l'importance",
-        "previous_question": "Précédent"
+        "previous_question": "Précédent",
+        "invite_candidate": "Invite un candidat non repris dans la liste"
+    },
+    "mail": {
+        "invite_candidate": {
+            "subject": "Votre inscription au GPS électoral pour les élections municipales",
+            "text": "Cher candidat, chère candidate,\n" +
+                "\n" +
+                "L’asbl NousCitoyens a produit le GPS électoral, en partenariat avec la presse : METRO, Sudpresse et Le Vif. Un des avantages de la plateforme NousCitoyens est que chaque candidat acquiert une visibilité, grâce à une page web (http://directory.wecitizens.be/fr/politician/profil/665) gratuite où il peut se présenter. Si vous répondez au questionnaire du GPS électoral, vous êtes repris dans le classement des candidats fourni par NousCitoyens aux électeurs. Il est toujours possible de s’inscrire et participer au GPS électoral (il n’y a pas d’autre date limite que les élections). \n" +
+                "\n" +
+                "La participation se fait en trois étapes : (1) votre enregistrement dans notre base de données. Voyez sur www.PoliticiansOnline.be/fr si vous êtes déjà inscrit. (2) Dans votre profil (en mode édition) apparaît un onglet 'Candidat 2018', où vous pouvez indiquer où vous êtes candidat. (3) Dans le même onglet, apparaît ensuite un questionnaire d’une trentaine de question fermées. Pour être repris dans le GPS électoral, il faut avoir répondu à toutes les questions.\n" +
+                "\n" +
+                "Comme électeur, je souhaite voter pour des candidats transparents, et j’espère que vous en ferez partie.\n" +
+                "\n" +
+                "Meilleures salutations."
+        }
     },
     "menu": {
         "item": {

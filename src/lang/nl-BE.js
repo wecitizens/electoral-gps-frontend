@@ -50,7 +50,22 @@ export default {
         "next_question": "Volgende",
         "show_more_infos": "info",
         "show_importance": "het gewicht bepalen",
-        "previous_question": "Voorgaande"
+        "previous_question": "Voorgaande",
+        "invite_candidate": "Nodig een kandidaat uit die niet in de lijst is opgenomen"
+    },
+    "mail": {
+        "invite_candidate": {
+            "subject": "Uw inschrijving in de KiesWijzer voor de gemeenteraadsverkiezingen",
+            "text": "Beste kandidaat,\n" +
+                "\n" +
+                "In samenwerking met Knack en Metro biedt WijBurgers de KiesWijzer aan. Deze applicatie heeft als doel de kiezer de kandidaten van zijn gemeente te leren kennen en inzicht te krijgen in hun politieke standpunten. In PoliticiansOnline, die aan de KiesWijzer is gekoppeld, kan iedere kandidaat (dus niet alleen kieslijsten of lijsttrekkers) zich gratis voorstellen op een webpagina (http://directory.wecitizens.be/nl/politician/profil/665) die speciaal is ontworpen voor en door de kiezer. \n" +
+                "\n" +
+                "Opdat de KiesWijzer de kandidaten kan helpen vergelijken, moet de kandidaat wel de vragenlijst van de KiesWijzer hebben ingevuld. De deelname gebeurt online in drie stappen: (1) toevoeging in PoliticiansOnline (kijk op www.PoliticiansOnline.be/nl of u er al bent ingeschreven), (2) aanduiding waar u kandidaat bent (tabblad “Kandidaat 2018”, wanneer u ingelogd bent in uw profiel), (3) antwoord op een dertigtal gesloten vragen.\n" +
+                "\n" +
+                "Als kiezer wens ik te stemmen voor transparante kandidaten, en ik hoop dat u eraan meedoet.\n" +
+                "\n" +
+                "Met vriendelijke groeten."
+        }
     },
     "menu": {
         "item": {

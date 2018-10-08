@@ -29,6 +29,12 @@
                     </div>
                 </li>
             </ul>
+
+            <a :href="'mailto:?subject=' +  encodeURIComponent($t('mail.invite_candidate.subject')) + '&body=' + encodeURIComponent($t('mail.invite_candidate.text'))"
+               class="el-button el-button--default">
+                {{ $t("button.invite_candidate") }}
+            </a>
+            
             <router-link :to="'/survey/'+district_key" class="btn btn-block btn-danger mt-3 d-none">{{
                 $t('im_doing_test_anyway') }}
             </router-link>

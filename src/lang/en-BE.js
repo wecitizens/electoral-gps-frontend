@@ -50,7 +50,22 @@ export default {
         "next_question": "Next",
         "show_more_infos": "info",
         "show_importance": "define the importance",
-        "previous_question": "Previous"
+        "previous_question": "Previous",
+        "invite_candidate": "Invite a candidate not included in the list"
+    },
+    "mail": {
+        "invite_candidate": {
+            "subject": "Your registration to the electoral GPS for the municipal elections",
+            "text": "Dear candidate,\n" +
+                "\n" +
+                "The association WeCitizens has produced the electoral GPS, in partnership with the press: METRO, Sudpresse, Knack and Le Vif. One of the advantages of the platform WeCitizens is that each candidate gains visibility, thanks to a free web page (http://directory.wecitizens.be/en/politician/profil/665) where he can present himself. If you answer the electoral GPS survey, you are included in the candidate rankings provided by WeCitizens. It is always possible to register and participate in the electoral GPS (there is no other deadline than the elections).\n" +
+                "\n" +
+                "The participation is done in three steps: (1) your registration in our database. See www.PoliticiansOnline.be if you are already registered. (2) In your profile (in edit mode) appears a tab \"\"Candidate 2018\"\", where you can indicate where you are candidate. (3) In the same tab, then appears a survey of about thirty closed questions. To be included in the electoral GPS, you must have answered all the questions.\n" +
+                "\n" +
+                "As a voter, I want to vote for transparent candidates, and I hope you will be part of it.\n" +
+                "\n" +
+                "Best regards."
+        }
     },
     "menu": {
         "item": {
