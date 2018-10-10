@@ -32,7 +32,7 @@
                             {app_title:$t('app.title')})}}</a>
 
                         <a class="dropdown-item" target="_blank"
-                           :href="$t('newsletter.link')">{{$t('newsletter.text')}}</a>
+                           :href="$t('newsletter.link')">{{$t('newsletter.title')}}</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" target="_blank"
                            :href="$t('links.register_as_candidate_link')">{{$t('menu.item.register_as_candidate',

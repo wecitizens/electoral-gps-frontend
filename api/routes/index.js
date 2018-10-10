@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db');
+var fs = require('fs');
 
 router.get('/v1/dir/politician/:key.json', function (req, res) {
 
@@ -255,9 +256,13 @@ router.get('/v1/vote/district.json', function (req, res) {
 });
 
 router.all('/v1/stats', function (req, res) {
-  /**
-   * @TODO => check where to save that
-   */
+
+  console.log('req', req);
+
+  let json = JSON.stringify(req.params);
+
+  fs.writeFile('./public/stats/'+Date.now() + '.json', json, 'utf8');
+
   res.json({
     'data': ['ok']
   });

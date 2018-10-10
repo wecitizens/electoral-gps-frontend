@@ -83,7 +83,7 @@ export default {
     "accept_condition": "J'accepte les conditions générales de NousCitoyens",
     "moreinfo_tooltip": "Plus d'infos",
     "strongly_disagree": "Pas du tout d'accord",
-    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. En cliquant sur le nom d'un candidat, tu ouvres son profil. Les premiers noms (affichés en noir) ont répondu à des questions. L'onglet \"Opinions\" (dans leur profil) affiche leurs réponses.",
+    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. Reviens, le 13 ou le 14 octobre,  pour réessayer. Tu peux néanmoins faire le test, si tu le souhaites, en cliquant sur l'étape \"2. Questions\", ci dessus. En cliquant sur le nom d'un candidat, tu ouvres son profil. Les premiers noms (affichés en noir) ont répondu à des questions. L'onglet \"Opinions\" (dans leur profil) affiche leurs réponses.",
     "importance_tooltip": "Niveau d'importance pour moi",
     "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {

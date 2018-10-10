@@ -83,7 +83,7 @@ export default {
     "accept_condition": "Ik aanvaard de algemene voorwaarden van WijBurgers",
     "moreinfo_tooltip": "Meer infos",
     "strongly_disagree": "Helemaal niet akkoord",
-    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is nog onvoldoende om het matching-proces van de KiesWijzer door te voeren. Klik op de naam van een kandidaat en open zijn profiel. De eerste namen (in het zwart gedrukt) hebben op vragen geantwoord. Op het tabblad 'Opinies' (in hun profiel) vind je zijn antwoorden.",
+    "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is nog onvoldoende om het matching-proces van de KiesWijzer door te voeren. Je kunt op 13 of 14 oktober komen zien of er meer kandidaten opduiken. Als je nu toch door de vragenlijst wilt gaan, klik je op \"2.Vragen\" hierboven. Klik op de naam van een kandidaat en open zijn profiel. De eerste namen (in het zwart gedrukt) hebben op vragen geantwoord. Op het tabblad 'Opinies' (in hun profiel) vind je hun antwoorden.",
     "importance_tooltip": "Hoe belangrijk voor mij",
     "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
     "results": {

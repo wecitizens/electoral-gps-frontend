@@ -83,7 +83,7 @@ export default {
     "accept_condition": "I accept the terms & conditions of WeCitizens",
     "moreinfo_tooltip": "More infos",
     "strongly_disagree": "Strongly disagree",
-    "insuffisant_number": "The number of participating candidates in the municipality is still insufficient to perform a matching with the Electoral GPS. By clicking on the name of a candidate, you open his profile. The first names (displayed in black) have answered some questions. The \"Opinions\" tab (in their profile) gives you their answers.",
+    "insuffisant_number": "The number of participating candidates in the municipality is still insufficient to run the matching function. Come back on the 13th or 14th of October to try again. Should you want, you reach the survey by clicking on step \"2. Questions\", here abore. By clicking on the name of a candidate, you open his profile. The first names (displayed in black) have answered some questions. The \"Opinions\" tab (in their profile) gives you their answers.",
     "importance_tooltip": "How important for me",
     "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {

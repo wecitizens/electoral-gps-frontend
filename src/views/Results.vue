@@ -47,8 +47,8 @@
             </b-tabs>
         </b-card>
 
-        <el-dialog :visible.sync="showShare" width="90%">
-            <a :href="newsletter.link">{{ newsletter.text }}</a>
+        <el-dialog :visible.sync="showNewsletter" width="90%">
+            <a :href="$t('newsletter.link')" target="_blank">{{ $t('newsletter.text') }}</a>
         </el-dialog>
     </div>
 </template>
@@ -138,6 +138,11 @@
     },
     computed: {
       ...mapGetters(['currentElection', 'currentCandidateScores', 'currentElectoralListScores'])
+    },
+    data(){
+      return {
+        showNewsletter : true
+      };
     }
   }
 </script>
