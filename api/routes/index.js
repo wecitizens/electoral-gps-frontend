@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db');
-var fs = require('fs');
 
 router.get('/v1/dir/politician/:key.json', function (req, res) {
 
@@ -131,7 +130,7 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
   const district = 'BE' + key;
 
   db.query(`SELECT
-    CONCAT('2018_be_municipal_be_', replace(e.district,'BE','')) AS segment_key,
+    CONCAT('2018_be_municipal_be_', replace(localite_menu.postcodes_principal,'.000','')) AS segment_key,
     'electoral_list' AS segment_type,
     CONCAT('be_', replace(e.district,'BE',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS list_key,
     CONCAT('be_politician_', p.id) AS politician_key,
@@ -144,26 +143,32 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
     e.questionnaire as has_answered,
     e.id_election AS id_election,
     p.completeness_of_profile AS completeness,
-    count(a.id) AS total_questions
+    a.opinion_total_sent AS total_questions,
+    a.opinion_total_received AS total_received
 FROM
     politician_election e
-        LEFT JOIN
+        JOIN
     politician_job j ON j.id_politician = e.id_politician
-        LEFT JOIN
+        JOIN
     politician p ON p.id = e.id_politician
         LEFT JOIN
     party party ON party.id = e.roll
         LEFT JOIN
     politician_photos pic ON pic.id_politician = e.id_politician
-        LEFT JOIN
+        JOIN
     election ON election.id = e.id_election  
         LEFT JOIN
-    questions_election q ON e.id_election = q.id_election
+    localite_menu ON localite_menu.id_gps = election.id_gps 
         LEFT JOIN
     opinions_answers a ON a.id_politician = e.id_politician    
 WHERE
     e.district = ?
-    AND e.id_election >= 16`, district, (err, rows) => {
+    AND e.id_election >= 16
+GROUP BY e.id_politician`, district, (err, rows) => {
+
+    /**
+     * @TODO => activate e.questionnaire = 1 when candidates answers to everything
+     */
 
     if (err) {
       throw  err;
@@ -224,7 +229,7 @@ WHERE
         completeness: item.completeness,
         list: item.party,
         total_questions: item.total_questions,
-        total_received: item.total_questions
+        total_received: item.total_received
       };
     });
 
@@ -250,13 +255,9 @@ router.get('/v1/vote/district.json', function (req, res) {
 });
 
 router.all('/v1/stats', function (req, res) {
-
-  console.log('req', req);
-
-  let json = JSON.stringify(req.params);
-
-  fs.writeFile(Date.now() + '.json', json, 'utf8');
-
+  /**
+   * @TODO => check where to save that
+   */
   res.json({
     'data': ['ok']
   });
