@@ -144,7 +144,7 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
     e.id_election AS id_election,
     p.completeness_of_profile AS completeness,
     a.opinion_total_sent AS total_questions,
-    a.opinion_total_received AS total_received
+    a.opinion_total_sent AS total_received
 FROM
     politician_election e
         JOIN

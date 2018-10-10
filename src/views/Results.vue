@@ -5,7 +5,7 @@
                 <b-tab :title="$t('title.candidates')" class="col-md-6 tab-center" active>
                     <p class="list-legend">{{ $t('Les candidats qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
-                         :key="idx" v-bind:class="{ disabled: !item.has_answered }">
+                         :key="idx" v-bind:class="{ disabled: !item.has_answered }" v-if="item.score">
                         <div class="col-3">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail" />
                             <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
@@ -28,7 +28,7 @@
                 <b-tab :title="$t('title.parties')" class="col-md-6 tab-center">
                     <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
-                         :key="idx">
+                         :key="idx"  v-if="item.score">
                         <div class="col-3 d-none">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
                             <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
