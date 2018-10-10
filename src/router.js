@@ -19,6 +19,16 @@ export default new Router({
       component: Home
     },
     {
+      path: '/nl',
+      name: 'home-nl',
+      component: Home
+    },
+    {
+      path: '/en',
+      name: 'home-en',
+      component: Home
+    },
+    {
       path: '/survey/:key',
       name: 'survey',
       component: Survey

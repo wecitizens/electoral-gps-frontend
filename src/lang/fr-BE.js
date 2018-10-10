@@ -1,17 +1,17 @@
 export default {
     "agree": "Plutôt d'accord",
     "notice": "La méthodologie de calcul du score (le 'matching') est décrite ici [http://www.wecitizens.be/docs-en/Q22-Matching_methodology.pdf] Disclaimer: NousCitoyens ne peut pas garantir la sincérité ni la fiabilité des réponses des candidats. Le 'matching' n'est qu'une indication, parmi d'autres pour se former un jugement : les projets, les compétences et l'intégrité du candidat. Il est recommandé de visiter le profil du candidat en cliquant sur son nom. Tenez aussi compte que votre commune connaît des enjeux qui lui sont propres et qui ne sont pas repris dans cet outil. Avec votre soutien, nous espérons pouvoir vous aider encore mieux lors des élections fédérales, régionales et européenne de mai 2019.",
-    "disagree": "Plutôt pas d'accord",
     "home": {
         "cta": "Je fais le test !",
         "title": "Je trouve les candidats qui me correspondent",
-        "title_1": "GPS",
         "title_2": "ELECTORAL",
+        "title_1": "GPS",
         "subtitle": "Communales 2018",
         "powered_by": "Powered by:",
         "description": "{userCount} électeurs ont déjà fait l'expérience",
         "with_help_from": "En partenariat avec :"
     },
+    "disagree": "Plutôt pas d'accord",
     "app": {
         "title": "GPS électoral"
     },
@@ -37,73 +37,62 @@ export default {
     },
     "PayPal-button": "Faire un don par PayPal",
     "strongly_agree": "Tout à fait d'accord",
+    "button": {
+        "lets_go": "C'est parti",
+        "more_info": "détails",
+        "see_results": "Voir les résultats",
+        "next_question": "Suivant",
+        "show_importance": "définir l'importance",
+        "show_more_infos": "d'infos",
+        "invite_candidate": "Invite un candidat non repris dans la liste",
+        "previous_question": "Précédent"
+    },
     "links": {
         "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
         "wecitizens_link": "http://www.wecitizens.be/fr",
         "advice_to_elector_link": "https://www.wecitizens.be/fr/conseils_pour_l_electeur/",
         "register_as_candidate_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/"
     },
-    "button": {
-        "lets_go": "C'est parti",
-        "more_info": "détails",
-        "see_results": "Voir les résultats",
-        "next_question": "Suivant",
-        "show_more_infos": "d'infos",
-        "show_importance": "définir l'importance",
-        "previous_question": "Précédent",
-        "invite_candidate": "Invite un candidat non repris dans la liste"
-    },
-    "mail": {
-        "invite_candidate": {
-            "subject": "Votre inscription au GPS électoral pour les élections municipales",
-            "text": "Cher candidat, chère candidate,\n" +
-                "\n" +
-                "L’asbl NousCitoyens a produit le GPS électoral, en partenariat avec la presse : METRO, Sudpresse et Le Vif. Un des avantages de la plateforme NousCitoyens est que chaque candidat acquiert une visibilité, grâce à une page web (http://directory.wecitizens.be/fr/politician/profil/665) gratuite où il peut se présenter. Si vous répondez au questionnaire du GPS électoral, vous êtes repris dans le classement des candidats fourni par NousCitoyens aux électeurs. Il est toujours possible de s’inscrire et participer au GPS électoral (il n’y a pas d’autre date limite que les élections). \n" +
-                "\n" +
-                "La participation se fait en trois étapes : (1) votre enregistrement dans notre base de données. Voyez sur www.PoliticiansOnline.be/fr si vous êtes déjà inscrit. (2) Dans votre profil (en mode édition) apparaît un onglet 'Candidat 2018', où vous pouvez indiquer où vous êtes candidat. (3) Dans le même onglet, apparaît ensuite un questionnaire d’une trentaine de question fermées. Pour être repris dans le GPS électoral, il faut avoir répondu à toutes les questions.\n" +
-                "\n" +
-                "Comme électeur, je souhaite voter pour des candidats transparents, et j’espère que vous en ferez partie.\n" +
-                "\n" +
-                "Meilleures salutations."
-        }
+    "newsletter": {
+        "link": "http://www.wecitizens.be/fr/bulletins/",
+        "text": "Newsletter"
     },
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Soutenir",
-            "results": "Résultats",
             "welcome": "Accueil",
-            "share_app": "Partager le {app_title}",
+            "results": "Résultats",
             "about_app": "À propos du {app_title}",
             "questions": "Questions",
+            "share_app": "Partager le {app_title}",
             "municipality": "Commune",
-            "go_to_results": "Sauter aux résultats",
             "share_results": "Partager mes résultats",
-            "see_all_questions": "Voir toutes les questions",
+            "go_to_results": "Sauter aux résultats",
             "advice_to_elector": "Conseil à l'électeur",
+            "see_all_questions": "Voir toutes les questions",
             "about_association": "À propos de {association_name}",
             "start_from_scratch": "Recommencer à zéro",
             "register_as_candidate": "M'inscrire comme candidat"
         }
     },
-    "accept_condition": "J'accepte les conditions générales de NousCitoyens",
-    "importance_title": "Pondération",
     "association": {
         "name": "NousCitoyens"
     },
+    "importance_title": "Pondération",
+    "accept_condition": "J'accepte les conditions générales de NousCitoyens",
     "moreinfo_tooltip": "Plus d'infos",
     "strongly_disagree": "Pas du tout d'accord",
+    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. En cliquant sur le nom d'un candidat, tu ouvres son profil. Les premiers noms (affichés en noir) ont répondu à des questions. L'onglet \"Opinions\" (dans leur profil) affiche leurs réponses.",
     "importance_tooltip": "Niveau d'importance pour moi",
-    "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. Tu pourrais réessayer après le 10 octobre. En cliquant sur le nom d'un candidat, tu ouvres son profil. Les premiers noms (affichés en noir) ont répondu à des questions. L'onglet \"Opinions\" (dans leur profil) affiche leurs réponses.",
     "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "results": {
         "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
         "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
     },
     "Pas du tout d'accord": "Pas du tout d'accord",
-    "im_doing_test_anyway": "Je fais quand-même le test !",
     "Tout à fait d'accord": "Tout à fait d'accord",
-    "accept_condition_link": "http://www.wecitizens.be/fr/nous-citoyens/termes-et-conditions/",
+    "im_doing_test_anyway": "Je fais quand-même le test !",
     "stats": {
         "questions": [
             {
@@ -137,17 +126,17 @@ export default {
                 "options": {
                     "ps": "PS",
                     "mr": "MR",
-                    "nva": "N-VA",
-                    "spa": "sp.a",
                     "cdh": "cdH",
                     "cdv": "CD&V",
-                    "none": "Aucun",
+                    "spa": "sp.a",
+                    "nva": "N-VA",
                     "defi": "Défi",
+                    "none": "Aucun",
                     "other": "Autre parti",
                     "groen": "Groen",
                     "ecolo": "Ecolo",
-                    "openvld": "Open VLD",
                     "ptbpvda": "PTB",
+                    "openvld": "Open VLD",
                     "vlaaamsbelang": "Vlaams Belang",
                     "partipopulaire": "Parti Populaire"
                 }
@@ -156,19 +145,26 @@ export default {
         "anonymous_question_to_improve_service": "Ces dernières questions restent anonymes, nous permettent d’améliorer notre service et de faire des analyses statistiques."
     },
     "Je ne me prononce pas": "Je ne me prononce pas",
+    "accept_condition_link": "http://www.wecitizens.be/fr/nous-citoyens/termes-et-conditions/",
     "invite_politician_link": "http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/",
-    "meaning_of_the_importance": "Le calcul du score de chaque candidat tient compte du poids que j’accorde à chaque question. Par défaut, la question est considéré “d’importance moyenne”. Si je clique sur “non-négociable” je donne le poids maximal à la question et d’exclue tous les candidats qui ne vont pas dans mon sens.",
     "only_3_candidates_message": "Dans ta commune, {number} candidats participent au GPS électoral",
-    "not_enough_candidates_answered": "Dans cette commune, moins de six candidats ont répondu au questionnaire du GPS électoral. Désolé, mais la procédure s'arrête ici.",
-    "district": {
-        "help_customise_survey": "Je recevrai le classement des candidats de ma commune.",
-        "what_is_your_postcode": "Mon code postal"
+    "meaning_of_the_importance": "Le calcul du score de chaque candidat tient compte du poids que j’accorde à chaque question. Par défaut, la question est considéré “d’importance moyenne”. Si je clique sur “non-négociable” je donne le poids maximal à la question et d’exclue tous les candidats qui ne vont pas dans mon sens.",
+    "mail": {
+        "invite_candidate": {
+            "text": "Cher candidat, chère candidate,\n\nL’asbl NousCitoyens a produit le GPS électoral, en partenariat avec la presse : METRO, Sudpresse et Le Vif. Un des avantages de la plateforme NousCitoyens est que chaque candidat acquiert une visibilité, grâce à une page web (http://directory.wecitizens.be/fr/politician/profil/665) gratuite où il peut se présenter. Si vous répondez au questionnaire du GPS électoral, vous êtes repris dans le classement des candidats fourni par NousCitoyens aux électeurs. Il est toujours possible de s’inscrire et participer au GPS électoral (il n’y a pas d’autre date limite que les élections). \n\nLa participation se fait en trois étapes : (1) votre enregistrement dans notre base de données. Voyez sur www.PoliticiansOnline.be/fr si vous êtes déjà inscrit. (2) Dans votre profil (en mode édition) apparaît un onglet « Candidat 2018 », où vous pouvez indiquer où vous êtes candidat. (3) Dans le même onglet, apparaît ensuite un questionnaire d’une trentaine de question fermées. Pour être repris dans le GPS électoral, il faut avoir répondu à toutes les questions.\nL’accès au premier formulaire se trouve ici (http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/). Il y a déjà plus de 14.000 acteurs politiques enregistrés.\n\nComme électeur, je souhaite voter pour des candidats transparents, et j’espère que vous en ferez partie.\n\nMeilleures salutations.",
+            "subject": "Votre inscription au GPS électoral pour les élections municipales"
+        }
     },
+    "district": {
+        "what_is_your_postcode": "Mon code postal",
+        "help_customise_survey": "Je recevrai le classement des candidats de ma commune."
+    },
+    "not_enough_candidates_answered": "Dans cette commune, moins de six candidats ont répondu au questionnaire du GPS électoral. Désolé, mais la procédure s'arrête ici.",
     "input": {
         "place_holder": {
             "your_postcode": "xxxx"
         }
     },
-    "Les listes qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les listes électorales (pour les candidats, voir l'autre onglet):",
-    "Les candidats qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les candidats (pour les listes électorales, voir l'autre onglet):"
+    "Les listes qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les listes électorales (pour les candidats, voir l'autre onglet)",
+    "Les candidats qui partagent le plus mes convictions sont": "Mon degré d'affinité politique avec les candidats (pour les listes électorales, voir l'autre onglet)"
 }

@@ -46,6 +46,10 @@
                 </b-tab>
             </b-tabs>
         </b-card>
+
+        <el-dialog :visible.sync="showShare" width="90%">
+            <a :href="newsletter.link">{{ newsletter.text }}</a>
+        </el-dialog>
     </div>
 </template>
 

@@ -86,8 +86,6 @@
           .then(() => this.getQuestions())
           .then(() => {
             this.loading = false;
-            let $ = window.jQuery;
-            $("html, body").animate({scrollTop: $(document).height()}, 1000);
           });
       });
     }

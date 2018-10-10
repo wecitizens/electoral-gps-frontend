@@ -30,6 +30,9 @@
                             {association_name:$t('association.name')})}}</a>
                         <a class="dropdown-item" @click="() => showDonate = true">{{$t('menu.item.donate',
                             {app_title:$t('app.title')})}}</a>
+
+                        <a class="dropdown-item" target="_blank"
+                           :href="$t('newsletter.link')">{{$t('newsletter.text')}}</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" target="_blank"
                            :href="$t('links.register_as_candidate_link')">{{$t('menu.item.register_as_candidate',

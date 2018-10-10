@@ -36,6 +36,7 @@
   import {mapActions, mapGetters} from 'vuex';
   import Steps from '../components/Steps';
   import Aos from 'aos';
+  import Vue from 'vue';
 
   export default {
     name: 'home',
@@ -45,9 +46,24 @@
     created() {
       this.$store.dispatch('getQuestions');
       Aos.init();
+
+      //let userLang = navigator.language || navigator.userLanguage;
+
+      switch (this.$router.currentRoute.name) {
+        case "home-nl":
+          Vue.i18n.set("nl");
+          break
+        case "home-en":
+          Vue.i18n.set('en');
+          break
+      }
     },
     methods: {
       ...mapActions(['getQuestions']),
+      setLocale: (local) => {
+        console.log('-> Switch lang', local);
+        Vue.i18n.set(local);
+      },
     },
     computed: {
       ...mapGetters([

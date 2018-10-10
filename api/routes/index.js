@@ -1,36 +1,37 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db');
+var fs = require('fs');
 
 router.get('/v1/dir/politician/:key.json', function (req, res) {
 
-    var key = req.params['key'];
+  var key = req.params['key'];
 
-    key = key.replace('politician_be_', '');
-    key = key.replace('be_politician_', '');
+  key = key.replace('politician_be_', '');
+  key = key.replace('be_politician_', '');
 
-    db.query("SELECT * from politician WHERE id = ?", key, function (err, rows) {
-        if (err) throw err;
+  db.query("SELECT * from politician WHERE id = ?", key, function (err, rows) {
+    if (err) throw err;
 
-        let item = rows[0];
+    let item = rows[0];
 
-        // Generate thumb
-        item.thumb = "http://directory.wecitizens.be/assets/media/politician-thumb/" + item.id + ".jpg";
+    // Generate thumb
+    item.thumb = "http://directory.wecitizens.be/assets/media/politician-thumb/" + item.id + ".jpg";
 
-        res.json(item);
-    });
+    res.json(item);
+  });
 });
 
 router.get('/v1/gps/answer/segment/2018_be_municipal_be_:key.json', function (req, res) {
 
-    let key = req.params['key'];
+  let key = req.params['key'];
 
-    if (key.includes('_electoral_list')) {
+  if (key.includes('_electoral_list')) {
 
-        key = key.replace('_electoral_list', '');
-        const district = 'BE' + key;
+    key = key.replace('_electoral_list', '');
+    const district = 'BE' + key;
 
-        let electoralListQuery = `
+    let electoralListQuery = `
 SELECT DISTINCT
     a.id,
     CONCAT('2018_be_municipal_be_', '` + key + `') AS segment_key,
@@ -69,18 +70,18 @@ WHERE
     AND p.personal_gender in ('i')
 ORDER BY opinion_received DESC
   `;
-        console.log(electoralListQuery);
+    console.log(electoralListQuery);
 
-        db.query(electoralListQuery, district, function (err, rows) {
-            if (err) throw err;
-            res.json({data: rows});
-        });
+    db.query(electoralListQuery, district, function (err, rows) {
+      if (err) throw err;
+      res.json({data: rows});
+    });
 
-    } else {
-        key = key.replace('_candidate', '');
-        const district = 'BE' + key;
+  } else {
+    key = key.replace('_candidate', '');
+    const district = 'BE' + key;
 
-        let candidateQuery = `
+    let candidateQuery = `
 SELECT DISTINCT
     a.id,
     CONCAT('2018_be_municipal_be_', '` + key + `') AS segment_key,
@@ -114,23 +115,23 @@ WHERE
     AND p.personal_gender in ('m','f')
     ORDER BY opinion_received DESC
   `;
-        console.log(candidateQuery);
+    console.log(candidateQuery);
 
-        db.query(candidateQuery, district, function (err, rows) {
-            if (err) throw err;
+    db.query(candidateQuery, district, function (err, rows) {
+      if (err) throw err;
 
-            res.json({data: rows});
-        });
-    }
+      res.json({data: rows});
+    });
+  }
 });
 
 router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function (req, res) {
 
-    let key = req.params['key'];
-    const district = 'BE' + key;
+  let key = req.params['key'];
+  const district = 'BE' + key;
 
-    db.query(`SELECT
-    CONCAT('2018_be_municipal_be_', replace(localite_menu.postcodes_principal,'.000','')) AS segment_key,
+  db.query(`SELECT
+    CONCAT('2018_be_municipal_be_', replace(e.district,'BE','')) AS segment_key,
     'electoral_list' AS segment_type,
     CONCAT('be_', replace(e.district,'BE',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS list_key,
     CONCAT('be_politician_', p.id) AS politician_key,
@@ -143,131 +144,129 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
     e.questionnaire as has_answered,
     e.id_election AS id_election,
     p.completeness_of_profile AS completeness,
-    a.opinion_total_sent AS total_questions,
-    a.opinion_total_received AS total_received
+    count(a.id) AS total_questions
 FROM
     politician_election e
-        JOIN
+        LEFT JOIN
     politician_job j ON j.id_politician = e.id_politician
-        JOIN
+        LEFT JOIN
     politician p ON p.id = e.id_politician
         LEFT JOIN
     party party ON party.id = e.roll
         LEFT JOIN
     politician_photos pic ON pic.id_politician = e.id_politician
-        JOIN
+        LEFT JOIN
     election ON election.id = e.id_election  
         LEFT JOIN
-    localite_menu ON localite_menu.id_gps = election.id_gps 
+    questions_election q ON e.id_election = q.id_election
         LEFT JOIN
     opinions_answers a ON a.id_politician = e.id_politician    
 WHERE
     e.district = ?
-    AND e.id_election >= 16
-GROUP BY e.id_politician`, district, (err, rows) => {
+    AND e.id_election >= 16`, district, (err, rows) => {
 
-        /**
-         * @TODO => activate e.questionnaire = 1 when candidates answers to everything
-         */
+    if (err) {
+      throw  err;
+    }
 
-        if (err) {
-            throw  err;
-        }
+    let data = {
+      "key": "2018_be_municipal_" + key,
+      "type": "be_municipal",
+      "type_name": "election_type_be_municipal_name",
+      "date": "2018-10-14T00:00:00.000Z",
+      "main_election_key": "2018_be_municipal",
+      "district_key": "be_municipal_" + key,
+      "electoral_lists": [],
+      "candidates": [],
+      "i18n": {
+        "en": {},
+        "nl": {},
+        "fr": {}
+      }
+    };
 
-        let data = {
-            "key": "2018_be_municipal_" + key,
-            "type": "be_municipal",
-            "type_name": "election_type_be_municipal_name",
-            "date": "2018-10-14T00:00:00.000Z",
-            "main_election_key": "2018_be_municipal",
-            "district_key": "be_municipal_" + key,
-            "electoral_lists": [],
-            "candidates": [],
-            "i18n": {
-                "en": {},
-                "nl": {},
-                "fr": {}
-            }
+    let lists = {};
+    let candidates = {};
+    let names = {};
+
+    rows.map((item) => {
+
+      let imgUrl = (url) => {
+        return url ? url.replace('/home/wecitizens/domains/wecitizens.be/public_html/directory/', 'http://directory.wecitizens.be/') : null
+      }
+
+      if (typeof lists[item.list_key] === 'undefined') {
+        lists[item.list_key] = {
+          "key": item.list_key,
+          "name": item.list_key + "_name",
+          "id": item.politician_id,
+          "img": imgUrl(item.img),
+          "candidates": {}
         };
+      }
 
-        let lists = {};
-        let candidates = {};
-        let names = {};
+      names[item.list_key + '_name'] = item.party;
 
-        rows.map((item) => {
+      lists[item.list_key].candidates[item.politician_key] = {
+        "order": item.position,
+        "key": item.politician_key,
+        "status": item.status
+      };
 
-            let imgUrl = (url) => {
-                return url ? url.replace('/home/wecitizens/domains/wecitizens.be/public_html/directory/', 'http://directory.wecitizens.be/') : null
-            }
-
-            if (typeof lists[item.list_key] === 'undefined') {
-                lists[item.list_key] = {
-                    "key": item.list_key,
-                    "name": item.list_key + "_name",
-                    "id": item.politician_id,
-                    "img": imgUrl(item.img),
-                    "candidates": {}
-                };
-            }
-
-            names[item.list_key + '_name'] = item.party;
-
-            lists[item.list_key].candidates[item.politician_key] = {
-                "order": item.position,
-                "key": item.politician_key,
-                "status": item.status
-            };
-
-            candidates[item.politician_key] = {
-                key: item.politician_key,
-                politician_id: item.politician_id,
-                full_name: item.full_name,
-                img: imgUrl(item.img),
-                order: item.position,
-                status: item.status,
-                has_answered: item.has_answered,
-                completeness: item.completeness,
-                list: item.party,
-                total_questions: item.total_questions,
-                total_received: item.total_received
-            };
-        });
-
-        data.electoral_lists = Object.values(lists);
-
-        data.electoral_lists.map((item) => {
-            return item.candidates = Object.values(item.candidates);
-        });
-
-        data.candidates = Object.values(candidates);
-
-        data.i18n.en = names;
-        data.i18n.nl = names;
-        data.i18n.fr = names;
-
-        res.json(data);
+      candidates[item.politician_key] = {
+        key: item.politician_key,
+        politician_id: item.politician_id,
+        full_name: item.full_name,
+        img: imgUrl(item.img),
+        order: item.position,
+        status: item.status,
+        has_answered: item.has_answered,
+        completeness: item.completeness,
+        list: item.party,
+        total_questions: item.total_questions,
+        total_received: item.total_questions
+      };
     });
+
+    data.electoral_lists = Object.values(lists);
+
+    data.electoral_lists.map((item) => {
+      return item.candidates = Object.values(item.candidates);
+    });
+
+    data.candidates = Object.values(candidates);
+
+    data.i18n.en = names;
+    data.i18n.nl = names;
+    data.i18n.fr = names;
+
+    res.json(data);
+  });
 });
 
 router.get('/v1/vote/district.json', function (req, res) {
-    //let key = req.params['key'];
-    res.json({});
+  //let key = req.params['key'];
+  res.json({});
 });
 
 router.all('/v1/stats', function (req, res) {
-    /**
-     * @TODO => check where to save that
-     */
-    res.json({
-        'data': ['ok']
-    });
+
+  console.log('req', req);
+
+  let json = JSON.stringify(req.params);
+
+  fs.writeFile(Date.now() + '.json', json, 'utf8');
+
+  res.json({
+    'data': ['ok']
+  });
 });
 
 /**
  * Just to check if the server response to a ping :-)
  */
 router.get('/ping', function (req, res) {
-    res.send('pong');
+  res.send('pong');
 });
 
 module.exports = router;
