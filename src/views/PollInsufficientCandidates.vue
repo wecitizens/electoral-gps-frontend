@@ -9,7 +9,7 @@
             </div>
             <ul class="list-unstyled mt-4">
                 <li class="media mb-3" v-for="(item, key) in orderList" :key="key"
-                    v-bind:class="{ disabled: !item.total_received }" v-if="item.completeness > 12">
+                    v-bind:class="{ disabled: !item.total_received }">
                     <a :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.politician_id"
                        target="_blank">
                         <img class="mr-3 align-self-start img-thumbnail" :src="item.img" width="64" alt=""
@@ -65,7 +65,8 @@
         if (this.$store.state.vote.current.election) {
 
           let candidates = this.$store.state.vote.current.election.candidates;
-          return candidates.sort((a, b) => b.total_received - a.total_received);
+          console.log("candidates in insufficient",candidates);
+          return candidates.sort((a, b) => (b.total_received - a.total_received) / 20 + (b.completeness - a.completeness) / 100);
         }
 
         return [];
