@@ -63,7 +63,9 @@
       orderList() {
 
         if (this.$store.state.vote.current.election) {
-          return this.$store.state.vote.current.election.candidates.sort((a, b) => b.total_received - a.total_received);
+
+          let candidates = this.$store.state.vote.current.election.candidates;
+          return candidates.sort((a, b) => b.total_received - a.total_received);
         }
 
         return [];

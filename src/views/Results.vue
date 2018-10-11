@@ -7,15 +7,20 @@
                     <div class="row list-item" v-for="(item, idx) in currentCandidateScores.map(extractCandidate)"
                          :key="idx" v-bind:class="{ disabled: !item.has_answered }" v-if="item.score">
                         <div class="col-3">
-                            <img :src="item.img" v-if="item.img" class="img-thumbnail" />
-                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                            <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
+                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else
+                                 class="img-thumbnail"/>
                         </div>
                         <div class="col-9">
                             <div class="title">
-                                <a v-if="item.completeness > 12" :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.id" target="_blank">{{ item.name }}</a>
+                                <a v-if="item.completeness > 12"
+                                   :href="'//directory.wecitizens.be/'+$i18n.locale()+'/politician/profil/'+item.id"
+                                   target="_blank">{{ item.name }}</a>
                                 <span v-else>{{ item.name }}</span>
                             </div>
-                            <div class="subtitle"><span v-if="item.position > 0">#{{ item.position }}</span> {{ item.group }}</div>
+                            <div class="subtitle"><span v-if="item.position > 0">#{{ item.position }}</span> {{
+                                item.group }}
+                            </div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" :style="'width:' + item.score + '%;'"
                                      :aria-valuenow="item.score"
@@ -28,10 +33,11 @@
                 <b-tab :title="$t('title.parties')" class="col-md-6 tab-center">
                     <p class="list-legend">{{ $t('Les listes qui partagent le plus mes convictions sont') }}:</p>
                     <div class="row list-item" v-for="(item, idx) in currentElectoralListScores.map(extractList)"
-                         :key="idx"  v-if="item.score">
+                         :key="idx">
                         <div class="col-3 d-none">
                             <img :src="item.img" v-if="item.img" class="img-thumbnail"/>
-                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else class="img-thumbnail" />
+                            <img src="//directory.wecitizens.be/assets/media/politician-thumb/img-no-photo.png" v-else
+                                 class="img-thumbnail"/>
                         </div>
                         <div class="col-12">
                             <div class="title">{{ item.name }}</div>
@@ -47,8 +53,11 @@
             </b-tabs>
         </b-card>
 
-        <el-dialog :visible.sync="showNewsletter" width="90%">
-            <a :href="$t('newsletter.link')" target="_blank">{{ $t('newsletter.text') }}</a>
+        <el-dialog :visible.sync="showNewsletter" width="60%">
+            <h2 class="mb-3">{{ $t('newsletter.title') }}</h2>
+            <p>{{ $t('newsletter.text') }}</p>
+            <a :href="$t('newsletter.link')" target="_blank" class="btn btn-info btn-block mt-3">{{
+                $t('newsletter.title') }}</a>
         </el-dialog>
     </div>
 </template>
@@ -67,7 +76,7 @@
         let group = this.currentElection.electoral_lists
           .filter(e => e.candidates.map(c => c.key).includes(score.user_key))[0]
         let candidate = this.currentElection.candidates.find(p => p.key == score.user_key)
-        console.log(score)  
+        console.log(score)
         if (candidate) {
           return {
             id: candidate.politician_id,
@@ -77,7 +86,7 @@
             score: score.score,
             img: candidate.img,
             has_answered: candidate.has_answered,
-            completeness : candidate.completeness
+            completeness: candidate.completeness
           }
         } else {
           return {}
@@ -139,9 +148,9 @@
     computed: {
       ...mapGetters(['currentElection', 'currentCandidateScores', 'currentElectoralListScores'])
     },
-    data(){
+    data() {
       return {
-        showNewsletter : true
+        showNewsletter: true
       };
     }
   }
@@ -184,13 +193,24 @@
         margin-top: .6em;
         border-radius: 10px;
     }
+
     .list-item .progress-bar {
-      background-color: #F8E71C;
-      color: black;
+        background-color: #F8E71C;
+        color: black;
     }
 
     .list-scroll {
         height: 70vh;
         overflow-y: scroll;
+    }
+
+    .image {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 100%;
+    }
+
+    .image img {
+        position: absolute;
     }
 </style>
