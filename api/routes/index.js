@@ -130,42 +130,105 @@ router.get('/v1/vote/election/2018_be_municipal/district/be_:key.json', function
   let key = req.params['key'];
   const district = 'BE' + key;
 
-  db.query(`SELECT
-    CONCAT('2018_be_municipal_be_', replace(localite_menu.postcodes_principal,'.000','')) AS segment_key,
-    'electoral_list' AS segment_type,
-    CONCAT('be_', replace(e.district,'BE',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS list_key,
-    CONCAT('be_politician_', p.id) AS politician_key,
-    p.id AS politician_id,
-    CONCAT(p.name, ' ', p.surname) AS full_name,
-    pic.full_path as img,
-    party.abbr AS party,
-    e.place as position,
-    e.status as status,
-    e.questionnaire as has_answered,
-    e.id_election AS id_election,
-    p.completeness_of_profile AS completeness,
-    a.opinion_total_sent AS total_questions,
-    a.opinion_total_sent AS total_received
+  db.query(`SELECT 
+    MAX(segment_key) as segment_key,
+    MAX(segment_type) as segment_type,
+    MAX(list_key) as list_key,
+    MAX(politician_key) as politician_key,
+    id_politician AS politician_id,
+    MAX(full_name) as full_name,
+    MAX(img) as img,
+    MAX(party) as party,
+    MAX(position) as position,
+    MAX(status) as status,
+    MAX(has_answered) as has_answered,
+    MAX(id_election) as id_election,
+    MAX(completeness) as completeness,
+    MAX(total_questions) as total_questions,
+    MAX(total_received) as total_received
 FROM
-    politician_election e
-        JOIN
-    politician_job j ON j.id_politician = e.id_politician
-        JOIN
-    politician p ON p.id = e.id_politician
-        LEFT JOIN
-    party party ON party.id = e.roll
-        LEFT JOIN
-    politician_photos pic ON pic.id_politician = e.id_politician
-        JOIN
-    election ON election.id = e.id_election  
-        LEFT JOIN
-    localite_menu ON localite_menu.id_gps = election.id_gps 
-        LEFT JOIN
-    opinions_answers a ON a.id_politician = e.id_politician    
-WHERE
-    e.district = ?
-    AND e.id_election >= 16
-GROUP BY e.id_politician`, district, (err, rows) => {
+    (SELECT 
+        segment_key,
+            segment_type,
+            list_key,
+            politician_key,
+            id_politician,
+            full_name,
+            img,
+            party,
+            position,
+            status,
+            has_answered,
+            id_election,
+            completeness,
+            total_questions,
+            COUNT(*) AS total_received
+    FROM
+        (SELECT DISTINCT
+        NULL AS segment_key,
+            NULL AS segment_type,
+            NULL AS list_key,
+            NULL AS politician_key,
+            a.id_politician,
+            NULL AS full_name,
+            NULL AS img,
+            NULL AS party,
+            NULL AS position,
+            NULL AS status,
+            0 AS has_answered,
+            0 AS id_election,
+            0 AS completeness,
+            0 AS total_questions,
+            a.opinion_id AS question_key
+    FROM
+        opinions_answers a
+    INNER JOIN politician p ON p.id = a.id_politician
+    INNER JOIN politician_election e ON e.id_politician = a.id_politician
+    INNER JOIN election ON election.id = e.id_election
+    INNER JOIN localite_menu ON localite_menu.id_gps = election.id_gps
+    WHERE
+        a.id_politician != 5439
+            AND e.id_election >= 16
+            AND e.district = ?
+            AND a.opinion_answer IN ('1' , '2', '3', '4', '5')
+            AND a.opinion_id IN ('4' , '14', '20', '21', '22', '23', '31', '38', '46', '49', '52', '58', '84', '88', '89', '90', '93', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '110', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '123', '124', '125')
+            AND p.personal_gender IN ('m' , 'f', 'i')
+    ORDER BY opinion_received DESC) segment
+    GROUP BY segment_key , segment_type , list_key , politician_key , id_politician , full_name , img , party , position , status , has_answered , id_election , completeness , total_questions UNION SELECT 
+        CONCAT('2018_be_municipal_be_', REPLACE(localite_menu.postcodes_principal, '.000', '')) AS segment_key,
+            (CASE
+                WHEN p.personal_gender = 'm' THEN 'candidate'
+                WHEN p.personal_gender = 'f' THEN 'candidate'
+                WHEN p.personal_gender = 'i' THEN 'electoral_list'
+                ELSE 'wrong'
+            END) AS segment_type,
+            CONCAT('be_', REPLACE(e.district, 'BE', ''), '_', LOWER(REPLACE(REPLACE(party.abbr, '! &', ''), ' ', '_'))) AS list_key,
+            CONCAT('be_politician_', p.id) AS politician_key,
+            p.id AS politician_id,
+            CONCAT(p.name, ' ', p.surname) AS full_name,
+            pic.full_path AS img,
+            party.abbr AS party,
+            e.place AS position,
+            e.status AS status,
+            e.questionnaire AS has_answered,
+            e.id_election AS id_election,
+            p.completeness_of_profile AS completeness,
+            45 AS total_questions,
+            0 AS total_received
+    FROM
+        politician_election e
+    JOIN politician_job j ON j.id_politician = e.id_politician
+    JOIN politician p ON p.id = e.id_politician
+    LEFT JOIN party party ON party.id = e.roll
+    LEFT JOIN politician_photos pic ON pic.id_politician = e.id_politician
+    JOIN election ON election.id = e.id_election
+    LEFT JOIN localite_menu ON localite_menu.id_gps = election.id_gps
+    WHERE
+        e.district = ?
+            AND e.id_election >= 16
+    GROUP BY e.id_politician) all_together
+GROUP BY id_politician
+ORDER BY id_politician DESC`, [district,district], (err, rows) => {
 
     /**
      * @TODO => activate e.questionnaire = 1 when candidates answers to everything
