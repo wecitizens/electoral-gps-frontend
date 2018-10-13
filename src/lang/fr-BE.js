@@ -55,7 +55,7 @@ export default {
     },
     "newsletter": {
         "link": "http://www.wecitizens.be/fr/bulletins/",
-        "text": "WeCitizens travaille dur pour vous fournir un outil plus performant aux élections de mai 2019. Inscrivez-vous à notre newsletter pour être tenu au courant et faire un vote informé\"? Merci!",
+        "text": "WeCitizens travaille dur pour vous fournir un outil plus performant aux élections de mai 2019. Inscrivez-vous à notre newsletter pour être tenu au courant et exprimer un vote informé. Merci!",
         "title": "Newsletter"
     },
     "menu": {
