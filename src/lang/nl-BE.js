@@ -55,8 +55,8 @@ export default {
     },
     "newsletter": {
         "link": "http://www.wecitizens.be/nl/nieuwsbrief-berichten/",
-        "text": "WijBurgers werkt hart aan een betere app voor de Mei 2019 verkiezingen. Schrijf jij op onze newsletter om ervan op de hoogte te blijven en geïnformeerd te stemmen",
-        "title": "Newsletter"
+        "text": "WijBurgers doet zijn uiterste best om in mei 2019 een betere KiesWijzer aan te bieden. Schrijf jij in op onze nieuwsbrief om hiervan op de hoogte te blijven en met inzicht te stemmen.",
+        "title": "Nieuwsbrief"
     },
     "menu": {
         "item": {
