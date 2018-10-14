@@ -39,11 +39,11 @@ SELECT DISTINCT
     CONCAT('be_', replace(e.district,'BE',''), '_', lower(replace(replace(party.abbr,'! &',''),' ','_'))) AS user_key,
     CONCAT('question_', a.opinion_id) AS question_key,
     CASE
-        WHEN a.opinion_answer = '1' THEN 'fully_agree'
+        WHEN a.opinion_answer = '1' THEN 'strongly_agree'
         WHEN a.opinion_answer = '2' THEN 'agree'
         WHEN a.opinion_answer = '3' THEN 'no_opinion'
         WHEN a.opinion_answer = '4' THEN 'disagree'
-        WHEN a.opinion_answer = '5' THEN 'fully_disagree'
+        WHEN a.opinion_answer = '5' THEN 'strongly_disagree'
         ELSE 'no_opinion'
     END AS value,
     party.abbr as user_name, # added to ease compatibility but should not be part of segments
@@ -89,11 +89,11 @@ SELECT DISTINCT
     CONCAT('be_politician_',a.id_politician) AS user_key,
     CONCAT('question_', a.opinion_id) AS question_key,
     (CASE
-    WHEN a.opinion_answer = '1' THEN 'fully_agree'
+    WHEN a.opinion_answer = '1' THEN 'strongly_agree'
     WHEN a.opinion_answer = '2' THEN 'agree'
     WHEN a.opinion_answer = '3' THEN 'no_opinion'
     WHEN a.opinion_answer = '4' THEN 'disagree'
-    WHEN a.opinion_answer = '5' THEN 'fully_disagree'
+    WHEN a.opinion_answer = '5' THEN 'strongly_disagree'
     ELSE 'wrong'
     END) AS value
 FROM
