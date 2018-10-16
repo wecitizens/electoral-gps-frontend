@@ -4,9 +4,6 @@
         <h3 class="text-center m-3">{{$t('stats.anonymous_question_to_improve_service')}}</h3>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
 
-            <div v-if="value" v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
-                       :value="value">{{ value }}</div>
-
             <el-form-item :label="q[0].title">
                 <el-select :v-model="form.source" placeholder="" value="">
                     <el-option v-if="value" v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
