@@ -3,23 +3,27 @@
         <steps :active="3"></steps>
         <h3 class="text-center m-3">{{$t('stats.anonymous_question_to_improve_service')}}</h3>
         <el-form ref="form" label-position="top" :model="form" label-width="120px">
+
+            <div v-if="value" v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
+                       :value="value">{{ value }}</div>
+
             <el-form-item :label="q[0].title">
-                <el-select :v-model="form.source" placeholder="">
-                    <el-option v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
+                <el-select :v-model="form.source" placeholder="" value="">
+                    <el-option v-if="value" v-for="(name, value) in q[0].options" :key="value" v-bind:label="name" :name="q[0].key"
                                :value="value"></el-option>
                 </el-select>
             </el-form-item>
 
             <el-form-item :label="q[1].title">
-                <el-select :v-model="form.age" placeholder="">
-                    <el-option v-for="(name, value) in q[1].options" :key="value" v-bind:label="name" :name="q[1].key"
+                <el-select :v-model="form.age" placeholder="" value="">
+                    <el-option v-if="value" v-for="(name, value) in q[1].options" :key="value" v-bind:label="name" :name="q[1].key"
                                :value="value"></el-option>
                 </el-select>
             </el-form-item>
 
             <el-form-item :label="q[2].title">
-                <el-select :v-model="form.party_vote" placeholder="">
-                    <el-option v-for="(name, value) in q[2].options" :key="value" v-bind:label="name" :name="q[2].key"
+                <el-select :v-model="form.party_vote" placeholder="" value="">
+                    <el-option v-if="value" v-for="(name, value) in q[2].options" :key="value" v-bind:label="name" :name="q[2].key"
                                :value="value"></el-option>
                 </el-select>
             </el-form-item>

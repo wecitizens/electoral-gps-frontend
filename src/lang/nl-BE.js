@@ -31,12 +31,11 @@ export default {
         "account": "IBAN : BE16 7350 3219 3274"
     },
     "importance_5": "Helemaal akkoord",
-    "PayPal-button": "Ik doe een gift via PayPal",
     "title": {
         "parties": "Kieslijsten",
         "candidates": "Kandidaten"
     },
-    "strongly_agree": "Helemaal akkoord",
+    "PayPal-button": "Ik doe een gift via PayPal",
     "button": {
         "lets_go": "Van start !",
         "more_info": "lees meer",
@@ -47,6 +46,7 @@ export default {
         "invite_candidate": "Nodig een kandidaat uit die niet in de lijst is opgenomen",
         "previous_question": "Voorgaande"
     },
+    "strongly_agree": "Helemaal akkoord",
     "links": {
         "gps_link": "http://www.wecitizens.be/nl/onze-tools/kieswijzer/",
         "wecitizens_link": "http://www.wecitizens.be/nl",
@@ -58,18 +58,19 @@ export default {
         "text": "WijBurgers doet zijn uiterste best om in mei 2019 een betere KiesWijzer aan te bieden. Schrijf jij in op onze nieuwsbrief om hiervan op de hoogte te blijven en met inzicht te stemmen.",
         "title": "Nieuwsbrief"
     },
+    "GPS_deactivated": "De KiesWijzer voor de gemeenteraadsverkiezingen is niet meer toegankelijk. Op deze pagina vindt u de KiesWijzer voor de parlementsverkiezingen in mei 2019.",
     "menu": {
         "item": {
             "stats": "Statistiek",
             "donate": "Steun",
             "welcome": "Welkom",
             "results": "Resultaat",
-            "about_app": "Meer over {app_title}",
             "share_app": "Ik deel de {app_title}",
+            "about_app": "Meer over {app_title}",
             "questions": "Vragen",
             "municipality": "Gemeente",
-            "share_results": "Mijn resultaat delen",
             "go_to_results": "Nu al naar het resultaat",
+            "share_results": "Mijn resultaat delen",
             "about_association": "Meer over {association_name}",
             "see_all_questions": "Alle vragen bekijken",
             "advice_to_elector": "Tips voor de kiezer",
@@ -78,22 +79,22 @@ export default {
         }
     },
     "moreinfo_tooltip": "Meer infos",
+    "importance_title": "Weging",
     "accept_condition": "Ik aanvaard de algemene voorwaarden van WijBurgers",
     "association": {
         "name": "WijBurgers"
     },
-    "importance_title": "Weging",
     "strongly_disagree": "Helemaal niet akkoord",
-    "importance_tooltip": "Hoe belangrijk voor mij",
     "insuffisant_number": "Het aantal deelnemende kandidaten in de gemeente is nog onvoldoende om het matching-proces van de KiesWijzer door te voeren. Je kunt op 13 of 14 oktober komen zien of er meer kandidaten opduiken. Als je nu toch door de vragenlijst wilt gaan, klik je op \"2.Vragen\" hierboven. Klik op de naam van een kandidaat en open zijn profiel. De eerste namen (in het zwart gedrukt) hebben op vragen geantwoord. Op het tabblad 'Opinies' (in hun profiel) vind je hun antwoorden.",
-    "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
+    "importance_tooltip": "Hoe belangrijk voor mij",
     "results": {
         "lists_title": "Kieslijsten in de volgorde van politieke affiniteit",
         "candatidates_sharing_my_position_the_most": "De kandidaten die het best mijn overtuigingen delen"
     },
-    "im_doing_test_anyway": "Ik doe de test hoe dan ook!",
-    "Pas du tout d'accord": "Helemaal niet akkoord",
+    "explicative_message": "Onderhavige lijst met kandidaten, weerspiegelt niet de algemene verdeling van de kandidaten. WijBurgers nodigt alle kandidaten uit om deel te nemen, zonder ze te kunnen verplichten. Je kunt ze de uitnodiging sturen.[http://www.wecitizens.be/nl/inschrijvingsformulier-voor-nieuwe-kandidaten/]",
     "Tout à fait d'accord": "Volledig akkoord",
+    "Pas du tout d'accord": "Helemaal niet akkoord",
+    "im_doing_test_anyway": "Ik doe de test hoe dan ook!",
     "stats": {
         "questions": [
             {
@@ -106,8 +107,8 @@ export default {
                     "mailing": "WijBurgers' mailing",
                     "tv_radio": "TV / Radio",
                     "paper_press": "Geschreven pers",
-                    "social_media": "Social netwerken",
-                    "googlesearch": "Google search"
+                    "googlesearch": "Google search",
+                    "social_media": "Social netwerken"
                 }
             },
             {
@@ -125,12 +126,12 @@ export default {
                 "type": "multiselect",
                 "title": "Bij de federale verkiezingen van 2014, heb ik voor volgende partij gestemd:",
                 "options": {
-                    "mr": "MR",
                     "ps": "PS",
+                    "mr": "MR",
                     "cdh": "cdH",
-                    "cdv": "CD&V",
-                    "nva": "N-VA",
                     "spa": "sp.a",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
                     "none": "Geen enkele partij",
                     "defi": "Défi",
                     "ecolo": "Ecolo",

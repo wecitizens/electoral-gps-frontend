@@ -31,12 +31,11 @@ export default {
         "account": "IBAN : BE16 7350 3219 3274"
     },
     "importance_5": "Tout à fait d'accord",
-    "PayPal-button": "Faire un don par PayPal",
     "title": {
         "parties": "Listes",
         "candidates": "Candidats"
     },
-    "strongly_agree": "Tout à fait d'accord",
+    "PayPal-button": "Faire un don par PayPal",
     "button": {
         "lets_go": "C'est parti",
         "more_info": "détails",
@@ -47,6 +46,7 @@ export default {
         "invite_candidate": "Invite un candidat non repris dans la liste",
         "previous_question": "Précédent"
     },
+    "strongly_agree": "Tout à fait d'accord",
     "links": {
         "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
         "wecitizens_link": "http://www.wecitizens.be/fr",
@@ -58,18 +58,19 @@ export default {
         "text": "WeCitizens travaille dur pour vous fournir un outil plus performant aux élections de mai 2019. Inscrivez-vous à notre newsletter pour être tenu au courant et exprimer un vote informé. Merci!",
         "title": "Newsletter"
     },
+    "GPS_deactivated": "Le GPS électoral pour les élections communales de 2018 n'est plus opérationnel. La présente page affichera le GPS pour les élections parlementaire en mai 2019.",
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Soutenir",
             "welcome": "Accueil",
             "results": "Résultats",
-            "about_app": "À propos du {app_title}",
             "share_app": "Partager le {app_title}",
+            "about_app": "À propos du {app_title}",
             "questions": "Questions",
             "municipality": "Commune",
-            "share_results": "Partager mes résultats",
             "go_to_results": "Sauter aux résultats",
+            "share_results": "Partager mes résultats",
             "about_association": "À propos de {association_name}",
             "see_all_questions": "Voir toutes les questions",
             "advice_to_elector": "Conseil à l'électeur",
@@ -78,22 +79,22 @@ export default {
         }
     },
     "moreinfo_tooltip": "Plus d'infos",
+    "importance_title": "Pondération",
     "accept_condition": "J'accepte les conditions générales de NousCitoyens",
     "association": {
         "name": "NousCitoyens"
     },
-    "importance_title": "Pondération",
     "strongly_disagree": "Pas du tout d'accord",
-    "importance_tooltip": "Niveau d'importance pour moi",
     "insuffisant_number": "Le nombre de candidats participants dans la commune est encore insuffisant pour actionner le comparateur du GPS électoral. Reviens, le 13 ou le 14 octobre,  pour réessayer. Tu peux néanmoins faire le test, si tu le souhaites, en cliquant sur l'étape \"2. Questions\", ci dessus. En cliquant sur le nom d'un candidat, tu ouvres son profil. Les premiers noms (affichés en noir) ont répondu à des questions. L'onglet \"Opinions\" (dans leur profil) affiche leurs réponses.",
-    "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
+    "importance_tooltip": "Niveau d'importance pour moi",
     "results": {
         "lists_title": "Les listes électorales dans l'ordre d'affinité politiques",
         "candatidates_sharing_my_position_the_most": "Les candidats qui partagent le plus mes convictions"
     },
-    "im_doing_test_anyway": "Je fais quand-même le test !",
-    "Pas du tout d'accord": "Pas du tout d'accord",
+    "explicative_message": "La liste de candidats reproduite ici ne reflète pas la répartition globale des candidats. NousCitoyens invite tous les candidats à participer, sans pouvoir les obliger. Tu peux leur transmettre l'invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "Tout à fait d'accord": "Tout à fait d'accord",
+    "Pas du tout d'accord": "Pas du tout d'accord",
+    "im_doing_test_anyway": "Je fais quand-même le test !",
     "stats": {
         "questions": [
             {
@@ -106,12 +107,12 @@ export default {
                     "mailing": "Mailing de NousCitoyens",
                     "tv_radio": "TV / Radio",
                     "paper_press": "Presse papier",
-                    "social_media": "Réseaux sociaux",
-                    "googlesearch": "Moteur de recherche Google"
+                    "googlesearch": "Moteur de recherche Google",
+                    "social_media": "Réseaux sociaux"
                 }
             },
             {
-                "key": "âge",
+                "key": "age",
                 "type": "select",
                 "title": "Mon âge:",
                 "options": {
@@ -125,12 +126,12 @@ export default {
                 "type": "multiselect",
                 "title": "Lors des élections fédérale de 2014, j'ai voté pour ce parti:",
                 "options": {
-                    "mr": "MR",
                     "ps": "PS",
+                    "mr": "MR",
                     "cdh": "cdH",
-                    "cdv": "CD&V",
-                    "nva": "N-VA",
                     "spa": "sp.a",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
                     "none": "Aucun",
                     "defi": "Défi",
                     "ecolo": "Ecolo",

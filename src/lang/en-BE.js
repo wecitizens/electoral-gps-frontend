@@ -31,12 +31,11 @@ export default {
         "account": "IBAN : BE16 7350 3219 3274"
     },
     "importance_5": "Fully agree",
-    "PayPal-button": "Donate (using PayPal)",
     "title": {
         "parties": "Candidate list",
         "candidates": "Candidates"
     },
-    "strongly_agree": "Fully agree",
+    "PayPal-button": "Donate (using PayPal)",
     "button": {
         "lets_go": "Let's go!",
         "more_info": "more info",
@@ -47,6 +46,7 @@ export default {
         "invite_candidate": "Invite a candidate not included in the list",
         "previous_question": "Previous"
     },
+    "strongly_agree": "Fully agree",
     "links": {
         "gps_link": "https://www.wecitizens.be/fr/q05-gps_electoral/",
         "wecitizens_link": "http://www.wecitizens.be",
@@ -58,18 +58,19 @@ export default {
         "text": "WeCitizens is working hard to develop a more performing tool for the May 2019 elections. Register to our newsletter to stay informed and cast an informed vote.",
         "title": "Newsletter"
     },
+    "GPS_deactivated": "The Electoral GPS for the municipal elections of 2018 is no more in service. On this page you will find, in May 2019, the Electoral GPS for the parliaments' elections.",
     "menu": {
         "item": {
             "stats": "Stats",
             "donate": "Donate",
             "welcome": "Home",
             "results": "Results",
-            "about_app": "About {app_title}",
             "share_app": "Share the {app_title}",
+            "about_app": "About {app_title}",
             "questions": "Questions",
             "municipality": "Municipality",
-            "share_results": "Share my results",
             "go_to_results": "Skip to results",
+            "share_results": "Share my results",
             "about_association": "About {association_name}",
             "see_all_questions": "See all questions",
             "advice_to_elector": "Advise to the voters",
@@ -78,22 +79,22 @@ export default {
         }
     },
     "moreinfo_tooltip": "More infos",
+    "importance_title": "Importance",
     "accept_condition": "I accept the terms & conditions of WeCitizens",
     "association": {
         "name": "WeCitizens"
     },
-    "importance_title": "Importance",
     "strongly_disagree": "Strongly disagree",
-    "importance_tooltip": "How important for me",
     "insuffisant_number": "The number of participating candidates in the municipality is still insufficient to run the matching function. Come back on the 13th or 14th of October to try again. Should you want, you reach the survey by clicking on step \"2. Questions\", here abore. By clicking on the name of a candidate, you open his profile. The first names (displayed in black) have answered some questions. The \"Opinions\" tab (in their profile) gives you their answers.",
-    "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
+    "importance_tooltip": "How important for me",
     "results": {
         "lists_title": "Electoral lists in the order of political affinity",
         "candatidates_sharing_my_position_the_most": "Candidates that share my ideas the most"
     },
-    "im_doing_test_anyway": "I'm doing the test anyway!",
-    "Pas du tout d'accord": "Strongly disagree",
+    "explicative_message": "The list of candidates reproduced here does not reflect the overall distribution of candidates. WeCitizens invites all the candidates to participate, but can't oblige them. You can send them the invitation.[http://www.wecitizens.be/fr/gps-electoral-acces-au-formulaire-dinscription-comme-candidat/]",
     "Tout à fait d'accord": "Strongly agree",
+    "Pas du tout d'accord": "Strongly disagree",
+    "im_doing_test_anyway": "I'm doing the test anyway!",
     "stats": {
         "questions": [
             {
@@ -106,8 +107,8 @@ export default {
                     "mailing": "WeCitizens mailing",
                     "tv_radio": "TV / Radio",
                     "paper_press": "Paper press",
-                    "social_media": "Social media",
-                    "googlesearch": "Google search"
+                    "googlesearch": "Google search",
+                    "social_media": "Social media"
                 }
             },
             {
@@ -125,12 +126,12 @@ export default {
                 "type": "multiselect",
                 "title": "I voted for following party at the Federal elections of 2014:",
                 "options": {
-                    "mr": "MR",
                     "ps": "PS",
+                    "mr": "MR",
                     "cdh": "cdH",
-                    "cdv": "CD&V",
-                    "nva": "N-VA",
                     "spa": "sp.a",
+                    "nva": "N-VA",
+                    "cdv": "CD&V",
                     "none": "None",
                     "defi": "Défi (FDF)",
                     "ecolo": "Ecolo",
